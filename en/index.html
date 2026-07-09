@@ -2379,6 +2379,7 @@
           <button class="pill" data-val="round" title="CCM R-shape (Ribcor), Sherwood Rekker — rounded, concave, ergonomic">Round</button>
           <button class="pill" data-val="slim" title="Bauer Vapor / Pulse / Twitch, Warrior Covert — slim profile">Slim</button>
           <button class="pill" data-val="hybrid" title="CCM Jetspeed / Vizion, Bauer Proto, Warrior Novium — hybrid">Hybrid</button>
+          <button class="pill" data-val="five-sided" title="Bauer Supreme Fuse — five-sided taper (2026)">Five-sided</button>
         </div>
       </div>
       <div class="filter-group">
@@ -2582,64 +2583,62 @@
         </p>
 
         <!-- Kick point diagram -->
-        <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; margin: 20px 0; display: block;" aria-label="Kick point diagram showing low, mid, and hybrid kick points on a hockey stick">
-          <defs>
-            <marker id="arrowKP" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-              <path d="M0,0 L8,4 L0,8 Z" fill="#ff5b1f"/>
-            </marker>
-          </defs>
-
-          <!-- LOW KICK -->
-          <g transform="translate(60, 20)">
-            <text x="50" y="0" text-anchor="middle" fill="#e8e6e1" font-family="Inter,sans-serif" font-size="14" font-weight="700">LOW</text>
-            <text x="50" y="18" text-anchor="middle" fill="#a8a59f" font-family="Inter,sans-serif" font-size="11">Bauer Vapor, CCM Ribcor</text>
-
-            <!-- shaft -->
-            <line x1="50" y1="40" x2="50" y2="220" stroke="#a8a59f" stroke-width="3"/>
-            <!-- bend zone (low, near blade) -->
-            <ellipse cx="50" cy="200" rx="14" ry="8" fill="#ff5b1f" opacity="0.55"/>
-            <!-- blade -->
-            <path d="M50,220 L20,260 L50,255 L80,260 Z" fill="#a8a59f"/>
-            <!-- arrow -->
-            <line x1="100" y1="200" x2="78" y2="200" stroke="#ff5b1f" stroke-width="2" marker-end="url(#arrowKP)"/>
-            <text x="105" y="205" fill="#ff5b1f" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700">bend zone</text>
-
-            <text x="50" y="285" text-anchor="middle" fill="#e8e6e1" font-family="Inter,sans-serif" font-size="11">Quick wrist shots</text>
-            <text x="50" y="300" text-anchor="middle" fill="#a8a59f" font-family="Inter,sans-serif" font-size="10">snipers, fast release</text>
-          </g>
-
-          <!-- MID KICK -->
-          <g transform="translate(260, 20)">
-            <text x="50" y="0" text-anchor="middle" fill="#e8e6e1" font-family="Inter,sans-serif" font-size="14" font-weight="700">MID</text>
-            <text x="50" y="18" text-anchor="middle" fill="#a8a59f" font-family="Inter,sans-serif" font-size="11">CCM XF Ghost, Bauer Nexus</text>
-
-            <line x1="50" y1="40" x2="50" y2="220" stroke="#a8a59f" stroke-width="3"/>
-            <!-- bend zone (middle) -->
-            <ellipse cx="50" cy="130" rx="14" ry="10" fill="#ff5b1f" opacity="0.55"/>
-            <path d="M50,220 L20,260 L50,255 L80,260 Z" fill="#a8a59f"/>
-            <line x1="100" y1="130" x2="78" y2="130" stroke="#ff5b1f" stroke-width="2" marker-end="url(#arrowKP)"/>
-            <text x="105" y="134" fill="#ff5b1f" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700">bend zone</text>
-
-            <text x="50" y="285" text-anchor="middle" fill="#e8e6e1" font-family="Inter,sans-serif" font-size="11">Slap shots, one-timers</text>
-            <text x="50" y="300" text-anchor="middle" fill="#a8a59f" font-family="Inter,sans-serif" font-size="10">power shooters, big wind-up</text>
-          </g>
-
-          <!-- HYBRID KICK -->
-          <g transform="translate(460, 20)">
-            <text x="50" y="0" text-anchor="middle" fill="#e8e6e1" font-family="Inter,sans-serif" font-size="14" font-weight="700">HYBRID</text>
-            <text x="50" y="18" text-anchor="middle" fill="#a8a59f" font-family="Inter,sans-serif" font-size="11">CCM Jetspeed, Bauer Pulse</text>
-
-            <line x1="50" y1="40" x2="50" y2="220" stroke="#a8a59f" stroke-width="3"/>
-            <!-- bend zone (mid-low, larger area) -->
-            <ellipse cx="50" cy="170" rx="14" ry="22" fill="#ff5b1f" opacity="0.45"/>
-            <path d="M50,220 L20,260 L50,255 L80,260 Z" fill="#a8a59f"/>
-            <line x1="100" y1="165" x2="78" y2="165" stroke="#ff5b1f" stroke-width="2" marker-end="url(#arrowKP)"/>
-            <text x="105" y="169" fill="#ff5b1f" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700">bend zone</text>
-
-            <text x="50" y="285" text-anchor="middle" fill="#e8e6e1" font-family="Inter,sans-serif" font-size="11">All shots, versatile</text>
-            <text x="50" y="300" text-anchor="middle" fill="#a8a59f" font-family="Inter,sans-serif" font-size="10">all-around players</text>
-          </g>
-        </svg>
+        <svg viewBox="0 0 660 416" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; margin: 20px 0; display: block; font-family: Inter, sans-serif;" aria-label="Kick point diagram: low, mid and hybrid bend zones marked on identically loaded sticks">
+  <defs><marker id="kpArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#ff5b1f"/></marker></defs>
+  <g transform="translate(15,0)">
+    <text x="95" y="20" text-anchor="middle" fill="#e8e6e1" font-size="15" font-weight="700">LOW KICK</text>
+    <text x="95" y="36" text-anchor="middle" fill="#a8a59f" font-size="9.5">Bauer Vapor · CCM Ribcor · Sherwood Rekker</text>
+    <line x1="113" y1="55" x2="97" y2="278" stroke="#a8a59f" stroke-width="3" stroke-dasharray="5 6" opacity="0.35"/>
+    <path d="M113,55 C92,130 87,205 91,278" fill="none" stroke="#e8e6e1" stroke-width="5" stroke-linecap="round"/>
+    <path d="M91,278 q -6,9 -26,11 l -26,2" fill="none" stroke="#e8e6e1" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="88" cy="246" rx="15" ry="27" fill="#ff5b1f" opacity="0.25"/><circle cx="88" cy="246" r="4.5" fill="#ff5b1f"/>
+    <circle cx="16" cy="286" r="6" fill="#e8e6e1"/>
+    <line x1="24" y1="280" x2="66" y2="252" stroke="#ff5b1f" stroke-width="3" marker-end="url(#kpArrow)"/>
+    <text x="95" y="322" text-anchor="middle" fill="#ff5b1f" font-size="11.5" font-weight="700">Quick, snappy release</text>
+    <text x="0" y="349" fill="#a8a59f" font-size="9.5">RELEASE</text>
+    <rect x="70" y="341" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
+    <rect x="70" y="341" width="104" height="7" rx="3.5" fill="#ff5b1f"/>
+    <text x="0" y="371" fill="#a8a59f" font-size="9.5">POWER</text>
+    <rect x="70" y="363" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
+    <rect x="70" y="363" width="46" height="7" rx="3.5" fill="#ff5b1f"/>
+  </g>
+  <g transform="translate(235,0)">
+    <text x="95" y="20" text-anchor="middle" fill="#e8e6e1" font-size="15" font-weight="700">MID KICK</text>
+    <text x="95" y="36" text-anchor="middle" fill="#a8a59f" font-size="9.5">Bauer Supreme Fuse · True Catalyst</text>
+    <line x1="113" y1="55" x2="97" y2="278" stroke="#a8a59f" stroke-width="3" stroke-dasharray="5 6" opacity="0.35"/>
+    <path d="M113,55 C92,130 87,205 91,278" fill="none" stroke="#e8e6e1" stroke-width="5" stroke-linecap="round"/>
+    <path d="M91,278 q -6,9 -26,11 l -26,2" fill="none" stroke="#e8e6e1" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="88" cy="166" rx="15" ry="27" fill="#ff5b1f" opacity="0.25"/><circle cx="88" cy="166" r="4.5" fill="#ff5b1f"/>
+    <circle cx="16" cy="286" r="6" fill="#e8e6e1"/>
+    <line x1="24" y1="280" x2="66" y2="252" stroke="#ff5b1f" stroke-width="3" marker-end="url(#kpArrow)"/>
+    <text x="95" y="322" text-anchor="middle" fill="#ff5b1f" font-size="11.5" font-weight="700">Max shot power</text>
+    <text x="0" y="349" fill="#a8a59f" font-size="9.5">RELEASE</text>
+    <rect x="70" y="341" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
+    <rect x="70" y="341" width="46" height="7" rx="3.5" fill="#ff5b1f"/>
+    <text x="0" y="371" fill="#a8a59f" font-size="9.5">POWER</text>
+    <rect x="70" y="363" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
+    <rect x="70" y="363" width="104" height="7" rx="3.5" fill="#ff5b1f"/>
+  </g>
+  <g transform="translate(455,0)">
+    <text x="95" y="20" text-anchor="middle" fill="#e8e6e1" font-size="15" font-weight="700">HYBRID</text>
+    <text x="95" y="36" text-anchor="middle" fill="#a8a59f" font-size="9.5">CCM Jetspeed · Bauer Proto · Warrior Novium</text>
+    <line x1="113" y1="55" x2="97" y2="278" stroke="#a8a59f" stroke-width="3" stroke-dasharray="5 6" opacity="0.35"/>
+    <path d="M113,55 C92,130 87,205 91,278" fill="none" stroke="#e8e6e1" stroke-width="5" stroke-linecap="round"/>
+    <path d="M91,278 q -6,9 -26,11 l -26,2" fill="none" stroke="#e8e6e1" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="88" cy="246" rx="10" ry="19" fill="#ff5b1f" opacity="0.25"/><circle cx="88" cy="246" r="3.1" fill="#ff5b1f"/><ellipse cx="88" cy="166" rx="10" ry="19" fill="#ff5b1f" opacity="0.25"/><circle cx="88" cy="166" r="3.1" fill="#ff5b1f"/>
+    <circle cx="16" cy="286" r="6" fill="#e8e6e1"/>
+    <line x1="24" y1="280" x2="66" y2="252" stroke="#ff5b1f" stroke-width="3" marker-end="url(#kpArrow)"/>
+    <text x="95" y="322" text-anchor="middle" fill="#ff5b1f" font-size="11.5" font-weight="700">Best of both zones</text>
+    <text x="0" y="349" fill="#a8a59f" font-size="9.5">RELEASE</text>
+    <rect x="70" y="341" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
+    <rect x="70" y="341" width="80" height="7" rx="3.5" fill="#ff5b1f"/>
+    <text x="0" y="371" fill="#a8a59f" font-size="9.5">POWER</text>
+    <rect x="70" y="363" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
+    <rect x="70" y="363" width="80" height="7" rx="3.5" fill="#ff5b1f"/>
+  </g>
+  <text x="330" y="392" text-anchor="middle" fill="#a8a59f" font-size="9.5">dashed = unloaded stick · solid = loaded during a shot · orange glow = where it bends</text>
+  <text x="330" y="408" text-anchor="middle" fill="#a8a59f" font-size="9.5" font-style="italic">Illustrative sketch only — the bend is exaggerated and only marks the zones, not the real bend shape.</text>
+</svg>
 
         <p>
           <strong>Why it matters:</strong> a low-kick stick loads (bends) closer to the blade, snapping back faster — great for quick wrist shots in tight spaces. A mid-kick stick loads in the middle, takes longer to bend but stores more energy — better for slap shots from the point. Hybrid splits the difference.
@@ -2810,6 +2809,11 @@
       <div class="learn-card">
         <span class="lc-tag">🎀 Taping</span>
         <h3>Taping the stick: blade, knob, grip — what actually matters.</h3>
+        <div style="position:relative; width:100%; max-width:640px; aspect-ratio:16/9; margin:20px 0 8px;">
+          <iframe src="https://www.youtube-nocookie.com/embed/b_5pmwy7fJE" title="How To Tape A Hockey Stick" style="position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:10px;" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p style="font-size:0.88em; color:var(--ink-faint); max-width:640px;">Every player tapes a bit differently — this is the basic taping we recommend starting with. Video: <a href="https://www.youtube.com/watch?v=b_5pmwy7fJE" target="_blank" rel="noopener" style="color:var(--ink-faint); text-decoration:underline;">«How To Tape A Hockey Stick»</a> by The Hockey Shop (YouTube) — credit to the creator.</p>
+
         <p>
           <span class="badge standard">Standard practice</span> Tape isn't decoration. On the blade it protects the composite from chips and moisture, and gives the puck something to grip. On the butt end it's a <strong>safety feature</strong>. Total cost: ~40 NOK per roll, one roll lasts a young player months.
         </p>
@@ -3090,7 +3094,9 @@ const STICKS = [
     shaftProfile: 'square',
     shaftProfileLabel: 'CCM "T" — square (FT8 Pro spec)',
     ageGroup: 'JR',
-    tagline: 'CCM\'s top hybrid. Currently -20% at hockeystore.no.',
+    tagline: 'Previous-gen flagship, now -30% at hockeystore.no. Successor: FT9 Pro.',
+    lastGen: true,
+    successor: 'ccm-jetspeed-ft9-pro-jr',
     notes: 'Junior performance not independently verified.',
   },
   {
@@ -3109,7 +3115,9 @@ const STICKS = [
     shaftProfile: 'square',
     shaftProfileLabel: 'CCM "T" — square (FT8 Pro spec)',
     ageGroup: 'JR',
-    tagline: 'Color variants of FT8 Pro. -15% NICE PRICE. Charcoal/Red available.',
+    tagline: 'Color variants of FT8 Pro, -30%. Successor: FT9 Pro.',
+    lastGen: true,
+    successor: 'ccm-jetspeed-ft9-pro-jr',
     notes: 'Junior performance not independently verified.',
   },
 
@@ -3574,7 +3582,9 @@ const STICKS = [
     shaftProfile: 'square',
     shaftProfileLabel: 'CCM "T" — square (FT8 Pro spec)',
     ageGroup: 'YTH',
-    tagline: 'Hybrid kick, flagship (youth).',
+    tagline: 'Previous-gen flagship (youth). Successor: FT9 Pro.',
+    lastGen: true,
+    successor: 'ccm-jetspeed-ft9-pro-yth',
   },
   {
     id: 'ccm-jetspeed-ft8-pro-int',
@@ -3592,7 +3602,9 @@ const STICKS = [
     shaftProfile: 'square',
     shaftProfileLabel: 'CCM "T" — square (FT8 Pro spec)',
     ageGroup: 'INT',
-    tagline: 'Hybrid kick, flagship (intermediate).',
+    tagline: 'Previous-gen flagship (intermediate). Successor: FT9 Pro.',
+    lastGen: true,
+    successor: 'ccm-jetspeed-ft9-pro-int',
   },
 
   // FT8 Yth + Int
@@ -4367,8 +4379,8 @@ const STICKS = [
     shaftProfileLabel: 'Bauer Supreme — hybrid',
     ageGroup: 'JR',
     lastGen: true,
-    successor: 'bauer-proto-r-jr',
-    tagline: 'Supreme Mach (2022). Successor: PROTO-R.',
+    successor: 'bauer-supreme-fuse-jr',
+    tagline: 'Supreme Mach (2022). Successor: Supreme Fuse (line revived 2026).',
   },
   {
     id: 'bauer-supreme-3s-pro-jr',
@@ -4386,7 +4398,7 @@ const STICKS = [
     ageGroup: 'JR',
     lastGen: true,
     successor: 'bauer-supreme-mach-jr',
-    tagline: 'Supreme 3S Pro (2021). Lineage: 3S Pro → Mach → PROTO.',
+    tagline: 'Supreme 3S Pro (2021). Lineage: 3S Pro → Mach → Supreme Fuse.',
   },
 
   // ============================================
@@ -4786,6 +4798,384 @@ const STICKS = [
     tagline: 'Cheapest Bauer wood option.',
     notes: 'Wood stick — heavier but very cheap.',
   },
+
+  {
+    id: 'ccm-jetspeed-ft9-pro-jr',
+    brand: 'CCM',
+    family: 'Jetspeed',
+    model: 'Jetspeed FT9 Pro Jr',
+    kick: 'hybrid',
+    tier: 'flagship',
+    weight: 375,
+    flexes: [40, 50],
+    curves: ['P28+1/4', 'P29+1/4', 'P88', 'P90TM'],
+    stores: [{ name: 'us.ccmhockey.com (MSRP)', priceNOK: 3190, priceMSRP: 3190, url: 'https://us.ccmhockey.com/Sticks/Shop-All-Sticks/Jetspeed', lastChecked: '2026-07-08', note: 'Official manufacturer MSRP, $289.99 USD converted at 1:11' },
+    ],
+    shaftProfile: 'round',
+    shaftProfileLabel: 'CCM "R" — round (FT9 Pro spec)',
+    ageGroup: 'JR',
+    tagline: 'New 2026 flagship. Evo Blade + NeoSense Fuze hosel.',
+    notes: 'Launched May 2026, successor to FT8 Pro. Stocked at hockeystore (NOK price to verify). No 30 flex in JR — line starts at 40. Blade prints P28/P29 but is the +1/4 max-height variant. Weight estimated; official JR weight not published.',
+  },
+  {
+    id: 'ccm-jetspeed-ft9-pro-yth',
+    brand: 'CCM',
+    family: 'Jetspeed',
+    model: 'Jetspeed FT9 Pro Yth',
+    kick: 'hybrid',
+    tier: 'flagship',
+    weight: 340,
+    flexes: [20, 30],
+    curves: ['P28', 'P29'],
+    stores: [{ name: 'us.ccmhockey.com (MSRP)', priceNOK: 2420, priceMSRP: 2420, url: 'https://us.ccmhockey.com/Sticks/Shop-All-Sticks/Jetspeed', lastChecked: '2026-07-08', note: 'Official manufacturer MSRP, $219.99 USD converted at 1:11' },
+    ],
+    shaftProfile: 'round',
+    shaftProfileLabel: 'CCM "R" — round (FT9 Pro spec)',
+    ageGroup: 'YTH',
+    tagline: 'New 2026 flagship (youth).',
+    notes: 'Launched May 2026. Youth curve options unverified; P28/P29 assumed per CCM youth convention. Weight estimated.',
+  },
+  {
+    id: 'ccm-jetspeed-ft9-pro-int',
+    brand: 'CCM',
+    family: 'Jetspeed',
+    model: 'Jetspeed FT9 Pro Int',
+    kick: 'hybrid',
+    tier: 'flagship',
+    weight: 385,
+    flexes: [55, 65],
+    curves: ['P28+1/4', 'P29+1/4', 'P88', 'P90TM'],
+    stores: [{ name: 'us.ccmhockey.com (MSRP)', priceNOK: 3960, priceMSRP: 3960, url: 'https://us.ccmhockey.com/Sticks/Shop-All-Sticks/Jetspeed', lastChecked: '2026-07-08', note: 'Official manufacturer MSRP, $359.99 USD converted at 1:11' },
+    ],
+    shaftProfile: 'round',
+    shaftProfileLabel: 'CCM "R" — round (FT9 Pro spec)',
+    ageGroup: 'INT',
+    tagline: 'New 2026 flagship (intermediate).',
+    notes: 'Launched May 2026, successor to FT8 Pro. Stocked at hockeystore (NOK price to verify). Weight estimated.',
+  },
+  {
+    id: 'true-hzrdus-smoke-jr',
+    brand: 'True',
+    family: 'HZRDUS',
+    model: 'HZRDUS Smoke Jr',
+    kick: 'low',
+    tier: 'flagship',
+    weight: 390,
+    flexes: [20, 40],
+    curves: ['T92'],
+    stores: [{ name: 'truehockey.com (MSRP)', priceNOK: 2640, priceMSRP: 2640, url: 'https://truehockey.com/collections/sticks', lastChecked: '2026-07-08', note: 'Official manufacturer MSRP, $239.99 USD (40 flex) converted at 1:11. UFLEX pricing: 20 flex is $189.99.' },
+    ],
+    shaftProfile: 'round',
+    shaftProfileLabel: 'True HZRDUS Smoke — round, double-concave',
+    ageGroup: 'JR',
+    tagline: 'True\'s 2025 flagship (retail name for 9X5). UFLEX per-flex pricing.',
+    notes: 'Gen-5 HZRDUS top model. Only T92 confirmed in JR at 20 flex; higher flexes may add T28. Not seen at hockeystore.no yet. Weight estimated.',
+  },
+  {
+    id: 'true-hzrdus-smoke-yth',
+    brand: 'True',
+    family: 'HZRDUS',
+    model: 'HZRDUS Smoke Yth',
+    kick: 'low',
+    tier: 'flagship',
+    weight: 340,
+    flexes: [15],
+    curves: ['T92'],
+    stores: [{ name: 'truehockey.com (MSRP)', priceNOK: 1430, priceMSRP: 1430, url: 'https://truehockey.com/collections/sticks', lastChecked: '2026-07-08', note: 'Official manufacturer MSRP, $129.99 USD converted at 1:11' },
+    ],
+    shaftProfile: 'round',
+    shaftProfileLabel: 'True HZRDUS Smoke — round, double-concave',
+    ageGroup: 'YTH',
+    tagline: 'Flagship tech in youth size. Unusual 15 flex.',
+    notes: 'UFLEX youth: single 15 flex option. Not seen at hockeystore.no yet. Weight estimated.',
+  },
+  {
+    id: 'warrior-novium-2-pro-jr',
+    brand: 'Warrior',
+    family: 'Novium',
+    model: 'Novium 2 Pro Jr',
+    kick: 'mid',
+    tier: 'flagship',
+    weight: 370,
+    flexes: [30, 40, 50],
+    curves: ['W03', 'W28', 'W88', 'W90TM'],
+    stores: [{ name: 'warrior.com (MSRP)', priceNOK: 2640, priceMSRP: 2640, url: 'https://www.warrior.com/hockey/sticks', lastChecked: '2026-07-08', note: 'Official manufacturer MSRP, $239.99 USD (40 flex) converted at 1:11. Flex-dependent: 30 flex $219.99, 50 flex $259.99.' },
+    ],
+    shaftProfile: 'hybrid',
+    shaftProfileLabel: 'Warrior Novium — hybrid',
+    ageGroup: 'JR',
+    tagline: 'The NHL Novium (2 Pro), not the plain Novium 2. Bevel Taper.',
+    notes: 'Warrior classifies Novium as high kick (loads between the hands); grouped under mid here. Curves W03/W28/W88/W90T at all JR flexes. Not carried by hockeystore.no. Weight estimated.',
+  },
+
+  {
+    id: 'bauer-supreme-fuse-jr',
+    brand: 'Bauer',
+    family: 'Supreme',
+    model: 'Supreme Fuse Jr',
+    kick: 'mid',
+    tier: 'flagship',
+    weight: 380,
+    flexes: [30, 40, 50],
+    curves: ['P92', 'P28', 'P90TM'],
+    stores: [{ name: 'hockeystore.no', priceNOK: 2199, priceMSRP: 2199, url: 'https://www.hockeystore.no/no/articles/2.514.30327/bauer-hockeykolle-supreme-fuse-jr', lastChecked: '2026-07-08' },
+      { name: 'bauer.com (MSRP)', priceNOK: 2340, priceMSRP: 2340, url: 'https://fi.bauer.com/products/bauer-supreme-fuse-grip-stick-junior', lastChecked: '2026-07-08', note: 'Official Bauer Europe price, EUR 199.90 (40/50 flex; 30 flex EUR 189.90) converted at ~1:11.7 (EUR rate, not USD)' },
+    ],
+    shaftProfile: 'five-sided',
+    shaftProfileLabel: 'Bauer Fuse — five-sided taper',
+    ageGroup: 'JR',
+    tagline: 'Supreme is BACK — first Supreme stick since 2020. ER Spine mid kick.',
+    notes: 'Launched June 12, 2026. Bauer spec: ER Spine Mid-Kick (hockeystore release article markets it as high kick). Five-sided shaft shape, CONNECTECH blade. 30-flex variant also sold separately at hockeystore (article 35378). Weight estimated; official JR weight not published.',
+  },
+  {
+    id: 'bauer-supreme-fuse-yth',
+    brand: 'Bauer',
+    family: 'Supreme',
+    model: 'Supreme Fuse Yth',
+    kick: 'mid',
+    tier: 'flagship',
+    weight: 345,
+    flexes: [20],
+    curves: ['P92', 'P28'],
+    stores: [{ name: 'bauer.com (MSRP)', priceNOK: 1990, priceMSRP: 1990, url: 'https://fi.bauer.com/products/bauer-supreme-fuse-grip-stick-youth', lastChecked: '2026-07-08', note: 'Official Bauer Europe price, EUR 169.90 converted at ~1:11.7 (EUR rate, not USD)' },
+    ],
+    shaftProfile: 'five-sided',
+    shaftProfileLabel: 'Bauer Fuse — five-sided taper',
+    ageGroup: 'YTH',
+    tagline: 'Supreme line revival (youth).',
+    notes: 'Launched June 2026. Not yet seen at hockeystore.no (JR/INT/SR are stocked). Weight estimated.',
+  },
+  {
+    id: 'bauer-supreme-fuse-int',
+    brand: 'Bauer',
+    family: 'Supreme',
+    model: 'Supreme Fuse Int',
+    kick: 'mid',
+    tier: 'flagship',
+    weight: 400,
+    flexes: [55, 65],
+    curves: ['P92', 'P28', 'P88', 'P90TM'],
+    stores: [{ name: 'hockeystore.no', priceNOK: 2599, priceMSRP: 2599, url: 'https://www.hockeystore.no/no/articles/2.513.30326/bauer-hockeykolle-supreme-fuse-int', lastChecked: '2026-07-08' },
+      { name: 'bauer.com (MSRP)', priceNOK: 2810, priceMSRP: 2810, url: 'https://fi.bauer.com/products/bauer-supreme-fuse-grip-stick-intermediate', lastChecked: '2026-07-08', note: 'Official Bauer Europe price, EUR 239.90 converted at ~1:11.7 (EUR rate, not USD)' },
+    ],
+    shaftProfile: 'five-sided',
+    shaftProfileLabel: 'Bauer Fuse — five-sided taper',
+    ageGroup: 'INT',
+    tagline: 'Supreme line revival (intermediate).',
+    notes: 'Launched June 12, 2026. Weight estimated.',
+  },
+
+  {
+    id: 'true-hzrdus-smoke-int',
+    brand: 'True',
+    family: 'HZRDUS',
+    model: 'HZRDUS Smoke Int',
+    kick: 'low',
+    tier: 'flagship',
+    weight: 405,
+    flexes: [55, 65],
+    curves: ['T92', 'T28'],
+    stores: [{ name: 'truehockey.com (MSRP)', priceNOK: 3740, priceMSRP: 3740, url: 'https://truehockey.com/collections/sticks', lastChecked: '2026-07-09', note: 'US retail $329.99-339.99 (sources differ; official MSRP to confirm), $339.99 converted at 1:11' },
+    ],
+    shaftProfile: 'round',
+    shaftProfileLabel: 'True HZRDUS Smoke — round, double-concave',
+    ageGroup: 'INT',
+    tagline: 'Flagship tech (intermediate).',
+    notes: 'Flexes assumed 55/65 per True INT convention; curves assumed per Smoke line — both to verify. Not seen at hockeystore.no. Weight estimated.',
+  },
+  {
+    id: 'warrior-novium-2-pro-yth',
+    brand: 'Warrior',
+    family: 'Novium',
+    model: 'Novium 2 Pro Yth',
+    kick: 'mid',
+    tier: 'flagship',
+    weight: 340,
+    flexes: [20],
+    curves: ['W03'],
+    stores: [{ name: 'warrior.com (MSRP)', priceNOK: null, priceMSRP: null, url: 'https://www.warrior.com/hockey/sticks', lastChecked: '2026-07-09', note: 'Price unconfirmed — to verify (US retailers list it without visible MSRP)' },
+    ],
+    shaftProfile: 'hybrid',
+    shaftProfileLabel: 'Warrior Novium — hybrid',
+    ageGroup: 'YTH',
+    tagline: 'NHL Novium in youth size. W03 only.',
+    notes: 'Flex 20 and W03-only confirmed at retail. Warrior classifies Novium as high kick; grouped under mid here. Not carried by hockeystore.no. Weight estimated.',
+  },
+  {
+    id: 'warrior-novium-2-pro-int',
+    brand: 'Warrior',
+    family: 'Novium',
+    model: 'Novium 2 Pro Int',
+    kick: 'mid',
+    tier: 'flagship',
+    weight: 385,
+    flexes: [55, 65],
+    curves: ['W03', 'W28', 'W88', 'W90TM'],
+    stores: [{ name: 'warrior.com (MSRP)', priceNOK: 3630, priceMSRP: 3630, url: 'https://www.warrior.com/hockey/sticks', lastChecked: '2026-07-09', note: 'US retail $329.99 converted at 1:11; official MSRP to confirm' },
+    ],
+    shaftProfile: 'hybrid',
+    shaftProfileLabel: 'Warrior Novium — hybrid',
+    ageGroup: 'INT',
+    tagline: 'The NHL Novium (intermediate).',
+    notes: 'Flexes assumed 55/65 per Warrior INT convention; curves assumed same as JR/SR — both to verify. Warrior classifies Novium as high kick; grouped under mid here. Not carried by hockeystore.no. Weight estimated.',
+  },
+  {
+    id: 'sherwood-rekker-jr',
+    brand: 'Sherwood',
+    family: 'Rekker',
+    model: 'Rekker Jr (2025)',
+    kick: 'low',
+    tier: 'budget',
+    weight: 420,
+    flexes: [30, 40],
+    curves: ['PP28', 'PP92', 'PP92M'],
+    stores: [{ name: 'sherwood.com (MSRP)', priceNOK: null, priceMSRP: null, url: 'https://sherwoodhockey.com/collections/hockey-sticks', lastChecked: '2026-07-09', note: 'US retail range $63.99-95.99 across Yth/Jr — per-version price to verify' },
+    ],
+    shaftProfile: 'round',
+    shaftProfileLabel: 'Sherwood Rekker — round',
+    ageGroup: 'JR',
+    tagline: 'Budget Jr with Morph Pro carbon tech. Duo-Fire low kick.',
+    notes: 'BlackLine XXV carbon, speared one-piece — same tech family as flagship Rekker Morph Pro (Bedard). PP92M max-height confirmed in 30/40 flex; PP28/PP92 assumed per Rekker convention; 50 flex existence unconfirmed. US-only (not at hockeystore.no). Weight estimated.',
+  },
+  {
+    id: 'sherwood-rekker-yth',
+    brand: 'Sherwood',
+    family: 'Rekker',
+    model: 'Rekker Yth (2025)',
+    kick: 'low',
+    tier: 'budget',
+    weight: 380,
+    flexes: [20, 30],
+    curves: ['PP88'],
+    stores: [{ name: 'sherwood.com (MSRP)', priceNOK: null, priceMSRP: null, url: 'https://sherwoodhockey.com/products/sher-wood-rekker-youth-hockey-stick', lastChecked: '2026-07-09', note: 'US retail range $63.99-95.99 across Yth/Jr — per-version price to verify' },
+    ],
+    shaftProfile: 'round',
+    shaftProfileLabel: 'Sherwood Rekker — round',
+    ageGroup: 'YTH',
+    tagline: 'Competitive youth budget stick. Unusual PP88 heel curve.',
+    notes: 'Sherwood confirms two flex options and a single generous PP88 curve; flex values assumed 20/30 — to verify. US-only (not at hockeystore.no). Weight estimated.',
+  },
+  {
+    id: 'ccm-jetspeed-ft-yth',
+    brand: 'CCM',
+    family: 'Jetspeed',
+    model: 'Jetspeed FT Youth',
+    kick: 'hybrid',
+    tier: 'budget',
+    weight: 380,
+    flexes: [20, 30],
+    curves: ['P28', 'P29'],
+    stores: [{ name: 'us.ccmhockey.com (MSRP)', priceNOK: 660, priceMSRP: 660, url: 'https://us.ccmhockey.com/Sticks/Shop-All-Sticks/Jetspeed', lastChecked: '2026-07-09', note: 'Official manufacturer MSRP, $59.99 USD converted at 1:11' },
+    ],
+    shaftProfile: 'hybrid',
+    shaftProfileLabel: 'CCM "H" — hybrid',
+    ageGroup: 'YTH',
+    tagline: 'CCM\'s cheapest composite youth stick.',
+    notes: 'Entry point below FT860. Flexes and curves assumed per CCM youth convention — to verify. US-only (not at hockeystore.no). Weight estimated.',
+  },
+
+  {
+    id: 'sherwood-rekker-morph-pro-jr',
+    brand: 'Sherwood',
+    family: 'Rekker Morph',
+    model: 'Rekker Morph Pro Jr',
+    kick: 'low',
+    tier: 'flagship',
+    weight: 340,
+    flexes: [30, 40, 50],
+    curves: ['PP28', 'PP92M'],
+    stores: [{ name: 'sherwood.com (MSRP)', priceNOK: 1980, priceMSRP: 1980, url: 'https://sherwoodhockey.com/products/sherwood-rekker-morph-pro-junior-hockey-stick', lastChecked: '2026-07-09', note: 'Manufacturer price $179.99 USD (retailer MSRP-bound listing) converted at 1:11' },
+    ],
+    shaftProfile: 'round',
+    shaftProfileLabel: 'Sherwood Rekker — concave, grip corners',
+    ageGroup: 'JR',
+    tagline: 'Bedard\'s line — lightest Rekker ever. Duo-Fire low kick.',
+    notes: 'New 2025 flagship, replaced Legend Pro (-30 g). Low kick with Duo-Fire secondary kick point for slap-shot power. Some shops label the max-height curve PP92MX (= PP92M). US-only (not at hockeystore.no). Weight estimated.',
+  },
+  {
+    id: 'sherwood-rekker-morph-pro-yth',
+    brand: 'Sherwood',
+    family: 'Rekker Morph',
+    model: 'Rekker Morph Pro Yth',
+    kick: 'low',
+    tier: 'flagship',
+    weight: 210,
+    flexes: [20],
+    curves: ['PP92', 'PP28'],
+    stores: [{ name: 'sherwood.com (MSRP)', priceNOK: 1540, priceMSRP: 1540, url: 'https://sherwoodhockey.com/products/sherwood-rekker-morph-pro-youth-hockey-stick', lastChecked: '2026-07-09', note: 'Manufacturer price $139.99 USD (retailer MSRP-bound listing) converted at 1:11' },
+    ],
+    shaftProfile: 'round',
+    shaftProfileLabel: 'Sherwood Y2 youth shaft (larger)',
+    ageGroup: 'YTH',
+    tagline: 'Bedard-line youth. 210 g — manufacturer-claimed, lightest Rekker ever.',
+    notes: 'Developed with shooting coaches: larger Y2 shaft shape, longer/taller blade. Weight 210 g at 20 flex is manufacturer-claimed (rare confirmed youth weight). US-only (not at hockeystore.no).',
+  },
+  {
+    id: 'sherwood-rekker-morph-1-jr',
+    brand: 'Sherwood',
+    family: 'Rekker Morph',
+    model: 'Rekker Morph 1 Jr',
+    kick: 'low',
+    tier: 'mid',
+    weight: 380,
+    flexes: [30, 40, 50],
+    curves: ['PP28', 'PP92M'],
+    stores: [{ name: 'sherwood.com (MSRP)', priceNOK: null, priceMSRP: null, url: 'https://sherwoodhockey.com/collections/hockey-sticks', lastChecked: '2026-07-09', note: '$149.99 CAD at Canadian retail; USD MSRP to verify' },
+    ],
+    shaftProfile: 'round',
+    shaftProfileLabel: 'Sherwood Rekker — concave, grip corners',
+    ageGroup: 'JR',
+    tagline: 'Second-tier Morph: same Duo-Fire kick, BlackLine XXV carbon.',
+    notes: '2025 line. Only 40 flex directly confirmed; 30/50 assumed per Morph Pro Jr ladder — to verify. US/CA-only (not at hockeystore.no). Weight estimated.',
+  },
+  {
+    id: 'ccm-ribcor-trigger-unleashed-pro-jr',
+    brand: 'CCM',
+    family: 'Ribcor',
+    model: 'Trigger Unleashed Pro Jr',
+    kick: 'low',
+    tier: 'flagship',
+    weight: null,
+    flexes: [],
+    curves: [],
+    stores: [],
+    ageGroup: 'JR',
+    upcoming: true,
+    tagline: 'UNRELEASED — next Ribcor flagship, expected later in 2026.',
+    notes: 'First spotted on Sakari Manninen (Team Finland) at the 2026 IIHF World Championship. No retail specs, prices or age versions announced; JR availability assumed per Ribcor line history. Kick assumed low per family. Source: GearGeek unreleased tracker.',
+  },
+  {
+    id: 'warrior-covert-qr7-pro-jr',
+    brand: 'Warrior',
+    family: 'Covert',
+    model: 'Covert QR7 Pro Jr',
+    kick: 'low',
+    tier: 'flagship',
+    weight: null,
+    flexes: [],
+    curves: [],
+    stores: [],
+    ageGroup: 'JR',
+    upcoming: true,
+    tagline: 'UNRELEASED — next Covert flagship, expected 2026.',
+    notes: 'Successor to QR6 Pro per Warrior release cadence. No retail specs, prices or age versions announced; JR availability assumed per Covert line history. Kick assumed low per family. Source: GearGeek unreleased tracker.',
+  },
+  {
+    id: 'true-catalyst-nitro-pro-jr',
+    brand: 'True',
+    family: 'Catalyst',
+    model: 'Catalyst Nitro Pro Jr',
+    kick: 'mid',
+    tier: 'flagship',
+    weight: null,
+    flexes: [],
+    curves: [],
+    stores: [],
+    ageGroup: 'JR',
+    upcoming: true,
+    tagline: 'UNRELEASED — next Catalyst flagship, expected 2026.',
+    notes: 'Player version first spotted on Timo Meier (New Jersey Devils) in late January 2026; goalie version seen at the 2026 Winter Olympics. No retail specs, prices or age versions announced; JR availability assumed per Catalyst line history. Kick assumed mid per family. Source: GearGeek unreleased tracker.',
+  },
 ];
 
 // ============================================
@@ -4822,7 +5212,9 @@ function curveForBrand(brand, category) {
 // ============================================
 function getBestStore(stick) {
   if (!stick.stores || stick.stores.length === 0) return null;
-  return stick.stores.slice().sort((a, b) => a.priceNOK - b.priceNOK)[0];
+  const priced = stick.stores.filter(st => st.priceNOK != null);
+  const pool = priced.length ? priced : stick.stores;
+  return pool.slice().sort((a, b) => a.priceNOK - b.priceNOK)[0];
 }
 
 function getAlternativeStores(stick) {
@@ -4835,7 +5227,7 @@ function getAlternativeStores(stick) {
 if (typeof STICKS !== 'undefined') {
   STICKS.forEach(s => {
     if (s.stores && !s.hasOwnProperty('_legacyApplied')) {
-      Object.defineProperty(s, 'priceNOK', { get: () => { const b = getBestStore(s); return b ? b.priceNOK : Infinity; }, configurable: true });
+      Object.defineProperty(s, 'priceNOK', { get: () => { const b = getBestStore(s); return (b && b.priceNOK != null) ? b.priceNOK : Infinity; }, configurable: true });
       Object.defineProperty(s, 'priceMSRP', { get: () => { const b = getBestStore(s); return b ? b.priceMSRP : null; }, configurable: true });
       Object.defineProperty(s, 'url', { get: () => { const b = getBestStore(s); return b ? b.url : null; }, configurable: true });
       Object.defineProperty(s, 'storeName', { get: () => { const b = getBestStore(s); return b ? b.name : ''; }, configurable: true });
@@ -5192,6 +5584,7 @@ function buildWarnings(match, answers) {
 // ============================================
 function finishQuiz() {
   const allMatches = STICKS
+    .filter(s => !s.upcoming)
     .map(s => {
       const m = scoreStick(s, state.answers);
       return {
@@ -5314,6 +5707,7 @@ function renderStickCard(match, rank, includeRank) {
   else if (score >= 65) tags.push('<span class="tag fit-good">Good fit</span>');
 
   if (s.lastGen) tags.push('<span class="tag lastgen">Last gen value</span>');
+  if (s.upcoming) tags.push('<span class="tag" style="background:rgba(255,91,31,0.15);color:var(--accent);">COMING 2026 — not yet in stores</span>');
   if (s.priceNOK <= 1500) tags.push('<span class="tag value">Under 1500 NOK</span>');
   tags.push(`<span class="tag">${s.tier}</span>`);
   tags.push(`<span class="tag">${s.kick} kick</span>`);
@@ -5356,11 +5750,11 @@ function renderStickCard(match, rank, includeRank) {
         <div class="stick-price-block">
           ${s.url
             ? `<a href="${s.url}" target="_blank" rel="noopener" class="stick-price-link" title="View at ${storeName}">
-                <div class="stick-price">${s.priceNOK} <span class="currency">NOK</span> <span class="external-arrow-large">↗</span></div>
+                <div class="stick-price">${s.priceNOK !== Infinity ? `${s.priceNOK} <span class="currency">NOK</span>` : 'Price unconfirmed'} <span class="external-arrow-large">↗</span></div>
                 ${s.priceMSRP && s.priceMSRP > s.priceNOK ? `<div class="stick-msrp">was ${s.priceMSRP} NOK · save ${Math.round((1 - s.priceNOK / s.priceMSRP) * 100)}%</div>` : ''}
                 <div class="stick-store-name" style="font-size:11px;color:var(--ink-faint);margin-top:4px;">@ ${storeName}</div>
               </a>`
-            : `<div class="stick-price">${s.priceNOK} <span class="currency">NOK</span></div>
+            : `<div class="stick-price">${s.priceNOK !== Infinity ? `${s.priceNOK} <span class="currency">NOK</span>` : 'Price unconfirmed'}</div>
                ${s.priceMSRP && s.priceMSRP > s.priceNOK ? `<div class="stick-msrp">was ${s.priceMSRP} NOK · save ${Math.round((1 - s.priceNOK / s.priceMSRP) * 100)}%</div>` : ''}`
           }
           ${altsHTML}
@@ -5368,9 +5762,9 @@ function renderStickCard(match, rank, includeRank) {
       </div>
       <div class="stick-specs">
         <div class="spec"><div class="v">${s.kick.toUpperCase()}</div><div class="l">Kick</div></div>
-        <div class="spec"><div class="v">${s.flexes.join('/')}</div><div class="l">Flex</div></div>
-        <div class="spec"><div class="v">${s.weight}g</div><div class="l">Weight*</div></div>
-        <div class="spec"><div class="v">${s.curves.join(' / ')}</div><div class="l">Curves</div></div>
+        <div class="spec"><div class="v">${s.flexes.length ? s.flexes.join('/') : '?'}</div><div class="l">Flex</div></div>
+        <div class="spec"><div class="v">${s.weight ? `${s.weight}g` : '?'}</div><div class="l">Weight*</div></div>
+        <div class="spec"><div class="v">${s.curves.length ? s.curves.join(' / ') : '?'}</div><div class="l">Curves</div></div>
         ${s.shaftProfile ? `<div class="spec" title="${s.shaftProfileLabel || ''}"><div class="v">${s.shaftProfile}</div><div class="l">Shaft</div></div>` : ''}
       </div>
       ${fitHTML}
@@ -5573,7 +5967,7 @@ function renderFilterResults() {
   }
 
   tbody.innerHTML = filtered.map(s => {
-    const lastGenMarker = s.lastGen ? `<span class="lastgen-marker">LAST GEN</span>` : '';
+    const lastGenMarker = s.upcoming ? `<span class="lastgen-marker" style="color:var(--accent);">COMING 2026</span>` : s.lastGen ? `<span class="lastgen-marker">LAST GEN</span>` : '';
     const flexDisplay = s.flexes.join(' / ');
     const curvesDisplay = s.curves.join(' / ');
     const shaftDisplay = s.shaftProfile || '—';
@@ -5768,7 +6162,7 @@ const CURVE_FAMILIES = {
   midtoe:  ['P29', 'P29+1/4', 'W29', 'T29', 'PP29'],            // between toe and mid
   mid:     ['P92', 'P92+1/4', 'W92', 'T92', 'T92.5', 'PP92'],   // most popular all-around
   heel:    ['P88', 'W88', 'T88', 'PP88'],                       // heel curve
-  midmax:  ['P90TM', 'W90TM', 'T90TM', 'P90T'],                 // mid + max height
+  midmax:  ['P90TM', 'W90TM', 'T90TM', 'P90T', 'PP92M'],                 // mid + max height
 };
 
 function curveFamily(curve) {
