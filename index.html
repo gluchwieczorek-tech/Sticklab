@@ -1942,7 +1942,7 @@
     <div class="quiz-step active" data-step="1">
       <div class="step-num">Spørsmål 01 / 08</div>
       <h2 class="step-q">Hvor høyt er barnet ditt?</h2>
-      <p class="step-help">Det er én køllelengde — to måter å sjekke: <strong>uten skøyter skal den nå mellom øyenbrynene</strong>, og <strong>med skøyter skal den nå leppene</strong>. (Skøyter løfter deg ~3 cm, fra øyenbryn til lepper er ~10 cm — samme kølle, ulike referansepunkter.)</p>
+      <p class="step-help">Det er én køllelengde — to måter å sjekke: <strong>uten skøyter skal den nå mellom haken og nesen</strong>, og <strong>med skøyter omtrent til haken</strong>. Snipere og tekniske spillere: sikt mot haken. Forsvarere som vil ha rekkevidde: mot nesen. (Skøyter løfter deg noen cm — samme kølle, ulikt referansepunkt.)</p>
       <div class="slider-wrap">
         <div class="slider-display">
           <span class="slider-value" id="height-val">140</span>
@@ -1954,7 +1954,7 @@
         </div>
         <div class="live-calc">
           <div>Køllelengde: <strong id="length-target">130 cm</strong></div>
-          <div style="margin-top: 4px; opacity: 0.85; font-size: 12px;">Når øyenbrynene uten skøyter / leppene med skøyter på.</div>
+          <div style="margin-top: 4px; opacity: 0.85; font-size: 12px;">Når hake–nese uten skøyter / omtrent haken med skøyter på.</div>
         </div>
       </div>
       <div class="edu-box" style="margin-top: 16px;">
@@ -2458,8 +2458,8 @@
           <span class="badge standard">Standardpraksis i europeisk/nordisk ungdomshockey</span>
         </p>
         <p>
-          ✅ Med skøyter <strong>av</strong>: kølla når omtrent <strong>mellom øyenbrynene</strong>.<br>
-          ✅ Med skøyter <strong>på</strong>: kølla når omtrent <strong>leppene/munnen</strong>.
+          ✅ Med skøyter <strong>av</strong>: kølla når omtrent <strong>mellom haken og nesen</strong>.<br>
+          ✅ Med skøyter <strong>på</strong>: kølla når omtrent <strong>hakene/munnen</strong>.
         </p>
         <p>
           Skøytehevingen (~3-4 cm) er det som lager forskjellen mellom de to. Begge målingene beskriver samme kølle — bare målt i forskjellige forhold.
@@ -2844,7 +2844,7 @@
           Disse er ikke til forhandling. Bom på noe av dette og barnet kjemper mot utstyret i stedet for å lære spillet.
         </p>
         <p>
-          ✅ <strong>Lengde</strong> — mellom øyenbrynene (uten skøyter) / leppene (på skøyter). For kort = foroverbøyd og ryggsmerter. For lang = ingen puckkontroll.<br>
+          ✅ <strong>Lengde</strong> — hake–nese (uten skøyter) / omtrent haken (på skøyter); snipere kortere, forsvarere lengre. For kort = foroverbøyd og ryggsmerter. For lang = ingen puckkontroll.<br>
           ✅ <strong>Flex</strong> — vekt × 1,1, rund NED. For stiv = kan ikke laste kølla = dårlig skuddteknikk dannes. Bedre å bomme på myk side.<br>
           ✅ <strong>Hånd</strong> — venstre- eller høyrehendt skudd. Test med en sopelime eller rett trekølle hjemme før kjøp. Feil hånd = bortkastede penger og frustrasjon.
         </p>
@@ -2872,6 +2872,10 @@
           ⚙️ <strong>Estetikk</strong> — farge, grafikk, hevet vs flatt grep. Hva enn barnet ditt liker er fint.
         </p>
 
+        <div style="position:relative; width:100%; max-width:640px; aspect-ratio:16/9; margin:20px 0 8px;">
+          <iframe src="https://www.youtube-nocookie.com/embed/NTmisJKXDyw" title="How To Choose Your Hockey Stick Flex and Curve — Matt Redmond" style="position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:10px;" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p style="font-size:0.88em; color:var(--ink-faint); max-width:640px;">Flex og curve forklart på noen minutter — verdt å se før du kjøper. Video: <a href="https://www.youtube.com/watch?v=NTmisJKXDyw" target="_blank" rel="noopener" style="color:var(--ink-faint); text-decoration:underline;">«How To Choose Your Hockey Stick Flex and Curve»</a> av Matt Redmond (Redmond's Corner, YouTube).</p>
         <h4 style="margin-top: 24px; color: var(--accent); font-family: 'Fraunces', serif; font-weight: 600;">🎯 Den ene beste regelen</h4>
         <p style="font-size: 16px;">
           <strong>Tilpass kølla til budsjettet, ikke budsjettet til kølla.</strong>
@@ -2903,7 +2907,11 @@
 //   url:       Direct hockeystore.no link (verified working)
 //   source:    Always "hockeystore.no" unless noted
 //
-// Sources verified directly from hockeystore.no (Norwegian site, NOK currency)
+// Sources verified directly from hockeystore.no (NOK currency).
+// NOTE: Hockeystore is a SWEDISH retailer (Spobik AB, Jönköping); ".no" is the
+// Norwegian-LANGUAGE storefront, shipping from Sweden. "In stock at hockeystore.no"
+// means orderable to Norway — it says nothing about Norwegian local/physical retail.
+// Prices: manual verification for now; shop-provided data feeds hoped for in future.
 // Last verified: 2 May 2026
 //
 // Curve mapping: P28(CCM) = W28(Bauer) = T28(True) = PP28(Sherwood) = W03(Warrior)
@@ -5312,12 +5320,15 @@ function prevStep() {
 // CALCULATIONS
 // ============================================
 
-// Lengde: fysisk køllelengde er ETT tall. To måter å verifisere:
-//   - Uten skøyter: kølla når omtrent øyenbrynene
-//   - Med skøyter: kølla når omtrent leppene/munnen (skøyter løfter kroppen ~3 cm)
-// Begge metodene beskriver samme kølle. Vi bruker 0.92 av høyden.
+// Lengde: forankret i den klassiske hake-nese-regelen og CCMs fabrikklengder
+// (JR 40 flex leveres ~124 cm totalt, JR 50 ~132 cm). Stiljustert:
+//   sniper/teknisk    0.87 x hoyde  (~ haken, uten skoyter) - kontroll forst
+//   standard          0.89          (hake-nese)
+//   power/forsvarer   0.91          (~ nesen, uten skoyter) - rekkevidde forst
+// v0.2 brukte flat 0.92 ("oyenbryn") - praksis viste at det ble for langt.
 function calculateIdealLength(answers) {
-  return Math.round(answers.height * 0.92);
+  const f = answers.style === 'sniper' ? 0.87 : answers.style === 'power' ? 0.91 : 0.89;
+  return Math.round(answers.height * f);
 }
 
 // Flex: weight (kg) × 1.1, then round DOWN
@@ -5329,6 +5340,7 @@ function calculateIdealFlex(answers) {
 
   // Sniper preference: slightly softer
   if (answers.style === 'sniper') flex -= 3;
+  if (answers.ageGroup === 'under13') flex -= 5; // strength lags height/weight in young kids — calibrated on real setups (tall 11yo: YTH 30 + ext)
 
   // Round DOWN to nearest available flex
   const available = [20, 30, 40, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110];
@@ -5639,7 +5651,7 @@ function renderResults(matches, answers) {
     <div class="summary-item"><div class="label">Høyde</div><div class="value">${answers.height} cm</div></div>
     <div class="summary-item"><div class="label">Vekt</div><div class="value">${answers.weight} kg</div></div>
     <div class="summary-item"><div class="label">Mål-flex</div><div class="value">${idealFlex}</div></div>
-    <div class="summary-item"><div class="label">Køllelengde</div><div class="value">~${idealLen} cm</div></div>
+    <div class="summary-item"><div class="label">Køllelengde (stående på blad)</div><div class="value">~${idealLen} cm</div></div>
     <div class="summary-item"><div class="label">Foreslått kick</div><div class="value">${idealKick}</div></div>
     <div class="summary-item"><div class="label">Foreslått krumning</div><div class="value">${idealCurve}</div></div>
     <div class="summary-item"><div class="label">Budsjett</div><div class="value">${answers.budget} NOK</div></div>
@@ -5671,7 +5683,7 @@ function renderResults(matches, answers) {
   // Length vs flex dilemma
   if (answers.height >= 140 && idealFlex <= 40) {
     const targetLen = calculateIdealLength(answers);
-    insightHTML += `<div class="insight-box" style="border-left-color: #ffd23f; background: rgba(255, 210, 63, 0.06);"><strong>⚠️ Lengde vs flex-dilemma:</strong> Barnet ditt trenger ~${targetLen} cm lengde (øyenbrynnivå), men juniorskaft er korte: <strong>JR 40 flex ≈ 124 cm</strong>, <strong>JR 50 flex ≈ 132 cm</strong>. Så selv JR 50 flex kan være ${targetLen - 132} cm for kort. Tre alternativer: <strong>(1) JR 30/40 flex + 10-15 cm forlenger</strong> (anbefalt — forlenger gjør også flex litt mykere); <strong>(2) JR 50 flex uten forlenger</strong> hvis du ikke kan forlenge; <strong>(3) Intermediate 55 flex</strong> — perfekt lengde men kan være for stiv. De fleste foreldre velger alternativ 1.</div>`;
+    insightHTML += `<div class="insight-box" style="border-left-color: #ffd23f; background: rgba(255, 210, 63, 0.06);"><strong>📏 Skaftlengde vs stående høyde:</strong> Målet ~${targetLen} cm er målt slik man faktisk måler — kølla stående på bladet, skaftet loddrett mot barnet. Produsentene oppgir derimot <strong>skaftlengden</strong> (topp til hæl langs kølla). Stående på bladet blir kølla ~10–14 cm høyere enn oppgitt. Tommelregel: <strong>JR 40 flex (oppgitt ~124 cm) står ~135 cm</strong>, JR 50 (~132 cm) står ~143 cm, YTH-køller lavere. Står kølla for høyt: kapp den (husk: kapping gjør flexen stivere) — eller velg <strong>YTH riktig flex + kort forlenger</strong>; mange lette, tekniske spillere lander nettopp der. Høye, lette barn — lange bein, men skuddstyrken kommer senere — er nettopp de som faller mellom YTH og JR her.</div>`;
   }
 
   insights.innerHTML = insightHTML;

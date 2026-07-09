@@ -1944,7 +1944,7 @@
     <div class="quiz-step active" data-step="1">
       <div class="step-num">Question 01 / 08</div>
       <h2 class="step-q">How tall is your kid?</h2>
-      <p class="step-help">There is one stick length — two ways to verify: <strong>without skates it should reach your eyebrows</strong>, and <strong>on skates it should reach your lips</strong>. (Skates raise you ~3 cm, eyebrows-to-lips is ~10 cm — same stick, different reference points.)</p>
+      <p class="step-help">There is one stick length — two ways to check: <strong>without skates it should reach between the chin and the nose</strong>, and <strong>on skates roughly the chin</strong>. Snipers and technical players: aim toward the chin. Defenders who want reach: toward the nose. (Skates raise you a few cm — same stick, different reference point.)</p>
       <div class="slider-wrap">
         <div class="slider-display">
           <span class="slider-value" id="height-val">140</span>
@@ -1956,7 +1956,7 @@
         </div>
         <div class="live-calc">
           <div>Stick length: <strong id="length-target">130 cm</strong></div>
-          <div style="margin-top: 4px; opacity: 0.85; font-size: 12px;">Reaches eyebrows without skates / lips with skates on.</div>
+          <div style="margin-top: 4px; opacity: 0.85; font-size: 12px;">Reaches chin–nose without skates / about the chin with skates on.</div>
         </div>
       </div>
       <div class="edu-box" style="margin-top: 16px;">
@@ -2464,8 +2464,8 @@
           <span class="badge standard">Standard practice in European/Nordic youth hockey</span>
         </p>
         <p>
-          ✅ With skates <strong>off</strong>: stick reaches roughly <strong>between the eyebrows</strong>.<br>
-          ✅ With skates <strong>on</strong>: stick reaches roughly <strong>the lips/mouth</strong>.
+          ✅ With skates <strong>off</strong>: stick reaches roughly <strong>between the chin and the nose</strong>.<br>
+          ✅ With skates <strong>on</strong>: stick reaches roughly <strong>the chin/mouth</strong>.
         </p>
         <p>
           The skate boost (~3-4 cm) is what makes the difference between the two. Both measurements describe the same stick — just measured in different conditions.
@@ -2850,7 +2850,7 @@
           These are non-negotiable. Get any of these wrong and your kid is fighting their equipment instead of learning the game.
         </p>
         <p>
-          ✅ <strong>Length</strong> — between eyebrows (no skates) / lips (on skates). Too short = hunched over and back pain. Too long = no puck control.<br>
+          ✅ <strong>Length</strong> — chin–nose (no skates) / about the chin (on skates); snipers shorter, defenders longer. Too short = hunched over and back pain. Too long = no puck control.<br>
           ✅ <strong>Flex</strong> — weight × 1.1, round DOWN. Too stiff = can't load the stick = bad shooting technique forming. Better to err on softer side.<br>
           ✅ <strong>Hand</strong> — left or right shot. Test with a broomstick or straight wood stick at home before buying. Wrong hand = wasted money and frustration.
         </p>
@@ -2878,6 +2878,10 @@
           ⚙️ <strong>Aesthetics</strong> — color, graphics, raised vs flat grip. Whatever your kid likes is fine.
         </p>
 
+        <div style="position:relative; width:100%; max-width:640px; aspect-ratio:16/9; margin:20px 0 8px;">
+          <iframe src="https://www.youtube-nocookie.com/embed/NTmisJKXDyw" title="How To Choose Your Hockey Stick Flex and Curve — Matt Redmond" style="position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:10px;" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p style="font-size:0.88em; color:var(--ink-faint); max-width:640px;">Flex and curve explained in a few minutes — worth watching before you buy. Video: <a href="https://www.youtube.com/watch?v=NTmisJKXDyw" target="_blank" rel="noopener" style="color:var(--ink-faint); text-decoration:underline;">«How To Choose Your Hockey Stick Flex and Curve»</a> by Matt Redmond (Redmond's Corner, YouTube).</p>
         <h4 style="margin-top: 24px; color: var(--accent); font-family: 'Fraunces', serif; font-weight: 600;">🎯 The single best decision-making rule</h4>
         <p style="font-size: 16px;">
           <strong>Match the stick to the budget, not the budget to the stick.</strong>
@@ -2909,7 +2913,11 @@
 //   url:       Direct hockeystore.no link (verified working)
 //   source:    Always "hockeystore.no" unless noted
 //
-// Sources verified directly from hockeystore.no (Norwegian site, NOK currency)
+// Sources verified directly from hockeystore.no (NOK currency).
+// NOTE: Hockeystore is a SWEDISH retailer (Spobik AB, Jönköping); ".no" is the
+// Norwegian-LANGUAGE storefront, shipping from Sweden. "In stock at hockeystore.no"
+// means orderable to Norway — it says nothing about Norwegian local/physical retail.
+// Prices: manual verification for now; shop-provided data feeds hoped for in future.
 // Last verified: 2 May 2026
 //
 // Curve mapping: P28(CCM) = W28(Bauer) = T28(True) = PP28(Sherwood) = W03(Warrior)
@@ -5319,14 +5327,15 @@ function prevStep() {
 // CALCULATIONS
 // ============================================
 
-// Length: physical stick length is ONE number. Two ways to verify:
-//   - Without skates: stick reaches roughly the eyebrows
-//   - With skates: stick reaches roughly the lips/mouth (skates raise body ~3 cm)
-// Both methods describe the same stick. We use 0.92 of height — a balance
-// between observed Norwegian/European practice and developing-player ergonomics.
-// (Older "chin/nose" guidance is too short for kids who are still growing.)
+// Length: anchored to the classic chin-nose window and CCM factory JR lengths
+// (JR 40 flex ships ~124 cm total, JR 50 ~132 cm). Style-aware:
+//   sniper/technical  0.87 x height  (~ chin, no skates)  - control first
+//   default/playmaker 0.89           (chin-nose)
+//   power/defender    0.91           (~ nose, no skates)  - reach first
+// v0.2 used a flat 0.92 ("eyebrows") - real-world testing showed it clearly too long.
 function calculateIdealLength(answers) {
-  return Math.round(answers.height * 0.92);
+  const f = answers.style === 'sniper' ? 0.87 : answers.style === 'power' ? 0.91 : 0.89;
+  return Math.round(answers.height * f);
 }
 
 // Flex: weight (kg) × 1.1, then round DOWN
@@ -5338,6 +5347,7 @@ function calculateIdealFlex(answers) {
 
   // Sniper preference: slightly softer
   if (answers.style === 'sniper') flex -= 3;
+  if (answers.ageGroup === 'under13') flex -= 5; // strength lags height/weight in young kids — calibrated on real setups (tall 11yo: YTH 30 + ext)
 
   // Round DOWN to nearest available flex
   const available = [20, 30, 40, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110];
@@ -5648,7 +5658,7 @@ function renderResults(matches, answers) {
     <div class="summary-item"><div class="label">Height</div><div class="value">${answers.height} cm</div></div>
     <div class="summary-item"><div class="label">Weight</div><div class="value">${answers.weight} kg</div></div>
     <div class="summary-item"><div class="label">Target flex</div><div class="value">${idealFlex}</div></div>
-    <div class="summary-item"><div class="label">Stick length</div><div class="value">~${idealLen} cm</div></div>
+    <div class="summary-item"><div class="label">Stick length (standing on blade)</div><div class="value">~${idealLen} cm</div></div>
     <div class="summary-item"><div class="label">Suggested kick</div><div class="value">${idealKick}</div></div>
     <div class="summary-item"><div class="label">Suggested curve</div><div class="value">${idealCurve}</div></div>
     <div class="summary-item"><div class="label">Budget</div><div class="value">${answers.budget} NOK</div></div>
@@ -5682,7 +5692,7 @@ function renderResults(matches, answers) {
   // Kids over 140cm targeting 30-40 flex will end up with a too-short stick
   if (answers.height >= 140 && idealFlex <= 40) {
     const targetLen = calculateIdealLength(answers);
-    insightHTML += `<div class="insight-box" style="border-left-color: #ffd23f; background: rgba(255, 210, 63, 0.06);"><strong>⚠️ Length vs flex dilemma:</strong> Your kid needs ~${targetLen} cm length (eyebrows level), but Junior shafts are short: <strong>JR 40 flex ≈ 124 cm</strong>, <strong>JR 50 flex ≈ 132 cm</strong>. So even JR 50 flex may be ${targetLen - 132} cm short for them. Three options: <strong>(1) JR 30/40 flex + 10-15 cm extension</strong> (recommended — extension makes flex slightly softer too); <strong>(2) JR 50 flex without extension</strong> if you can't extend; <strong>(3) Intermediate 55 flex</strong> — perfect length but might be too stiff. Most parents go with option 1.</div>`;
+    insightHTML += `<div class="insight-box" style="border-left-color: #ffd23f; background: rgba(255, 210, 63, 0.06);"><strong>📏 Shaft length vs standing height:</strong> The ~${targetLen} cm target is measured the way you actually measure — stick standing on its blade, shaft vertical against the kid. Manufacturers, however, quote the <strong>shaft length</strong> (butt end to heel along the stick). Standing on the blade, the stick reaches ~10–14 cm higher than quoted. Rule of thumb: <strong>JR 40 flex (quoted ~124 cm) stands ~135 cm</strong>, JR 50 (~132 cm) stands ~143 cm, YTH sticks lower. If it stands too tall: cut it (remember: cutting stiffens flex) — or pick a <strong>YTH stick in the right flex + a short extension</strong>; many light, technical players end up exactly there. Tall, light kids — long legs, shot strength still catching up — are exactly the ones who fall between YTH and JR here.</div>`;
   }
 
   insights.innerHTML = insightHTML;
