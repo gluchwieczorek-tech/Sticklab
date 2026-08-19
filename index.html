@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1313,7 +1313,9 @@
     border-radius: 8px;
     animation: fadeIn 0.3s ease;
   }
-  .upgrade-step.active { display: block; }
+  .upgrade-step.active {
+    display: block;
+  }
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(4px); }
     to { opacity: 1; transform: translateY(0); }
@@ -1784,64 +1786,64 @@
     <span>Stick Lab</span>
   </div>
   <nav class="nav-mode">
-    <button class="nav-btn active" data-view="home">Hjem</button>
+    <button class="nav-btn active" data-view="home">Home</button>
     <button class="nav-btn" data-view="quiz">Quiz</button>
-    <button class="nav-btn" data-view="upgrade">Bytt kølle</button>
-    <button class="nav-btn" data-view="browse">Katalog</button>
-    <button class="nav-btn" data-view="learn">Lær</button>
-    <button class="nav-btn" data-view="philosophy">Hvorfor</button>
-    <a href="/en/" class="nav-btn lang-toggle" title="Switch to English" style="margin-left: auto; opacity: 0.7; text-decoration: none;">🇬🇧 EN</a>
+    <button class="nav-btn" data-view="upgrade">Upgrade</button>
+    <button class="nav-btn" data-view="browse">Browse</button>
+    <button class="nav-btn" data-view="learn">Learn</button>
+    <button class="nav-btn" data-view="philosophy">Why</button>
+    <a href="/" class="nav-btn lang-toggle" title="Bytt til norsk" style="margin-left: auto; opacity: 0.7; text-decoration: none;">🇳🇴 NO</a>
   </nav>
 </header>
 
 <!-- ========== HOME ========== -->
 <section class="view active" id="view-home">
   <div class="hero">
-    <div class="hero-eyebrow">Junior hockeykøllefinder · v0.2</div>
-    <h1>Den første køllefinneren bygd rundt <em>spillerens utvikling</em>, ikke utstyrsmarkedsføring.</h1>
+    <div class="hero-eyebrow">Junior Hockey Stick Finder · v0.2</div>
+    <h1>The first stick finder built around <em>child development</em>, not equipment marketing.</h1>
     <p class="hero-sub">
-      Vi følger den offisielle posisjonen til USA Hockey, Hockey Canada, IIHF og de norske/svenske forbundene: under 13 år handler hockey om utvikling, ikke om å vinne. Vi hjelper deg å hoppe over markedsføringen og finne en kølle som barnet ditt kan <em>vokse med</em> — i riktig størrelse, med riktig flex, og til en pris som tar hensyn til at barnet kommer til å vokse fra den.
+      We follow the official position of USA Hockey, Hockey Canada, IIHF, and Norwegian/Swedish federations: under 13, hockey is for development, not winning. We help you skip the marketing and find a stick your kid can <em>grow with</em> — at the right size, the right flex, and a price that respects the fact that they'll outgrow it.
     </p>
     <div class="hero-cta">
       <button class="btn-primary" onclick="setView('quiz')">
-        Jeg starter fra null →
+        I'm starting from scratch →
       </button>
       <button class="btn-primary" onclick="setView('upgrade')" style="background:transparent; color:var(--accent); border:2px solid var(--accent);">
-        Jeg har allerede en kølle →
+        I already have a stick →
       </button>
       <button class="btn-secondary" onclick="setView('philosophy')">
-        Les manifestet
+        Read the manifesto
       </button>
     </div>
     <div class="hero-meta">
       <div class="meta-item">
-        <div class="num mono">11</div>
-        <div class="label">Manifestprinsipper</div>
+        <div class="num mono">10</div>
+        <div class="label">Manifesto principles</div>
       </div>
       <div class="meta-item">
         <div class="num mono">5</div>
-        <div class="label">Merker dekket</div>
+        <div class="label">Brands covered</div>
       </div>
       <div class="meta-item">
         <div class="num mono" id="meta-stick-count">—</div>
-        <div class="label">Modeller</div>
+        <div class="label">Models tracked</div>
       </div>
       <div class="meta-item">
         <div class="num mono">0</div>
-        <div class="label">Affiliatelenker</div>
+        <div class="label">Affiliate links</div>
       </div>
     </div>
   </div>
 
   <div class="trust-strip">
     <div class="trust-strip-inner">
-      <span class="trust-label">På linje med</span>
+      <span class="trust-label">Aligned with</span>
       <div class="trust-items">
         <span>USA Hockey ADM</span>
         <span>Hockey Canada</span>
         <span>IIHF Learn to Play</span>
-        <span>Norges Ishockeyforbund</span>
-        <span>Svensk Hockey</span>
+        <span>Norway Model</span>
+        <span>Swedish Hockey</span>
       </div>
     </div>
   </div>
@@ -1850,84 +1852,84 @@
 <!-- ========== PHILOSOPHY (manifesto) ========== -->
 <section class="view" id="view-philosophy">
   <div class="manifesto-section">
-    <div class="manifesto-tag">Stick Lab Manifestet</div>
-    <h2 class="manifesto-title">Elleve prinsipper for kjøp av juniorkølle.</h2>
+    <div class="manifesto-tag">The Stick Lab Manifesto</div>
+    <h2 class="manifesto-title">Ten principles for buying a junior stick.</h2>
 
     <div class="manifesto-list">
       <div class="manifesto-item zero">
-        <h3>Hver kamp er en treningsøkt.</h3>
-        <p>Juniorhockey handler om å utvikle spillere, ikke vinne kamper. Ikke optimaliser for kampdagen — optimaliser for det som hjelper barnet ditt å vokse som spiller.</p>
+        <h3>Every game is practice.</h3>
+        <p>Junior hockey is for developing players, not winning matches. Don't optimize for game day — optimize for what helps your kid grow as a player.</p>
         <div class="source">
-          <strong>USA Hockey ADM:</strong> "Det finnes ikke noe slikt som en elite-12-åring."<br>
-          <strong>Hockey Canada:</strong> Ingen posisjonsspesialisering før U13.<br>
-          <strong>Sverige, Norge:</strong> Ingen tabeller eller statistikk &lt;U13.<br>
-          <strong>IIHF:</strong> "Målet deres er ikke å bli hockeyspiller, men å ha det gøy."
+          <strong>USA Hockey ADM:</strong> "There is no such thing as an elite 12-year-old."<br>
+          <strong>Hockey Canada:</strong> No position specialization until U13.<br>
+          <strong>Sweden, Norway:</strong> No standings or stats &lt;U13.<br>
+          <strong>IIHF:</strong> "Their goal is not to develop into a hockey player, but to have fun."
         </div>
       </div>
 
       <div class="manifesto-item">
-        <h3>Utstyr er et tillegg, ikke kjernen.</h3>
-        <p>Timer på isen slår alltid den nyeste kølla. Ingen forbund foreskriver spesifikke merker eller modeller — de fokuserer på spillerutvikling.</p>
+        <h3>Equipment is supplementary, not central.</h3>
+        <p>Hours on ice always beat the latest stick. No federation prescribes specific brands or models — they focus on player development.</p>
       </div>
 
       <div class="manifesto-item">
-        <h3>Få det grunnleggende riktig; resten er kunnskap.</h3>
-        <p>Lengde, flex og skuddhånd er kritisk. Kickpoint, krumning og lie er nyttig å forstå, men gjør sjelden en meningsfull forskjell. Kunnskap om dem hjelper deg å gjøre bevisste endringer senere.</p>
+        <h3>Get the basics right; the rest is education.</h3>
+        <p>Length, flex, and shooting hand are critical. Kick point, curve, and lie are useful to understand but rarely make a meaningful difference. Knowing them helps you make conscious changes later.</p>
       </div>
 
       <div class="manifesto-item">
-        <h3>Rund flex NED, aldri opp.</h3>
-        <p>Kroppsvekt i kg × 1,1, deretter rund ned til nærmeste tilgjengelige flex. Å gå over er den vanligste feilen. De fleste spillere bruker køller som er for stive.</p>
+        <h3>Round flex DOWN, never up.</h3>
+        <p>Body weight in kg × 1.1, then round down to the nearest available flex. Going over is the most common mistake. Most players use sticks that are too stiff.</p>
       </div>
 
       <div class="manifesto-item">
-        <h3>Tilpass kølla til budsjettet.</h3>
-        <p>Topp-modeller gir mening hvis du har råd til dem. Hvis du ikke har det, finnes det ingen bevis for at de hjelper barnet ditt på noen meningsfull måte.</p>
+        <h3>Match the stick to the budget.</h3>
+        <p>Top tier sticks make sense if you can afford them. If you can't, there is no evidence they will help your child in any meaningful way.</p>
       </div>
 
       <div class="manifesto-item">
-        <h3>"Anstendig mellomklasse" slår begge ytterpunktene.</h3>
-        <p>Tre er tyngre (effekten på teknikken er nyansert — noen proffer trener tungt med vilje). Toppmodeller har ingen påvist fordel for juniorer. Mellomklasse-komposit, helst forrige generasjon, er sweet spot.</p>
+        <h3>"Decent mid-tier" beats both extremes.</h3>
+        <p>Wood is heavier (effects on technique are nuanced — some pros train heavy on purpose). Flagships have no proven advantage for juniors. Mid-tier composite, ideally previous generation, is the sweet spot.</p>
       </div>
 
       <div class="manifesto-item">
-        <h3>Proffene er uenige med markedsføringen.</h3>
-        <p>NHL-spillere bruker rutinemessig køllemodeller som er 5-10 år gamle. Produsenter maler noen ganger gamle køller for å se nye ut. Hvis proffene prioriterer familiaritet over nyhet, hvorfor skulle ikke barnet ditt?</p>
+        <h3>The pros disagree with the marketing.</h3>
+        <p>NHL players routinely use stick models that are 5-10 years old. Manufacturers sometimes paint old sticks to look new. If pros prioritize familiarity over newness, why shouldn't your kid?</p>
         <div class="source">
-          Dokumentert hos <strong>HockeyStickMan</strong> og <strong>GearGeek</strong> (NHL utstyrsdatabase, 855 aktive spillere).
+          Documented at <strong>HockeyStickMan</strong> and <strong>GearGeek</strong> (NHL equipment database, 855 active players).
         </div>
       </div>
 
       <div class="manifesto-item">
-        <h3>Juniorskaft er fysisk forskjellige.</h3>
-        <p>Mindre omkrets for mindre hender. En avkortet seniorkølle gir ikke samme hånd-passform som en ekte juniormodell.</p>
+        <h3>Junior shafts are physically different.</h3>
+        <p>Smaller circumference for smaller hands. A cut-down senior stick will not give the same hand-fit as a true junior model.</p>
         <div class="source">
-          <strong>IIHF Learn to Play:</strong> "Lettere køller for mindre spillere."<br>
-          <strong>Polsk hockey-tradisjon (PZHL-tilpasset):</strong> "Trzonek odpowiednio cienki" (skaftet må være passende tynt).
+          <strong>IIHF Learn to Play:</strong> "Lighter sticks for smaller players."<br>
+          <strong>Polish hockey tradition (PZHL-aligned):</strong> "Trzonek odpowiednio cienki" (shaft must be appropriately thin).
         </div>
       </div>
 
       <div class="manifesto-item">
-        <h3>Ytelsesdata for juniorkøller mangler stort sett.</h3>
-        <p>Nesten alle anmeldelser og tutorials tester seniorkøller. Produsenters påstander om juniorversjoner ("samme teknologi") er ikke uavhengig verifisert. Vær skeptisk til premium-priser på juniormodeller.</p>
+        <h3>Junior performance data is largely missing.</h3>
+        <p>Almost all reviews and tutorials test senior sticks. Manufacturer claims about junior versions ("same technology") are not independently verified. Be skeptical of premium pricing for junior models.</p>
       </div>
 
       <div class="manifesto-item">
-        <h3>Personlig preferanse slår enhver formel.</h3>
-        <p>Hver spiller har sine egne preferanser som er verdt å oppdage. NHL-proffer bruker 55, 80, 120 flex til tross for formler. Generelle anbefalinger gir deg en start; eksperimentering finner den rette kølla.</p>
+        <h3>Personal preference beats every schema.</h3>
+        <p>Every player has their own preferences worth discovering. NHL pros use 55, 80, 120 flex despite formulas. Generic recommendations get you started; experimentation finds the right stick.</p>
       </div>
 
       <div class="manifesto-item">
-        <h3>For første kølle, start med minimal krumning.</h3>
-        <p>Aggressive krumninger (P28, W28) er for erfarne spillere som allerede vet hva de liker. Nybegynnere har nytte av minimale eller mellomkrumninger for å lære grunnprinsippene — backhand, pasninger, grunnleggende skudd.</p>
+        <h3>For first sticks, start with minimal curve.</h3>
+        <p>Aggressive curves (P28, W28) are for skilled players who already know what they like. Beginners benefit from minimal or mid curves for learning fundamentals — backhand, passing, basic shooting.</p>
         <div class="source">
-          <strong>PZHL-tilpasset tradisjon:</strong> "Krzywizna jak najmniejsza" (krumning så liten som mulig) for barn.
+          <strong>PZHL-aligned tradition:</strong> "Krzywizna jak najmniejsza" (curve as minimal as possible) for kids.
         </div>
       </div>
     </div>
 
     <div style="margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); text-align: center;">
-      <button class="btn-primary" onclick="setView('quiz')">Start quizen →</button>
+      <button class="btn-primary" onclick="setView('quiz')">Start the Quiz →</button>
     </div>
   </div>
 </section>
@@ -1940,9 +1942,9 @@
 
     <!-- Step 1: height -->
     <div class="quiz-step active" data-step="1">
-      <div class="step-num">Spørsmål 01 / 08</div>
-      <h2 class="step-q">Hvor høyt er barnet ditt?</h2>
-      <p class="step-help">Det er én køllelengde — to måter å sjekke: <strong>uten skøyter skal den nå mellom haken og nesen</strong>, og <strong>med skøyter omtrent til haken</strong>. Snipere og tekniske spillere: sikt mot haken. Forsvarere som vil ha rekkevidde: mot nesen. (Skøyter løfter deg noen cm — samme kølle, ulikt referansepunkt.)</p>
+      <div class="step-num">Question 01 / 08</div>
+      <h2 class="step-q">How tall is your kid?</h2>
+      <p class="step-help">There is one stick length — two ways to check: <strong>without skates it should reach between the chin and the nose</strong>, and <strong>on skates roughly the chin</strong>. Snipers and technical players: aim toward the chin. Defenders who want reach: toward the nose. (Skates raise you a few cm — same stick, different reference point.)</p>
       <div class="slider-wrap">
         <div class="slider-display">
           <span class="slider-value" id="height-val">140</span>
@@ -1953,25 +1955,25 @@
           <span>100</span><span>130</span><span>160</span><span>190</span>
         </div>
         <div class="live-calc">
-          <div>Køllelengde: <strong id="length-target">130 cm</strong></div>
-          <div style="margin-top: 4px; opacity: 0.85; font-size: 12px;">Når hake–nese uten skøyter / omtrent haken med skøyter på.</div>
+          <div>Stick length: <strong id="length-target">130 cm</strong></div>
+          <div style="margin-top: 4px; opacity: 0.85; font-size: 12px;">Reaches chin–nose without skates / about the chin with skates on.</div>
         </div>
       </div>
       <div class="edu-box" style="margin-top: 16px;">
-        <span class="edu-tag">💡 Blir kølla for kort? Prøv en forlenger</span>
-        Barn vokser fort — en kølle som passer perfekt i dag kan være 4-5 cm for kort om seks måneder. Før du kjøper en ny kølle, vurder en <strong>skaftforlenger</strong> (4-6 tommers endeplugg). Kommersielle forlengere koster 80-150 NOK; du kan også <strong>3D-printe en</strong> gratis hvis du har tilgang til en printer. Se <em>Lær</em>-seksjonen for detaljer.
+        <span class="edu-tag">💡 Stick getting short? Try an extension</span>
+        Kids grow fast — a stick that fits perfectly today can be 4-5 cm too short in six months. Before buying a new stick, consider a <strong>shaft extension</strong> (4-6 inch end plug). Commercial extensions are 80-150 NOK; you can also <strong>3D-print one</strong> for free if you have access to a printer. See the <em>Learn</em> section for details.
       </div>
       <div class="quiz-nav">
-        <button class="btn-secondary" onclick="setView('home')">← Tilbake</button>
-        <button class="btn-primary" onclick="nextStep()">Fortsett →</button>
+        <button class="btn-secondary" onclick="setView('home')">← Back</button>
+        <button class="btn-primary" onclick="nextStep()">Continue →</button>
       </div>
     </div>
 
     <!-- Step 2: weight -->
     <div class="quiz-step" data-step="2">
-      <div class="step-num">Spørsmål 02 / 08</div>
-      <h2 class="step-q">Hvor mye veier de?</h2>
-      <p class="step-help">Omtrentlig. Vekt × 1,1 gir flex-utgangspunktet — så runder vi ned (industristandard).</p>
+      <div class="step-num">Question 02 / 08</div>
+      <h2 class="step-q">How much do they weigh?</h2>
+      <p class="step-help">Roughly. Weight × 1.1 gives the flex baseline — then we round down (industry standard).</p>
       <div class="slider-wrap">
         <div class="slider-display">
           <span class="slider-value" id="weight-val">35</span>
@@ -1982,140 +1984,140 @@
           <span>15</span><span>35</span><span>60</span><span>90</span>
         </div>
         <div class="live-calc">
-          Mål-flex (rundet ned): <strong id="flex-target">35</strong>
+          Target flex (rounded down): <strong id="flex-target">35</strong>
         </div>
       </div>
       <div class="quiz-nav">
-        <button class="btn-secondary" onclick="prevStep()">← Tilbake</button>
-        <button class="btn-primary" onclick="nextStep()">Fortsett →</button>
+        <button class="btn-secondary" onclick="prevStep()">← Back</button>
+        <button class="btn-primary" onclick="nextStep()">Continue →</button>
       </div>
     </div>
 
     <!-- Step 3: age group -->
     <div class="quiz-step" data-step="3">
-      <div class="step-num">Spørsmål 03 / 08</div>
-      <h2 class="step-q">Aldersgruppe?</h2>
-      <p class="step-help">Dette avgjør om vi spør om posisjon. Forbund anbefaler ingen spesialisering før U13.</p>
+      <div class="step-num">Question 03 / 08</div>
+      <h2 class="step-q">Age group?</h2>
+      <p class="step-help">This determines whether we ask about position. Federations recommend no specialization before U13.</p>
       <div class="fed-box">
-        <span class="fed-tag">🏛️ Forbundsveiledning</span>
-        <strong>Hockey Canada, USA Hockey ADM, Norge og Sverige</strong> unngår alle eksplisitt posisjonsspesialisering før U13. Barn roterer posisjoner for å utvikle allsidige ferdigheter. Så vi later ikke som om en backs kølle er forskjellig fra en forwards i denne alderen.
+        <span class="fed-tag">🏛️ Federation guidance</span>
+        <strong>Hockey Canada, USA Hockey ADM, Norway, and Sweden</strong> all explicitly avoid position specialization before U13. Kids rotate positions to develop all-around skills. So we don't pretend a defenseman's stick is different from a forward's at this age.
       </div>
       <div class="option-grid" data-q="ageGroup">
         <button class="option-card" data-val="under13">
           <span class="opt-icon">U13</span>
           <div class="opt-title">Under 13</div>
-          <div class="opt-desc">Forbund: ingen spesialisering ennå. Vi hopper over posisjonsspørsmål.</div>
+          <div class="opt-desc">Federations: no specialization yet. We'll skip position questions.</div>
         </button>
         <button class="option-card" data-val="13plus">
           <span class="opt-icon">U13+</span>
-          <div class="opt-title">13 eller eldre</div>
-          <div class="opt-desc">Begynner å spesialisere seg. Vi spør om posisjon og stil.</div>
+          <div class="opt-title">13 or older</div>
+          <div class="opt-desc">Starting to specialize. We'll ask about position and style.</div>
         </button>
       </div>
       <div class="quiz-nav">
-        <button class="btn-secondary" onclick="prevStep()">← Tilbake</button>
-        <button class="btn-primary" onclick="nextStep()" disabled id="next-3">Fortsett →</button>
+        <button class="btn-secondary" onclick="prevStep()">← Back</button>
+        <button class="btn-primary" onclick="nextStep()" disabled id="next-3">Continue →</button>
       </div>
     </div>
 
     <!-- Step 4: experience -->
     <div class="quiz-step" data-step="4">
-      <div class="step-num">Spørsmål 04 / 08</div>
-      <h2 class="step-q">Hvor erfarne er de?</h2>
-      <p class="step-help">Nybegynnere har nytte av tilgivende oppsett (mykere flex, minimal krumning). Erfarne barn takler aggressive spesifikasjoner.</p>
+      <div class="step-num">Question 04 / 08</div>
+      <h2 class="step-q">How experienced are they?</h2>
+      <p class="step-help">Beginners benefit from forgiving setups (softer flex, minimal curve). Advanced kids can handle aggressive specs.</p>
       <div class="option-grid" data-q="experience">
         <button class="option-card" data-val="beginner">
-          <span class="opt-icon">Niv. 01</span>
-          <div class="opt-title">Nybegynner</div>
-          <div class="opt-desc">Første eller andre sesong. Bygger fortsatt grunnleggende.</div>
+          <span class="opt-icon">Lvl 01</span>
+          <div class="opt-title">Beginner</div>
+          <div class="opt-desc">First or second season. Still building basics.</div>
         </button>
         <button class="option-card" data-val="intermediate">
-          <span class="opt-icon">Niv. 02</span>
-          <div class="opt-title">Middels</div>
-          <div class="opt-desc">2-4 år inn. Pålitelig håndleddsskudd, regelmessige treninger.</div>
+          <span class="opt-icon">Lvl 02</span>
+          <div class="opt-title">Intermediate</div>
+          <div class="opt-desc">2-4 years in. Reliable wrist shot, regular practices.</div>
         </button>
         <button class="option-card" data-val="advanced">
-          <span class="opt-icon">Niv. 03</span>
-          <div class="opt-title">Avansert</div>
-          <div class="opt-desc">Konkurranseliga, flere treninger i uken.</div>
+          <span class="opt-icon">Lvl 03</span>
+          <div class="opt-title">Advanced</div>
+          <div class="opt-desc">Competitive league, multiple practices a week.</div>
         </button>
       </div>
       <div class="quiz-nav">
-        <button class="btn-secondary" onclick="prevStep()">← Tilbake</button>
-        <button class="btn-primary" onclick="nextStep()" disabled id="next-4">Fortsett →</button>
+        <button class="btn-secondary" onclick="prevStep()">← Back</button>
+        <button class="btn-primary" onclick="nextStep()" disabled id="next-4">Continue →</button>
       </div>
     </div>
 
-    <!-- Step 5: style -->
+    <!-- Step 5: style (only for 13+, but we keep the question for everyone with adapted framing) -->
     <div class="quiz-step" data-step="5">
-      <div class="step-num">Spørsmål 05 / 08</div>
-      <h2 class="step-q">Hvordan skyter barnet ditt?</h2>
-      <p class="step-help" id="style-help">For utviklende spillere er dette observasjonsbasert, ikke prediktivt. Kickpoint-preferanser endrer seg etter hvert som barn vokser.</p>
+      <div class="step-num">Question 05 / 08</div>
+      <h2 class="step-q">How does your kid shoot?</h2>
+      <p class="step-help" id="style-help">For developing players, this is observational, not predictive. Kick point preferences shift as kids grow.</p>
       <div class="option-grid" data-q="style">
         <button class="option-card" data-val="sniper">
-          <span class="opt-icon">Rask · Lavt kick</span>
-          <div class="opt-title">Rask & presis</div>
-          <div class="opt-desc">Sikter mot hjørnene, raskt utløp. Lever av snap shots og tip-ins.</div>
+          <span class="opt-icon">Quick · Low kick</span>
+          <div class="opt-title">Quick & precise</div>
+          <div class="opt-desc">Aims for corners, fast release. Lives off snap shots and tip-ins.</div>
         </button>
         <button class="option-card" data-val="all-around">
-          <span class="opt-icon">Blandet · Hybrid</span>
-          <div class="opt-title">Allsidig</div>
-          <div class="opt-desc">Litt av alt. Håndleddsskudd, snaps, av og til slap.</div>
+          <span class="opt-icon">Mixed · Hybrid</span>
+          <div class="opt-title">Versatile</div>
+          <div class="opt-desc">Mix of everything. Wrist shots, snaps, occasional slap.</div>
         </button>
         <button class="option-card" data-val="power">
-          <span class="opt-icon">Kraft · Midt-kick</span>
-          <div class="opt-title">Kraftskytter</div>
-          <div class="opt-desc">Tunge slap shots, one-timers. Elsker å banke til.</div>
+          <span class="opt-icon">Power · Mid kick</span>
+          <div class="opt-title">Power shooter</div>
+          <div class="opt-desc">Heavy slap shots, one-timers. Loves to crank it.</div>
         </button>
         <button class="option-card" data-val="unsure">
-          <span class="opt-icon">Utvikler seg</span>
-          <div class="opt-title">Ennå ikke definert</div>
-          <div class="opt-desc">Utvikler seg fortsatt. Vi foreslår en allsidig hybrid eller midt.</div>
+          <span class="opt-icon">Still developing</span>
+          <div class="opt-title">Not yet defined</div>
+          <div class="opt-desc">Still developing. We'll suggest a versatile hybrid or mid.</div>
         </button>
       </div>
       <div class="quiz-nav">
-        <button class="btn-secondary" onclick="prevStep()">← Tilbake</button>
-        <button class="btn-primary" onclick="nextStep()" disabled id="next-5">Fortsett →</button>
+        <button class="btn-secondary" onclick="prevStep()">← Back</button>
+        <button class="btn-primary" onclick="nextStep()" disabled id="next-5">Continue →</button>
       </div>
     </div>
 
     <!-- Step 6: hand -->
     <div class="quiz-step" data-step="6">
-      <div class="step-num">Spørsmål 06 / 08</div>
-      <h2 class="step-q">Venstre- eller høyreskudd?</h2>
-      <p class="step-help">I et hockeygrep, hvilken hånd er NEDERST på kølla? Venstre nederst = venstrehendt skudd.</p>
+      <div class="step-num">Question 06 / 08</div>
+      <h2 class="step-q">Left or right shot?</h2>
+      <p class="step-help">In a hockey grip, which hand is at the BOTTOM of the stick? Left bottom = left-handed shot.</p>
       <div class="edu-box">
-        <span class="edu-tag">💡 Usikker? Lurt foreldretrick</span>
-        <strong>Finn en gammel trekølle med rett blad</strong> — ofte gratis eller nesten gratis fra klubbens utlånshaug, hockeyspillende venner eller bruktmarked (Finn.no, Facebook Marketplace). Et rett blad har ingen "riktig" eller "feil" side, så barnet ditt kan holde det begge veier og prøve. Følg med på hva som føles naturlig for puckhåndtering. <strong>Mye bedre enn å kjøpe to kompositkøller for testing.</strong>
+        <span class="edu-tag">💡 Not sure? Smart parent trick</span>
+        <strong>Find an old straight-blade wood stick</strong> — often free or near-free from your local club's loaner pile, hockey-playing friends, or used market (Finn.no, OLX, Facebook). Straight blade has no "right" or "wrong" side, so your kid can grip it both ways and try. Watch what feels natural for stickhandling. <strong>Far better than buying two composite sticks to test.</strong>
       </div>
       <div class="option-grid" data-q="hand">
         <button class="option-card" data-val="left">
-          <span class="opt-icon">V</span>
-          <div class="opt-title">Venstre</div>
-          <div class="opt-desc">Venstre hånd nederst på skaftet.</div>
+          <span class="opt-icon">L</span>
+          <div class="opt-title">Left</div>
+          <div class="opt-desc">Left hand at bottom of shaft.</div>
         </button>
         <button class="option-card" data-val="right">
-          <span class="opt-icon">H</span>
-          <div class="opt-title">Høyre</div>
-          <div class="opt-desc">Høyre hånd nederst på skaftet.</div>
+          <span class="opt-icon">R</span>
+          <div class="opt-title">Right</div>
+          <div class="opt-desc">Right hand at bottom of shaft.</div>
         </button>
         <button class="option-card" data-val="testing">
           <span class="opt-icon">?</span>
-          <div class="opt-title">Tester fortsatt</div>
-          <div class="opt-desc">Velger trekølle først. Vis meg begge sider.</div>
+          <div class="opt-title">Still testing</div>
+          <div class="opt-desc">Will pick a wood stick first. Show me both sides.</div>
         </button>
       </div>
       <div class="quiz-nav">
-        <button class="btn-secondary" onclick="prevStep()">← Tilbake</button>
-        <button class="btn-primary" onclick="nextStep()" disabled id="next-6">Fortsett →</button>
+        <button class="btn-secondary" onclick="prevStep()">← Back</button>
+        <button class="btn-primary" onclick="nextStep()" disabled id="next-6">Continue →</button>
       </div>
     </div>
 
     <!-- Step 7: budget -->
     <div class="quiz-step" data-step="7">
-      <div class="step-num">Spørsmål 07 / 08</div>
-      <h2 class="step-q">Hva er budsjettet per kølle?</h2>
-      <p class="step-help">I NOK. Barn vokser fra køller på 6-12 måneder — de fleste foreldre foretrekker verdi i mellomklasse fremfor toppmodell-priser.</p>
+      <div class="step-num">Question 07 / 08</div>
+      <h2 class="step-q">What's the budget per stick?</h2>
+      <p class="step-help">In NOK. Kids outgrow sticks in 6-12 months — most parents prefer mid-tier value over flagship pricing.</p>
       <div class="slider-wrap">
         <div class="slider-display">
           <span class="slider-value" id="budget-val">1500</span>
@@ -2127,21 +2129,21 @@
         </div>
       </div>
       <div class="quiz-nav">
-        <button class="btn-secondary" onclick="prevStep()">← Tilbake</button>
-        <button class="btn-primary" onclick="nextStep()">Fortsett →</button>
+        <button class="btn-secondary" onclick="prevStep()">← Back</button>
+        <button class="btn-primary" onclick="nextStep()">Continue →</button>
       </div>
     </div>
 
     <!-- Step 8: brand -->
     <div class="quiz-step" data-step="8">
-      <div class="step-num">Spørsmål 08 / 08</div>
-      <h2 class="step-q">Merkepreferanse?</h2>
-      <p class="step-help">Krumninger er likeverdige på tvers av merker (P28 = W28 = T28 = PP28). Bytte av merke ødelegger ikke muskelminnet.</p>
+      <div class="step-num">Question 08 / 08</div>
+      <h2 class="step-q">Brand preference?</h2>
+      <p class="step-help">Curves are equivalent across brands (P28 = W28 = T28 = PP28). Switching brands won't break muscle memory.</p>
       <div class="option-grid" data-q="brand">
         <button class="option-card selected" data-val="any">
           <span class="opt-icon">★</span>
-          <div class="opt-title">Ingen preferanse</div>
-          <div class="opt-desc">Vis de beste treffene på tvers av alle merker.</div>
+          <div class="opt-title">No preference</div>
+          <div class="opt-desc">Show the best matches across all brands.</div>
         </button>
         <button class="option-card" data-val="ccm">
           <span class="opt-icon">CCM</span>
@@ -2161,17 +2163,17 @@
         <button class="option-card" data-val="true">
           <span class="opt-icon">True</span>
           <div class="opt-title">TRUE</div>
-          <div class="opt-desc">HZRDUS-serien.</div>
+          <div class="opt-desc">HZRDUS series.</div>
         </button>
         <button class="option-card" data-val="sherwood">
           <span class="opt-icon">SHW</span>
           <div class="opt-title">Sherwood</div>
-          <div class="opt-desc">Rekker, Code (sjelden i NO).</div>
+          <div class="opt-desc">Rekker, Code (rare in NO).</div>
         </button>
       </div>
       <div class="quiz-nav">
-        <button class="btn-secondary" onclick="prevStep()">← Tilbake</button>
-        <button class="btn-primary" onclick="finishQuiz()">Se resultater →</button>
+        <button class="btn-secondary" onclick="prevStep()">← Back</button>
+        <button class="btn-primary" onclick="finishQuiz()">See Results →</button>
       </div>
     </div>
   </div>
@@ -2182,91 +2184,95 @@
 <section class="view" id="view-upgrade">
   <main>
     <div class="results-header">
-      <div class="results-tag">Finn en lignende kølle</div>
-      <h2 class="results-title">Du har allerede en kølle. Finn en med lignende følelse.</h2>
-      <p class="results-sub">Velg hva barnet ditt bruker nå, fortell oss hva du vil endre, og vi viser køller som deler resten av filosofien (kick point, skaftprofil, krumningsfamilie).</p>
+      <div class="results-tag">Find a similar stick</div>
+      <h2 class="results-title">You already have a stick. Find another one with similar feel.</h2>
+      <p class="results-sub">Pick what your kid currently uses, tell us what you want to change, and we'll show you sticks that share the rest of the philosophy (kick point, shaft profile, curve family).</p>
     </div>
 
     <div class="upgrade-wizard">
+      <!-- Step 1: Brand -->
       <div class="upgrade-step active" id="upgrade-step-1">
-        <div class="upgrade-step-num">Steg 1 av 4</div>
-        <h3 class="upgrade-step-title">Hvilket merke er din nåværende kølle?</h3>
+        <div class="upgrade-step-num">Step 1 of 4</div>
+        <h3 class="upgrade-step-title">Which brand is your current stick?</h3>
         <div class="upgrade-options" id="upgrade-brands"></div>
       </div>
 
+      <!-- Step 2: Family -->
       <div class="upgrade-step" id="upgrade-step-2">
-        <div class="upgrade-step-num">Steg 2 av 4</div>
-        <h3 class="upgrade-step-title">Hvilken linje / serie?</h3>
+        <div class="upgrade-step-num">Step 2 of 4</div>
+        <h3 class="upgrade-step-title">Which line / family?</h3>
         <div class="upgrade-options" id="upgrade-families"></div>
-        <button class="upgrade-back" data-back-to="1">← Tilbake til merker</button>
+        <button class="upgrade-back" data-back-to="1">← Back to brands</button>
       </div>
 
+      <!-- Step 3: Model -->
       <div class="upgrade-step" id="upgrade-step-3">
-        <div class="upgrade-step-num">Steg 3 av 4</div>
-        <h3 class="upgrade-step-title">Hvilken eksakt modell?</h3>
+        <div class="upgrade-step-num">Step 3 of 4</div>
+        <h3 class="upgrade-step-title">Which exact model?</h3>
         <div class="upgrade-options" id="upgrade-models"></div>
-        <button class="upgrade-back" data-back-to="2">← Tilbake til serier</button>
+        <button class="upgrade-back" data-back-to="2">← Back to families</button>
       </div>
 
+      <!-- Step 4: What to change -->
       <div class="upgrade-step" id="upgrade-step-4">
-        <div class="upgrade-step-num">Steg 4 av 4</div>
-        <h3 class="upgrade-step-title">Tilpass søket</h3>
+        <div class="upgrade-step-num">Step 4 of 4</div>
+        <h3 class="upgrade-step-title">Adjust your search</h3>
         <div class="upgrade-current" id="upgrade-current-display"></div>
 
-        <p class="upgrade-help" style="font-weight: 600; color: var(--ink); margin-top: 24px;">Vokste barnet?</p>
+        <p class="upgrade-help" style="font-weight: 600; color: var(--ink); margin-top: 24px;">Did your kid grow up?</p>
         <div class="upgrade-size-options">
           <label class="change-option">
             <input type="radio" name="upgrade-size" value="same" checked>
             <div>
-              <strong>Samme størrelse</strong>
-              <span>Ser etter alternativer i samme aldersgruppe.</span>
+              <strong>Same size</strong>
+              <span>Looking for alternatives in the same age group.</span>
             </div>
           </label>
           <label class="change-option">
             <input type="radio" name="upgrade-size" value="next">
             <div>
-              <strong>Neste størrelse opp</strong>
-              <span>Barnet vokste — vis YTH→JR eller JR→INT-alternativer.</span>
+              <strong>Next size up</strong>
+              <span>Kid grew up — show YTH→JR or JR→INT options.</span>
             </div>
           </label>
         </div>
 
-        <p class="upgrade-help" style="font-weight: 600; color: var(--ink); margin-top: 24px;">Hva annet skal være annerledes?</p>
-        <p class="upgrade-help">Valgfritt. Velg null eller flere. Egenskaper du ikke huker av forblir like.</p>
+        <p class="upgrade-help" style="font-weight: 600; color: var(--ink); margin-top: 24px;">What else should be different from current stick?</p>
+        <p class="upgrade-help">Optional. Pick zero or more. Properties not picked stay the same.</p>
         <div class="upgrade-change-options">
           <label class="change-option">
             <input type="checkbox" data-change="curve">
             <div>
-              <strong>Krumning</strong>
-              <span>Vil prøve et annet bladmønster (f.eks. bytte fra P28 til P92).</span>
+              <strong>Curve</strong>
+              <span>Want a different blade pattern (e.g. switching from P28 to P92).</span>
             </div>
           </label>
           <label class="change-option">
             <input type="checkbox" data-change="shaftProfile">
             <div>
-              <strong>Skaftprofil</strong>
-              <span>Annen følelse i hånden (slank / firkantet / rund / hybrid).</span>
+              <strong>Shaft profile</strong>
+              <span>Different feel in hand (slim / square / round / hybrid).</span>
             </div>
           </label>
           <label class="change-option">
             <input type="checkbox" data-change="kick">
             <div>
               <strong>Kick point</strong>
-              <span>Raskere release (low) / hardere skudd (mid) / blanding (hybrid).</span>
+              <span>Faster release (low) / harder shots (mid) / mix (hybrid).</span>
             </div>
           </label>
           <label class="change-option">
             <input type="checkbox" data-change="tier">
             <div>
-              <strong>Prisklasse</strong>
-              <span>Billigere alternativ (budget) / oppgradering (mid → flagship).</span>
+              <strong>Price tier</strong>
+              <span>Cheaper option (budget) / step up (mid → flagship).</span>
             </div>
           </label>
         </div>
         <button class="btn-primary" id="upgrade-show-results" style="margin-top: 24px;">
-          Vis matchende køller →
+          Show matching sticks →
         </button>
-        <button class="upgrade-back" data-back-to="3">← Tilbake til modell</button>
+        <button class="upgrade-back" data-back-to="3">← Back to model</button>
       </div>
     </div>
   </main>
@@ -2276,9 +2282,9 @@
 <section class="view" id="view-results">
   <main>
     <div class="results-header">
-      <div class="results-tag">Forslag</div>
-      <h2 class="results-title">Køller som passer barnet ditt.</h2>
-      <p class="results-sub">Dette er køllene som matcher det grunnleggende (lengde, flex, hånd). Innenfor denne gruppen er forskjellene mest preferanse — tenk på dem som <em>alternativer å vokse med</em>, ikke "den rette".</p>
+      <div class="results-tag">Suggestions</div>
+      <h2 class="results-title">Sticks that fit your kid.</h2>
+      <p class="results-sub">These are the sticks that match the basics (length, flex, hand). Within this group, the differences are mostly preference — try to think of these as <em>options to grow with</em>, not "the right one".</p>
     </div>
 
     <div class="player-summary" id="player-summary"></div>
@@ -2288,9 +2294,9 @@
     <div class="stick-list" id="stick-results"></div>
 
     <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
-      <button class="btn-secondary" onclick="restartQuiz()">↺ Start på nytt</button>
-      <button class="btn-secondary" onclick="setView('browse')">Se hele katalogen →</button>
-      <button class="btn-secondary" onclick="setView('learn')">Lær mer →</button>
+      <button class="btn-secondary" onclick="restartQuiz()">↺ Restart Quiz</button>
+      <button class="btn-secondary" onclick="setView('browse')">Browse all →</button>
+      <button class="btn-secondary" onclick="setView('learn')">Learn more →</button>
     </div>
   </main>
 </section>
@@ -2299,24 +2305,24 @@
 <section class="view" id="view-browse">
   <main>
     <div class="results-header" style="margin-top:60px">
-      <div class="results-tag">Katalog</div>
-      <h2 class="results-title">Alle køller · full katalog</h2>
-      <p class="results-sub">Alle modeller fra denne sesongen. Søk på modell, merke eller serie. Klikk på kolonneoverskrifter for å sortere. Bruk knappen under for å også vise modeller fra forrige generasjon.</p>
+      <div class="results-tag">Catalog</div>
+      <h2 class="results-title">All sticks · full catalog</h2>
+      <p class="results-sub">All current-season junior models. Search by model, brand, or family. Click column headers to sort. Filter by what matters. Use the toggle below to also show older generation models.</p>
     </div>
 
     <div class="browse-controls">
       <div class="search-box">
         <span class="search-icon">⌕</span>
-        <input type="text" id="search-input" class="search-input" placeholder="Søk på modell, merke eller serie (f.eks. 'ribcor', 'lavt kick', 'P28')..." />
+        <input type="text" id="search-input" class="search-input" placeholder="Search by model, brand, or family (e.g. 'ribcor', 'low kick', 'P28')..." />
       </div>
-      <div class="browse-meta">Viser <strong id="filter-count">—</strong> av <span id="filter-total">—</span></div>
+      <div class="browse-meta">Showing <strong id="filter-count">—</strong> of <span id="filter-total">—</span></div>
     </div>
 
     <div class="filter-bar">
       <div class="filter-group">
-        <span class="filter-group-label">Merke</span>
+        <span class="filter-group-label">Brand</span>
         <div class="filter-group-pills filter-pills" data-filter="brand">
-          <button class="pill active" data-val="all">Alle</button>
+          <button class="pill active" data-val="all">All</button>
           <button class="pill" data-val="CCM">CCM</button>
           <button class="pill" data-val="Bauer">Bauer</button>
           <button class="pill" data-val="Warrior">Warrior</button>
@@ -2325,36 +2331,36 @@
         </div>
       </div>
       <div class="filter-group">
-        <span class="filter-group-label">Alder</span>
+        <span class="filter-group-label">Age</span>
         <div class="filter-group-pills filter-pills" data-filter="ageGroup">
-          <button class="pill active" data-val="all">Alle</button>
-          <button class="pill" data-val="YTH" title="Youth — typisk 5-9 år, minste køller">YTH</button>
-          <button class="pill" data-val="JR" title="Junior — typisk 8-13 år">JR</button>
-          <button class="pill" data-val="INT" title="Intermediate — typisk 11-15 år, større barn">INT</button>
+          <button class="pill active" data-val="all">All</button>
+          <button class="pill" data-val="YTH" title="Youth — typically ages 5-9, smallest sticks">YTH</button>
+          <button class="pill" data-val="JR" title="Junior — typically ages 8-13">JR</button>
+          <button class="pill" data-val="INT" title="Intermediate — typically ages 11-15, larger kids">INT</button>
         </div>
       </div>
       <div class="filter-group">
         <span class="filter-group-label">Kick</span>
         <div class="filter-group-pills filter-pills" data-filter="kick">
-          <button class="pill active" data-val="all">Alle</button>
-          <button class="pill" data-val="low">Lav</button>
+          <button class="pill active" data-val="all">All</button>
+          <button class="pill" data-val="low">Low</button>
           <button class="pill" data-val="hybrid">Hybrid</button>
-          <button class="pill" data-val="mid">Midt</button>
+          <button class="pill" data-val="mid">Mid</button>
         </div>
       </div>
       <div class="filter-group">
-        <span class="filter-group-label">Klasse</span>
+        <span class="filter-group-label">Tier</span>
         <div class="filter-group-pills filter-pills" data-filter="tier">
-          <button class="pill active" data-val="all">Alle</button>
-          <button class="pill" data-val="budget">Budsjett</button>
-          <button class="pill" data-val="mid">Mellom</button>
-          <button class="pill" data-val="flagship">Topp</button>
+          <button class="pill active" data-val="all">All</button>
+          <button class="pill" data-val="budget">Budget</button>
+          <button class="pill" data-val="mid">Mid</button>
+          <button class="pill" data-val="flagship">Flagship</button>
         </div>
       </div>
       <div class="filter-group">
         <span class="filter-group-label">Flex</span>
         <div class="filter-group-pills filter-pills" data-filter="flex">
-          <button class="pill active" data-val="all">Alle</button>
+          <button class="pill active" data-val="all">All</button>
           <button class="pill" data-val="20" title="Youth">20</button>
           <button class="pill" data-val="30" title="Youth/Junior">30</button>
           <button class="pill" data-val="35" title="Junior">35</button>
@@ -2362,75 +2368,75 @@
           <button class="pill" data-val="50" title="Junior">50</button>
           <button class="pill" data-val="55" title="Intermediate">55</button>
           <button class="pill" data-val="65" title="Intermediate">65</button>
-          <button class="pill" data-val="75" title="Senior light / stor INT">75</button>
+          <button class="pill" data-val="75" title="Senior light / large INT">75</button>
         </div>
       </div>
       <div class="filter-group">
-        <span class="filter-group-label">Skaft</span>
+        <span class="filter-group-label">Shaft</span>
         <div class="filter-group-pills filter-pills" data-filter="shaftProfile">
-          <button class="pill active" data-val="all">Alle</button>
-          <button class="pill" data-val="square" title="CCM T-shape, Bauer Nexus, Warrior Alpha, True HZRDUS — firkantet pro-følelse">Firkantet</button>
-          <button class="pill" data-val="round" title="CCM R-shape (Ribcor), Sherwood Rekker — rund, konkav, ergonomisk">Rund</button>
-          <button class="pill" data-val="slim" title="Bauer Vapor / Pulse / Twitch, Warrior Covert — slank profil">Slank</button>
+          <button class="pill active" data-val="all">All</button>
+          <button class="pill" data-val="square" title="CCM T-shape, Bauer Nexus, Warrior Alpha, True HZRDUS — square pro feel">Square</button>
+          <button class="pill" data-val="round" title="CCM R-shape (Ribcor), Sherwood Rekker — rounded, concave, ergonomic">Round</button>
+          <button class="pill" data-val="slim" title="Bauer Vapor / Pulse / Twitch, Warrior Covert — slim profile">Slim</button>
           <button class="pill" data-val="hybrid" title="CCM Jetspeed / Vizion, Bauer Proto, Warrior Novium — hybrid">Hybrid</button>
-          <button class="pill" data-val="five-sided" title="Bauer Supreme Fuse — femsidig skaft (2026)">Femsidig</button>
+          <button class="pill" data-val="five-sided" title="Bauer Supreme Fuse — five-sided taper (2026)">Five-sided</button>
         </div>
       </div>
       <div class="filter-group">
-        <span class="filter-group-label">Spesielt</span>
+        <span class="filter-group-label">Special</span>
         <div class="filter-group-pills filter-pills" data-filter="special">
-          <button class="pill active" data-val="all">Alle</button>
+          <button class="pill active" data-val="all">All</button>
           <button class="pill" data-val="under1500">Under 1500 NOK</button>
         </div>
       </div>
-      <button class="reset-btn" id="reset-filters">↺ Tilbakestill</button>
-      <button class="reset-btn" id="toggle-lastgen" style="margin-left: 8px;">+ Vis eldre generasjoner</button>
+      <button class="reset-btn" id="reset-filters">↺ Reset</button>
+      <button class="reset-btn" id="toggle-lastgen" style="margin-left: 8px;">+ Show older generations</button>
     </div>
 
     <div class="table-wrap">
       <table class="stick-table" id="stick-table">
         <thead>
           <tr>
-            <th data-sort="brand">Merke <span class="sort-arrow">↑</span></th>
-            <th data-sort="model">Modell <span class="sort-arrow">↑</span></th>
-            <th data-sort="ageGroup" title="Youth / Junior / Intermediate">Alder <span class="sort-arrow">↑</span></th>
+            <th data-sort="brand">Brand <span class="sort-arrow">↑</span></th>
+            <th data-sort="model">Model <span class="sort-arrow">↑</span></th>
+            <th data-sort="ageGroup" title="Youth / Junior / Intermediate">Age <span class="sort-arrow">↑</span></th>
             <th data-sort="kick">Kick <span class="sort-arrow">↑</span></th>
-            <th data-sort="tier">Klasse <span class="sort-arrow">↑</span></th>
+            <th data-sort="tier">Tier <span class="sort-arrow">↑</span></th>
             <th data-sort="flex">Flex <span class="sort-arrow">↑</span></th>
-            <th data-sort="weight" title="Vekt for seniorkølle - juniorversjon ikke uavhengig verifisert">Vekt (sr)<span class="sort-arrow">↑</span></th>
-            <th data-sort="curves">Krumninger <span class="sort-arrow">↑</span></th>
-            <th data-sort="shaftProfile" title="Skaftprofil / geometri">Skaft <span class="sort-arrow">↑</span></th>
-            <th data-sort="price" class="sorted">Pris <span class="sort-arrow">↓</span></th>
+            <th data-sort="weight" title="Senior stick weight - junior versions not independently verified">Weight (sr)<span class="sort-arrow">↑</span></th>
+            <th data-sort="curves">Curves <span class="sort-arrow">↑</span></th>
+            <th data-sort="shaftProfile" title="Shaft profile / geometry">Shaft <span class="sort-arrow">↑</span></th>
+            <th data-sort="price" class="sorted">Price <span class="sort-arrow">↓</span></th>
           </tr>
         </thead>
         <tbody id="filter-results"></tbody>
       </table>
-      <div class="scroll-hint">← Scroll horisontalt for å se alle kolonner →</div>
+      <div class="scroll-hint">← Scroll horizontally to see all columns →</div>
     </div>
 
     <div class="table-footnote">
-      <span class="footnote-mark">*</span><strong>Vekttallene som vises gjelder SENIORKØLLER (85 flex), ikke juniorversjoner.</strong> Produsenter publiserer sjelden juniorspesifikke vekttall, og uavhengig testing av juniormodeller er begrenset. Juniorkøller er fysisk mindre (kortere skaft, mindre blad) så reell juniorvekt er lavere — men den eksakte verdien er ikke verifiserbar. Bruk disse tallene som <em>relativ sammenligning innenfor klassen</em> (en "lettere" seniormodell betyr som regel en "lettere" juniormodell, men den absolutte vekten er ikke det barnet ditt vil holde).
+      <span class="footnote-mark">*</span><strong>Weight values shown are for SENIOR sticks (85 flex), not junior versions.</strong> Manufacturers rarely publish junior-specific weight figures, and independent testing of junior models is scarce. Junior sticks are physically smaller (shorter shaft, smaller blade) so actual junior weight is lower — but the exact figure is not verifiable. Treat these numbers as <em>relative comparison only</em> within tier (a "lighter" senior model usually means a "lighter" junior model, but the absolute weight is not what your kid will hold).
     </div>
 
     <div class="table-footnote" style="background: rgba(95, 180, 255, 0.06); border-left-color: var(--info); margin-top: 12px;">
-      <span class="footnote-mark" style="color: var(--info);">kr</span><strong style="color: var(--info);">Om prisene.</strong> Prisene som vises er <strong>MSRP fra produsentenes offisielle nettsteder</strong> (CCM, Bauer, Warrior, True, Sherwood) — konvertert fra USD med ~11 NOK/USD. De brukes som <strong>referansepunkt for klasseklassifisering</strong> (budget / mid / flagship), ikke som faktiske butikkpriser. Der det er tilgjengelig, viser vi også <strong>verifiserte priser fra hockeystore.no</strong> (salgs- og originalpris) — som gjenspeiler faktiske salgspriser i Norge. <strong>Sjekk alltid gjeldende pris hos butikken før kjøp.</strong> Utgåtte modeller fra tidligere generasjoner har ingen pris. Vi tjener ingen affiliateprovisjon på disse lenkene.
+      <span class="footnote-mark" style="color: var(--info);">kr</span><strong style="color: var(--info);">About prices.</strong> The prices shown are <strong>MSRP from manufacturer official sites</strong> (CCM, Bauer, Warrior, True, Sherwood) — converted from USD at ~11 NOK/USD. They serve as a <strong>reference point for tier classification</strong> (budget / mid / flagship), not as actual store prices. Where available, we also show <strong>verified prices from hockeystore.no</strong> (sale and original) — those reflect actual sale prices in Norway. <strong>Always verify current price at the store before buying.</strong> Discontinued models from previous generations have no price entry. We earn no affiliate commission on any of these links.
     </div>
 
     <!-- ========== LINEAGE TABLE ========== -->
     <div class="lineage-section">
-      <h3 class="lineage-title">Modellinje — eldre modeller</h3>
+      <h3 class="lineage-title">Lineage — predecessor models</h3>
       <p class="lineage-intro">
-        Funnet en kølle på bruktmarked eller klubbens utlånshaug? Match den her. Eldre modeller på utsalg kan være utmerket verdi — samme konstruksjon, samme krumningsstandard, lavere pris. Eldre køller er <em>ikke dårligere</em> for en utviklende junior; proffer bruker rutinemessig 5-10 år gamle modeller.
+        Found a stick on a used market or your club's loaner pile? Match it here. Older models on clearance can be excellent value — same construction, same curve standards, lower price. Predecessor sticks are <em>not worse</em> for a developing junior; pros use 5-10 year old models routinely.
       </p>
       <div class="table-wrap">
         <table class="lineage-table">
           <thead>
             <tr>
-              <th>Merke</th>
-              <th>Eldre modell</th>
+              <th>Brand</th>
+              <th>Older model (predecessor)</th>
               <th></th>
-              <th>Aktuell ekvivalent</th>
-              <th>År</th>
+              <th>Current equivalent</th>
+              <th>Year</th>
             </tr>
           </thead>
           <tbody id="lineage-results"></tbody>
@@ -2444,107 +2450,107 @@
 <section class="view" id="view-learn">
   <main>
     <div class="results-header" style="margin-top:60px">
-      <div class="results-tag">Kunnskap</div>
-      <h2 class="results-title">Lær før du kjøper.</h2>
-      <p class="results-sub">Alt vi skulle ønske vi visste da vi kjøpte vår første juniorkølle. Med tillit-merker så du ser hvor solid hver påstand er.</p>
+      <div class="results-tag">Knowledge</div>
+      <h2 class="results-title">Learn before you buy.</h2>
+      <p class="results-sub">Everything we wish we'd known when buying our first junior stick. With confidence badges so you know how solid each claim is.</p>
     </div>
 
     <div class="learn-section">
 
       <div class="learn-card">
-        <span class="lc-tag">📏 Lengde</span>
-        <h3>Hvor lang skal kølla være?</h3>
+        <span class="lc-tag">📏 Sizing</span>
+        <h3>How long should the stick be?</h3>
         <p>
-          <span class="badge standard">Standardpraksis i europeisk/nordisk ungdomshockey</span>
+          <span class="badge standard">Standard practice in European/Nordic youth hockey</span>
         </p>
         <p>
-          ✅ Med skøyter <strong>av</strong>: kølla når omtrent <strong>mellom haken og nesen</strong>.<br>
-          ✅ Med skøyter <strong>på</strong>: kølla når omtrent <strong>hakene/munnen</strong>.
+          ✅ With skates <strong>off</strong>: stick reaches roughly <strong>between the chin and the nose</strong>.<br>
+          ✅ With skates <strong>on</strong>: stick reaches roughly <strong>the chin/mouth</strong>.
         </p>
         <p>
-          Skøytehevingen (~3-4 cm) er det som lager forskjellen mellom de to. Begge målingene beskriver samme kølle — bare målt i forskjellige forhold.
+          The skate boost (~3-4 cm) is what makes the difference between the two. Both measurements describe the same stick — just measured in different conditions.
         </p>
         <p>
-          Det viktigste: <strong>se hvordan barnet ditt holder kølla på isen</strong>. Hvis de står for foroverbøyd, er den for kort. Hvis de står for oppreist og bladet knapt rører isen, er den for lang.
+          What matters most: <strong>watch how your kid holds it on the ice</strong>. If they're hunched over too much, it's too short. If they're standing too upright and the blade is barely on the ice, it's too long.
         </p>
         <p>
-          <strong>Å kappe en kølle øker flexen.</strong> Hver tomme (~2,5 cm) kappet av legger til omtrent 3-5 på flex-tallet. Hvis du kapper 5 cm av en 40 flex, spiller du nå nærmere 50 flex.
+          <strong>Cutting a stick raises the flex.</strong> Each inch (~2.5 cm) cut off adds roughly 3-5 to the flex number. If you cut 5 cm off a 40 flex, you're now playing closer to 50 flex.
         </p>
         <p>
-          <strong>Og motsatt — forlengere <em>senker</em> flexen litt</strong> ved å gi deg mer leverage. Legg til 4-6 tommer (~10-15 cm) og din 40 flex blir effektivt nærmere 35. Se "Skaftforlengere"-seksjonen under.
-        </p>
-      </div>
-
-      <div class="learn-card">
-        <span class="lc-tag">🔧 Skaftforlengere</span>
-        <h3>Ikke kjøp ny kølle. Forleng den gamle.</h3>
-        <p>
-          <span class="badge confirmed">Bekreftet</span> Barn vokser 4-7 cm i året. En kølle som passer perfekt i dag er for kort om 6-12 måneder. De fleste foreldre kjøper ny kølle når dette skjer. <strong>Det trenger du ikke.</strong>
-        </p>
-        <p>
-          Skaftforlengere (også kalt "endeplugger" eller "butt extensions") legger til 4-6 tommer (~10-15 cm) på toppen av skaftet. De limes eller epoxy-festes på plass. To hovedtyper:
-        </p>
-        <p>
-          <strong>1. Treforlengere</strong> — billigst, ~50-100 NOK. Legger til litt vekt på toppen (som faktisk hjelper på balansen for barn som synes kølla er "tip-tung"). Tilgjengelig i de fleste hockeybutikker.
-        </p>
-        <p>
-          <strong>2. Komposit-/skumforlengere</strong> — lette, merket av Bauer/CCM/Warrior, ~80-150 NOK. Matcher kølla estetisk.
-        </p>
-        <p>
-          <strong>3. 🖨️ 3D-printede forlengere</strong> — gratis hvis du har tilgang til en printer (skole, bibliotek, makerspace, venn). Mange gratis design tilgjengelig:
-        </p>
-        <p>
-          → Søk på <strong>"hockey stick extension"</strong> på <a href="https://www.thingiverse.com" target="_blank" rel="noopener" style="color:var(--accent);">Thingiverse</a> eller <a href="https://www.printables.com" target="_blank" rel="noopener" style="color:var(--accent);">Printables.com</a> — flere gratis design for standard senior/junior skaftdimensjoner. De fleste printer i PLA eller PETG på 3-6 timer.
-        </p>
-        <p>
-          <strong>Installasjon:</strong> fjern eksisterende endeplugg (ofte en liten plastplugg — vipp den ut), test-pass forlengeren, fest med smeltelim eller 2-komponent epoxy. Tape toppen på nytt. Hele jobben tar 15-20 minutter.
-        </p>
-        <p>
-          <strong>Effekt på flex:</strong> en lengre kølle med samme blad er litt mykere — du har mer leverage. Å legge til 5 cm forlengelse mykner effektiv flex med omtrent 3-5 poeng. Som regel en god ting for voksende barn som ikke har fylt ut kølla helt enda.
-        </p>
-        <p>
-          <strong>Når IKKE forlenge:</strong> hvis kølla allerede er sprukket eller skadet, bytt den. Hvis barnet tydelig har vokst fra flexen (f.eks. gikk fra 30 kg til 45 kg over sesongen), trenger de uansett en stivere kølle, ikke bare en lengre.
+          <strong>And the opposite — extensions <em>lower</em> the flex slightly</strong> by giving you more leverage. Add 4-6 inch (~10-15 cm) and your 40 flex becomes effectively closer to 35. See the "Stick extensions" section below.
         </p>
       </div>
 
       <div class="learn-card">
-        <span class="lc-tag">✂️ Kapping av køller</span>
-        <h3>Kapping av komposittkøller: to ting ingen forteller deg.</h3>
+        <span class="lc-tag">🔧 Stick extensions</span>
+        <h3>Don't buy a new stick. Extend the old one.</h3>
         <p>
-          <span class="badge confirmed">Bekreftet</span> Køller kommer sjelden i akkurat riktig lengde, så kapping er normalt. Men to ting betyr noe som de fleste foreldre aldri hører om — én påvirker kølla, én påvirker <strong>deg</strong>.
+          <span class="badge confirmed">Confirmed</span> Kids grow 4-7 cm per year. A stick that fits perfectly today is too short in 6-12 months. Most parents buy a new stick when this happens. <strong>You don't have to.</strong>
         </p>
         <p>
-          <strong>1. Kapping gjør kølla stivere.</strong> Materialet endres ikke, men et kortere skaft gir mindre vektstang — så det krever mer kraft å bøye den. Tommelfingerregel: <strong>omtrent +3–5 flex per tomme (2,5 cm) du kapper.</strong> Og effekten er <em>større på juniorkøller</em>, fordi hver centimeter er en større andel av et kort skaft. Kapp 5 cm av en junior 40-flex og barnet ditt spiller i praksis med ~48 — noe som stille bryter "flex ≈ vekt × 1,1"-regelen hele denne siden er bygget på. Vet du at du skal kappe mye, kjøp ett flex-trinn mykere. (Forlengere virker motsatt: mer lengde gjør kølla mykere — se kortet over.)
+          Stick extensions (also called "end plugs" or "butt extensions") add 4-6 inches (~10-15 cm) to the top of the shaft. They're glued or epoxied in place. Two main types:
         </p>
         <p>
-          <span class="badge warning">Helse</span> <strong>2. Karbonfiberstøv er en reell fare for lungene.</strong> Komposittkøller er karbonfiber i epoksyharpiks. Saging frigjør et fint, respirabelt støv som er dokumentert helseskadelig å puste inn (dette er standard HMS-territorium — OSHA dekker maskinering av kompositter). Det er også ubehagelig for hud og øyne: fibrene er i praksis mikroskopiske fliser. Dette er ikke "sagflis fra sløyden". Ta det på alvor.
+          <strong>1. Wood extensions</strong> — cheapest, ~50-100 NOK. Add some weight at the top (which actually helps with stick balance for kids who feel their stick is "tip-heavy"). Available at most hockey shops.
         </p>
         <p>
-          <strong>Hvis du kapper hjemme:</strong> gjør det utendørs eller i et godt ventilert rom, bruk støvmaske (P2/FFP2 eller bedre) og briller, langermet hvis du er ømfintlig. Surr et lag tape rundt kappelinjen først — det reduserer flising og gir en ren kant. Bruk en <strong>fintannet baufil</strong> (høyt tanntall), ikke en grov tresag — grove blad fliser opp og delaminerer karbonlagene. Sag med lette, jevne tak. Etterpå: tørk opp støvet med en fuktig klut (ikke blås det rundt), puss kanten lett glatt, og tape toppen på nytt.
+          <strong>2. Composite/foam extensions</strong> — light, branded by Bauer/CCM/Warrior, ~80-150 NOK. Match the stick aesthetically.
         </p>
         <p>
-          <strong>Det enkle svaret:</strong> la butikken gjøre det. Nesten alle hockeybutikker kapper køller gratis eller nesten gratis ved kjøp — de har riktig sag og bruker 30 sekunder. Merk lengden hjemme først (barnet på skøyter, kølla vertikalt, merk ved leppene — se størrelseskortet), så du ikke gjetter i butikken.
+          <strong>3. 🖨️ 3D-printed extensions</strong> — free if you have access to a printer (school, library, makerspace, friend). Plenty of free designs:
         </p>
         <p>
-          <strong>Kappet for mye?</strong> Ingen panikk — det er akkurat det forlengere er til (forrige kort).
+          → Search <strong>"hockey stick extension"</strong> on <a href="https://www.thingiverse.com" target="_blank" rel="noopener" style="color:var(--accent);">Thingiverse</a> or <a href="https://www.printables.com" target="_blank" rel="noopener" style="color:var(--accent);">Printables.com</a> — multiple free designs for standard senior/junior shaft dimensions. Most print in PLA or PETG in 3-6 hours.
+        </p>
+        <p>
+          <strong>Installation:</strong> remove the existing butt end (often a small plastic plug — pry it out), test-fit the extension, then secure with hot glue or 2-component epoxy. Re-tape the top. Whole job takes 15-20 minutes.
+        </p>
+        <p>
+          <strong>Effect on flex:</strong> a longer stick with the same blade is slightly whippier — you have more leverage. Adding 5 cm of extension softens the effective flex by roughly 3-5 points. Usually a good thing for growing kids who haven't fully filled out the stick yet.
+        </p>
+        <p>
+          <strong>When NOT to extend:</strong> if the stick is already cracked or damaged, replace it. If the kid has clearly outgrown the flex (e.g., went from 30 kg to 45 kg over the season), they need a stiffer stick anyway, not just a longer one.
+        </p>
+      </div>
+
+      <div class="learn-card">
+        <span class="lc-tag">✂️ Cutting sticks</span>
+        <h3>Cutting a composite stick: two things nobody tells you.</h3>
+        <p>
+          <span class="badge confirmed">Confirmed</span> Sticks rarely come in exactly the right length, so cutting is normal. But two things matter that most parents never hear about — one affects the stick, one affects <strong>you</strong>.
+        </p>
+        <p>
+          <strong>1. Cutting makes the stick stiffer.</strong> The material doesn't change, but a shorter shaft gives less leverage — so it takes more force to bend it. Rule of thumb: <strong>roughly +3–5 flex per inch (2.5 cm) you cut off.</strong> And the effect is <em>bigger on junior sticks</em>, because each centimeter is a larger share of a short shaft. Cut 5 cm off a junior 40-flex and your kid is effectively playing a ~48 — which quietly breaks the "flex ≈ weight × 1.1" rule this whole site is built on. If you know you'll cut a lot, buy one flex step softer. (Extensions work the other way: adding length makes the stick softer — see the card above.)
+        </p>
+        <p>
+          <span class="badge warning">Health</span> <strong>2. Carbon fiber dust is a real lung hazard.</strong> Composite sticks are carbon fiber in epoxy resin. Sawing releases a fine, respirable dust that's documented as harmful to breathe (this is standard occupational-safety territory — OSHA covers composite machining). It's also nasty for skin and eyes: the fibers are essentially microscopic splinters. This is not "wood shop dust". Treat it seriously.
+        </p>
+        <p>
+          <strong>If you cut at home:</strong> do it outdoors or in a well-ventilated space, wear a dust mask (P2/FFP2 or better) and glasses, long sleeves if you're sensitive. Wrap a layer of tape around the cut line first — it reduces splintering and gives a clean edge. Use a <strong>fine-tooth hacksaw</strong> (high tooth count), not a coarse wood saw — coarse blades chip and delaminate the carbon layers. Cut with light, even strokes. Afterwards, wipe dust up with a damp cloth (don't blow it around), lightly sand the edge smooth, and re-tape the top.
+        </p>
+        <p>
+          <strong>The easy answer:</strong> let the shop do it. Almost every hockey shop cuts sticks for free or nearly free when you buy — they have proper saws and it takes them 30 seconds. Mark the length at home first (kid in skates, stick vertical, mark at lips — see the sizing card), so you're not guessing in the store.
+        </p>
+        <p>
+          <strong>Cut too much?</strong> Don't panic — that's exactly what extensions are for (previous card). 
         </p>
       </div>
 
       <div class="learn-card">
         <span class="lc-tag">💪 Flex</span>
-        <h3>Velge riktig flex</h3>
+        <h3>Choosing the right flex</h3>
         <p>
-          <span class="badge standard">Industristandard</span> Startformelen: <strong>vekt i kg × 1,1, deretter rund NED</strong> til nærmeste tilgjengelige flex.
+          <span class="badge standard">Industry standard</span> The starting formula: <strong>weight in kg × 1.1, then round DOWN</strong> to the nearest available flex.
         </p>
         <p>
-          For amerikansk marked leses samme formel: vekt i lbs ÷ 2. Vi bruker kg fordi det er europeisk standard.
+          For US markets the same formula reads: weight in lbs ÷ 2. We use kg because it's the European standard.
         </p>
         <table class="ref-table">
           <thead>
-            <tr><th>Vekt (kg)</th><th>Vekt × 1,1</th><th>Foreslått flex</th></tr>
+            <tr><th>Weight (kg)</th><th>Weight × 1.1</th><th>Suggested flex</th></tr>
           </thead>
           <tbody>
-            <tr><td>opp til 27 kg</td><td>20-29</td><td>20 (junior)</td></tr>
+            <tr><td>up to 27 kg</td><td>20-29</td><td>20 (junior)</td></tr>
             <tr><td>28-36 kg</td><td>30-39</td><td>30 (junior)</td></tr>
             <tr><td>37-45 kg</td><td>40-49</td><td>40 (junior)</td></tr>
             <tr><td>46-49 kg</td><td>50-54</td><td>50 (junior)</td></tr>
@@ -2558,29 +2564,29 @@
           </tbody>
         </table>
         <p style="font-size: 13px; color: var(--ink-faint); margin-top: 8px;">
-          Merk: denne tabellen anvender strengt vekt × 1,1 → rund NED-formelen. Stick Labs anbefaling tar også hensyn til erfaringsnivå (nybegynner: −5 flex) og skuddstil (sniper: −3 flex), som kan flytte forslaget en klasse mykere.
+          Note: this table strictly applies the weight × 1.1 → round DOWN formula. Stick Lab's recommendation also accounts for experience level (beginner: −5 flex) and shooting style (sniper: −3 flex), which can shift the suggestion one tier softer.
         </p>
         <p>
-          <strong>Hvorfor runde ned?</strong> De fleste spillere bruker for stive køller. Twig Hockey anbefaler eksplisitt "uten å gå over". Forumkonsensus på HFBoards: en mykere flex hjelper barn faktisk å laste kølla og lære riktig skuddteknikk.
+          <strong>Why round down?</strong> Most players use sticks that are too stiff. Twig Hockey explicitly recommends "without going over." Forum consensus across HFBoards: a softer flex helps kids actually load the stick and learn proper shooting technique.
         </p>
         <div class="blockquote">
-          "Hvis du ikke kan bøye kølla når du lener deg på den, kan du ikke skyte med den."
-          <div class="blockquote-source">Coach Lance Pitlick, tidligere NHL-back</div>
+          "If you can't bend the stick when you lean on it, you can't shoot with it."
+          <div class="blockquote-source">Coach Lance Pitlick, former NHL defender</div>
         </div>
       </div>
 
       <div class="learn-card">
-        <span class="lc-tag">🎯 Kickpoint</span>
-        <h3>Hva er et kickpoint?</h3>
+        <span class="lc-tag">🎯 Kick point</span>
+        <h3>What is a kick point?</h3>
         <p>
-          Når du skyter, <strong>bøyer kølla seg og snapper tilbake</strong> — det er det som gir skuddet kraft. "Kickpoint" er <strong>hvor på skaftet bøyen skjer</strong>. Det er ikke et reelt punkt på kølla — det er en egenskap ved hvordan kølla er konstruert til å flexe.
+          When you take a shot, the stick <strong>bends and snaps back</strong> — that's what gives your shot its power. The "kick point" is <strong>where on the shaft the bend happens</strong>. It's not a real point on the stick — it's a feature of how the stick is engineered to flex.
         </p>
 
         <!-- Kick point diagram -->
-        <svg viewBox="0 0 660 416" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; margin: 20px 0; display: block; font-family: Inter, sans-serif;" aria-label="Kickpoint-diagram: lav, midt og hybrid bøyesone markert på identisk belastede køller">
+        <svg viewBox="0 0 660 416" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; margin: 20px 0; display: block; font-family: Inter, sans-serif;" aria-label="Kick point diagram: low, mid and hybrid bend zones marked on identically loaded sticks">
   <defs><marker id="kpArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#ff5b1f"/></marker></defs>
   <g transform="translate(15,0)">
-    <text x="95" y="20" text-anchor="middle" fill="#e8e6e1" font-size="15" font-weight="700">LAV KICK</text>
+    <text x="95" y="20" text-anchor="middle" fill="#e8e6e1" font-size="15" font-weight="700">LOW KICK</text>
     <text x="95" y="36" text-anchor="middle" fill="#a8a59f" font-size="9.5">Bauer Vapor · CCM Ribcor · Sherwood Rekker</text>
     <line x1="113" y1="55" x2="97" y2="278" stroke="#a8a59f" stroke-width="3" stroke-dasharray="5 6" opacity="0.35"/>
     <path d="M113,55 C92,130 87,205 91,278" fill="none" stroke="#e8e6e1" stroke-width="5" stroke-linecap="round"/>
@@ -2588,16 +2594,16 @@
     <ellipse cx="88" cy="246" rx="15" ry="27" fill="#ff5b1f" opacity="0.25"/><circle cx="88" cy="246" r="4.5" fill="#ff5b1f"/>
     <circle cx="16" cy="286" r="6" fill="#e8e6e1"/>
     <line x1="24" y1="280" x2="66" y2="252" stroke="#ff5b1f" stroke-width="3" marker-end="url(#kpArrow)"/>
-    <text x="95" y="322" text-anchor="middle" fill="#ff5b1f" font-size="11.5" font-weight="700">Raskt, kvikt avtrekk</text>
-    <text x="0" y="349" fill="#a8a59f" font-size="9.5">AVTREKK</text>
+    <text x="95" y="322" text-anchor="middle" fill="#ff5b1f" font-size="11.5" font-weight="700">Quick, snappy release</text>
+    <text x="0" y="349" fill="#a8a59f" font-size="9.5">RELEASE</text>
     <rect x="70" y="341" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
     <rect x="70" y="341" width="104" height="7" rx="3.5" fill="#ff5b1f"/>
-    <text x="0" y="371" fill="#a8a59f" font-size="9.5">KRAFT</text>
+    <text x="0" y="371" fill="#a8a59f" font-size="9.5">POWER</text>
     <rect x="70" y="363" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
     <rect x="70" y="363" width="46" height="7" rx="3.5" fill="#ff5b1f"/>
   </g>
   <g transform="translate(235,0)">
-    <text x="95" y="20" text-anchor="middle" fill="#e8e6e1" font-size="15" font-weight="700">MIDT KICK</text>
+    <text x="95" y="20" text-anchor="middle" fill="#e8e6e1" font-size="15" font-weight="700">MID KICK</text>
     <text x="95" y="36" text-anchor="middle" fill="#a8a59f" font-size="9.5">Bauer Supreme Fuse · True Catalyst</text>
     <line x1="113" y1="55" x2="97" y2="278" stroke="#a8a59f" stroke-width="3" stroke-dasharray="5 6" opacity="0.35"/>
     <path d="M113,55 C92,130 87,205 91,278" fill="none" stroke="#e8e6e1" stroke-width="5" stroke-linecap="round"/>
@@ -2605,11 +2611,11 @@
     <ellipse cx="88" cy="166" rx="15" ry="27" fill="#ff5b1f" opacity="0.25"/><circle cx="88" cy="166" r="4.5" fill="#ff5b1f"/>
     <circle cx="16" cy="286" r="6" fill="#e8e6e1"/>
     <line x1="24" y1="280" x2="66" y2="252" stroke="#ff5b1f" stroke-width="3" marker-end="url(#kpArrow)"/>
-    <text x="95" y="322" text-anchor="middle" fill="#ff5b1f" font-size="11.5" font-weight="700">Maks skuddkraft</text>
-    <text x="0" y="349" fill="#a8a59f" font-size="9.5">AVTREKK</text>
+    <text x="95" y="322" text-anchor="middle" fill="#ff5b1f" font-size="11.5" font-weight="700">Max shot power</text>
+    <text x="0" y="349" fill="#a8a59f" font-size="9.5">RELEASE</text>
     <rect x="70" y="341" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
     <rect x="70" y="341" width="46" height="7" rx="3.5" fill="#ff5b1f"/>
-    <text x="0" y="371" fill="#a8a59f" font-size="9.5">KRAFT</text>
+    <text x="0" y="371" fill="#a8a59f" font-size="9.5">POWER</text>
     <rect x="70" y="363" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
     <rect x="70" y="363" width="104" height="7" rx="3.5" fill="#ff5b1f"/>
   </g>
@@ -2622,269 +2628,269 @@
     <ellipse cx="88" cy="246" rx="10" ry="19" fill="#ff5b1f" opacity="0.25"/><circle cx="88" cy="246" r="3.1" fill="#ff5b1f"/><ellipse cx="88" cy="166" rx="10" ry="19" fill="#ff5b1f" opacity="0.25"/><circle cx="88" cy="166" r="3.1" fill="#ff5b1f"/>
     <circle cx="16" cy="286" r="6" fill="#e8e6e1"/>
     <line x1="24" y1="280" x2="66" y2="252" stroke="#ff5b1f" stroke-width="3" marker-end="url(#kpArrow)"/>
-    <text x="95" y="322" text-anchor="middle" fill="#ff5b1f" font-size="11.5" font-weight="700">Det beste fra begge</text>
-    <text x="0" y="349" fill="#a8a59f" font-size="9.5">AVTREKK</text>
+    <text x="95" y="322" text-anchor="middle" fill="#ff5b1f" font-size="11.5" font-weight="700">Best of both zones</text>
+    <text x="0" y="349" fill="#a8a59f" font-size="9.5">RELEASE</text>
     <rect x="70" y="341" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
     <rect x="70" y="341" width="80" height="7" rx="3.5" fill="#ff5b1f"/>
-    <text x="0" y="371" fill="#a8a59f" font-size="9.5">KRAFT</text>
+    <text x="0" y="371" fill="#a8a59f" font-size="9.5">POWER</text>
     <rect x="70" y="363" width="110" height="7" rx="3.5" fill="#a8a59f" opacity="0.22"/>
     <rect x="70" y="363" width="80" height="7" rx="3.5" fill="#ff5b1f"/>
   </g>
-  <text x="330" y="392" text-anchor="middle" fill="#a8a59f" font-size="9.5">stiplet = ubelastet kølle · heltrukket = belastet under skudd · oransje glød = der den bøyer seg</text>
-  <text x="330" y="408" text-anchor="middle" fill="#a8a59f" font-size="9.5" font-style="italic">Kun en veiledende skisse — bøyen er overdrevet og viser bare sonene, ikke reell bøyeform.</text>
+  <text x="330" y="392" text-anchor="middle" fill="#a8a59f" font-size="9.5">dashed = unloaded stick · solid = loaded during a shot · orange glow = where it bends</text>
+  <text x="330" y="408" text-anchor="middle" fill="#a8a59f" font-size="9.5" font-style="italic">Illustrative sketch only — the bend is exaggerated and only marks the zones, not the real bend shape.</text>
 </svg>
 
         <p>
-          <strong>Hvorfor det betyr noe:</strong> en lav-kick kølle laster (bøyer seg) nærmere bladet, snapper tilbake raskere — flott for raske håndleddsskudd på trange områder. En midt-kick kølle laster i midten, tar lenger tid å bøye, men lagrer mer energi — bedre for slap shots fra blålinjen. Hybrid splitter forskjellen.
+          <strong>Why it matters:</strong> a low-kick stick loads (bends) closer to the blade, snapping back faster — great for quick wrist shots in tight spaces. A mid-kick stick loads in the middle, takes longer to bend but stores more energy — better for slap shots from the point. Hybrid splits the difference.
         </p>
 
         <p>
-          <span class="badge unverified">Manifestnotat</span> For en utviklende junior er <strong>denne forskjellen reell, men mindre enn markedsføringen antyder</strong>. Et barn kan score med hvilket som helst kickpoint — kickpointet former <em>hvordan</em> de skyter, ikke om de kan. Å kjenne forskjellene hjelper deg å gjøre bevisste endringer senere (f.eks. "la oss prøve et lavt kick neste år og sammenligne"). Mange NHL-snipere bruker midt-kick køller (Auston Matthews, Steven Stamkos) — det finnes ingen regel.
+          <span class="badge unverified">Manifesto note</span> For a developing junior, <strong>this difference is real but smaller than marketing suggests</strong>. A kid can score with any kick point — the kick point shapes <em>how</em> they shoot, not whether they can. Knowing the differences helps you make conscious changes later (e.g. "let's try a low kick next year and compare"). Many NHL snipers use mid-kick sticks (Auston Matthews, Steven Stamkos) — there's no rule.
         </p>
       </div>
 
       <div class="learn-card">
-        <span class="lc-tag">🌀 Krumninger</span>
-        <h3>Hva er en bladkrumning?</h3>
+        <span class="lc-tag">🌀 Curves</span>
+        <h3>What is a blade curve?</h3>
         <p>
-          En bladkrumning er <strong>formen på bøyen</strong> som er bygget inn i bladet. Et flatt blad kan skyte, men et kurvet gir bedre puckkontroll, mer løft på skuddene, og — kritisk — forskjellig følelse for forskjellige spillestiler. Krumningen defineres av <strong>hvor</strong> bøyen er langs bladet og <strong>hvor dyp</strong> den er.
+          A blade curve is the <strong>shape of the bend</strong> built into the blade. A flat blade can shoot, but a curved one gives you better puck control, more lift on shots, and — critically — different feel for different play styles. The curve is defined by <strong>where</strong> the bend is along the blade and <strong>how deep</strong> it is.
         </p>
 
         <p style="font-size: 14px; margin-top: 20px; padding: 14px 16px; background: rgba(95, 180, 255, 0.06); border-left: 2px solid var(--info);">
-          <strong>👀 Se de faktiske bladene.</strong> De mest autoritative sammenligningstabellene på tvers av merker (med ekte bladfoto og NHL-spillerreferanser) finnes hos:
-          <a href="https://www.icewarehouse.com/lc/curvecharts/bauer-stick-blade-curve-chart.html" target="_blank" rel="noopener" style="color: var(--accent);">Ice Warehouse — Bauer-tabell</a>,
-          <a href="https://www.icewarehouse.com/lc/curvecharts/ccm-stick-blade-curve-chart.html" target="_blank" rel="noopener" style="color: var(--accent);">CCM-tabell</a>,
-          <a href="https://www.icewarehouse.com/lc/curvecharts/warrior-stick-blade-curve-chart.html" target="_blank" rel="noopener" style="color: var(--accent);">Warrior-tabell</a>, og
-          <a href="https://www.bauer.com/blogs/learn/complete-hockey-stick-curve-guide" target="_blank" rel="noopener" style="color: var(--accent);">Bauers offisielle krumningsguide</a>.
+          <strong>👀 See the actual blades.</strong> The most authoritative cross-brand comparison charts (with real blade photos and NHL player references) are at:
+          <a href="https://www.icewarehouse.com/lc/curvecharts/bauer-stick-blade-curve-chart.html" target="_blank" rel="noopener" style="color: var(--accent);">Ice Warehouse — Bauer chart</a>,
+          <a href="https://www.icewarehouse.com/lc/curvecharts/ccm-stick-blade-curve-chart.html" target="_blank" rel="noopener" style="color: var(--accent);">CCM chart</a>,
+          <a href="https://www.icewarehouse.com/lc/curvecharts/warrior-stick-blade-curve-chart.html" target="_blank" rel="noopener" style="color: var(--accent);">Warrior chart</a>, and
+          <a href="https://www.bauer.com/blogs/learn/complete-hockey-stick-curve-guide" target="_blank" rel="noopener" style="color: var(--accent);">Bauer's official curve guide</a>.
         </p>
 
         <p>
-          <strong>Tilsvarende på tvers av merker</strong> — hvert merke har sin egen navngivning, men de fleste krumningene er funksjonelt identiske:
+          <strong>Cross-brand equivalents</strong> — every brand has its own naming, but most curves are functionally identical:
         </p>
         <table class="ref-table">
           <thead>
-            <tr><th>Familie</th><th>CCM</th><th>Bauer</th><th>Warrior</th><th>True</th><th>Sherwood</th></tr>
+            <tr><th>Family</th><th>CCM</th><th>Bauer</th><th>Warrior</th><th>True</th><th>Sherwood</th></tr>
           </thead>
           <tbody>
-            <tr><td>Toe (aggressiv)</td><td>P28</td><td>P28</td><td>W28 / W03</td><td>T28</td><td>PP28</td></tr>
-            <tr><td>Midt (allsidig)</td><td>P29</td><td>P92</td><td>—</td><td>T92</td><td>PP92</td></tr>
+            <tr><td>Toe (aggressive)</td><td>P28</td><td>P28</td><td>W28 / W03</td><td>T28</td><td>PP28</td></tr>
+            <tr><td>Mid (versatile)</td><td>P29</td><td>P92</td><td>—</td><td>T92</td><td>PP92</td></tr>
             <tr><td>Heel (slap shot)</td><td>P90TM</td><td>P88</td><td>W88</td><td>—</td><td>PP88</td></tr>
           </tbody>
         </table>
 
-        <h4 style="margin-top: 24px; color: var(--accent); font-family: 'Fraunces', serif; font-weight: 600;">📜 Litt historie</h4>
+        <h4 style="margin-top: 24px; color: var(--accent); font-family: 'Fraunces', serif; font-weight: 600;">📜 A bit of history</h4>
         <p>
-          De første 130 årene av hockey var bladene <strong>flate</strong>. Krumningen oppsto ved en tilfeldighet på slutten av 1950-tallet. Striden om hvem som virkelig oppfant den er uavklart — <strong>Andy Bathgate</strong> (NY Rangers) hevdet han hadde bøyd blader siden ungdommen i 1940-tallets Winnipeg, mens <strong>Stan Mikita</strong> (Chicago Blackhawks) krediterer sin egen tilfeldige oppdagelse: et knust blad på trening som fikk pucken til å danse uforutsigbart. Mikita og lagkamerat <strong>Bobby Hull</strong> begynte å bøye blader med vilje — ved å presse dem inn i benkdører og helle varmt vann over.
+          For the first 130 years of hockey, blades were <strong>flat</strong>. The curve appeared by accident in the late 1950s. The dispute over who really invented it is unsettled — <strong>Andy Bathgate</strong> (NY Rangers) claimed he'd been bending blades since his youth in 1940s Winnipeg, while <strong>Stan Mikita</strong> (Chicago Blackhawks) credits his own accidental discovery: a broken blade in practice that made the puck dance unpredictably. Mikita and his teammate <strong>Bobby Hull</strong> began bending blades on purpose — jamming them in bench doors and pouring hot water on them.
         </p>
         <p>
-          På midten av 1960-tallet hadde Hulls "<strong>bananblad</strong>" krumninger opp til 3 tommer dype. Målvakter (de fleste fortsatt uten masker) hatet det — pucker beveget seg som knuckleballs og målvaktskader økte. NHL svarte med regler: i <strong>1967</strong> begynte ligaen å begrense krumninger, og landet på 1/2 tomme i 1970.
+          By the mid-1960s Hull's "<strong>banana blade</strong>" had curves up to 3 inches deep. Goalies (most still without masks) hated it — pucks moved like knuckleballs and goalie injuries surged. The NHL responded with rules: in <strong>1967</strong> the league began limiting curves, settling at 1/2 inch in 1970.
         </p>
         <p>
-          <strong>I dag er grensen 19 mm (3/4 tomme)</strong> både i NHL (siden 2005-06) og IIHF-reglene. IIHF-regelen gjelder internasjonalt, inkludert norsk, polsk og svensk hockey på konkurransenivå. Praktisk talt: <strong>hver butikk-juniorkølle ligger godt innenfor lovlige grenser</strong> — du trenger bare å tenke på dette hvis noen modifiserer blader ved varmebøying (sjeldent i dag siden komposittblader erstattet tre).
+          <strong>Today the limit is 19 mm (3/4 inch)</strong> in both NHL (since 2005-06) and IIHF rules. The IIHF rule applies internationally, including Norwegian, Polish, and Swedish hockey at competitive levels. Practically: <strong>every retail junior stick is well within legal limits</strong> — you only need to think about this if someone modifies blades by heat-bending (rare these days since composite blades replaced wood).
         </p>
 
         <p style="margin-top: 24px;">
-          <span class="badge federation">Polsk hockey-tradisjon</span> For unge eller nybegynnere, <strong>"krzywizna jak najmniejsza"</strong> — krumning så minimal som mulig. Aggressive toe-krumninger (P28) er designet for erfarne spillere som vet hva de vil. Nybegynnere har nytte av balanserte midt-krumninger for å lære grunnprinsippene som backhand og pasninger.
+          <span class="badge federation">Polish hockey tradition</span> For young or beginner kids, <strong>"krzywizna jak najmniejsza"</strong> — the most minimal curve possible. Aggressive toe curves (P28) are designed for skilled players who know what they want. Beginners benefit from balanced mid curves to learn fundamentals like backhand and passing.
         </p>
 
-        <h4 style="margin-top: 24px; color: var(--ink-faint); font-family: 'Fraunces', serif; font-weight: 600; font-size: 15px;">En liten merknad om CCM "+1/4"-varianter</h4>
+        <h4 style="margin-top: 24px; color: var(--ink-faint); font-family: 'Fraunces', serif; font-weight: 600; font-size: 15px;">A small note on CCM "+1/4" variants</h4>
         <p style="font-size: 13px; color: var(--ink-faint);">
-          På hockeystore.no's CCM-filter ser du alternativer som <strong>P28+1/4</strong>, <strong>P29+1/4</strong>. Dette er ikke andre krumninger — det er samme form med <strong>høyere blad</strong> (mer vertikal flate, samme krumningsdybde). Ideen er mer flate for å slå pucker ut av lufta, blokkere skudd og kontrollere sprettende pucker. Uavhengige målinger (ABSHockey) tyder på at den faktiske høydeforskjellen er liten — nærmere markedsføringsnyans enn dramatisk endring. <strong>Hopp over disse for juniorer</strong> — hold deg til base P28 / P29 til barnet ditt har spilt 1-2 sesonger og spør eksplisitt. Bauer/Warrior/True tilbyr typisk ikke +1/4-varianter i juniormodeller.
+          On hockeystore.no's CCM filter you'll see options like <strong>P28+1/4</strong>, <strong>P29+1/4</strong>. These aren't different curves — they're the same shape with the <strong>blade made taller</strong> (more vertical surface, same curve depth). The idea is more area for batting pucks out of the air, blocking shots, and corralling bouncing pucks. Independent measurements (ABSHockey) suggest the actual height difference is small — closer to marketing nuance than dramatic change. <strong>Skip these for juniors</strong> — stick with base P28 / P29 until your kid has played 1-2 seasons and asks specifically. Bauer/Warrior/True don't typically offer +1/4 variants in junior models.
         </p>
       </div>
 
       <div class="learn-card">
-        <span class="lc-tag">🤲 Hånd-valg</span>
-        <h3>Venstre- eller høyreskudd?</h3>
+        <span class="lc-tag">🤲 Hand selection</span>
+        <h3>Left or right shot?</h3>
         <p>
-          <span class="badge unverified">Ingen universelt "riktig" svar</span>
+          <span class="badge unverified">No universal "correct" answer</span>
         </p>
         <p>
-          I et hockeygrep definerer den nederste hånden skuddsiden. Venstre hånd nederst = venstrehendt skudd.
+          In a hockey grip, the bottom hand defines the shot side. Left hand at bottom = left-handed shot.
         </p>
         <p>
-          <strong>Konvensjonell visdom (varierer etter region):</strong>
+          <strong>Conventional wisdom (varies by region):</strong>
         </p>
         <p>
-          🇺🇸🇨🇦 <strong>Nord-Amerika:</strong> dominant hånd på toppen (for puckhåndteringskontroll). Høyrehendte barn → venstrehendt skudd.<br>
-          🇪🇺 <strong>Deler av Europa:</strong> dominant hånd nederst (for skuddkraft). Høyrehendt → høyrehendt skudd.
+          🇺🇸🇨🇦 <strong>North America:</strong> dominant hand on top (for stickhandling control). Right-hand dominant kids → left-handed shot.<br>
+          🇪🇺 <strong>Parts of Europe:</strong> dominant hand on bottom (for shot power). Right-hand dominant → right-handed shot.
         </p>
         <p>
-          <strong>NHL-data:</strong> ~70% av NHL-spillere skyter venstre, selv om bare ~10% av befolkningen er venstrehendt. Forholdet mellom hendthet og skuddside er ikke 1:1.
+          <strong>NHL data:</strong> ~70% of NHL players shoot left, even though only ~10% of the general population is left-handed. The relationship between handedness and shooting side is not 1:1.
         </p>
         <p>
-          <strong>Beste praktiske metode:</strong> finn en gammel trekølle med rett blad (klubbens utlånshaug, bruktmarked, familieloft). La barnet ditt holde den begge veier. Følg med på hva som føles naturlig for puckhåndtering og pasningsmottak. <strong>Når de har spilt på én side i ~6 måneder, ikke bytt.</strong>
+          <strong>Best practical method:</strong> find an old straight-blade wood stick (loaner pile, used market, family attic). Let your kid grip it both ways. Watch what feels natural for stickhandling and receiving passes. <strong>Once they've played for ~6 months on one side, don't switch.</strong>
         </p>
       </div>
 
       <div class="learn-card">
-        <span class="lc-tag">🏛️ Forbund</span>
-        <h3>Hva offisielle hockeyforbund faktisk sier</h3>
-        <p><span class="badge federation">Forbundstilpasning</span></p>
+        <span class="lc-tag">🏛️ Federations</span>
+        <h3>What official hockey federations actually say</h3>
+        <p><span class="badge federation">Federation alignment</span></p>
         <div class="blockquote">
-          "Det finnes ikke noe slikt som en elite-12-åring. Vi presser for tidlig fortreffelighet på bekostning av utvikling."
+          "There is no such thing as an elite 12-year-old. We push for early excellence at the expense of development."
           <div class="blockquote-source">USA Hockey ADM</div>
         </div>
         <div class="blockquote">
-          "Ingen posisjonsspesialisering før U13."
+          "No position specialization until U13."
           <div class="blockquote-source">Hockey Canada — Shooting and Scoring Pathway</div>
         </div>
         <div class="blockquote">
-          "Målet deres er ikke å bli hockeyspiller, men å ha det gøy. Lettere køller for mindre spillere."
-          <div class="blockquote-source">IIHF Learn to Play Manual (367 sider)</div>
+          "Their goal is not to develop into a hockey player, but to have fun. Lighter sticks for smaller players."
+          <div class="blockquote-source">IIHF Learn to Play Manual (367 pages)</div>
         </div>
         <div class="blockquote">
-          "House teams kan dannes, men tabeller og resultater holdes ikke [under U8]. Å pålegge voksenkonkurransefilosofi til små barn har vist å redusere moro, skade ferdighetsutvikling og redusere fastholdelse."
+          "House teams may be formed but standings and scores are not kept [under U8]. Imposing adult-level competitive philosophies on young children has been shown to reduce fun, hurt skill development, and reduce retention."
           <div class="blockquote-source">USA Hockey ADM Best Practices</div>
         </div>
         <p>
-          <strong>Hva forbund ikke sier:</strong>
+          <strong>What federations don't say:</strong>
         </p>
         <p>
-          ❌ Kjøp en toppmodell-kølle<br>
-          ❌ Bruk spesifikt kickpoint<br>
-          ❌ Merke X er bedre enn merke Y<br>
-          ❌ Juniormodeller replikerer seniorytelse
+          ❌ Buy a flagship stick<br>
+          ❌ Use specific kick point<br>
+          ❌ Brand X is better than brand Y<br>
+          ❌ Junior models replicate senior performance
         </p>
         <p>
-          Den offisielle posisjonen på tvers av USA Hockey, Hockey Canada, IIHF, Norge og Sverige: <strong>få det grunnleggende riktig, fokuser på utvikling, ikke utstyr.</strong>
-        </p>
-      </div>
-
-      <div class="learn-card">
-        <span class="lc-tag">⚠️ Juniordata-gap</span>
-        <h3>Et ærlig forbehold om alt du leser på nettet</h3>
-        <p><span class="badge unverified">Begrensede data</span></p>
-        <p>
-          Nesten alle køllevurderinger, vekttester, kickpoint-sammenligninger og holdbarhetsanalyser på nettet tester <strong>seniorkøller testet av voksne anmeldere</strong>.
-        </p>
-        <p>
-          Produsentsider hevder at juniorversjoner bruker "samme teknologi" — Nanolite Shield, Sigmatex carbon, Twitch Taper og så videre. Disse påstandene er <strong>ikke uavhengig verifisert</strong>. Juniorvekttall publiseres sjelden. Kickpoint-følelse for barn er ikke studert.
-        </p>
-        <p>
-          <strong>Hva vi vet med sikkerhet:</strong>
-        </p>
-        <p>
-          ✅ Juniorkøller har mindre skaftomkrets (mindre hender).<br>
-          ✅ Juniorkøller kommer i lavere flex-alternativer (20, 30, 40, 50).<br>
-          ✅ Juniorskaftlengde er kortere.
-        </p>
-        <p>
-          <strong>Hva som bare er markedsføringspåstand:</strong>
-        </p>
-        <p>
-          ⚠️ Juniorversjon av toppmodell = samme ytelse som senior toppmodell.<br>
-          ⚠️ Juniorvekttall matcher markedsføringsbilder.<br>
-          ⚠️ Junior kickpoint føles akkurat som senior kickpoint.
-        </p>
-        <p>
-          <strong>Praktisk implikasjon:</strong> tillegget for en junior-toppmodell er stort sett et markedsføringstillegg. Mellomklasse og forrige generasjons juniormodeller leverer ofte tilsvarende reell verdi til en brøkdel av kostnaden.
+          The official position across USA Hockey, Hockey Canada, IIHF, Norway, and Sweden: <strong>get the basics right, focus on development, not equipment.</strong>
         </p>
       </div>
 
       <div class="learn-card">
-        <span class="lc-tag">🏆 NHL-proffer</span>
-        <h3>Hva proffer faktisk bruker (spoiler: ikke det nyeste)</h3>
+        <span class="lc-tag">⚠️ Junior data gap</span>
+        <h3>An honest caveat about everything you read online</h3>
+        <p><span class="badge unverified">Limited data</span></p>
         <p>
-          <span class="badge confirmed">Bekreftet av GearGeek</span> NHL-utstyrsdatabase som sporer 855 aktive spillere: mange av topp-køllene i ligaen er 5-10 år gamle modeller.
+          Almost every hockey stick review, weight test, kick-point comparison, and durability assessment online tests <strong>senior sticks tested by adult reviewers</strong>.
+        </p>
+        <p>
+          Manufacturer pages claim junior versions use "the same technology" — Nanolite Shield, Sigmatex carbon, Twitch Taper, and so on. These claims are <strong>not independently verified</strong>. Junior weight figures are rarely published. Kick-point feel for kids is unstudied.
+        </p>
+        <p>
+          <strong>What we know for certain:</strong>
+        </p>
+        <p>
+          ✅ Junior sticks have smaller shaft circumference (smaller hands).<br>
+          ✅ Junior sticks come in lower flex options (20, 30, 40, 50).<br>
+          ✅ Junior shaft length is shorter.
+        </p>
+        <p>
+          <strong>What's marketing claim only:</strong>
+        </p>
+        <p>
+          ⚠️ Junior version of flagship = same performance as senior flagship.<br>
+          ⚠️ Junior weight figures match marketing photos.<br>
+          ⚠️ Junior kick point feels exactly like senior kick point.
+        </p>
+        <p>
+          <strong>Practical implication:</strong> the premium for a junior flagship is largely a marketing premium. Mid-tier and previous-generation junior models often deliver similar real-world value at a fraction of the cost.
+        </p>
+      </div>
+
+      <div class="learn-card">
+        <span class="lc-tag">🏆 NHL pros</span>
+        <h3>What pros actually use (spoiler: not the latest)</h3>
+        <p>
+          <span class="badge confirmed">Confirmed by GearGeek</span> NHL equipment database tracking 855 active players: many top sticks in the league are 5-10 year old models.
         </p>
         <div class="blockquote">
-          "Hver gang vi går inn i NHL-garderober, er de fleste køllene vi ser eldre modeller, eller eldre modellkøller 'malt' for å se ut som den nye utgivelsen for markedsføring."
+          "Every time we go into NHL dressing rooms, most of the sticks we see are older models, or older model sticks 'painted' to look like the new release for marketing purposes."
           <div class="blockquote-source">HockeyStickMan, 2022</div>
         </div>
         <p>
-          Sidney Crosby har brukt i hovedsak samme køllemodell i over et tiår — Bauer maler den bare om. Jack Eichel bruker fortsatt Bauer Supreme 1S (en 2015-modell) til tross for flere nyere Supreme-generasjoner.
+          Sidney Crosby has used essentially the same stick model for over a decade — Bauer simply repaints it. Jack Eichel still uses the Bauer Supreme 1S (a 2015 model) despite multiple newer Supreme generations.
         </p>
         <p>
-          <strong>Hva dette betyr for deg:</strong> hvis Crosby spiller en 2015-kølle, klarer barnet ditt seg med fjorårets modell. Presset om å "ha det nyeste" er for det meste markedsføring.
+          <strong>What this means for you:</strong> if Crosby plays a 2015 stick, your kid is fine with last year's model. The "must have the latest tech" pressure is mostly marketing.
         </p>
       </div>
 
       <div class="learn-card">
-        <span class="lc-tag">🎀 Teiping</span>
-        <h3>Teiping av kølla: blad, knott, grep — hva som faktisk betyr noe.</h3>
+        <span class="lc-tag">🎀 Taping</span>
+        <h3>Taping the stick: blade, knob, grip — what actually matters.</h3>
         <div style="position:relative; width:100%; max-width:640px; aspect-ratio:16/9; margin:20px 0 8px;">
           <iframe src="https://www.youtube-nocookie.com/embed/b_5pmwy7fJE" title="How To Tape A Hockey Stick" style="position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:10px;" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <p style="font-size:0.88em; color:var(--ink-faint); max-width:640px;">Hver spiller teiper litt forskjellig — dette er den grunnleggende teipingen vi anbefaler å starte med. Video: <a href="https://www.youtube.com/watch?v=b_5pmwy7fJE" target="_blank" rel="noopener" style="color:var(--ink-faint); text-decoration:underline;">«How To Tape A Hockey Stick»</a> av The Hockey Shop (YouTube) — takk til skaperen.</p>
+        <p style="font-size:0.88em; color:var(--ink-faint); max-width:640px;">Every player tapes a bit differently — this is the basic taping we recommend starting with. Video: <a href="https://www.youtube.com/watch?v=b_5pmwy7fJE" target="_blank" rel="noopener" style="color:var(--ink-faint); text-decoration:underline;">«How To Tape A Hockey Stick»</a> by The Hockey Shop (YouTube) — credit to the creator.</p>
 
         <p>
-          <span class="badge standard">Standard praksis</span> Tape er ikke pynt. På bladet beskytter den kompositten mot hakk og fukt, og gir pucken noe å gripe i. På enden av skaftet er den en <strong>sikkerhetsfunksjon</strong>. Total kostnad: ~40 NOK per rull, én rull varer en ung spiller i månedsvis.
+          <span class="badge standard">Standard practice</span> Tape isn't decoration. On the blade it protects the composite from chips and moisture, and gives the puck something to grip. On the butt end it's a <strong>safety feature</strong>. Total cost: ~40 NOK per roll, one roll lasts a young player months.
         </p>
         <p>
-          <strong>Bladet — slik gjør du det:</strong> tape fra <strong>hæl til tå</strong>, slik at hvert lag overlapper det forrige i isens retning — da ligger tapen flatt i stedet for å hekte seg. Overlapp omtrent halve tapebredden, hold jevn stramming, ingen rynker (rynker under pucken = urolige pasninger). Riv av tapen ved <strong>overkanten</strong> av bladet, aldri underkanten — en hale i bunnen flasser av ved første skjær. Glatt alt ned med hånden eller gni med en gammel puck.
+          <strong>Blade — how:</strong> tape from <strong>heel to toe</strong>, so each wrap overlaps the previous one in the direction of the ice — the tape lies flat instead of catching. Overlap about half the tape width, keep even tension, no wrinkles (wrinkles under the puck = wobbly passes). Tear the tape off at the <strong>top edge</strong> of the blade, never the bottom — a tail on the bottom peels off with the first stride. Smooth everything down with your hand or rub it with an old puck.
         </p>
         <p>
-          <strong>Hvit eller svart?</strong> For barn som lærer spillet: <strong>hvit</strong>. De ser pucken mot bladet, noe som faktisk hjelper utviklingen av puckbehandling. Svart tape "gjemmer" pucken for keepere — en marginal fordel som betyr noe på høyere nivå, ikke som 10-åring. Bonus: hvit tape setter mindre merker i hanskehåndflatene. Dropp mønstret pyntetape på bladet — kvaliteten er et lotteri.
+          <strong>White or black?</strong> For kids learning the game: <strong>white</strong>. They can see the puck against the blade, which genuinely helps stickhandling development. Black tape "hides" the puck from goalies — a marginal advantage that matters at higher levels, not at 10 years old. Bonus: white tape stains glove palms less. Skip the patterned/novelty tapes on the blade — they're cloth quality lottery.
         </p>
         <p>
-          <strong>Voks (køllevoks):</strong> et tynt lag voks over bladtapen avviser vann og snø, så tapen varer lenger og isen ikke bygger seg opp. Nyttig, ikke obligatorisk — budsjettversjonen er å gni det tapede bladet med en gammel puck. Bruk aldri gjennomsiktig leggskinnstape på et blad.
+          <strong>Wax (kølle­voks):</strong> a thin layer of stick wax over the blade tape repels water and snow, so the tape lasts longer and ice doesn't build up. Useful, not mandatory — the budget version is rubbing the taped blade with an old puck. Never use clear shin-pad tape on a blade.
         </p>
         <p>
-          <strong>Knotten (enden) — dette handler om sikkerhet:</strong> en tapet knott hindrer kølla i å skli gjennom hansken, gjør det mulig å plukke den opp fra isen med hansker på, og — det som betyr noe for barn — <strong>en bar skaftende er et butt rør</strong> ved fall eller mot et ansikt. Mange ungdomsligaer regner en udekket skaftende som ulovlig utstyr. Tilpass størrelsen til barnets hånd: noen få omganger holder, en keeperstor ball forstyrrer hansken.
+          <strong>Knob (butt end) — this one is safety:</strong> a taped knob keeps the stick from sliding through the glove, makes it possible to pick up off the ice with gloves on, and — the part that matters for kids — <strong>a bare shaft end is a blunt pipe</strong> in a fall or against a face. Many youth leagues treat an uncovered butt end as illegal equipment. Size it for the kid's hand: a few wraps is enough, a goalie-sized ball interferes with the glove.
         </p>
         <p>
-          <strong>Grep på skaftet:</strong> tape bare de øverste ~1,5 hanskelengdene — den nederste hånden <em>må gli fritt</em>, så aldri tape hele skaftet (det legger også meningsløs vekt på den dyre, lette kølla). En "candy cane"-spiral eller en tynn tapestreng under er greit hvis barnet liker følelsen; dropp avanserte fingerspor-jobber for unge spillere, de låser hånden på ett sted.
+          <strong>Shaft grip:</strong> tape only the top ~1.5 glove-lengths — the lower hand <em>must slide freely</em>, so never tape the whole shaft (it also adds pointless weight to that expensive light stick). A "candy cane" spiral or a thin under-tape ridge is fine if the kid likes the feel; skip elaborate finger-groove jobs for young players, they lock the hand in one spot.
         </p>
         <p>
-          <strong>Når tape på nytt:</strong> når underkanten av bladtapen er frynset gjennom — for en ung spiller er det hvert par økter, ikke hver dag. Fersk tape før kamp er et hyggelig ritual, ikke et krav. Ha en rull i bagen.
+          <strong>When to re-tape:</strong> when the bottom edge of the blade tape frays through — for a young player that's every few sessions, not every day. Fresh tape before a game is a nice ritual, not a requirement. Keep a roll in the bag.
         </p>
       </div>
 
       <!-- SUMMARY CARD -->
       <div class="learn-card" style="border-color: var(--accent); background: linear-gradient(135deg, rgba(255,91,31,0.08) 0%, rgba(28,26,23,0.95) 100%);">
-        <span class="lc-tag" style="background: var(--accent); color: var(--bg-1);">📋 Oppsummering</span>
-        <h3>Hva som faktisk er viktig — en prioritetsguide</h3>
+        <span class="lc-tag" style="background: var(--accent); color: var(--bg-1);">📋 Summary</span>
+        <h3>What's actually important — a priority guide</h3>
         <p>
-          Du har lest mye. Slik tenker du om det hele når du faktisk skal ta en avgjørelse. Tre kategorier, sortert etter hvor mye de påvirker barnets utvikling.
+          You've read a lot. Here's how to think about all of it when you actually make a decision. Three buckets, in order of how much they affect your kid's development.
         </p>
 
-        <h4 style="margin-top: 24px; color: var(--good); font-family: 'Fraunces', serif; font-weight: 600;">🟢 ESSENSIELT — få dette riktig</h4>
+        <h4 style="margin-top: 24px; color: var(--good); font-family: 'Fraunces', serif; font-weight: 600;">🟢 ESSENTIAL — get these right</h4>
         <p>
-          Disse er ikke til forhandling. Bom på noe av dette og barnet kjemper mot utstyret i stedet for å lære spillet.
+          These are non-negotiable. Get any of these wrong and your kid is fighting their equipment instead of learning the game.
         </p>
         <p>
-          ✅ <strong>Lengde</strong> — hake–nese (uten skøyter) / omtrent haken (på skøyter); snipere kortere, forsvarere lengre. For kort = foroverbøyd og ryggsmerter. For lang = ingen puckkontroll.<br>
-          ✅ <strong>Flex</strong> — vekt × 1,1, rund NED. For stiv = kan ikke laste kølla = dårlig skuddteknikk dannes. Bedre å bomme på myk side.<br>
-          ✅ <strong>Hånd</strong> — venstre- eller høyrehendt skudd. Test med en sopelime eller rett trekølle hjemme før kjøp. Feil hånd = bortkastede penger og frustrasjon.
-        </p>
-
-        <h4 style="margin-top: 24px; color: #ffd23f; font-family: 'Fraunces', serif; font-weight: 600;">🟡 VIKTIG — verdt å tenke på</h4>
-        <p>
-          Disse former <em>hvordan</em> barnet ditt spiller. De betyr noe, men de er preferanser snarere enn fundamenter. Du kan vanligvis finne ut hva som fungerer gjennom prøving.
-        </p>
-        <p>
-          🔸 <strong>Krumningsfamilie</strong> — toe (P28), midt (P29/P92), heel (P88). Nybegynnere: hold deg til midt. Ikke bekymre deg for navnet på tvers av merker.<br>
-          🔸 <strong>Kickpoint</strong> — lavt (snipere), midt (slap-shots), hybrid (alle andre). Mindre kritisk enn markedsføringen gjør det til.<br>
-          🔸 <strong>Klasse</strong> — toppmodell vs mellomklasse vs budsjett. For barn under 13 år er mellomklasse (eller forrige generasjons toppmodell på salg) sweet spot. Ingen påvist fordel av proff-køller for juniorer.<br>
-          🔸 <strong>Merke</strong> — velg det som er tilgjengelig lokalt. Krumninger er likeverdige på tvers av merker. Merkelojalitet er for det meste markedsføring.
+          ✅ <strong>Length</strong> — chin–nose (no skates) / about the chin (on skates); snipers shorter, defenders longer. Too short = hunched over and back pain. Too long = no puck control.<br>
+          ✅ <strong>Flex</strong> — weight × 1.1, round DOWN. Too stiff = can't load the stick = bad shooting technique forming. Better to err on softer side.<br>
+          ✅ <strong>Hand</strong> — left or right shot. Test with a broomstick or straight wood stick at home before buying. Wrong hand = wasted money and frustration.
         </p>
 
-        <h4 style="margin-top: 24px; color: var(--ink-faint); font-family: 'Fraunces', serif; font-weight: 600;">⚪ GREIT Å VITE — ikke stress</h4>
+        <h4 style="margin-top: 24px; color: #ffd23f; font-family: 'Fraunces', serif; font-weight: 600;">🟡 IMPORTANT — worth thinking about</h4>
         <p>
-          Du kan lese om disse for å forstå markedsføringen, men de bør ikke styre avgjørelsen.
+          These shape <em>how</em> your kid plays. They matter, but they're preferences more than fundamentals. You can usually figure out what works through trial.
         </p>
         <p>
-          ⚙️ <strong>Krumningsvarianter som P28+1/4</strong> — høyere blad, samme krumning. Hopp over for juniorer.<br>
-          ⚙️ <strong>Eksakt køllevekt i gram</strong> — juniorvekt er uansett ikke uavhengig verifisert, og noen få gram endrer ikke noe for en utviklende spiller.<br>
-          ⚙️ <strong>"Nyeste teknologi" / "ny denne sesongen"</strong> — NHL-proffer bruker 5-10 år gamle køller. Forrige gen på salg er greit.<br>
-          ⚙️ <strong>Spesifikk bladkonstruksjon</strong> (skumkjerne, karbonvev) — vanskelig å verifisere, enda vanskeligere å føle.<br>
-          ⚙️ <strong>Estetikk</strong> — farge, grafikk, hevet vs flatt grep. Hva enn barnet ditt liker er fint.
+          🔸 <strong>Curve family</strong> — toe (P28), mid (P29/P92), heel (P88). Beginners: stay with mid. Don't worry about cross-brand naming.<br>
+          🔸 <strong>Kick point</strong> — low (snipers), mid (slap-shots), hybrid (everyone else). Less critical than marketing makes it out to be.<br>
+          🔸 <strong>Tier</strong> — flagship vs mid-tier vs budget. For kids under 13, mid-tier (or last-gen flagship on sale) is the sweet spot. No proven advantage of pro sticks for juniors.<br>
+          🔸 <strong>Brand</strong> — pick what's available locally. Curves are equivalent across brands. Brand loyalty is mostly marketing.
+        </p>
+
+        <h4 style="margin-top: 24px; color: var(--ink-faint); font-family: 'Fraunces', serif; font-weight: 600;">⚪ NICE TO KNOW — don't stress</h4>
+        <p>
+          You can read about these to understand the marketing, but they shouldn't drive your decision.
+        </p>
+        <p>
+          ⚙️ <strong>Curve variants like P28+1/4</strong> — taller blade, same curve. Skip for juniors.<br>
+          ⚙️ <strong>Exact stick weight in grams</strong> — junior weights aren't independently verified anyway, and a few grams won't change anything for a developing player.<br>
+          ⚙️ <strong>"Latest tech" / "new this season"</strong> — NHL pros use 5-10 year old sticks. Last-gen on clearance is fine.<br>
+          ⚙️ <strong>Specific blade construction</strong> (foam core, carbon weave) — hard to even verify, harder to feel.<br>
+          ⚙️ <strong>Aesthetics</strong> — color, graphics, raised vs flat grip. Whatever your kid likes is fine.
         </p>
 
         <div style="position:relative; width:100%; max-width:640px; aspect-ratio:16/9; margin:20px 0 8px;">
           <iframe src="https://www.youtube-nocookie.com/embed/NTmisJKXDyw" title="How To Choose Your Hockey Stick Flex and Curve — Matt Redmond" style="position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:10px;" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <p style="font-size:0.88em; color:var(--ink-faint); max-width:640px;">Flex og curve forklart på noen minutter — verdt å se før du kjøper. Video: <a href="https://www.youtube.com/watch?v=NTmisJKXDyw" target="_blank" rel="noopener" style="color:var(--ink-faint); text-decoration:underline;">«How To Choose Your Hockey Stick Flex and Curve»</a> av Matt Redmond (Redmond's Corner, YouTube).</p>
-        <h4 style="margin-top: 24px; color: var(--accent); font-family: 'Fraunces', serif; font-weight: 600;">🎯 Den ene beste regelen</h4>
+        <p style="font-size:0.88em; color:var(--ink-faint); max-width:640px;">Flex and curve explained in a few minutes — worth watching before you buy. Video: <a href="https://www.youtube.com/watch?v=NTmisJKXDyw" target="_blank" rel="noopener" style="color:var(--ink-faint); text-decoration:underline;">«How To Choose Your Hockey Stick Flex and Curve»</a> by Matt Redmond (Redmond's Corner, YouTube).</p>
+        <h4 style="margin-top: 24px; color: var(--accent); font-family: 'Fraunces', serif; font-weight: 600;">🎯 The single best decision-making rule</h4>
         <p style="font-size: 16px;">
-          <strong>Tilpass kølla til budsjettet, ikke budsjettet til kølla.</strong>
+          <strong>Match the stick to the budget, not the budget to the stick.</strong>
         </p>
         <p>
-          Hvis du kan bruke 800 NOK, kjøp den beste 800-NOK-kølla som passer lengde+flex+hånd. Hvis du kan bruke 3000 NOK, kjøp den beste 3000-NOK-kølla som passer. Uansett vil barnet ditt forbedre seg. Forskjellen mellom en 800 NOK og en 3000 NOK kølle er mye mindre enn forskjellen mellom å trene to ganger i uken og tre ganger i uken.
+          If you can spend 800 NOK, buy the best 800 NOK stick that fits length+flex+hand. If you can spend 3000 NOK, buy the best 3000 NOK stick that fits. Either way, your kid will improve. The difference between a 800 NOK and a 3000 NOK stick is much smaller than the difference between practicing twice a week and three times a week.
         </p>
         <p style="margin-top: 20px; padding: 16px; background: rgba(255,91,31,0.06); border-left: 3px solid var(--accent); font-style: italic; color: var(--ink);">
-          Utstyr er et tillegg, ikke kjernen. Barnet er spilleren, ikke kølla.
+          Equipment is supplementary, not central. The kid is the player, not the stick.
         </p>
       </div>
 
@@ -2893,8 +2899,8 @@
 </section>
 
 <footer>
-  Stick Lab v0.2 · Uavhengig utstyrsforskning · Ingen affiliatelenker · Ingen reklame<br>
-  På linje med USA Hockey ADM · Hockey Canada · IIHF Learn to Play · Norges Ishockeyforbund
+  Stick Lab v0.2 · Independent gear research · No affiliate links · No ads<br>
+  Aligned with USA Hockey ADM · Hockey Canada · IIHF Learn to Play · Norway Model
 </footer>
 
 <script>
@@ -5336,9 +5342,10 @@ function getBestStore(stick) {
 function getAlternativeStores(stick) {
   if (!stick.stores || stick.stores.length <= 1) return [];
   const sorted = stick.stores.slice().sort((a, b) => a.priceNOK - b.priceNOK);
-  return sorted.slice(1);
+  return sorted.slice(1); // all except the cheapest
 }
 
+// Backward-compat: expose .priceNOK/.priceMSRP/.url as getters returning best store data
 if (typeof STICKS !== 'undefined') {
   STICKS.forEach(s => {
     if (s.stores && !s.hasOwnProperty('_legacyApplied')) {
@@ -5434,12 +5441,12 @@ function prevStep() {
 // CALCULATIONS
 // ============================================
 
-// Lengde: forankret i den klassiske hake-nese-regelen og CCMs fabrikklengder
-// (JR 40 flex leveres ~124 cm totalt, JR 50 ~132 cm). Stiljustert:
-//   sniper/teknisk    0.87 x hoyde  (~ haken, uten skoyter) - kontroll forst
-//   standard          0.89          (hake-nese)
-//   power/forsvarer   0.91          (~ nesen, uten skoyter) - rekkevidde forst
-// v0.2 brukte flat 0.92 ("oyenbryn") - praksis viste at det ble for langt.
+// Length: anchored to the classic chin-nose window and CCM factory JR lengths
+// (JR 40 flex ships ~124 cm total, JR 50 ~132 cm). Style-aware:
+//   sniper/technical  0.87 x height  (~ chin, no skates)  - control first
+//   default/playmaker 0.89           (chin-nose)
+//   power/defender    0.91           (~ nose, no skates)  - reach first
+// v0.2 used a flat 0.92 ("eyebrows") - real-world testing showed it clearly too long.
 function calculateIdealLength(answers) {
   const f = answers.style === 'sniper' ? 0.87 : answers.style === 'power' ? 0.91 : 0.89;
   return Math.round(answers.height * f);
@@ -5637,27 +5644,27 @@ function buildFitDescription(match, answers) {
 
   // Flex
   if (match.closestFlex === idealFlex) {
-    reasons.push(`Tilgjengelig i <strong>${idealFlex} flex</strong> — akkurat ditt mål.`);
+    reasons.push(`Available in <strong>${idealFlex} flex</strong> — exactly your target.`);
   } else if (match.closestFlex < idealFlex) {
-    reasons.push(`Nærmeste flex: <strong>${match.closestFlex}</strong> (målet var ${idealFlex}). Litt mykere — som regel greit.`);
+    reasons.push(`Closest flex available: <strong>${match.closestFlex}</strong> (target was ${idealFlex}). Slightly softer — usually fine.`);
   } else {
-    reasons.push(`Nærmeste flex: <strong>${match.closestFlex}</strong> (målet var ${idealFlex}). Stivere enn ideelt — vurder en annen flex hvis tilgjengelig.`);
+    reasons.push(`Closest flex available: <strong>${match.closestFlex}</strong> (target was ${idealFlex}). Stiffer than ideal — consider another flex if available.`);
   }
 
   // Curve
   if (match.targetCurve && s.curves.includes(match.targetCurve)) {
-    reasons.push(`Tilgjengelig i <strong>${match.targetCurve}</strong>-krumning.`);
+    reasons.push(`Available in <strong>${match.targetCurve}</strong> curve.`);
   } else if (s.curves.length >= 2) {
-    reasons.push(`Krumningsalternativer: ${s.curves.join(', ')}. Velg det som føles kjent.`);
+    reasons.push(`Curve options: ${s.curves.join(', ')}. Pick what feels familiar.`);
   } else {
-    reasons.push(`Kun én krumning: <strong>${s.curves.join('')}</strong>.`);
+    reasons.push(`Single curve only: <strong>${s.curves.join('')}</strong>.`);
   }
 
   // Budget
   if (s.priceNOK <= answers.budget) {
-    reasons.push(`<strong>${s.priceNOK} NOK</strong> — innenfor ditt ${answers.budget} NOK-budsjett.`);
+    reasons.push(`<strong>${s.priceNOK} NOK</strong> — fits inside your ${answers.budget} NOK budget.`);
   } else {
-    reasons.push(`<strong>${s.priceNOK} NOK</strong> — litt over ditt ${answers.budget} NOK-budsjett.`);
+    reasons.push(`<strong>${s.priceNOK} NOK</strong> — slightly over your ${answers.budget} NOK budget.`);
   }
 
   return reasons;
@@ -5666,9 +5673,9 @@ function buildFitDescription(match, answers) {
 function buildTeachesDescription(stick) {
   // What this stick "teaches" the developing player
   const teaches = {
-    low: 'Lærer raske beslutninger og snap shots før forsvarere kommer nærme.',
-    hybrid: 'Allsidig — støtter enhver skuddstil mens barnet finner sin preferanse.',
-    mid: 'Lærer barnet å laste kølla — bygger kraft og riktig skuddteknikk.',
+    low: 'Teaches quick decision-making and snap shots before defenders close in.',
+    hybrid: 'Versatile — supports any shooting style as the kid finds their preference.',
+    mid: 'Teaches the kid to load the stick — builds power and proper shooting technique.',
   };
   return teaches[stick.kick] || '';
 }
@@ -5681,16 +5688,16 @@ function buildWarnings(match, answers) {
   if (s.notes) warnings.push(s.notes);
 
   if (Math.abs(match.closestFlex - idealFlex) > 10) {
-    const direction = match.closestFlex > idealFlex ? 'stiv' : 'myk';
-    warnings.push(`Flex ${match.closestFlex} er langt fra mål ${idealFlex} — kan føles for ${direction}.`);
+    const direction = match.closestFlex > idealFlex ? 'stiff' : 'whippy';
+    warnings.push(`Flex ${match.closestFlex} is far from target ${idealFlex} — may feel too ${direction}.`);
   }
 
   if (answers.style === 'sniper' && s.kick === 'mid') {
-    warnings.push('Midt-kick er uvanlig for snipere, men mange NHL-snipere (Auston Matthews, Steven Stamkos) bruker midt-kick. Den dypere lastingen gir mer skuddvariasjon. Hvis barnet ditt allerede bruker midt-kick og liker det, ingen grunn til å bytte.');
+    warnings.push('Mid kick is unconventional for snipers, but plenty of NHL snipers (Auston Matthews, Steven Stamkos) use mid kicks. The deeper load gives more shot variety. If your kid currently uses a mid kick and likes it, no need to switch.');
   }
 
   if (s.priceNOK > answers.budget * 1.2) {
-    warnings.push(`Betydelig over budsjett (${s.priceNOK} vs ${answers.budget} NOK).`);
+    warnings.push(`Significantly over budget (${s.priceNOK} vs ${answers.budget} NOK).`);
   }
 
   return warnings;
@@ -5762,13 +5769,13 @@ function renderResults(matches, answers) {
 
   const summary = document.getElementById('player-summary');
   summary.innerHTML = `
-    <div class="summary-item"><div class="label">Høyde</div><div class="value">${answers.height} cm</div></div>
-    <div class="summary-item"><div class="label">Vekt</div><div class="value">${answers.weight} kg</div></div>
-    <div class="summary-item"><div class="label">Mål-flex</div><div class="value">${idealFlex}</div></div>
-    <div class="summary-item"><div class="label">Køllelengde (stående på blad)</div><div class="value">~${idealLen} cm</div></div>
-    <div class="summary-item"><div class="label">Foreslått kick</div><div class="value">${idealKick}</div></div>
-    <div class="summary-item"><div class="label">Foreslått krumning</div><div class="value">${idealCurve}</div></div>
-    <div class="summary-item"><div class="label">Budsjett</div><div class="value">${answers.budget} NOK</div></div>
+    <div class="summary-item"><div class="label">Height</div><div class="value">${answers.height} cm</div></div>
+    <div class="summary-item"><div class="label">Weight</div><div class="value">${answers.weight} kg</div></div>
+    <div class="summary-item"><div class="label">Target flex</div><div class="value">${idealFlex}</div></div>
+    <div class="summary-item"><div class="label">Stick length (standing on blade)</div><div class="value">~${idealLen} cm</div></div>
+    <div class="summary-item"><div class="label">Suggested kick</div><div class="value">${idealKick}</div></div>
+    <div class="summary-item"><div class="label">Suggested curve</div><div class="value">${idealCurve}</div></div>
+    <div class="summary-item"><div class="label">Budget</div><div class="value">${answers.budget} NOK</div></div>
   `;
 
   // Insights
@@ -5776,28 +5783,30 @@ function renderResults(matches, answers) {
   let insightHTML = '';
 
   if (answers.ageGroup === 'under13') {
-    insightHTML += `<div class="insight-box"><strong>Forbundsnotat:</strong> For U13 anbefaler forbund ingen posisjonsspesialisering og minimalt fokus på kampresultater. Den "rette" kølla i denne alderen er en som lar barnet ditt utvikle seg. Ikke overtenk det.</div>`;
+    insightHTML += `<div class="insight-box"><strong>Federation note:</strong> For U13, federations recommend no position specialization and minimal focus on game outcomes. The "right" stick at this age is one that lets your kid develop. Don't overthink it.</div>`;
   }
 
   if (answers.experience === 'beginner') {
-    insightHTML += `<div class="insight-box"><strong>Nybegynnertips:</strong> Ikke bruk for mye på den første kompositkølla. Vi har myknet flex-anbefalingen med 5 for å sikre at de faktisk kan laste kølla. Ferdigheter utvikles raskere på en kølle som passer enn på en dyr som ikke gjør det.</div>`;
+    insightHTML += `<div class="insight-box"><strong>Beginner tip:</strong> Don't overspend on the first composite. We've softened the flex recommendation by 5 to make sure they can actually load the stick. Skill develops faster on a stick that fits than on an expensive one that doesn't.</div>`;
   } else if (answers.style === 'sniper' && answers.experience !== 'beginner') {
-    insightHTML += `<div class="insight-box"><strong>Sniper-profil:</strong> Vi har myknet flexen med 3 fordi de fleste lav-kick skyttere har nytte av en litt mykere følelse. Lavt eller hybrid kick vil føles best — men en midt-kick "treningskølle" kan også hjelpe på å bygge kraftteknikk.</div>`;
+    insightHTML += `<div class="insight-box"><strong>Snipe profile:</strong> We've softened the flex by 3 because most low-kick shooters benefit from a slightly whippier feel. Low or hybrid kick will feel best — but a mid-kick "training stick" can also help build power technique.</div>`;
   }
 
   if (answers.brand === 'any') {
-    insightHTML += `<div class="insight-box"><strong>Påminnelse på tvers av merker:</strong> P28 (CCM) = W28 (Bauer) = T28 (True) = PP28 (Sherwood). Bytte av merke vil ikke ødelegge muskelminnet. Velg modellen som passer budsjettet og det som er tilgjengelig lokalt.</div>`;
+    insightHTML += `<div class="insight-box"><strong>Cross-brand reminder:</strong> P28 (CCM) = W28 (Bauer) = T28 (True) = PP28 (Sherwood). Switching brands won't break muscle memory. Pick the model that fits your budget and what's available locally.</div>`;
   }
 
-  // Growth tip
+  // Growth tip — for kids in growing age range (height under 165cm)
   if (answers.height < 165) {
-    insightHTML += `<div class="insight-box"><strong>Vekst-tips:</strong> Barn vokser ~5 cm/år. Før du kjøper en ny kølle når denne blir kort, sjekk <strong>"skaftforlengere"</strong> (~80-150 NOK) eller <strong>3D-printede forlengere</strong> (gratis hvis du har tilgang til en printer). Én kølle kan vare 1-2 sesonger med forlengere.</div>`;
+    insightHTML += `<div class="insight-box"><strong>Growth tip:</strong> Kids grow ~5 cm/year. Before buying a new stick when this one gets short, look up <strong>"shaft extensions"</strong> (~80-150 NOK) or <strong>3D-printed extensions</strong> (free if you have access to a printer). One stick can last 1-2 seasons with extensions.</div>`;
   }
 
-  // Length vs flex dilemma
+  // Length-vs-flex dilemma for taller kids (>140cm) with low target flex
+  // Junior shafts are: 40 flex ~124cm, 50 flex ~132cm
+  // Kids over 140cm targeting 30-40 flex will end up with a too-short stick
   if (answers.height >= 140 && idealFlex <= 40) {
     const targetLen = calculateIdealLength(answers);
-    insightHTML += `<div class="insight-box" style="border-left-color: #ffd23f; background: rgba(255, 210, 63, 0.06);"><strong>📏 Skaftlengde vs stående høyde:</strong> Målet ~${targetLen} cm er målt slik man faktisk måler — kølla stående på bladet, skaftet loddrett mot barnet. Produsentene oppgir derimot <strong>skaftlengden</strong> (topp til hæl langs kølla). Stående på bladet blir kølla ~10–14 cm høyere enn oppgitt. Tommelregel: <strong>JR 40 flex (oppgitt ~124 cm) står ~135 cm</strong>, JR 50 (~132 cm) står ~143 cm, YTH-køller lavere. Står kølla for høyt: kapp den (husk: kapping gjør flexen stivere) — eller velg <strong>YTH riktig flex + kort forlenger</strong>; mange lette, tekniske spillere lander nettopp der. Høye, lette barn — lange bein, men skuddstyrken kommer senere — er nettopp de som faller mellom YTH og JR her.</div>`;
+    insightHTML += `<div class="insight-box" style="border-left-color: #ffd23f; background: rgba(255, 210, 63, 0.06);"><strong>📏 Shaft length vs standing height:</strong> The ~${targetLen} cm target is measured the way you actually measure — stick standing on its blade, shaft vertical against the kid. Manufacturers, however, quote the <strong>shaft length</strong> (butt end to heel along the stick). Standing on the blade, the stick reaches ~10–14 cm higher than quoted. Rule of thumb: <strong>JR 40 flex (quoted ~124 cm) stands ~135 cm</strong>, JR 50 (~132 cm) stands ~143 cm, YTH sticks lower. If it stands too tall: cut it (remember: cutting stiffens flex) — or pick a <strong>YTH stick in the right flex + a short extension</strong>; many light, technical players end up exactly there. Tall, light kids — long legs, shot strength still catching up — are exactly the ones who fall between YTH and JR here.</div>`;
   }
 
   insights.innerHTML = insightHTML;
@@ -5806,9 +5815,9 @@ function renderResults(matches, answers) {
   const list = document.getElementById('stick-results');
   list.innerHTML = matches.map((m, i) => renderStickCard(m, i + 1, true)).join('') +
     `<div class="table-footnote" style="margin-top:8px;">
-      <span class="footnote-mark">*</span><strong>Vekttall er seniorkølle-spec (85 flex), ikke juniorversjoner.</strong>
-      Produsenter publiserer sjelden juniorspesifikke vekttall, og uavhengig juniortesting er begrenset.
-      Bruk disse som relativ sammenligning — faktisk juniorvekt er lavere (mindre skaft, mindre blad), men ikke verifiserbar.
+      <span class="footnote-mark">*</span><strong>Weight values are senior stick specs (85 flex), not junior versions.</strong>
+      Manufacturers rarely publish junior-specific weights, and independent junior testing is scarce.
+      Use these as relative comparison only — actual junior weight is lower (smaller shaft, smaller blade), but not verifiable.
     </div>`;
 }
 
@@ -5818,11 +5827,11 @@ function renderStickCard(match, rank, includeRank) {
 
   // Tags
   const tags = [];
-  if (score >= 80) tags.push('<span class="tag fit-perfect">★ Sterk match</span>');
-  else if (score >= 65) tags.push('<span class="tag fit-good">God match</span>');
+  if (score >= 80) tags.push('<span class="tag fit-perfect">★ Strong fit</span>');
+  else if (score >= 65) tags.push('<span class="tag fit-good">Good fit</span>');
 
-  if (s.lastGen) tags.push('<span class="tag lastgen">Forrige gen verdi</span>');
-  if (s.upcoming) tags.push('<span class="tag" style="background:rgba(255,91,31,0.15);color:var(--accent);">KOMMER 2026 — ikke i butikk ennå</span>');
+  if (s.lastGen) tags.push('<span class="tag lastgen">Last gen value</span>');
+  if (s.upcoming) tags.push('<span class="tag" style="background:rgba(255,91,31,0.15);color:var(--accent);">COMING 2026 — not yet in stores</span>');
   if (s.priceNOK <= 1500) tags.push('<span class="tag value">Under 1500 NOK</span>');
   tags.push(`<span class="tag">${s.tier}</span>`);
   tags.push(`<span class="tag">${s.kick} kick</span>`);
@@ -5837,18 +5846,19 @@ function renderStickCard(match, rank, includeRank) {
 
   const fitHTML = match.fit && match.fit.length
     ? `<div class="stick-fit">
-        <span class="fit-tag">Hvorfor denne kølla</span>
+        <span class="fit-tag">Why this stick</span>
         ${match.fit.map(r => `<div style="margin-bottom:4px">→ ${r}</div>`).join('')}
         ${teachesHTML}
         ${warningsHTML}
       </div>`
     : '';
 
+  // Multi-store rendering
   const bestStore = getBestStore(s);
   const altStores = getAlternativeStores(s);
   const storeName = bestStore ? bestStore.name : '';
   const altsHTML = altStores.length > 0
-    ? `<div class="stick-alt-stores">Også hos: ${altStores.map(st => `<a href="${st.url}" target="_blank" rel="noopener" style="color:var(--ink-faint);text-decoration:underline;">${st.name} ${st.priceNOK} NOK</a>`).join(' · ')}</div>`
+    ? `<div class="stick-alt-stores">Also at: ${altStores.map(st => `<a href="${st.url}" target="_blank" rel="noopener" style="color:var(--ink-faint);text-decoration:underline;">${st.name} ${st.priceNOK} NOK</a>`).join(' · ')}</div>`
     : '';
 
   return `
@@ -5863,13 +5873,13 @@ function renderStickCard(match, rank, includeRank) {
         </div>
         <div class="stick-price-block">
           ${s.url
-            ? `<a href="${s.url}" target="_blank" rel="noopener" class="stick-price-link" title="Se hos ${storeName}">
-                <div class="stick-price">${s.priceNOK !== Infinity ? `${s.priceNOK} <span class="currency">NOK</span>` : 'Pris ubekreftet'} <span class="external-arrow-large">↗</span></div>
-                ${s.priceMSRP && s.priceMSRP > s.priceNOK ? `<div class="stick-msrp">var ${s.priceMSRP} NOK · spar ${Math.round((1 - s.priceNOK / s.priceMSRP) * 100)}%</div>` : ''}
+            ? `<a href="${s.url}" target="_blank" rel="noopener" class="stick-price-link" title="View at ${storeName}">
+                <div class="stick-price">${s.priceNOK !== Infinity ? `${s.priceNOK} <span class="currency">NOK</span>` : 'Price unconfirmed'} <span class="external-arrow-large">↗</span></div>
+                ${s.priceMSRP && s.priceMSRP > s.priceNOK ? `<div class="stick-msrp">was ${s.priceMSRP} NOK · save ${Math.round((1 - s.priceNOK / s.priceMSRP) * 100)}%</div>` : ''}
                 <div class="stick-store-name" style="font-size:11px;color:var(--ink-faint);margin-top:4px;">@ ${storeName}</div>
               </a>`
-            : `<div class="stick-price">${s.priceNOK !== Infinity ? `${s.priceNOK} <span class="currency">NOK</span>` : 'Pris ubekreftet'}</div>
-               ${s.priceMSRP && s.priceMSRP > s.priceNOK ? `<div class="stick-msrp">var ${s.priceMSRP} NOK · spar ${Math.round((1 - s.priceNOK / s.priceMSRP) * 100)}%</div>` : ''}`
+            : `<div class="stick-price">${s.priceNOK !== Infinity ? `${s.priceNOK} <span class="currency">NOK</span>` : 'Price unconfirmed'}</div>
+               ${s.priceMSRP && s.priceMSRP > s.priceNOK ? `<div class="stick-msrp">was ${s.priceMSRP} NOK · save ${Math.round((1 - s.priceNOK / s.priceMSRP) * 100)}%</div>` : ''}`
           }
           ${altsHTML}
         </div>
@@ -5877,9 +5887,9 @@ function renderStickCard(match, rank, includeRank) {
       <div class="stick-specs">
         <div class="spec"><div class="v">${s.kick.toUpperCase()}</div><div class="l">Kick</div></div>
         <div class="spec"><div class="v">${s.flexes.length ? s.flexes.join('/') : '?'}</div><div class="l">Flex</div></div>
-        <div class="spec"><div class="v">${s.weight ? `${s.weight}g` : '?'}</div><div class="l">Vekt*</div></div>
-        <div class="spec"><div class="v">${s.curves.length ? s.curves.join(' / ') : '?'}</div><div class="l">Krumninger</div></div>
-        ${s.shaftProfile ? `<div class="spec" title="${s.shaftProfileLabel || ''}"><div class="v">${s.shaftProfile}</div><div class="l">Skaft</div></div>` : ''}
+        <div class="spec"><div class="v">${s.weight ? `${s.weight}g` : '?'}</div><div class="l">Weight*</div></div>
+        <div class="spec"><div class="v">${s.curves.length ? s.curves.join(' / ') : '?'}</div><div class="l">Curves</div></div>
+        ${s.shaftProfile ? `<div class="spec" title="${s.shaftProfileLabel || ''}"><div class="v">${s.shaftProfile}</div><div class="l">Shaft</div></div>` : ''}
       </div>
       ${fitHTML}
     </div>
@@ -5953,7 +5963,7 @@ if (resetBtn) {
     });
     const toggleBtn = document.getElementById('toggle-lastgen');
     if (toggleBtn) {
-      toggleBtn.textContent = '+ Vis eldre generasjoner';
+      toggleBtn.textContent = '+ Show older generations';
       toggleBtn.classList.remove('active');
     }
     document.querySelectorAll('#stick-table thead th').forEach(th => th.classList.remove('sorted'));
@@ -5972,8 +5982,8 @@ if (toggleLastGenBtn) {
   toggleLastGenBtn.addEventListener('click', () => {
     state.showLastGen = !state.showLastGen;
     toggleLastGenBtn.textContent = state.showLastGen
-      ? '− Skjul eldre generasjoner'
-      : '+ Vis eldre generasjoner';
+      ? '− Hide older generations'
+      : '+ Show older generations';
     toggleLastGenBtn.classList.toggle('active', state.showLastGen);
     renderFilterResults();
   });
@@ -6063,7 +6073,7 @@ function renderFilterResults() {
   const countEl = document.getElementById('filter-count');
   if (countEl) countEl.textContent = filtered.length;
 
-  // Total = current-gen if not showing lastGen, else all
+  // Total = current-gen models if not showing lastGen, else all models
   const totalEl = document.getElementById('filter-total');
   if (totalEl) {
     const totalVisible = state.showLastGen
@@ -6076,12 +6086,12 @@ function renderFilterResults() {
   if (!tbody) return;
 
   if (!filtered.length) {
-    tbody.innerHTML = `<tr><td colspan="10" class="table-empty">Ingen køller matcher disse filtrene eller søket</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="10" class="table-empty">No sticks match these filters or search</td></tr>`;
     return;
   }
 
   tbody.innerHTML = filtered.map(s => {
-    const lastGenMarker = s.upcoming ? `<span class="lastgen-marker" style="color:var(--accent);">KOMMER 2026</span>` : s.lastGen ? `<span class="lastgen-marker">FORRIGE GEN</span>` : '';
+    const lastGenMarker = s.upcoming ? `<span class="lastgen-marker" style="color:var(--accent);">COMING 2026</span>` : s.lastGen ? `<span class="lastgen-marker">LAST GEN</span>` : '';
     const flexDisplay = s.flexes.join(' / ');
     const curvesDisplay = s.curves.join(' / ');
     const shaftDisplay = s.shaftProfile || '—';
@@ -6095,9 +6105,9 @@ function renderFilterResults() {
       ? (isDiscounted
           ? `${s.priceNOK}<span class="currency">NOK</span><span class="discount">−${discountPct}%</span><span class="msrp">${s.priceMSRP} NOK</span>`
           : `${s.priceNOK}<span class="currency">NOK</span>`)
-      : `<span class="dim">ingen pris ennå</span>`;
+      : `<span class="dim">no price yet</span>`;
     const priceCell = (hasPrice && s.url)
-      ? `<a href="${s.url}" target="_blank" rel="noopener" class="price-link" title="Se hos ${storeName}">${priceContent}<span class="external-arrow">↗</span></a>`
+      ? `<a href="${s.url}" target="_blank" rel="noopener" class="price-link" title="View at ${storeName}">${priceContent}<span class="external-arrow">↗</span></a>`
       : priceContent;
 
     return `
@@ -6126,18 +6136,21 @@ function renderLineage() {
   const tbody = document.getElementById('lineage-results');
   if (!tbody) return;
 
+  // Find all sticks with successor field (predecessors)
   const predecessors = STICKS.filter(s => s.successor);
   if (predecessors.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--ink-faint);padding:24px;">Ingen modellinje-data ennå.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--ink-faint);padding:24px;">No lineage data yet.</td></tr>';
     return;
   }
 
+  // Group by brand for readability
   const byBrand = {};
   predecessors.forEach(p => {
     if (!byBrand[p.brand]) byBrand[p.brand] = [];
     byBrand[p.brand].push(p);
   });
 
+  // Try to extract year from tagline (e.g., "(2023)")
   const extractYear = (s) => {
     if (!s.tagline) return '';
     const m = s.tagline.match(/\((\d{4})\)/);
@@ -6169,6 +6182,7 @@ function renderLineage() {
 (function updateMetaCount() {
   const metaEl = document.getElementById('meta-stick-count');
   if (metaEl && typeof STICKS !== 'undefined') {
+    // Show current-generation models count (default view)
     const currentGen = STICKS.filter(s => !s.lastGen).length;
     metaEl.textContent = currentGen;
   }
@@ -6181,9 +6195,9 @@ function renderLineage() {
 const upgradeState = {
   brand: null,
   family: null,
-  modelKey: null,
+  modelKey: null, // brand+family+model base name (without YTH/JR/INT)
   currentStick: null,
-  changes: [],
+  changes: [], // ['curve', 'shaftProfile', 'kick', 'tier']
   wantsBiggerSize: false,
 };
 
@@ -6199,7 +6213,7 @@ function upgradeRenderBrands() {
   const brands = [...new Set(STICKS.map(s => s.brand))].sort();
   container.innerHTML = brands.map(b => {
     const count = STICKS.filter(s => s.brand === b).length;
-    return `<button data-brand="${b}"><strong>${b}</strong><span>${count} modeller</span></button>`;
+    return `<button data-brand="${b}"><strong>${b}</strong><span>${count} models</span></button>`;
   }).join('');
   container.querySelectorAll('button').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -6216,7 +6230,7 @@ function upgradeRenderFamilies() {
   const families = [...new Set(STICKS.filter(s => s.brand === upgradeState.brand).map(s => s.family))].sort();
   container.innerHTML = families.map(f => {
     const count = STICKS.filter(s => s.brand === upgradeState.brand && s.family === f).length;
-    return `<button data-family="${f}"><strong>${f}</strong><span>${count} modeller</span></button>`;
+    return `<button data-family="${f}"><strong>${f}</strong><span>${count} models</span></button>`;
   }).join('');
   container.querySelectorAll('button').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -6257,28 +6271,29 @@ function upgradeRenderCurrent() {
   if (!container || !upgradeState.currentStick) return;
   const s = upgradeState.currentStick;
   container.innerHTML = `
-    <strong>Din nåværende kølle:</strong> ${s.brand} ${s.model}
+    <strong>Your current stick:</strong> ${s.brand} ${s.model}
     <br>
     <span style="font-size:12px;">
-      ${s.ageGroup} · ${s.kick} kick · ${s.shaftProfile} profil · krumninger: ${s.curves.join(', ')} · ${s.tier}
+      ${s.ageGroup} · ${s.kick} kick · ${s.shaftProfile} profile · curves: ${s.curves.join(', ')} · ${s.tier}
     </span>
   `;
 }
 
-// Krumning-ekvivalens på tvers av merker - samme bladmønster, ulike navn
+// Curve equivalence across brands - same blade pattern, different naming
+// Source: hockey forums, manufacturer X-ref tables, retailer comparison charts
 const CURVE_FAMILIES = {
-  toe:     ['P28', 'P28+1/4', 'W28', 'T28', 'PP28', 'W03'],
-  midtoe:  ['P29', 'P29+1/4', 'W29', 'T29', 'PP29'],
-  mid:     ['P92', 'P92+1/4', 'W92', 'T92', 'T92.5', 'PP92'],
-  heel:    ['P88', 'W88', 'T88', 'PP88'],
-  midmax:  ['P90TM', 'W90TM', 'T90TM', 'P90T', 'PP92M'],
+  toe:     ['P28', 'P28+1/4', 'W28', 'T28', 'PP28', 'W03'],     // toe curve, sniper-favorite
+  midtoe:  ['P29', 'P29+1/4', 'W29', 'T29', 'PP29'],            // between toe and mid
+  mid:     ['P92', 'P92+1/4', 'W92', 'T92', 'T92.5', 'PP92'],   // most popular all-around
+  heel:    ['P88', 'W88', 'T88', 'PP88'],                       // heel curve
+  midmax:  ['P90TM', 'W90TM', 'T90TM', 'P90T', 'PP92M'],                 // mid + max height
 };
 
 function curveFamily(curve) {
   for (const [fam, list] of Object.entries(CURVE_FAMILIES)) {
     if (list.includes(curve)) return fam;
   }
-  return curve;
+  return curve; // unknown → exact match only
 }
 
 function curvesShareFamily(curvesA, curvesB) {
@@ -6293,18 +6308,20 @@ function upgradeFindMatches() {
   return upgradeFindMatchesWithChanges(upgradeState.changes);
 }
 
+// Helper: run matching with a given changes set (used for "what if" hints)
 function upgradeFindMatchesWithChanges(changesSet) {
   const cur = upgradeState.currentStick;
   if (!cur) return [];
   const changes = changesSet;
 
+  // Determine target age group based on wantsBiggerSize
   const ageOrder = ['YTH', 'JR', 'INT'];
   const curIdx = ageOrder.indexOf(cur.ageGroup);
   const targetAges = upgradeState.wantsBiggerSize && curIdx >= 0 && curIdx < ageOrder.length - 1
     ? [ageOrder[curIdx + 1]]
     : [cur.ageGroup];
 
-  // Hvis nåværende kølle er lastGen, tillat lineage-relaterte sukkessorer
+  // If user's current stick is lastGen, allow matches that share lineage
   const lineageRelated = new Set();
   if (cur.lastGen && cur.successor) {
     let nextId = cur.successor;
@@ -6320,8 +6337,9 @@ function upgradeFindMatchesWithChanges(changesSet) {
     if (s.lastGen && !lineageRelated.has(s.id)) return false;
     if (!targetAges.includes(s.ageGroup)) return false;
 
-    // IKKE i changes → må MATCHE (bevares)
-    // I changes → må AVVIKE (bruker vil ha endring)
+    // For each property:
+    //   NOT in changes → must MATCH current (preserve)
+    //   IN changes → must DIFFER from current (user explicitly wants change)
     if (!changes.includes('kick')) {
       if (s.kick !== cur.kick) return false;
     } else {
@@ -6341,8 +6359,10 @@ function upgradeFindMatchesWithChanges(changesSet) {
     }
 
     if (!changes.includes('curve')) {
+      // Preserve: must share at least one curve family
       if (!curvesShareFamily(s.curves, cur.curves)) return false;
     } else {
+      // Differ: must NOT share any curve family
       if (curvesShareFamily(s.curves, cur.curves)) return false;
     }
 
@@ -6352,8 +6372,22 @@ function upgradeFindMatchesWithChanges(changesSet) {
 
 function upgradeShowResults() {
   const matches = upgradeFindMatches();
-  const cur = upgradeState.currentStick;
 
+  // Reuse the existing results view + renderResults pipeline
+  // Build fake answers object from current stick for display purposes
+  const cur = upgradeState.currentStick;
+  const fakeAnswers = {
+    height: 0, // unknown — will hide length-based insights
+    weight: 0,
+    ageGroup: null,
+    experience: null,
+    style: null,
+    hand: null,
+    budget: 99999,
+    brand: 'any',
+  };
+
+  // Build match objects compatible with renderStickCard
   const matchObjs = matches.map((s, i) => ({
     stick: s,
     score: 100 - i,
@@ -6362,17 +6396,18 @@ function upgradeShowResults() {
     teaches: null,
   }));
 
+  // Render via custom upgrade-results renderer
   const summary = document.getElementById('player-summary');
   if (summary) {
     const changesLabel = upgradeState.changes.length === 0
-      ? 'ingen'
+      ? 'none'
       : upgradeState.changes.join(', ');
-    const sizeLabel = upgradeState.wantsBiggerSize ? 'Neste størrelse opp' : 'Samme størrelse';
+    const sizeLabel = upgradeState.wantsBiggerSize ? 'Next size up' : 'Same size';
     summary.innerHTML = `
-      <div class="summary-item"><div class="label">Nåværende</div><div class="value">${cur.brand} ${cur.model}</div></div>
-      <div class="summary-item"><div class="label">Størrelse</div><div class="value">${sizeLabel}</div></div>
-      <div class="summary-item"><div class="label">Andre endringer</div><div class="value">${changesLabel}</div></div>
-      <div class="summary-item"><div class="label">Matcher</div><div class="value">${matches.length} køller</div></div>
+      <div class="summary-item"><div class="label">Current</div><div class="value">${cur.brand} ${cur.model}</div></div>
+      <div class="summary-item"><div class="label">Size</div><div class="value">${sizeLabel}</div></div>
+      <div class="summary-item"><div class="label">Other changes</div><div class="value">${changesLabel}</div></div>
+      <div class="summary-item"><div class="label">Matching</div><div class="value">${matches.length} sticks</div></div>
     `;
   }
 
@@ -6382,13 +6417,14 @@ function upgradeShowResults() {
       const successor = cur.successor ? STICKS.find(s => s.id === cur.successor) : null;
       let suggestionHTML = '';
       if (successor) {
-        suggestionHTML = `<div class="insight-box" style="border-left-color:var(--info);background:rgba(95,180,255,0.06);"><strong>Modellinje-forslag:</strong> Din ${cur.brand} ${cur.model} ble etterfulgt av <strong>${successor.brand} ${successor.model}</strong>. Det er den direkte oppgraderingsveien. <button onclick="upgradeJumpToSuccessor('${successor.id}')" style="margin-left:8px;background:transparent;border:1px solid var(--info);color:var(--info);padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px;">Se den →</button></div>`;
+        suggestionHTML = `<div class="insight-box" style="border-left-color:var(--info);background:rgba(95,180,255,0.06);"><strong>Lineage suggestion:</strong> Your ${cur.brand} ${cur.model} was succeeded by <strong>${successor.brand} ${successor.model}</strong>. That's the direct upgrade path. <button onclick="upgradeJumpToSuccessor('${successor.id}')" style="margin-left:8px;background:transparent;border:1px solid var(--info);color:var(--info);padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px;">View it →</button></div>`;
       }
       insights.innerHTML = suggestionHTML +
-        `<div class="insight-box" style="border-left-color:#ffd23f;background:rgba(255,210,63,0.06);"><strong>Ingen eksakte treff.</strong> Din kølles kombinasjon er sjelden. Prøv å fjerne noen avhukinger, eller huk av <strong>Prisklasse</strong> / <strong>Skaftprofil</strong> for flere alternativer.</div>`;
+        `<div class="insight-box" style="border-left-color:#ffd23f;background:rgba(255,210,63,0.06);"><strong>No exact matches.</strong> Your current stick's combination of specs is rare. Try unchecking some change boxes, or check <strong>Tier</strong> / <strong>Shaft profile</strong> for more options.</div>`;
     } else {
+      // Smart hint: show how many extra results each unchecked option would add
       const allChangeKeys = ['curve', 'shaftProfile', 'kick', 'tier'];
-      const labels = { curve: 'Krumning', shaftProfile: 'Skaftprofil', kick: 'Kick point', tier: 'Prisklasse' };
+      const labels = { curve: 'Curve', shaftProfile: 'Shaft profile', kick: 'Kick point', tier: 'Price tier' };
       const currentMatchIds = new Set(matches.map(m => m.id));
       const hints = [];
       allChangeKeys.forEach(key => {
@@ -6400,21 +6436,22 @@ function upgradeShowResults() {
         }
       });
       const hintHTML = hints.length > 0
-        ? `<div style="margin-top:10px; font-size:13px; color: var(--ink-dim);">Vil du ha flere alternativer? Hvis du også huker av: ${hints.join(' · ')}.</div>`
+        ? `<div style="margin-top:10px; font-size:13px; color: var(--ink-dim);">Want more options? Checking another box adds: ${hints.join(' · ')}.</div>`
         : '';
-      insights.innerHTML = `<div class="insight-box"><strong>Hvordan lese disse:</strong> de deler egenskapene du ikke ba om å endre. ${upgradeState.wantsBiggerSize ? 'Dette er ett størrelsestrinn opp fra din nåværende kølle.' : 'Dette er alternativer i samme aldersgruppe.'}${hintHTML}</div>`;
+      insights.innerHTML = `<div class="insight-box"><strong>How to read these:</strong> they all share the properties you didn't ask to change. ${upgradeState.wantsBiggerSize ? 'These are the next size up from your current stick.' : 'These are alternatives in the same age group.'}${hintHTML}</div>`;
     }
   }
 
   const list = document.getElementById('stick-results');
   if (list) {
     list.innerHTML = matchObjs.map((m, i) => renderStickCard(m, i + 1, true)).join('') ||
-      `<p style="color:var(--ink-dim);text-align:center;padding:32px;">Ingen treff. Prøv å endre flere variabler.</p>`;
+      `<p style="color:var(--ink-dim);text-align:center;padding:32px;">No sticks match. Try changing more variables.</p>`;
   }
 
   setView('results');
 }
 
+// Init upgrade wizard handlers
 (function initUpgradeWizard() {
   upgradeRenderBrands();
 
@@ -6437,6 +6474,7 @@ function upgradeShowResults() {
   }
 })();
 
+// Reset upgrade wizard when leaving the view
 const origSetView = setView;
 setView = function(viewName) {
   origSetView(viewName);
@@ -6453,6 +6491,7 @@ setView = function(viewName) {
   }
 };
 
+// Jump to upgrade results for the successor of current stick
 function upgradeJumpToSuccessor(successorId) {
   const succ = STICKS.find(s => s.id === successorId);
   if (!succ) return;
