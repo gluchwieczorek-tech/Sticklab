@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Elbow &amp; Shoulder — Gear Lab</title>
+<meta name="description" content="Junior guide to elbow and shoulder pads: a sizing quiz, a verified catalog from hockeystore.no, and what you actually need to know before buying.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#141313; --card:#1c1a19; --card2:#211f1d; --line:#2c2926;
+  --ink:#e8e6e1; --faint:#a8a59f; --dim:#7d7a74; --accent:#ff5b1f;
+  --accent-soft:rgba(255,91,31,.12); --ok:#7fb069; --warn:#e0a458;
+  --radius:14px; --sans:'Inter',system-ui,sans-serif; --serif:'Fraunces',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px 96px}
+
+/* ---------- header ---------- */
+header{padding:26px 0 10px;border-bottom:1px solid var(--line)}
+.brandrow{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+.brand b{color:var(--accent);font-weight:700}
+.langtoggle{font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.langtoggle span{color:var(--dim);margin:0 4px}
+.langtoggle .on{color:var(--ink);font-weight:600;text-decoration:none;cursor:default}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,8vw,52px);line-height:1.04;letter-spacing:-.01em;margin:14px 0 8px}
+h1 .amp{color:var(--accent);font-style:italic;font-weight:400}
+.lede{color:var(--faint);font-size:15px;max-width:56ch}
+.meta-line{margin-top:10px;font-size:12px;color:var(--dim)}
+.meta-line b{color:var(--faint);font-weight:600}
+
+/* ---------- tabs ---------- */
+nav.tabs{position:sticky;top:0;z-index:20;background:linear-gradient(var(--bg) 82%,rgba(20,19,19,0));display:flex;gap:6px;padding:14px 0 10px}
+nav.tabs button{flex:1;appearance:none;border:1px solid var(--line);background:var(--card);color:var(--faint);font:600 13px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:12px 6px;border-radius:999px;cursor:pointer;transition:all .15s}
+nav.tabs button.active{background:var(--accent);border-color:var(--accent);color:#181210}
+nav.tabs button:not(.active):hover{color:var(--ink);border-color:var(--dim)}
+section.tab{display:none;padding-top:18px}
+section.tab.show{display:block}
+h2{font-family:var(--serif);font-weight:600;font-size:26px;margin:8px 0 4px}
+.sub{color:var(--faint);font-size:14px;margin-bottom:18px}
+
+/* ---------- generic card ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:14px}
+.card h3{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:6px}
+.card h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:14px 0 6px}
+.card p{font-size:14.5px;color:var(--ink);margin-bottom:8px}
+.card p.dim{color:var(--faint)}
+.card ol,.card ul{padding-left:20px;font-size:14.5px}
+.card li{margin-bottom:6px}
+.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+.srcline{font-size:11.5px;color:var(--dim);margin-top:8px}
+.srcline a{color:var(--dim);text-decoration:underline}
+.callout{background:var(--accent-soft);border:1px solid rgba(255,91,31,.35);border-radius:10px;padding:12px 14px;font-size:13.5px;margin:10px 0}
+.callout b{color:var(--accent)}
+
+/* ---------- quiz ---------- */
+form.quiz{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.field small{font-size:11.5px;color:var(--dim);letter-spacing:0;text-transform:none;font-weight:400}
+.field input,.field select{appearance:none;background:var(--card2);border:1px solid var(--line);border-radius:10px;color:var(--ink);font:500 16px var(--sans);padding:12px}
+.field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+button.go{grid-column:1/-1;appearance:none;border:0;background:var(--accent);color:#181210;font:700 15px var(--sans);letter-spacing:.05em;text-transform:uppercase;padding:15px;border-radius:12px;cursor:pointer;margin-top:4px}
+button.go:hover{filter:brightness(1.07)}
+#quizout{margin-top:18px}
+.res-grid{display:grid;gap:14px}
+.res-cat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.res-cat h3{font-family:var(--serif);font-size:19px;margin-bottom:10px}
+.sizerow{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.sizerow:last-of-type{border-bottom:0}
+.sizerow .b{font-weight:600}
+.sizerow .sz{font-family:var(--serif);font-size:17px;color:var(--accent);font-weight:600;white-space:nowrap}
+.sizerow .why{display:block;font-size:11.5px;color:var(--dim)}
+.recs{margin-top:10px}
+.rec{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:7px 0;font-size:14px;border-top:1px solid var(--line)}
+.rec .nm{font-weight:600}
+.rec .nm small{display:block;font-weight:400;color:var(--dim);font-size:11.5px}
+.rec .pr{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink)}
+.rec .pr.unv{color:var(--warn);font-size:12px}
+.flagnote{font-size:12.5px;color:var(--warn);margin-top:8px}
+
+/* ---------- katalog ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.filters select{appearance:none;background:var(--card2);border:1px solid var(--line);border-radius:999px;color:var(--ink);font:600 12.5px var(--sans);padding:9px 30px 9px 13px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='6'%3E%3Cpath d='M1 1l3.5 3.5L8 1' stroke='%23a8a59f' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center}
+.lgtoggle{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--faint);margin:4px 0 14px;cursor:pointer;user-select:none}
+.lgtoggle input{accent-color:var(--accent);width:16px;height:16px}
+.count{font-size:12px;color:var(--dim);margin-bottom:10px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:12px}
+.prod.lastgen{border-style:dashed;opacity:.92}
+.prodtop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.prod .name{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.15}
+.prod .name small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:3px}
+.badges{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end}
+.badge{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:999px;border:1px solid var(--line);color:var(--faint);white-space:nowrap}
+.badge.tier-flagship{border-color:var(--accent);color:var(--accent)}
+.badge.tier-mid{border-color:var(--dim);color:var(--ink)}
+.badge.lg{background:var(--card2);color:var(--warn);border-color:var(--warn)}
+.badge.up{background:var(--accent);color:#181210;border-color:var(--accent)}
+.tagline{font-size:13px;font-style:italic;color:var(--faint);margin:6px 0 4px}
+.specs{font-size:13.5px;color:var(--ink);margin:4px 0 8px}
+.sizes{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0 10px}
+.sizes span{font-size:11px;font-weight:600;border:1px solid var(--line);border-radius:6px;padding:3px 7px;color:var(--faint)}
+.sizes span b{color:var(--ink);font-weight:700;margin-right:4px}
+.storerow{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-top:1px solid var(--line);padding:9px 0 2px;font-size:14px}
+.storerow .st{color:var(--faint);font-size:12.5px}
+.storerow .st a{color:var(--faint);text-decoration:underline}
+.price{font-variant-numeric:tabular-nums;font-weight:700;font-size:16px;white-space:nowrap}
+.price s{color:var(--dim);font-weight:400;font-size:12.5px;margin-left:6px}
+.price.approx{font-weight:500;font-size:13.5px;color:var(--faint)}
+.unverified{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--warn);border:1px solid var(--warn);border-radius:6px;padding:3px 7px;white-space:nowrap}
+.stnote{font-size:11.5px;color:var(--dim);margin-top:2px}
+.pnote{font-size:12px;color:var(--faint);margin-top:8px;border-left:2px solid var(--line);padding-left:9px}
+
+/* ---------- learn ---------- */
+table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 4px}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
+th{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+td:first-child{font-weight:700;color:var(--accent)}
+td{font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto}
+.diagram{background:var(--card2);border-radius:10px;padding:10px 6px 4px;margin:10px 0 4px}
+.diagram svg{width:100%;height:auto;display:block}
+.sketchnote{font-size:11px;color:var(--dim);text-align:right;padding:0 6px 6px}
+.video{margin:12px 0 4px}
+.video .frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000;border:1px solid var(--line)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vcap{font-size:12.5px;color:var(--faint);margin-top:7px}
+.vcap b{color:var(--ink)}
+
+/* ---------- footer ---------- */
+footer{margin-top:36px;border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--dim);line-height:1.7}
+footer b{color:var(--faint)}
+
+@media(min-width:620px){
+  form.quiz{grid-template-columns:1fr 1fr 1fr}
+  .field.full{grid-column:1/-1}
+  .field.half{grid-column:span 1}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brandrow">
+    <div class="brand">GEAR <b>LAB</b> · Junior hockey Trondheim</div>
+    <div class="langtoggle"><span class="on">EN</span><span>/</span><a href="../">NO</a></div>
+  </div>
+  <h1>Elbow <span class="amp">&amp;</span> shoulder</h1>
+  <p class="lede">Junior guide to elbow and shoulder pads: a sizing quiz, a verified catalog from hockeystore.no, and what you actually need to know before buying.</p>
+  <p class="meta-line">Last checked: <b>2026-07-10</b> · Verified data only — “Price unverified” means exactly that.</p>
+</header>
+
+<nav class="tabs">
+  <button data-tab="quiz">Quiz</button>
+  <button data-tab="katalog">Catalog</button>
+  <button data-tab="laer">Learn</button>
+</nav>
+
+<section class="tab" id="quiz">
+  <h2>Find size and model</h2>
+  <p class="sub">Fill in what you have — chest and arm measurements give the safest answer. Measure over a thin shirt.</p>
+  <form class="quiz" id="quizform" novalidate>
+    <div class="field"><label for="q-height">Height (cm)</label><input id="q-height" type="number" inputmode="numeric" min="90" max="185" required></div>
+    <div class="field"><label for="q-weight">Weight (kg)</label><input id="q-weight" type="number" inputmode="numeric" min="15" max="90" required></div>
+    <div class="field"><label for="q-age">Age group</label><select id="q-age" required><option value="u8">U8 and younger</option><option value="u911">U9–U11</option><option value="u1213">U12–U13</option><option value="u14">U14+</option></select></div>
+    <div class="field"><label for="q-chest">Chest circumference (cm)</label><input id="q-chest" type="number" inputmode="numeric" min="40" max="110"><small>Just below the armpits — optional but recommended</small></div>
+    <div class="field"><label for="q-arm">Arm measurement (cm)</label><input id="q-arm" type="number" inputmode="numeric" min="10" max="40"><small>Elbow tip → wrist, measured on the OUTSIDE (CCM method) — optional</small></div>
+    <div class="field"><label for="q-budget">Budget per item</label><select id="q-budget"><option value="lav">Low (under 500 kr)</option><option value="middels">Mid (500–1000 kr)</option><option value="hoy">High (1000 kr +)</option></select></div>
+    <button class="go" type="submit">Show recommendation</button>
+  </form>
+  <div id="quizout"></div>
+</section>
+
+<section class="tab" id="katalog">
+  <h2>Catalog</h2>
+  <p class="sub">32 junior models from CCM, Bauer and Warrior — verified at hockeystore.no on 2026-07-10. True and Sherwood are not stocked in these categories there.</p>
+  <div class="filters">
+    <select id="f-cat"><option value="all">All categories</option><option value="elbow">Elbow</option><option value="shoulder">Shoulder</option></select>
+    <select id="f-brand"><option value="all">All brands</option><option value="CCM">CCM</option><option value="Bauer">Bauer</option><option value="Warrior">Warrior</option></select>
+    <select id="f-tier"><option value="all">All tiers</option><option value="flagship">Flagship</option><option value="mid">Mid-range</option><option value="budget">Budget</option></select>
+    <select id="f-age"><option value="all">All ages</option><option value="JR">Junior (JR)</option><option value="YTH">Youth (YTH)</option></select>
+  </div>
+  <label class="lgtoggle"><input type="checkbox" id="f-lastgen">Show last generation (outgoing models)</label>
+  <div class="count" id="catcount"></div>
+  <div id="catlist"></div>
+</section>
+
+<section class="tab" id="laer">
+  <h2>Learn</h2>
+  <p class="sub">Seven short cards — read 1 and 2 before you order.</p>
+  <div class="card"><div class="kicker">Card 1</div><h3>Measuring guide: chest and arm</h3>
+  <p>Two measurements cover both categories: <b>chest circumference</b> just below the armpits (shoulder) and <b>arm length</b> (elbow). Measure over a thin shirt, not a sweater.</p>
+  <div class="callout"><b>Brand trap:</b> CCM measures the arm from the <b>elbow tip to the wrist on the OUTSIDE</b> — Bauer measures from the <b>wrist to the elbow crease on the INSIDE</b>. Same kid, two different numbers. Never reuse the measurement across brands.</div>
+
+  <h4>CCM · Shoulder</h4>
+  <p class="dim" style="font-size:13px">Measure chest circumference just below the armpits. Caps must sit ON the shoulder point.</p>
+  <p style="font-size:12px;color:var(--faint)">JR</p><div class="tablewrap"><table><thead><tr><th>Size</th><th>Chest (cm)</th><th>Height (cm)</th></tr></thead><tbody><tr><td>S</td><td>61–76</td><td>127–137</td></tr><tr><td>M</td><td>66–81</td><td>137–147</td></tr><tr><td>L</td><td>76–89</td><td>147–157</td></tr></tbody></table></div>
+  <p style="font-size:12px;color:var(--faint)">YTH</p><div class="tablewrap"><table><thead><tr><th>Size</th><th>Chest (cm)</th><th>Height (cm)</th></tr></thead><tbody><tr><td>S</td><td>&lt; 58</td><td>102–109</td></tr><tr><td>M</td><td>58–64</td><td>109–117</td></tr><tr><td>L</td><td>61–71</td><td>117–127</td></tr></tbody></table></div>
+  <h4>CCM · Elbow</h4>
+  <p class="dim" style="font-size:13px">Measure from elbow tip to wrist on the OUTSIDE of the arm. If between sizes, CCM says trust the bicep circumference first.</p>
+  <p style="font-size:12px;color:var(--faint)">JR</p><div class="tablewrap"><table><thead><tr><th>Size</th><th>Arm (cm)</th><th>Bicep (cm)</th><th>Height (cm)</th></tr></thead><tbody><tr><td>S</td><td>15–20</td><td>18–23</td><td>127–137</td></tr><tr><td>M</td><td>18–23</td><td>20–25</td><td>137–147</td></tr><tr><td>L</td><td>20–25</td><td>23–28</td><td>147–157</td></tr></tbody></table></div>
+  <p style="font-size:12px;color:var(--faint)">YTH</p><div class="tablewrap"><table><thead><tr><th>Size</th><th>Arm (cm)</th><th>Bicep (cm)</th><th>Height (cm)</th></tr></thead><tbody><tr><td>S</td><td>11–15</td><td>14–18</td><td>102–109</td></tr><tr><td>M</td><td>14–18</td><td>15–19*</td><td>109–117</td></tr><tr><td>L</td><td>15–19</td><td>18–20</td><td>117–127</td></tr></tbody></table></div>
+  <p class="srcline">* CCM YTH M bicep: the source contains an obvious typo (6″–5.5″); the range shown is our interpolation between S and L — verify with CCM.</p>
+  <p class="srcline">CCM-tabell gjengitt hos Scheels (scheels.com, hentet 2026-07-09); tommer fra kilden, cm omregnet av oss</p>
+
+  <h4>Bauer · Shoulder</h4>
+  <p class="dim" style="font-size:13px">Measure chest at the widest point just under the arms. Bauer also lists age and weight.</p>
+  <p style="font-size:12px;color:var(--faint)">JR</p><div class="tablewrap"><table><thead><tr><th>Size</th><th>Chest (cm)</th><th>Age</th><th>Weight (kg)</th></tr></thead><tbody><tr><td>S</td><td>69–76</td><td>9–10</td><td>32–36</td></tr><tr><td>M</td><td>74–81</td><td>10–11</td><td>36–41</td></tr><tr><td>L</td><td>79–86</td><td>11–12</td><td>41–45</td></tr></tbody></table></div>
+  <p style="font-size:12px;color:var(--faint)">YTH</p><div class="tablewrap"><table><thead><tr><th>Size</th><th>Chest (cm)</th><th>Age</th><th>Weight (kg)</th></tr></thead><tbody><tr><td>S</td><td>53–61</td><td>3–5</td><td>16–20</td></tr><tr><td>M</td><td>58–66</td><td>5–7</td><td>20–27</td></tr><tr><td>L</td><td>64–71</td><td>7–9</td><td>27–41</td></tr></tbody></table></div>
+  <h4>Bauer · Elbow</h4>
+  <div class="callout">NOTE: Bauer measures from the WRIST to the elbow crease on the INSIDE — a different definition than CCM!</div>
+  <p style="font-size:12px;color:var(--faint)">JR</p><div class="tablewrap"><table><thead><tr><th>Size</th><th>Arm (cm)</th><th>Age</th><th>Weight (kg)</th></tr></thead><tbody><tr><td>S</td><td>22–27</td><td>8–11</td><td>27–41</td></tr><tr><td>L</td><td>24–29</td><td>11–14</td><td>36–45</td></tr></tbody></table></div>
+  <p style="font-size:12px;color:var(--faint)">YTH</p><div class="tablewrap"><table><thead><tr><th>Size</th><th>Arm (cm)</th><th>Age</th><th>Weight (kg)</th></tr></thead><tbody><tr><td>S</td><td>16–19</td><td>3–5</td><td>16–20</td></tr><tr><td>M</td><td>18–20</td><td>5–7</td><td>20–27</td></tr><tr><td>L</td><td>19–22</td><td>7–9</td><td>27–41</td></tr></tbody></table></div>
+  <p class="srcline">Bauer-tabell gjengitt hos Scheels (scheels.com, hentet 2026-07-09); lbs/tommer fra kilden, kg/cm omregnet av oss</p>
+
+  <h4>Warrior</h4>
+  <p style="font-size:13.5px">Shoulder: chest just below the armpits + height. Elbow: bicep and forearm circumference + elbow-crease-to-wrist length. Junior sizes are S/M/L.</p>
+  <p class="srcline">Metode bekreftet (HockeyMonkey/Willies-guider); numerisk junior-tabell IKKE verifisert — bruk tabellen på produktsiden</p>
+  </div><div class="card" id="gapcard"><div class="kicker">Card 2</div><h3>Gap check: the whole arm as one chain</h3>
+  <p>An elbow pad is never bought alone — it must meet the shoulder pad’s bicep guard at the top and the glove cuff at the bottom. Check with all the gear on:</p>
+  <div class="diagram" role="img" aria-label="1 · Cap ON the shoulder point; 2 · No bare skin bicep ↔ elbow; 3 · No bare skin elbow ↔ cuff">
+<svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <path d="M30 118 Q30 60 96 58 L128 58 Q150 58 150 84 L150 118" stroke="#e8e6e1" stroke-width="3"/>
+  <path d="M42 118 Q42 74 96 72 L122 72 Q136 72 136 90 L136 118" stroke="#7d7a74" stroke-width="2"/>
+  <rect x="150" y="70" width="96" height="52" rx="14" stroke="#e8e6e1" stroke-width="3"/>
+  <rect x="264" y="66" width="60" height="60" rx="30" stroke="#e8e6e1" stroke-width="3"/>
+  <rect x="322" y="74" width="120" height="44" rx="12" stroke="#e8e6e1" stroke-width="3"/>
+  <path d="M460 64 L516 52 Q536 48 540 68 L546 108 Q548 126 528 130 L466 138 Q456 128 458 108 Z" stroke="#e8e6e1" stroke-width="3"/>
+  <circle cx="148" cy="96" r="17" stroke="#ff5b1f" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <circle cx="256" cy="96" r="17" stroke="#ff5b1f" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <circle cx="452" cy="96" r="17" stroke="#ff5b1f" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <text x="30" y="40" fill="#a8a59f" font-family="Inter,sans-serif" font-size="13">Shoulder cap</text>
+  <text x="160" y="146" fill="#a8a59f" font-family="Inter,sans-serif" font-size="13">Bicep guard</text>
+  <text x="300" y="52" fill="#a8a59f" font-family="Inter,sans-serif" font-size="13">Elbow pad</text>
+  <text x="468" y="162" fill="#a8a59f" font-family="Inter,sans-serif" font-size="13">Glove cuff</text>
+  <text x="30" y="196" fill="#ff5b1f" font-family="Inter,sans-serif" font-size="13" font-weight="600">1 · Cap ON the shoulder point</text>
+  <text x="30" y="218" fill="#ff5b1f" font-family="Inter,sans-serif" font-size="13" font-weight="600">2 · No bare skin bicep ↔ elbow</text>
+  <text x="30" y="240" fill="#ff5b1f" font-family="Inter,sans-serif" font-size="13" font-weight="600">3 · No bare skin elbow ↔ cuff</text>
+</svg></div><div class="sketchnote">Illustrative sketch — not to scale.</div>
+  <ol>
+    <li>Put on the shoulder pad, elbow pad and glove at the same time.</li>
+    <li>Extend the arm straight out: no bare skin between the bicep guard and the elbow pad’s top flap (point 2 in the sketch).</li>
+    <li>No bare skin between the bottom of the elbow pad and the glove cuff (point 3). Short cuff? Choose a longer elbow pad — or a wrist guard.</li>
+    <li>Flex and extend: the pad must not rotate or slide.</li>
+  </ol>
+  <p class="srcline">Based on fitting guidance from HockeyMonkey and How To Hockey.</p></div><div class="card"><div class="kicker">Card 3</div><h3>Protection level: what U13 actually needs</h3>
+  <p>Honest answer: at U13, the hits come from falls, boards and pucks — not open-ice checks. The NIHF defines U13 and younger as child sport, and body checking is prohibited through U11.</p>
+  <p>That is why correct size and full coverage always beat pricier “pro level”: a mid-range pad that fits protects better than a flagship floating around on the arm.</p>
+  <p>Worth paying for: cap quality and straps on the elbow (that is where falls land) and fit on the shoulder. The retailer itself positions the budget models honestly — the FT880 as “affordable with reliable protection”, the Fly40 as “enough protection against light impacts”.</p>
+  <p class="dim">Flagships mainly buy lighter, airier materials and better mobility — nice, but not a safety must at this level.</p>
+  <p class="srcline">Sources: the NIHF documents in card 6.</p></div><div class="card"><div class="kicker">Card 4</div><h3>Adjusting the straps</h3><ul>
+    <li><b>Elbow, bottom strap first</b> — with the glove on. Tighten until two fingers barely fit underneath.</li>
+    <li><b>Elbow, top/bicep strap:</b> tight enough that the cap stays put when the arm is shaken.</li>
+    <li><b>Shoulder, torso straps:</b> the pad must not rotate when you pull on the caps.</li>
+    <li><b>Bicep guards:</b> adjust the length down toward the elbow pad’s top flap (the gap check in card 2).</li>
+    <li><b>After 2–3 sessions:</b> re-check everything — velcro and foam settle in.</li>
+  </ul></div><div class="card"><div class="kicker">Card 5</div><h3>Drying and care</h3><ul>
+    <li>Out of the bag the same evening — hang with airflow at room temperature.</li>
+    <li>Never on a heater/radiator or in a tumble dryer: glue and foam cannot take it.</li>
+    <li>Close the velcro before drying so it does not pick up lint.</li>
+    <li>If it smells sour: hand wash in lukewarm soapy water, rinse and air dry completely.</li>
+    <li>Dry gear lasts longer and smells less — simple math.</li>
+  </ul></div><div class="card"><div class="kicker">Card 6</div><h3>What do the rules say? (NIHF)</h3>
+  <p>The NIHF/IIHF playing rules require full protective equipment for skaters — the list includes elbow pads, shoulder pads, shin guards, a helmet with full face mask/visor, hockey pants and jersey; all protective gear (except gloves, helmet and goalie leg pads) must be worn under the jersey. The NIHF game regulations define U13 and younger as child sport, and body checking is prohibited in U11 and younger.</p>
+  <p class="srcline"><a href="https://skedsmoik.no/storage/files/uploads/201213%20Spilleregler%20ishockey%202018_22.pdf" target="_blank" rel="noopener">NIHF/IIHF Spilleregler (norsk oversettelse, 2018–22-bok)</a> · <a href="https://www.hockey.no/contentassets/bca027c9bef0493fabea0f1c784ae48a/kampreglementet-ver070623.pdf" target="_blank" rel="noopener">NIHF Kampreglement (hockey.no, rev. 2023)</a></p></div><div class="card"><div class="kicker">Card 7</div><h3>Watch the fit being done right</h3><div class="video"><div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/_KPraHo4pi4" title="How to Fit Hockey Elbow Pads" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+    <p class="vcap"><b>How to Fit Hockey Elbow Pads</b> — Pure Hockey · <a href="https://www.youtube.com/watch?v=_KPraHo4pi4" target="_blank" rel="noopener">YouTube</a></p></div><div class="video"><div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/pQkcfrddNds" title="How to Fit Hockey Shoulder Pads" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+    <p class="vcap"><b>How to Fit Hockey Shoulder Pads</b> — Pure Hockey · <a href="https://www.youtube.com/watch?v=pQkcfrddNds" target="_blank" rel="noopener">YouTube</a></p></div></div>
+</section>
+
+<footer>
+  <p><b>About the prices:</b> Last checked 2026-07-10 at hockeystore.no. Prices and stock change — the links always show today’s price. “Price unverified” = no NOK price found that day. € prices from hockeystore.com are converted at 1:11.7 and marked “≈”.</p>
+  <p>hockeystore.no is Swedish (Spobik AB); .no = Norwegian-language storefront shipping from Sweden. &quot;In stock&quot; = orderable to Norway.</p>
+  <p>Size run (S/M/L) taken from the brand’s official chart for the age group; actual availability varies per model — check the product page.</p>
+  <p>Gear Lab · built for hockey parents in Trondheim</p>
+</footer>
+</div>
+
+<script>
+var LANG = "en";
+var DATA = {"meta":{"lastChecked":"2026-07-10","eurRate":11.7,"storeNote_no":"hockeystore.no er svensk (Spobik AB); .no = norsk språkbutikk med frakt fra Sverige. «På lager» = bestillbar til Norge.","storeNote_en":"hockeystore.no is Swedish (Spobik AB); .no = Norwegian-language storefront shipping from Sweden. \"In stock\" = orderable to Norway.","sizesNote_no":"Størrelsesløp (S/M/L) hentet fra merkets offisielle tabell for aldersgruppen; faktisk tilgjengelighet varierer per modell — sjekk produktsiden.","sizesNote_en":"Size run (S/M/L) taken from the brand’s official chart for the age group; actual availability varies per model — check the product page."},"products":[{"id":"ccm-jetspeed-ft8pro-el-jr","brand":"CCM","family":"JetSpeed","model":"FT8 Pro","category":"elbow","tier":"flagship","ageGroup":"JR","tagline":"Max venting, 3-piece FlexMotion mobility","specs_no":"AER-TEC-ventilasjon, 3-delt FlexMotion, HD-skum i underarm/biceps, JDP-skål i PE.","specs_en":"AER-TEC thermoregulation, 3-piece FlexMotion, HD foam forearm/bicep, JDP PE cap.","stores":[{"name":"hockeystore.no","priceNOK":null,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/492/albuebeskyttelse-for-hockey","lastChecked":"2026-07-09","note_no":"NOK-pris ubekreftet — sist observert 1 299 kr («NYHET») i kategorilisten; verifiser på produktsiden.","note_en":"NOK price unverified — last seen 1,299 kr (tagged NEW) in the category list; verify on the product page."},{"name":"hockeystore.com (EUR)","priceNOK":1520,"priceMSRP":null,"url":"https://www.hockeystore.com/en/articles/2.492.26786/ccm-elbow-pads-jetspeed-ft8-pro-jr","lastChecked":"2026-07-09","note_no":"€129,90 (på lager) omregnet 1:11,7 — EUR, ikke NOK-butikkpris.","note_en":"€129.90 (in stock) converted at 1:11.7 — EUR, not the NOK storefront price."}],"notes_no":"JetSpeed FT8 Pro-linjen lansert 30. mai 2025 (hockeystore.com-nyhet).","notes_en":"JetSpeed FT8 Pro line launched online 30 May 2025 (hockeystore.com news).","sizes":[{"label":"S","armCm":"15–20"},{"label":"M","armCm":"18–23"},{"label":"L","armCm":"20–25"}]},{"id":"ccm-jetspeed-ft880-el-jr","brand":"CCM","family":"JetSpeed","model":"FT880","category":"elbow","tier":"budget","ageGroup":"JR","tagline":"Budget pick of the new JetSpeed line","specs_no":"Hybrid to-delt design, komprimert EVA-underarmsplate, JDP-skål i PE, flytende bicepsbeskytter.","specs_en":"Hybrid two-piece design, compressed EVA forearm plate, molded JDP PE cap, floating bicep guard.","stores":[{"name":"hockeystore.no","priceNOK":null,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/492/albuebeskyttelse-for-hockey","lastChecked":"2026-07-09","note_no":"NOK-pris ubekreftet — verifiser på produktsiden.","note_en":"NOK price unverified — verify on the product page."},{"name":"hockeystore.com (EUR)","priceNOK":818,"priceMSRP":null,"url":"https://www.hockeystore.com/en/articles/2.492.26727/ccm-elbow-pads-jetspeed-ft880-jr","lastChecked":"2026-07-09","note_no":"€69,90 (på lager) omregnet 1:11,7.","note_en":"€69.90 (in stock) converted at 1:11.7."}],"notes_no":"Butikken selv kaller den «et rimelig alternativ med pålitelig beskyttelse» — ærlig posisjonering for U13.","notes_en":"The retailer itself calls it \"an affordable option with reliable protection\" — honest positioning for U13.","sizes":[{"label":"S","armCm":"15–20"},{"label":"M","armCm":"18–23"},{"label":"L","armCm":"20–25"}]},{"id":"ccm-tacks-asv-el-jr","brand":"CCM","family":"Tacks","model":"AS-V","category":"elbow","tier":"flagship","ageGroup":"JR","lastGen":true,"tagline":"Protection-first Tacks fit, D3O in the cup","specs_no":"JDP-skål med D3O-materiale, Anatomical Shield Design, leddelt bicepsbeskyttelse i PE-skum, 360° feste.","specs_en":"JDP cup with D3O material, Anatomical Shield Design, articulated PE-foam bicep guard, 360° strapping.","stores":[{"name":"hockeystore.no","priceNOK":699,"priceMSRP":999,"url":"https://www.hockeystore.no/no/articles/2.492.12927/ccm-albuebeskyttere-tacks-as-v-jr","lastChecked":"2026-07-09","note_no":"IKKE på lager i dag (meta: out of stock).","note_en":"OUT of stock today (meta: out of stock)."}],"notes_no":"2022-generasjonen av Tacks-beskyttelse; fortsatt i sortiment, men utsolgt 09.07. Tacks-albuen er tilbake i sortimentet med XR-serien (S26) og XF Jr.","notes_en":"The 2022 Tacks protective generation; still listed but sold out 9 Jul. The Tacks elbow is back in the range with the XR series (S26) and the XF Jr.","sizes":[{"label":"S","armCm":"15–20"},{"label":"M","armCm":"18–23"},{"label":"L","armCm":"20–25"}]},{"id":"ccm-next-el-yth","brand":"CCM","family":"Next","model":"Next","category":"elbow","tier":"budget","ageGroup":"YTH","tagline":"One-piece starter pad, easy on/off","specs_no":"Ettstykks-konstruksjon, JDP-skål i PE-plast, dobbelt stroppsystem med stor borrelås-sone.","specs_en":"One-piece construction, JDP PE cap, double strap system with a large velcro landing zone.","stores":[{"name":"hockeystore.no","priceNOK":239,"priceMSRP":299,"url":"https://www.hockeystore.no/no/articles/2.690.16575/ccm-albuebeskyttere-next-yth","lastChecked":"2026-07-09","note_no":"På lager.","note_en":"In stock."}],"notes_no":"Next Jr og Next Sr finnes også i sortimentet (Jr-pris å verifisere).","notes_en":"Next Jr and Next Sr also exist in the range (Jr price to verify).","sizes":[{"label":"S","armCm":"11–15"},{"label":"M","armCm":"14–18"},{"label":"L","armCm":"15–19"}]},{"id":"bauer-vapor-flylite-el-jr","brand":"Bauer","family":"Vapor","model":"Flylite","category":"elbow","tier":"flagship","ageGroup":"JR","tagline":"Top Vapor: CURV forearm, deep cup","specs_no":"CURV-kompositt i underarmen, DEFENSE CLOUD TECH-skum i skålen, 360° underarmsbeskyttelse, DynaFlex-lukking.","specs_en":"CURV composite forearm, DEFENSE CLOUD TECH foam in the cap, 360° forearm wrap, DynaFlex closure.","stores":[{"name":"hockeystore.no","priceNOK":1199,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.492.26017/bauer-albuebeskyttere-vapor-flylite-jr","lastChecked":"2026-07-09","note_no":"På lager.","note_en":"In stock."}],"notes_no":"2025-Vapor heter Flylite/Flypro/Fly40 («Fly»-familien).","notes_en":"The 2025 Vapor protective family is Flylite/Flypro/Fly40.","sizes":[{"label":"S","armCm":"22–27"},{"label":"L","armCm":"24–29"}]},{"id":"bauer-vapor-flypro-el-jr","brand":"Bauer","family":"Vapor","model":"Flypro","category":"elbow","tier":"mid","ageGroup":"JR","tagline":"Light HYPERLITE foam, slim profile","specs_no":"Eksponert HYPERLITE-skum på skål og underarm, dyp albuekopp, 360° underarm, integrert erme (barnestørrelser).","specs_en":"Exposed HYPERLITE foam on cap and forearm, deep elbow cup, 360° forearm, integrated sleeve (kid sizes).","stores":[{"name":"hockeystore.no","priceNOK":839,"priceMSRP":999,"url":"https://www.hockeystore.no/no/articles/2.492.26020/bauer-albuebeskyttere-vapor-flypro-jr","lastChecked":"2026-07-09","note_no":"På lager, salgspris i dag.","note_en":"In stock, on sale today."}],"notes_no":"","notes_en":"","sizes":[{"label":"S","armCm":"22–27"},{"label":"L","armCm":"24–29"}]},{"id":"bauer-vapor-fly40-el-jr","brand":"Bauer","family":"Vapor","model":"Fly40","category":"elbow","tier":"budget","ageGroup":"JR","tagline":"Growing-player pick, integrated sleeve","specs_no":"Formstøpt PE-skum, dypere albuekopp, avsmalnende underarm; butikken: «nok beskyttelse mot lette støt — ideelt for voksende hockeytalenter».","specs_en":"Molded PE foam, deeper cup, tapered forearm; retailer: \"enough protection against light impacts — ideal for growing players\".","stores":[{"name":"hockeystore.no","priceNOK":599,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.492.26050/bauer-albuebeskyttere-vapor-fly40-jr","lastChecked":"2026-07-09","note_no":"På lager.","note_en":"In stock."}],"notes_no":"","notes_en":"","sizes":[{"label":"S","armCm":"22–27"},{"label":"L","armCm":"24–29"}]},{"id":"bauer-supreme-f50pro-el-jr","brand":"Bauer","family":"Supreme","model":"F50 Pro","category":"elbow","tier":"mid","ageGroup":"JR","tagline":"New Supreme line, wrap-lock fit","specs_no":"Lavprofilkappe, flytende biceps, 180° formet underarm, Wrap Lock + Comfort Anchor-stropp, THERMO MAX+-fôr.","specs_en":"Low-profile cap, floating bicep, 180° shaped forearm, Wrap Lock + Comfort Anchor strap, THERMO MAX+ liner.","stores":[{"name":"hockeystore.no","priceNOK":999,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.492.30085/bauer-albuebeskyttere-supreme-f50-pro-jr","lastChecked":"2026-07-09","note_no":"På lager.","note_en":"In stock."}],"notes_no":"Ny Supreme-beskyttelseslinje (Fuse over F50 Pro); Fuse albue sett kun i Int/Sr hos hockeystore.no.","notes_en":"New Supreme protective line (Fuse above F50 Pro); Fuse elbow only seen in Int/Sr at hockeystore.no.","sizes":[{"label":"S","armCm":"22–27"},{"label":"L","armCm":"24–29"}]},{"id":"bauer-supreme-mach-el-jr","brand":"Bauer","family":"Supreme","model":"Mach","category":"elbow","tier":"flagship","ageGroup":"JR","lastGen":true,"successor":"bauer-supreme-f50pro-el-jr","tagline":"2022 Supreme flagship on clearance","specs_no":"Forrige Supreme-toppmodell (2022); nå på utsalg med begrenset lager.","specs_en":"Previous Supreme flagship (2022); now on clearance with limited stock.","stores":[{"name":"hockeystore.no","priceNOK":799,"priceMSRP":1099,"url":"https://www.hockeystore.no/no/articles/2.492.18453/bauer-albuebeskyttere-supreme-mach-jr","lastChecked":"2026-07-09","note_no":"Salg («begrenset lager») — pris fra dagens kategoriliste.","note_en":"On sale (\"limited stock\") — price from today's category list."}],"notes_no":"","notes_en":"","sizes":[{"label":"S","armCm":"22–27"},{"label":"L","armCm":"24–29"}]},{"id":"bauer-x-el-jr","brand":"Bauer","family":"X","model":"X","category":"elbow","tier":"budget","ageGroup":"JR","tagline":"Entry pad that covers the basics","specs_no":"Formstøpt skål, FlexCell-skum, justerbar passform — Bauers innstegsserie.","specs_en":"Molded cap, FlexCell foam, adjustable fit — Bauer entry series.","stores":[{"name":"hockeystore.no","priceNOK":399,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.492.20907/bauer-albuebeskyttere-x-jr","lastChecked":"2026-07-09","note_no":"Pris fra dagens kategoriliste.","note_en":"Price from today's category list."}],"notes_no":"","notes_en":"","sizes":[{"label":"S","armCm":"22–27"},{"label":"L","armCm":"24–29"}]},{"id":"bauer-x-el-yth","brand":"Bauer","family":"X","model":"X","category":"elbow","tier":"budget","ageGroup":"YTH","tagline":"First elbow pads for the smallest","specs_no":"Samme X-serie i barnestørrelse.","specs_en":"Same X series in youth sizing.","stores":[{"name":"hockeystore.no","priceNOK":299,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.492.20909/bauer-albuebeskyttere-x-yth","lastChecked":"2026-07-09","note_no":"Pris fra dagens kategoriliste.","note_en":"Price from today's category list."}],"notes_no":"","notes_en":"","sizes":[{"label":"S","armCm":"16–19"},{"label":"M","armCm":"18–20"},{"label":"L","armCm":"19–22"}]},{"id":"warrior-alpha-pro-el-jr","brand":"Warrior","family":"Alpha","model":"Alpha Pro","category":"elbow","tier":"flagship","ageGroup":"JR","tagline":"Sling Wrap lock-in, Wartech sleeve","specs_no":"Sling Wrap-stropper med Fantom Stretch, Wartech-erme, Max Protect-skumforsterkninger, Lay Flat-stropper.","specs_en":"Sling Wrap straps with Fantom Stretch, Wartech sleeve, Max Protect foam reinforcement, Lay Flat straps.","stores":[{"name":"hockeystore.no","priceNOK":1099,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.492.22010/warrior-albuebeskyttere-alpha-pro-jr","lastChecked":"2026-07-09","note_no":"På lager.","note_en":"In stock."}],"notes_no":"2025-generasjonen av Warrior Alpha-beskyttelse.","notes_en":"2025 generation of Warrior Alpha protective.","sizes":[{"label":"S"},{"label":"M"},{"label":"L"}]},{"id":"warrior-alpha-lt-el-jr","brand":"Warrior","family":"Alpha","model":"Alpha LT","category":"elbow","tier":"mid","ageGroup":"JR","tagline":"Light 3-piece build, easy straps","specs_no":"3-delt design for naturlig bevegelse, skum med dobbel tetthet i underarm/biceps, Lay Flat-stropper.","specs_en":"3-piece design for natural motion, dual-density foam in forearm/bicep, Lay Flat straps.","stores":[{"name":"hockeystore.no","priceNOK":899,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.492.33393/warrior-albuebeskyttere-alpha-lt-jr","lastChecked":"2026-07-09","note_no":"På lager. Markedsføres også som «Alpha Lite» i deler av sortimentet.","note_en":"In stock. Also marketed as \"Alpha Lite\" in parts of the range."}],"notes_no":"","notes_en":"","sizes":[{"label":"S"},{"label":"M"},{"label":"L"}]},{"id":"ccm-jetspeed-ft8pro-sh-jr","brand":"CCM","family":"JetSpeed","model":"FT8 Pro","category":"shoulder","tier":"flagship","ageGroup":"JR","tagline":"AGI Shield + Zotefoam, elite venting","specs_no":"AER-TEC + AGI Shield, ultralette U-Foam-kapper, torso i støpt Zotefoam med ventilasjonsporter, Flexmotion-basejakke, justerbare HD-bicepsbeskyttere.","specs_en":"AER-TEC + AGI Shield, ultra-light U-Foam caps, molded Zotefoam torso with vent ports, Flexmotion base jacket, adjustable HD bicep guards.","stores":[{"name":"hockeystore.no","priceNOK":null,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/493/skulderbeskyttelse-hockey","lastChecked":"2026-07-09","note_no":"NOK-pris ubekreftet — verifiser på produktsiden.","note_en":"NOK price unverified — verify on the product page."},{"name":"hockeystore.com (EUR)","priceNOK":2105,"priceMSRP":null,"url":"https://www.hockeystore.com/en/articles/2.493.26782/ccm-shoulder-pads-jetspeed-ft8-pro-jr","lastChecked":"2026-07-09","note_no":"€179,90 omregnet 1:11,7 — utsolgt i EN-butikken i dag.","note_en":"€179.90 converted at 1:11.7 — out of stock in the EN storefront today."}],"notes_no":"","notes_en":"","sizes":[{"label":"S","chestCm":"61–76"},{"label":"M","chestCm":"66–81"},{"label":"L","chestCm":"76–89"}]},{"id":"ccm-jetspeed-ft8-sh-jr","brand":"CCM","family":"JetSpeed","model":"FT8","category":"shoulder","tier":"mid","ageGroup":"JR","tagline":"Mid JetSpeed with JDP caps (Jr)","specs_no":"AER-TEC-ventilasjon, forsterkede paneler med Amplified Mobility Design, JDP-kapper (Jr), torso i støpt PE-skum, Flexmotion-basejakke.","specs_en":"AER-TEC venting, reinforced Amplified Mobility panels, JDP caps (Jr), molded PE-foam torso, Flexmotion base jacket.","stores":[{"name":"hockeystore.no","priceNOK":null,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/493/skulderbeskyttelse-hockey","lastChecked":"2026-07-09","note_no":"Pris ubekreftet i begge butikker — verifiser.","note_en":"Price unverified in both storefronts — verify."}],"notes_no":"Sr-varianten sist sett 1 799 kr («NYHET») i .no-listen.","notes_en":"The Sr version was last seen at 1,799 kr (tagged NEW) in the .no list.","sizes":[{"label":"S","chestCm":"61–76"},{"label":"M","chestCm":"66–81"},{"label":"L","chestCm":"76–89"}]},{"id":"ccm-jetspeed-ft880-sh-jr","brand":"CCM","family":"JetSpeed","model":"FT880","category":"shoulder","tier":"budget","ageGroup":"JR","tagline":"Double-layer PE front, honest value","specs_no":"Dobbeltlags front i PE-skum, JDP-designede kapper i støpt PE, ventilert front, bicepsbeskyttere med lengdejustering.","specs_en":"Double-layer PE-foam front, JDP-designed molded PE caps, ventilated base, length-adjustable bicep guards.","stores":[{"name":"hockeystore.no","priceNOK":null,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/493/skulderbeskyttelse-hockey","lastChecked":"2026-07-09","note_no":"Står i dagens .no-liste; NOK-pris ble kuttet i vår uthenting — verifiser.","note_en":"Appears in today's .no list; NOK price was truncated in our fetch — verify."},{"name":"hockeystore.com (EUR)","priceNOK":993,"priceMSRP":null,"url":"https://www.hockeystore.com/en/articles/2.493.26725/ccm-shoulder-pads-jetspeed-ft880-jr","lastChecked":"2026-07-09","note_no":"€84,90 (på lager) omregnet 1:11,7.","note_en":"€84.90 (in stock) converted at 1:11.7."}],"notes_no":"","notes_en":"","sizes":[{"label":"S","chestCm":"61–76"},{"label":"M","chestCm":"66–81"},{"label":"L","chestCm":"76–89"}]},{"id":"ccm-tacks-xfpro-sh-jr","brand":"CCM","family":"Tacks","model":"XF Pro","category":"shoulder","tier":"flagship","ageGroup":"JR","tagline":"Protection-first Tacks fit","specs_no":"Tacks-passform = beskyttelse-først (mot JetSpeeds bevegelighet-først). Detaljerte spesifikasjoner å verifisere.","specs_en":"Tacks fit = protection-first (vs JetSpeed mobility-first). Detailed specs to verify.","stores":[{"name":"hockeystore.no","priceNOK":null,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/493/skulderbeskyttelse-hockey","lastChecked":"2026-07-09","note_no":"Sist sett 1 739 kr (1 899) i .no-listen (cache, dato ukjent) — verifiser.","note_en":"Last seen at 1,739 kr (1,899) in the .no list (cache, date unknown) — verify."}],"notes_no":"Tacks XR (S26) lanserte juli 2026 og tok over toppplassen; CCMs egen produktside viser XF Pro Jr som «unavailable». Fortsatt i .no-sortimentet per cache.","notes_en":"Tacks XR (S26) launched July 2026 and took over the top slot; CCM’s own product page shows XF Pro Jr as unavailable. Still in the .no range per cache.","sizes":[{"label":"S","chestCm":"61–76"},{"label":"M","chestCm":"66–81"},{"label":"L","chestCm":"76–89"}],"lastGen":true,"successor":"ccm-tacks-xrpro-sh-jr"},{"id":"ccm-next-sh-jr","brand":"CCM","family":"Next","model":"Next","category":"shoulder","tier":"budget","ageGroup":"JR","tagline":"Entry shoulder pad, light and simple","specs_no":"Innstegsserie; enkel, lett konstruksjon for nye spillere.","specs_en":"Entry series; simple, light construction for new players.","stores":[{"name":"hockeystore.no","priceNOK":null,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/493/skulderbeskyttelse-hockey","lastChecked":"2026-07-09","note_no":"Sist sett 449 kr (549) i .no-listen (cache) — verifiser.","note_en":"Last seen at 449 kr (549) in the .no list (cache) — verify."}],"notes_no":"Next Yth sist sett 389 kr (449).","notes_en":"Next Yth last seen at 389 kr (449).","sizes":[{"label":"S","chestCm":"61–76"},{"label":"M","chestCm":"66–81"},{"label":"L","chestCm":"76–89"}]},{"id":"bauer-supreme-f50pro-sh-jr","brand":"Bauer","family":"Supreme","model":"F50 Pro","category":"shoulder","tier":"mid","ageGroup":"JR","tagline":"Full caps + CURV sternum, snug ADAPTiV fit","specs_no":"Heldekkende kapper, integrert CURV-kompositt i brystbenet, ADAPTiV-ribber med stretch, anatomisk PE-rygg, justerbare biceps.","specs_en":"Full-coverage caps, integrated CURV composite sternum, ADAPTiV ribs with stretch gusset, anatomical PE spine, adjustable biceps.","stores":[{"name":"hockeystore.no","priceNOK":null,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/493/skulderbeskyttelse-hockey","lastChecked":"2026-07-09","note_no":"NOK-pris ubekreftet — verifiser på produktsiden.","note_en":"NOK price unverified — verify on the product page."},{"name":"hockeystore.com (EUR)","priceNOK":1520,"priceMSRP":null,"url":"https://www.hockeystore.com/en/articles/2.493.30076/bauer-shoulder-pad-supreme-f50-pro-jr","lastChecked":"2026-07-09","note_no":"€129,95 (på lager) omregnet 1:11,7.","note_en":"€129.95 (in stock) converted at 1:11.7."}],"notes_no":"","notes_en":"","sizes":[{"label":"S","chestCm":"69–76"},{"label":"M","chestCm":"74–81"},{"label":"L","chestCm":"79–86"}]},{"id":"bauer-supreme-m3-sh-jr","brand":"Bauer","family":"Supreme","model":"M3","category":"shoulder","tier":"budget","ageGroup":"JR","lastGen":true,"successor":"bauer-supreme-f50pro-sh-jr","tagline":"2023 Supreme value tier on clearance","specs_no":"Fulldekkende kappe med ekstra flekspunkter, Active Motion-lavprofilbeskyttelse (2023-linjen).","specs_en":"Full-coverage cap with extra flex points, Active Motion low-profile protection (2023 line).","stores":[{"name":"hockeystore.no","priceNOK":599,"priceMSRP":799,"url":"https://www.hockeystore.no/no/articles/2.493.18423/bauer-skulderbeskyttelse-supreme-m3-jr","lastChecked":"2026-07-09","note_no":"IKKE på lager i dag (meta: out of stock).","note_en":"OUT of stock today (meta: out of stock)."}],"notes_no":"M5 Pro Jr (samme 2023-linje) finnes i EN-butikken (€119,90).","notes_en":"M5 Pro Jr (same 2023 line) exists in the EN storefront (€119.90).","sizes":[{"label":"S","chestCm":"69–76"},{"label":"M","chestCm":"74–81"},{"label":"L","chestCm":"79–86"}]},{"id":"bauer-vapor-flypro-sh-jr","brand":"Bauer","family":"Vapor","model":"Flypro","category":"shoulder","tier":"mid","ageGroup":"JR","tagline":"Light Vapor with serious coverage","specs_no":"Vapor «Fly»-familien 2025 — lav profil og bevegelighet med HYPERLITE-skum.","specs_en":"2025 Vapor \"Fly\" family — low profile and mobility with HYPERLITE foam.","stores":[{"name":"hockeystore.no","priceNOK":1099,"priceMSRP":1299,"url":"https://www.hockeystore.no/no/articles/2.493.26011/bauer-skulderbeskyttelse-vapor-flypro-jr","lastChecked":"2026-07-09","note_no":"Salgspris fra dagens kategoriliste.","note_en":"Sale price from today's category list."}],"notes_no":"Flylite (toppmodellen) sett i Sr; Jr-variant å verifisere.","notes_en":"Flylite (top model) seen in Sr; Jr version to verify.","sizes":[{"label":"S","chestCm":"69–76"},{"label":"M","chestCm":"74–81"},{"label":"L","chestCm":"79–86"}]},{"id":"bauer-vapor-fly40-sh-jr","brand":"Bauer","family":"Vapor","model":"Fly40","category":"shoulder","tier":"budget","ageGroup":"JR","tagline":"Value Vapor for growing players","specs_no":"Innsteg i Fly-familien; formstøpt skum og lav vekt.","specs_en":"Entry of the Fly family; molded foam and low weight.","stores":[{"name":"hockeystore.no","priceNOK":679,"priceMSRP":799,"url":"https://www.hockeystore.no/no/articles/2.493.26014/bauer-skulderbeskyttelse-vapor-fly40-jr","lastChecked":"2026-07-09","note_no":"Salgspris fra dagens kategoriliste.","note_en":"Sale price from today's category list."}],"notes_no":"","notes_en":"","sizes":[{"label":"S","chestCm":"69–76"},{"label":"M","chestCm":"74–81"},{"label":"L","chestCm":"79–86"}]},{"id":"bauer-x-sh-jr","brand":"Bauer","family":"X","model":"X","category":"shoulder","tier":"budget","ageGroup":"JR","tagline":"Entry pad with molded sternum","specs_no":"Formstøpt brystben, FlexCell-skum, justerbar biceps med komfortlås-erme.","specs_en":"Molded sternum, FlexCell foam, adjustable bicep with comfort-lock sleeve.","stores":[{"name":"hockeystore.no","priceNOK":null,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/493/skulderbeskyttelse-hockey","lastChecked":"2026-07-09","note_no":"Sist sett 549 kr i .no-listen (cache) — verifiser.","note_en":"Last seen at 549 kr in the .no list (cache) — verify."}],"notes_no":"","notes_en":"","sizes":[{"label":"S","chestCm":"69–76"},{"label":"M","chestCm":"74–81"},{"label":"L","chestCm":"79–86"}]},{"id":"bauer-x-sh-yth","brand":"Bauer","family":"X","model":"X","category":"shoulder","tier":"budget","ageGroup":"YTH","tagline":"First shoulder pads for the smallest","specs_no":"Samme X-serie i barnestørrelse.","specs_en":"Same X series in youth sizing.","stores":[{"name":"hockeystore.no","priceNOK":379,"priceMSRP":449,"url":"https://www.hockeystore.no/no/articles/2.493.20914/bauer-skulderbeskyttelse-x-yth","lastChecked":"2026-07-09","note_no":"Salgspris fra dagens kategoriliste.","note_en":"Sale price from today's category list."}],"notes_no":"","notes_en":"","sizes":[{"label":"S","chestCm":"53–61"},{"label":"M","chestCm":"58–66"},{"label":"L","chestCm":"64–71"}]},{"id":"warrior-alpha-pro-sh-jr","brand":"Warrior","family":"Alpha","model":"Alpha Pro","category":"shoulder","tier":"flagship","ageGroup":"JR","tagline":"IMPAX foam, floating back/chest","specs_no":"Kompresjonsstøpt IMPAX-skum, flytende rygg- og brystbeskyttelse, avtakbar mageplate, lavprofil-kapper, Lay Flat-stropper.","specs_en":"Compression-molded IMPAX foam, floating back/chest protection, removable belly plate, low-profile caps, Lay Flat straps.","stores":[{"name":"hockeystore.no","priceNOK":1799,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.493.33387/warrior-skulderbeskyttelse-alpha-pro-jr","lastChecked":"2026-07-09","note_no":"På lager.","note_en":"In stock."}],"notes_no":"","notes_en":"","sizes":[{"label":"S"},{"label":"M"},{"label":"L"}]},{"id":"warrior-alpha-lt-sh-jr","brand":"Warrior","family":"Alpha","model":"Alpha LT","category":"shoulder","tier":"mid","ageGroup":"JR","tagline":"Lighter Alpha, same strap system","specs_no":"Max Protect med IMPAX-skum i nøkkelsoner, flytende rygg/bryst, avtakbar mageplate, Lay Flat-stropper.","specs_en":"Max Protect IMPAX foam in key zones, floating back/chest, removable belly plate, Lay Flat straps.","stores":[{"name":"hockeystore.no","priceNOK":1299,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.493.33389/warrior-skulderbeskyttelse-alpha-lt-jr","lastChecked":"2026-07-09","note_no":"På lager.","note_en":"In stock."}],"notes_no":"","notes_en":"","sizes":[{"label":"S"},{"label":"M"},{"label":"L"}]},{"id":"warrior-rise-sh-jr","brand":"Warrior","family":"Rise","model":"Rise","category":"shoulder","tier":"budget","ageGroup":"JR","tagline":"Multi-layer foam starter pad","specs_no":"Flerlags skum over nøkkelområder, lav vekt, Lay Flat-stropper.","specs_en":"Multi-layer foam over key areas, low weight, Lay Flat straps.","stores":[{"name":"hockeystore.no","priceNOK":749,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.493.22007/warrior-skulderbeskyttelse-rise-jr","lastChecked":"2026-07-09","note_no":"På lager.","note_en":"In stock."}],"notes_no":"","notes_en":"","sizes":[{"label":"S"},{"label":"M"},{"label":"L"}]},{"id":"ccm-tacks-xrpro-sh-jr","brand":"CCM","family":"Tacks","model":"XR Pro","category":"shoulder","tier":"flagship","ageGroup":"JR","tagline":"New S26 Tacks: D3O at every impact zone","specs_no":"ASD-design med formstøpte Zotefoam-paneler, frikoblet ryggpanel, Flexmotion-kapper med D3O i AC-leddet, flytende brystben/rygg med D3O, avtagbar magebeskytter, ADPT-stropper.","specs_en":"ASD design with molded Zotefoam panels, decoupled back panel, Flexmotion caps with D3O at the AC joint, floating sternum/spine with D3O, removable belly pad, ADPT straps.","sizes":[{"label":"M","chestCm":"66–81"},{"label":"L","chestCm":"76–89"}],"stores":[{"name":"hockeystore.no","priceNOK":1899,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.493.32587/ccm-skulderbeskyttelse-tacks-xr-pro-jr","lastChecked":"2026-07-10","note_no":"På lager (meta: in stock). NYHET. Kun M og L i Jr per i dag.","note_en":"In stock (meta). Tagged NEW. Only M and L in Jr as of today."}],"notes_no":"S26-generasjonen av Tacks-beskyttelse, lansert juli 2026. Erstatter Tacks XF Pro.","notes_en":"The S26 Tacks protective generation, launched July 2026. Replaces Tacks XF Pro."},{"id":"ccm-tacks-xr-sh-jr","brand":"CCM","family":"Tacks","model":"XR","category":"shoulder","tier":"mid","ageGroup":"JR","tagline":"S26 Tacks mid: JDP caps, D3O core","specs_no":"ASD-design med kompresjonsstøpt PE-skum, lavprofil JDP-kapper, D3O ved brystben/rygg, svetteavvisende EVA-fôr, avtagbare front-/ryggputer.","specs_en":"ASD design with compress-molded PE foam, low-profile JDP caps, D3O at sternum/spine, sweat-repellent EVA liner, removable front/back pads.","sizes":[{"label":"S","chestCm":"61–76"},{"label":"M","chestCm":"66–81"},{"label":"L","chestCm":"76–89"}],"stores":[{"name":"hockeystore.no","priceNOK":1499,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/2.493.32586/ccm-skulderbeskyttelse-tacks-xr-jr","lastChecked":"2026-07-10","note_no":"NYHET — pris fra dagens relaterte-liste på XR Pro-siden; lagerstatus å bekrefte på produktsiden.","note_en":"Tagged NEW — price from today’s related list on the XR Pro page; stock status to confirm on the product page."}],"notes_no":"","notes_en":""},{"id":"ccm-tacks-xr80-el-jr","brand":"CCM","family":"Tacks","model":"XR80","category":"elbow","tier":"budget","ageGroup":"JR","tagline":"S26 budget Tacks: JDP cup + Slash Shield","specs_no":"Max Coverage ASD, ettstykks flytende biceps med PE-forsterkning, JDP-skål med komfortring, Slash Shield-underarm, justerbar underarmsstropp.","specs_en":"Max Coverage ASD, single-piece floating bicep with PE reinforcement, JDP cup with comfort donut, Slash Shield forearm, adjustable forearm strap.","sizes":[{"label":"S","armCm":"15–20"},{"label":"M","armCm":"18–23"},{"label":"L","armCm":"20–25"}],"stores":[{"name":"hockeystore.no","priceNOK":699,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/492/albuebeskyttelse-for-hockey","lastChecked":"2026-07-10","note_no":"Pris fra dagens produktside-panel; «Forhåndsbestilling sendes 3. juli» — leveringsstatus å bekrefte. Produkt-URL å hente.","note_en":"Price from today’s product-page panel; “Pre-order ships 3 July” — delivery status to confirm. Product URL to fetch."}],"notes_no":"CCMs USD-pris for XR80 Jr albue: $89.99 (ccmhockey.com i dag).","notes_en":"CCM’s USD price for the XR80 Jr elbow: $89.99 (ccmhockey.com today)."},{"id":"ccm-tacks-xrpro-el-yth","brand":"CCM","family":"Tacks","model":"XR Pro","category":"elbow","tier":"flagship","ageGroup":"YTH","tagline":"Top S26 protection sized for YTH","specs_no":"JDP-skål forsterket med D3O Zero, leddelt bicepsbeskytter, dobbelt stroppsystem med stor borrelås-sone.","specs_en":"JDP cap reinforced with D3O Zero, articulated bicep guard, double-strap system with a large velcro landing zone.","sizes":[{"label":"S","armCm":"11–15"},{"label":"M","armCm":"14–18"},{"label":"L","armCm":"15–19"}],"stores":[{"name":"hockeystore.no","priceNOK":599,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/492/albuebeskyttelse-for-hockey","lastChecked":"2026-07-10","note_no":"NYHET — pris fra dagens produktside-panel; «Forhåndsbestilling sendes 3. juli». Produkt-URL å hente.","note_en":"Tagged NEW — price from today’s product-page panel; “Pre-order ships 3 July”. Product URL to fetch."}],"notes_no":"Sjelden: flaggskip-albue i YTH-størrelse.","notes_en":"Rare: a flagship elbow in YTH sizing."},{"id":"ccm-tacks-xf-el-jr","brand":"CCM","family":"Tacks","model":"XF","category":"elbow","tier":"mid","ageGroup":"JR","lastGen":true,"tagline":"S24 Tacks elbow, now on clearance","specs_no":"Forrige Tacks-generasjon (S24). Spesifikasjoner for ikke-Pro-varianten ikke verifisert — se produktsiden.","specs_en":"Previous Tacks generation (S24). Specs for the non-Pro variant not verified — see the product page.","sizes":[{"label":"S","armCm":"15–20"},{"label":"M","armCm":"18–23"},{"label":"L","armCm":"20–25"}],"stores":[{"name":"hockeystore.no","priceNOK":null,"priceMSRP":null,"url":"https://www.hockeystore.no/no/articles/492/albuebeskyttelse-for-hockey","lastChecked":"2026-07-10","note_no":"Pris ubekreftet — sist sett 899 kr (1 099, −18 %) i indeksert kategoriliste (dato ukjent); verifiser på produktsiden.","note_en":"Price unverified — last seen at 899 kr (1,099, −18%) in an indexed category list (date unknown); verify on the product page."}],"notes_no":"Korrigerer 09.07-funnet: det finnes en Tacks XF-albue i Jr hos hockeystore.no (utenfor de 12 første i vår uthenting). XR-generasjonen (S26) har tatt over.","notes_en":"Corrects the 9 Jul finding: a Tacks XF elbow does exist in Jr at hockeystore.no (beyond the first 12 in our fetch). The XR generation (S26) has taken over."}],"charts":{"ccm":{"source":"CCM-tabell gjengitt hos Scheels (scheels.com, hentet 2026-07-09); tommer fra kilden, cm omregnet av oss","shoulder":{"method_no":"Mål brystomkrets rett under armhulene. Kappene skal ligge PÅ skulderpunktet.","method_en":"Measure chest circumference just below the armpits. Caps must sit ON the shoulder point.","JR":[{"label":"S","chestCm":"61–76","heightCm":"127–137"},{"label":"M","chestCm":"66–81","heightCm":"137–147"},{"label":"L","chestCm":"76–89","heightCm":"147–157"}],"YTH":[{"label":"S","chestCm":"< 58","heightCm":"102–109"},{"label":"M","chestCm":"58–64","heightCm":"109–117"},{"label":"L","chestCm":"61–71","heightCm":"117–127"}]},"elbow":{"method_no":"Mål fra albuespiss til håndledd på UTSIDEN av armen. Ved tvil: CCM anbefaler å stole på overarmsomkretsen først.","method_en":"Measure from elbow tip to wrist on the OUTSIDE of the arm. If between sizes, CCM says trust the bicep circumference first.","JR":[{"label":"S","armCm":"15–20","bicepCm":"18–23","heightCm":"127–137"},{"label":"M","armCm":"18–23","bicepCm":"20–25","heightCm":"137–147"},{"label":"L","armCm":"20–25","bicepCm":"23–28","heightCm":"147–157"}],"YTH":[{"label":"S","armCm":"11–15","bicepCm":"14–18","heightCm":"102–109"},{"label":"M","armCm":"14–18","bicepCm":"15–19*","heightCm":"109–117"},{"label":"L","armCm":"15–19","bicepCm":"18–20","heightCm":"117–127"}]}},"bauer":{"source":"Bauer-tabell gjengitt hos Scheels (scheels.com, hentet 2026-07-09); lbs/tommer fra kilden, kg/cm omregnet av oss","shoulder":{"method_no":"Mål brystomkrets rundt bredeste punkt, rett under armene. Bauer oppgir også alder og vekt.","method_en":"Measure chest at the widest point just under the arms. Bauer also lists age and weight.","JR":[{"label":"S","chestCm":"69–76","age":"9–10","weightKg":"32–36"},{"label":"M","chestCm":"74–81","age":"10–11","weightKg":"36–41"},{"label":"L","chestCm":"79–86","age":"11–12","weightKg":"41–45"}],"YTH":[{"label":"S","chestCm":"53–61","age":"3–5","weightKg":"16–20"},{"label":"M","chestCm":"58–66","age":"5–7","weightKg":"20–27"},{"label":"L","chestCm":"64–71","age":"7–9","weightKg":"27–41"}]},"elbow":{"method_no":"OBS: Bauer måler fra HÅNDLEDDET til albuefolden på INNSIDEN — en annen definisjon enn CCM!","method_en":"NOTE: Bauer measures from the WRIST to the elbow crease on the INSIDE — a different definition than CCM!","JR":[{"label":"S","armCm":"22–27","age":"8–11","weightKg":"27–41"},{"label":"L","armCm":"24–29","age":"11–14","weightKg":"36–45"}],"YTH":[{"label":"S","armCm":"16–19","age":"3–5","weightKg":"16–20"},{"label":"M","armCm":"18–20","age":"5–7","weightKg":"20–27"},{"label":"L","armCm":"19–22","age":"7–9","weightKg":"27–41"}]}},"warrior":{"source":"Metode bekreftet (HockeyMonkey/Willies-guider); numerisk junior-tabell IKKE verifisert — bruk tabellen på produktsiden","method_no":"Skulder: brystomkrets rett under armhulene + høyde. Albue: overarms- og underarmsomkrets + lengde albuefold→håndledd. Junior-størrelser er S/M/L.","method_en":"Shoulder: chest just below the armpits + height. Elbow: bicep and forearm circumference + elbow-crease-to-wrist length. Junior sizes are S/M/L."}},"nihf":{"text_no":"NIHF/IIHF-spillereglene krever full beskyttelse for utespillere — listen omfatter blant annet albuebeskyttelse, skulderbeskyttelse, leggskinn, hjelm med heldekkende ansiktsmaske/visir, hockeybukse og drakt; alt beskyttelsesutstyr (unntatt hansker, hjelm og keeperskinn) skal bæres under drakten. NIHFs kampreglement definerer U13 og yngre som barneidrett, og i klassene U11 og yngre er kroppstaklinger forbudt.","text_en":"The NIHF/IIHF playing rules require full protective equipment for skaters — the list includes elbow pads, shoulder pads, shin guards, a helmet with full face mask/visor, hockey pants and jersey; all protective gear (except gloves, helmet and goalie leg pads) must be worn under the jersey. The NIHF game regulations define U13 and younger as child sport, and body checking is prohibited in U11 and younger.","sources":[{"label":"NIHF/IIHF Spilleregler (norsk oversettelse, 2018–22-bok)","url":"https://skedsmoik.no/storage/files/uploads/201213%20Spilleregler%20ishockey%202018_22.pdf"},{"label":"NIHF Kampreglement (hockey.no, rev. 2023)","url":"https://www.hockey.no/contentassets/bca027c9bef0493fabea0f1c784ae48a/kampreglementet-ver070623.pdf"}]},"videos":[{"id":"_KPraHo4pi4","title":"How to Fit Hockey Elbow Pads","channel":"Pure Hockey","url":"https://www.youtube.com/watch?v=_KPraHo4pi4"},{"id":"pQkcfrddNds","title":"How to Fit Hockey Shoulder Pads","channel":"Pure Hockey","url":"https://www.youtube.com/watch?v=pQkcfrddNds"}]};
+var T = {"tiers":{"flagship":"Flagship","mid":"Mid-range","budget":"Budget"},"cats":{"elbow":"Elbow pads","shoulder":"Shoulder pads"},"lastGenBadge":"Last gen","priceUnverified":"Price unverified","replacedBy":"Replaced by","noHits":"No matches — adjust the filters.","ofN":"of","aboveChart":"above the Jr chart — try in store","belowChart":"below the chart — check YTH","tieNote":"on the boundary — try both","basisChest":"based on chest (+ height)","basisChestBauer":"based on chest (+ weight/age)","basisRough":"rough: height/weight only","basisArm":"based on arm measurement (+ height)","basisAgeWeight":"Bauer chart: age + weight","warriorWhy":"numeric chart not verified — check the product page","measureChest":"Measure the chest for a reliable answer — this is only a rough estimate.","measureArm":"Measure the arm (elbow tip → wrist, outside) for a reliable answer.","modelsHeading":"Relevant models","noPriced":"No priced models in this group right now.","budgetRelaxed":"Nothing within budget — showing the nearest options.","gapTitle":"Gap check","gapReminder":"The size above is only half the job: elbow, shoulder and glove must meet with no bare skin. Try everything on together.","gapLink":"See how →","u13Note":"U13 and younger: the hits come from falls and pucks, not open-ice checks — correct fit beats “pro level”.","u13Link":"Read more →","borderGroups":"Height sits on the JR/YTH boundary — try both charts."};
+/* Quiz core: pure sizing helpers. Loaded before app.js in the browser; require()-able in node. */
+var QuizCore = (function(){
+  "use strict";
+  function parseRange(str){
+    if (!str) return null;
+    var s = String(str).replace(/\*/g,'').replace(/\s/g,'');
+    var lt = s.match(/^<(\d+(?:[.,]\d+)?)/); if (lt) return [0, parseFloat(lt[1].replace(',','.'))];
+    var m = s.match(/(\d+(?:[.,]\d+)?)[\u2013\u2014-](\d+(?:[.,]\d+)?)/);
+    if (m) return [parseFloat(m[1].replace(',','.')), parseFloat(m[2].replace(',','.'))];
+    return null;
+  }
+  function inR(v, r){ return !!r && v >= r[0] && v <= r[1]; }
+  function dist(v, r){ if (!r) return Infinity; if (v < r[0]) return r[0] - v; if (v > r[1]) return v - r[1]; return 0; }
+
+  /* Pick a row from chart rows.
+     - primary field decides the candidate set;
+     - tiebreakers narrow it (exact range match first, then nearest range);
+     - remaining ties resolve to the SMALLER size (fit-direction: safer error);
+     - res.tie signals "on the boundary — try both";
+     - res.edge signals value outside the whole chart. */
+  function pickRow(rows, primaryField, primaryVal, tiebreakers){
+    if (primaryVal == null || isNaN(primaryVal)) return null;
+    var cand = rows.filter(function(r){ return inR(primaryVal, parseRange(r[primaryField])); });
+    if (!cand.length){
+      var first = parseRange(rows[0][primaryField]), last = parseRange(rows[rows.length-1][primaryField]);
+      if (first && primaryVal < first[0]) return { row: rows[0], edge: 'below' };
+      if (last && primaryVal > last[1]) return { row: rows[rows.length-1], edge: 'above' };
+      return null;
+    }
+    var multi = cand.length > 1, usedProximity = false;
+    (tiebreakers||[]).forEach(function(tb){
+      if (cand.length <= 1 || tb.value == null || isNaN(tb.value)) return;
+      var narrowed = cand.filter(function(r){ return inR(tb.value, parseRange(r[tb.field])); });
+      if (narrowed.length) { cand = narrowed; return; }
+      /* no candidate contains the tiebreak value: pick the nearest by range distance */
+      var best = cand[0], bd = dist(tb.value, parseRange(cand[0][tb.field]));
+      for (var i = 1; i < cand.length; i++){
+        var d = dist(tb.value, parseRange(cand[i][tb.field]));
+        if (d < bd) { best = cand[i]; bd = d; }
+      }
+      if (isFinite(bd)) { cand = [best]; usedProximity = true; }
+    });
+    var res = { row: cand[0] };
+    if (cand.length > 1 || usedProximity) res.tie = true;
+    /* conflict: primary landed on one row, but a tiebreak value clearly belongs to other rows only */
+    if (!res.tie && multi === false && tiebreakers){
+      for (var j = 0; j < tiebreakers.length; j++){
+        var tv = tiebreakers[j].value; if (tv == null || isNaN(tv)) continue;
+        var owners = rows.filter(function(r){ return inR(tv, parseRange(r[tiebreakers[j].field])); });
+        if (owners.length && owners.indexOf(res.row) === -1) { res.tie = true; break; }
+      }
+    }
+    return res;
+  }
+
+  return { parseRange: parseRange, inR: inR, pickRow: pickRow };
+})();
+if (typeof module !== 'undefined' && module.exports) module.exports = QuizCore;
+
+/* Gear Lab — albue & skulder. Globals injected at build: DATA, T, LANG */
+(function(){
+"use strict";
+var $ = function(s,el){ return (el||document).querySelector(s); };
+var $$ = function(s,el){ return Array.prototype.slice.call((el||document).querySelectorAll(s)); };
+function L(obj, key){ var v = obj[key + '_' + LANG]; return v !== undefined ? v : (obj[key + '_no'] || ''); }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function fmtNOK(n){
+  var s = Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0');
+  return s + '\u00a0kr';
+}
+
+/* ---------- tabs ---------- */
+function showTab(id, push){
+  $$('.tabs button').forEach(function(b){ b.classList.toggle('active', b.dataset.tab === id); });
+  $$('section.tab').forEach(function(s){ s.classList.toggle('show', s.id === id); });
+  if (push !== false) { try { history.replaceState(null,'','#'+id); } catch(e){} }
+}
+$$('.tabs button').forEach(function(b){ b.addEventListener('click', function(){ showTab(b.dataset.tab); }); });
+var initial = (location.hash||'').replace('#','');
+showTab(['quiz','katalog','laer'].indexOf(initial) >= 0 ? initial : 'quiz', false);
+
+/* ---------- helpers over data ---------- */
+function primaryStore(p){ return p.stores && p.stores[0]; }
+function outOfStock(p){
+  var st = primaryStore(p); if (!st) return false;
+  return /IKKE p\u00e5 lager|OUT of stock/i.test((st.note_no||'') + ' ' + (st.note_en||''));
+}
+function bestNok(p){
+  var st = primaryStore(p);
+  if (st && st.priceNOK) return { v: st.priceNOK, approx:false };
+  for (var i=1;i<(p.stores||[]).length;i++){ if (p.stores[i].priceNOK) return { v: p.stores[i].priceNOK, approx:true }; }
+  return null;
+}
+
+/* ---------- catalog ---------- */
+var TIER_ORDER = { flagship:0, mid:1, budget:2 };
+function tierLabel(t){ return T.tiers[t] || t; }
+
+function prodCard(p){
+  var h = '<article class="prod' + (p.lastGen ? ' lastgen' : '') + '">';
+  h += '<div class="prodtop"><div class="name"><small>' + esc(p.brand) + ' ' + esc(p.family) + '</small>' + esc(p.model) + '</div>';
+  h += '<div class="badges">';
+  h += '<span class="badge tier-' + p.tier + '">' + esc(tierLabel(p.tier)) + '</span>';
+  h += '<span class="badge">' + esc(p.ageGroup) + '</span>';
+  if (p.lastGen) h += '<span class="badge lg">' + esc(T.lastGenBadge) + '</span>';
+  if (p.upcoming) h += '<span class="badge up">KOMMER 2026</span>';
+  h += '</div></div>';
+  if (p.tagline) h += '<p class="tagline">' + esc(p.tagline) + '</p>';
+  var specs = L(p, 'specs'); if (specs) h += '<p class="specs">' + esc(specs) + '</p>';
+  if (p.sizes && p.sizes.length){
+    h += '<div class="sizes">' + p.sizes.map(function(s){
+      var m = s.chestCm ? (esc(s.chestCm) + '\u00a0cm') : (s.armCm ? (esc(s.armCm) + '\u00a0cm') : '');
+      return '<span><b>' + esc(s.label) + '</b>' + m + '</span>';
+    }).join('') + '</div>';
+  }
+  (p.stores||[]).forEach(function(st){
+    h += '<div class="storerow"><span class="st"><a href="' + esc(st.url) + '" target="_blank" rel="noopener">' + esc(st.name) + '</a> \u00b7 ' + esc(st.lastChecked) + '</span>';
+    if (st.priceNOK){
+      var cls = /EUR/.test(st.name) ? ' approx' : '';
+      var pre = /EUR/.test(st.name) ? '\u2248 ' : '';
+      h += '<span class="price' + cls + '">' + pre + fmtNOK(st.priceNOK);
+      if (st.priceMSRP && st.priceMSRP > st.priceNOK) h += '<s>' + fmtNOK(st.priceMSRP) + '</s>';
+      h += '</span>';
+    } else {
+      h += '<span class="unverified">' + esc(T.priceUnverified) + '</span>';
+    }
+    h += '</div>';
+    var n = L(st, 'note'); if (n) h += '<div class="stnote">' + esc(n) + '</div>';
+  });
+  var note = L(p, 'notes'); if (note) h += '<p class="pnote">' + esc(note) + '</p>';
+  if (p.lastGen && p.successor){
+    var succ = DATA.products.filter(function(q){ return q.id === p.successor; })[0];
+    if (succ) h += '<p class="pnote">' + esc(T.replacedBy) + ': ' + esc(succ.brand + ' ' + succ.family + ' ' + succ.model) + '</p>';
+  }
+  return h + '</article>';
+}
+
+function renderCatalog(){
+  var cat = $('#f-cat').value, brand = $('#f-brand').value, tier = $('#f-tier').value, age = $('#f-age').value;
+  var showLG = $('#f-lastgen').checked;
+  var list = DATA.products.filter(function(p){
+    if (!showLG && p.lastGen) return false;
+    if (cat !== 'all' && p.category !== cat) return false;
+    if (brand !== 'all' && p.brand !== brand) return false;
+    if (tier !== 'all' && p.tier !== tier) return false;
+    if (age !== 'all' && p.ageGroup !== age) return false;
+    return true;
+  });
+  list.sort(function(a,b){
+    if (a.category !== b.category) return a.category === 'elbow' ? -1 : 1;
+    if (TIER_ORDER[a.tier] !== TIER_ORDER[b.tier]) return TIER_ORDER[a.tier] - TIER_ORDER[b.tier];
+    return a.brand.localeCompare(b.brand);
+  });
+  var byCat = { elbow: [], shoulder: [] };
+  list.forEach(function(p){ byCat[p.category].push(p); });
+  var h = '';
+  ['elbow','shoulder'].forEach(function(c){
+    if (!byCat[c].length) return;
+    h += '<h2 style="margin-top:14px">' + esc(T.cats[c]) + '</h2>';
+    h += byCat[c].map(prodCard).join('');
+  });
+  if (!h) h = '<p class="sub">' + esc(T.noHits) + '</p>';
+  $('#catlist').innerHTML = h;
+  $('#catcount').textContent = list.length + ' ' + T.ofN + ' ' + DATA.products.length;
+}
+['#f-cat','#f-brand','#f-tier','#f-age','#f-lastgen'].forEach(function(s){
+  $(s).addEventListener('change', renderCatalog);
+});
+renderCatalog();
+
+/* ---------- quiz (pure helpers live in QuizCore, inlined before this file) ---------- */
+var pickRow = QuizCore.pickRow;
+
+function sizeLine(brand, res, basisTxt){
+  if (!res) return null;
+  var extra = '';
+  if (res.edge === 'above') extra = ' \u2191 ' + T.aboveChart;
+  if (res.edge === 'below') extra = ' \u2193 ' + T.belowChart;
+  if (res.tie) extra = ' \u00b7 ' + T.tieNote;
+  return '<div class="sizerow"><span class="b">' + esc(brand) + '<span class="why">' + esc(basisTxt) + '</span></span>' +
+         '<span class="sz">' + esc(res.row.label) + esc(extra) + '</span></div>';
+}
+
+function recList(cat, group, budget){
+  var caps = { lav: 500, middels: 1000, hoy: Infinity };
+  var cap = caps[budget] || Infinity;
+  var pool = DATA.products.filter(function(p){
+    return p.category === cat && p.ageGroup === group && !p.lastGen && !p.upcoming;
+  });
+  var priced = pool.filter(function(p){
+    var st = primaryStore(p);
+    return st && st.priceNOK && !outOfStock(p);
+  }).map(function(p){ return { p:p, v: primaryStore(p).priceNOK }; });
+  var within = priced.filter(function(x){ return x.v <= cap; });
+  var chosen = (within.length ? within : priced).sort(function(a,b){ return b.v - a.v; }).slice(0,3);
+  var relaxed = !within.length && priced.length;
+  var unpricedCand = pool.filter(function(p){
+    var st = primaryStore(p);
+    return !(st && st.priceNOK) && (budget === 'hoy' ? p.tier !== 'budget' : p.tier !== 'flagship');
+  }).slice(0,2);
+  var h = '<div class="recs">';
+  if (!chosen.length) h += '<p class="dim" style="font-size:13px">' + esc(T.noPriced) + '</p>';
+  chosen.forEach(function(x){
+    var st = primaryStore(x.p);
+    h += '<div class="rec"><span class="nm">' + esc(x.p.brand + ' ' + x.p.family + ' ' + x.p.model) +
+         '<small>' + esc(tierLabel(x.p.tier)) + ' \u00b7 ' + esc(x.p.ageGroup) + '</small></span>' +
+         '<span class="pr"><a href="' + esc(st.url) + '" target="_blank" rel="noopener">' + fmtNOK(x.v) + '</a></span></div>';
+  });
+  unpricedCand.forEach(function(p){
+    h += '<div class="rec"><span class="nm">' + esc(p.brand + ' ' + p.family + ' ' + p.model) +
+         '<small>' + esc(tierLabel(p.tier)) + ' \u00b7 ' + esc(p.ageGroup) + '</small></span>' +
+         '<span class="pr unv">' + esc(T.priceUnverified) + '</span></div>';
+  });
+  h += '</div>';
+  if (relaxed) h += '<p class="flagnote">' + esc(T.budgetRelaxed) + '</p>';
+  return h;
+}
+
+$('#quizform').addEventListener('submit', function(ev){
+  ev.preventDefault();
+  var height = parseFloat($('#q-height').value);
+  var weight = parseFloat($('#q-weight').value);
+  var chest = parseFloat($('#q-chest').value);
+  var arm = parseFloat($('#q-arm').value);
+  var bracket = $('#q-age').value;           /* u8 | u911 | u1213 | u14 */
+  var budget = $('#q-budget').value;          /* lav | middels | hoy */
+  var ageMid = { u8: 7, u911: 10, u1213: 12, u14: 14 }[bracket] || 11;
+
+  var group = (!isNaN(height) && height < 127) ? 'YTH' : 'JR';
+  var borderline = !isNaN(height) && height >= 125 && height <= 130;
+
+  var C = DATA.charts;
+  var out = '<div class="res-grid">';
+
+  /* ----- shoulder ----- */
+  var ccmS = pickRow(C.ccm.shoulder[group], 'chestCm', chest, [{field:'heightCm', value:height}]);
+  var ccmS_rough = false;
+  if (!ccmS){ ccmS = pickRow(C.ccm.shoulder[group], 'heightCm', height, []); ccmS_rough = true; }
+  var bauS = pickRow(C.bauer.shoulder[group], 'chestCm', chest, [{field:'weightKg', value:weight},{field:'age', value:ageMid}]);
+  var bauS_rough = false;
+  if (!bauS){ bauS = pickRow(C.bauer.shoulder[group], 'weightKg', weight, [{field:'age', value:ageMid}]); bauS_rough = true; }
+
+  out += '<div class="res-cat"><h3>' + esc(T.cats.shoulder) + ' \u00b7 ' + group + '</h3>';
+  var l1 = sizeLine('CCM', ccmS, ccmS_rough ? T.basisRough : T.basisChest);
+  var l2 = sizeLine('Bauer', bauS, bauS_rough ? T.basisRough : T.basisChestBauer);
+  out += (l1||'') + (l2||'');
+  out += '<div class="sizerow"><span class="b">Warrior<span class="why">' + esc(T.warriorWhy) + '</span></span><span class="sz">S/M/L</span></div>';
+  if ((ccmS_rough || bauS_rough) && isNaN(chest)) out += '<p class="flagnote">' + esc(T.measureChest) + '</p>';
+  out += '<h4>' + esc(T.modelsHeading) + '</h4>' + recList('shoulder', group, budget) + '</div>';
+
+  /* ----- elbow ----- */
+  var ccmE = pickRow(C.ccm.elbow[group], 'armCm', arm, [{field:'heightCm', value:height}]);
+  var ccmE_rough = false;
+  if (!ccmE){ ccmE = pickRow(C.ccm.elbow[group], 'heightCm', height, []); ccmE_rough = true; }
+  var bauE = pickRow(C.bauer.elbow[group], 'age', ageMid, [{field:'weightKg', value:weight}]);
+
+  out += '<div class="res-cat"><h3>' + esc(T.cats.elbow) + ' \u00b7 ' + group + '</h3>';
+  var e1 = sizeLine('CCM', ccmE, ccmE_rough ? T.basisRough : T.basisArm);
+  var e2 = sizeLine('Bauer', bauE, T.basisAgeWeight);
+  out += (e1||'') + (e2||'');
+  out += '<div class="sizerow"><span class="b">Warrior<span class="why">' + esc(T.warriorWhy) + '</span></span><span class="sz">S/M/L</span></div>';
+  if (ccmE_rough && isNaN(arm)) out += '<p class="flagnote">' + esc(T.measureArm) + '</p>';
+  out += '<h4>' + esc(T.modelsHeading) + '</h4>' + recList('elbow', group, budget) + '</div>';
+
+  /* ----- always-on reminders ----- */
+  out += '<div class="callout"><b>' + esc(T.gapTitle) + ':</b> ' + esc(T.gapReminder) + ' <a href="#laer" data-jump="laer">' + esc(T.gapLink) + '</a></div>';
+  if (bracket === 'u8' || bracket === 'u911' || bracket === 'u1213'){
+    out += '<div class="callout">' + esc(T.u13Note) + ' <a href="#laer" data-jump="laer">' + esc(T.u13Link) + '</a></div>';
+  }
+  if (borderline) out += '<p class="flagnote">' + esc(T.borderGroups) + '</p>';
+  out += '</div>';
+
+  $('#quizout').innerHTML = out;
+  $$('#quizout [data-jump]').forEach(function(a){
+    a.addEventListener('click', function(ev2){
+      ev2.preventDefault(); showTab('laer');
+      if (window.scrollTo) try { window.scrollTo({top:0,behavior:'smooth'}); } catch(e){}
+    });
+  });
+  var qo = $('#quizout');
+  if (qo.scrollIntoView) try { qo.scrollIntoView({ behavior:'smooth', block:'start' }); } catch(e){}
+});
+})();
+
+</script>
+</body>
+</html>

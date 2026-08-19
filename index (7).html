@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hals &amp; tilbehør — Gear Lab</title>
+<meta name="description" content="Halsbeskytter er påbudt i norsk ishockey. Velger, katalog med verifiserte priser og foreldreguide for halsbeskyttelse og tilbehør.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#ff5b1f;--ink:#e8e6e1;--faint:#a8a59f;--bg:#141313;--card:#1c1b1a;--line:#2a2827;--ok:#7fb069}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header{padding:20px 0 0}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-size:12px;letter-spacing:.18em;color:var(--faint);text-transform:uppercase}
+.brand a{color:var(--faint)}
+.langsw{display:flex;gap:2px;border:1px solid var(--line);border-radius:6px;overflow:hidden;font-size:12px}
+.langsw a,.langsw span{padding:4px 10px;color:var(--faint)}
+.langsw span{background:var(--accent);color:#141313;font-weight:600}
+h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(30px,6vw,44px);line-height:1.1;margin:14px 0 6px}
+.sub{color:var(--faint);max-width:620px}
+/* Rule hero — the section's signature */
+.rulecard{margin:26px 0 8px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;background:var(--card);padding:18px 18px 14px;position:relative}
+.rulecard .tag{display:inline-block;background:var(--accent);color:#141313;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:10px}
+.rulecard .para{font-family:Fraunces,serif;font-size:13px;color:var(--faint);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.rulecard blockquote{font-family:Fraunces,serif;font-size:clamp(17px,2.6vw,20px);line-height:1.45}
+.rulecard .src{margin-top:10px;font-size:12.5px;color:var(--faint)}
+nav.tabs{display:flex;gap:8px;margin:24px 0 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5;padding-top:6px}
+nav.tabs button{background:none;border:none;color:var(--faint);font:inherit;font-weight:600;padding:10px 4px 12px;cursor:pointer;border-bottom:2px solid transparent;font-size:15px}
+nav.tabs button.on{color:var(--ink);border-bottom-color:var(--accent)}
+section.pane{display:none;padding:26px 0 10px}
+section.pane.on{display:block}
+h2{font-family:Fraunces,serif;font-weight:600;font-size:24px;margin:6px 0 12px}
+h3{font-size:16px;font-weight:700;margin:18px 0 8px}
+p{margin:0 0 12px}
+.mut{color:var(--faint);font-size:14px}
+.small{font-size:12.5px;color:var(--faint)}
+/* quiz */
+.qblock{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
+.qlabel{font-weight:600;margin-bottom:8px;display:block}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:9px 12px;font:inherit;font-size:14px;cursor:pointer;text-align:left}
+.opts button.sel{border-color:var(--accent);background:#241a15}
+.result{border:1px solid var(--accent);border-radius:10px;padding:16px;margin-top:14px;background:#1b1512}
+.result h3{margin-top:0}
+/* checklist */
+.chk{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.chk:last-child{border-bottom:none}
+.chk input{margin-top:4px;accent-color:var(--accent);width:16px;height:16px}
+.chk .nm{font-weight:600}
+.chk .pr{margin-left:auto;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink)}
+.total{display:flex;justify-content:space-between;font-weight:700;padding-top:12px;font-size:17px}
+/* catalog */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.filters button{background:var(--card);border:1px solid var(--line);color:var(--faint);border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.filters button.sel{color:#141313;background:var(--accent);border-color:var(--accent);font-weight:600}
+.grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.card .hd{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.card .nm{font-weight:700;font-size:16px}
+.card .fam{color:var(--faint);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.bdg{font-size:11px;font-weight:600;border:1px solid var(--line);border-radius:4px;padding:2px 6px;color:var(--faint)}
+.bdg.tier-flagship{border-color:var(--accent);color:var(--accent)}
+.bdg.tier-mid{border-color:#7a7671;color:var(--ink)}
+.bdg.cert{border-color:var(--ok);color:var(--ok)}
+.bdg.gen{border-color:#6b675f;color:#6b675f}
+.tagline{font-style:italic;color:var(--faint);font-size:13.5px}
+.spec{font-size:13.5px;color:var(--ink)}
+.spec b{font-weight:600}
+.pricebox{margin-top:auto;border-top:1px dashed var(--line);padding-top:10px;font-size:14px}
+.pr-now{font-weight:700;font-size:17px}
+.pr-ord{color:var(--faint);text-decoration:line-through;margin-left:6px;font-size:13px}
+.pr-unk{color:var(--faint);font-style:italic}
+.note{font-size:12.5px;color:var(--faint);border-left:2px solid var(--line);padding-left:8px}
+.lgn-toggle{margin:14px 0}
+.hide{display:none!important}
+/* accessories */
+.acc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px}
+.acc .rng{color:var(--accent);font-weight:700}
+.acc .ex{margin-top:8px;font-size:14px}
+/* learn */
+.learn{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:16px}
+.learn h3{margin-top:0;font-family:Fraunces,serif;font-size:19px;font-weight:600}
+.learn ul{margin:0 0 12px 18px}
+.learn li{margin-bottom:6px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--faint);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.dia{margin:12px 0;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px}
+.dia figcaption{font-size:12px;color:var(--faint);margin-top:6px}
+footer{border-top:1px solid var(--line);margin-top:36px;padding:22px 0 40px;font-size:12.5px;color:var(--faint)}
+footer p{margin-bottom:8px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="topbar">
+    <div class="brand"><a href="../">← GEAR LAB</a></div>
+    <div class="langsw"><span>NO</span><a href="en/">EN</a></div>
+  </div>
+  <h1>Hals &amp; tilbehør</h1>
+  <p class="sub">Halsbeskytteren er det viktigste — og billigste — sikkerhetsutstyret i bagen. Her: regelen i Norge (med kilde), verifiserte priser, enkel velger og en sjekkliste for første sesong.</p>
+
+  <div class="rulecard">
+    <span class="tag">Påbudt i Norge — alle nivåer</span>
+    <div class="para">NIHF Spilleregler · Regel 9.12 Halsbeskyttelse</div>
+    <blockquote>«For alle spillere i alle IIHF-turneringer er det påbudt å bruke godkjent halsbeskyttelse. Denne beskyttelsen skal dekke en så stor del av halsen som mulig. [...] For brudd på denne regel, etter advarsel fra hoveddommeren, skal en liten straff idømmes.»</blockquote>
+    <div class="src">Kilde: NIHF Spilleregler (norsk oversettelse av IIHF Official Rule Book), versjon 30.07.2025, hockey.no — sjekket 10.07.2026. For barn og ungdom har halsbeskytter vært påbudt utstyr i Norge lenge; fra sesongen 2024/25 gjelder påbudet alle nivåer, også senior. Mer i <a href="#" data-goto="laer">Lær</a>.</div>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="tabs" role="tablist">
+  <button class="on" data-tab="velger" role="tab" aria-selected="true">Velger</button>
+  <button data-tab="katalog" role="tab" aria-selected="false">Katalog</button>
+  <button data-tab="laer" role="tab" aria-selected="false">Lær</button>
+</nav>
+
+<!-- ==================== VELGER ==================== -->
+<section class="pane on" id="pane-velger">
+  <h2>Halsbeskytter-velger</h2>
+  <p class="mut">Tre spørsmål. Alle anbefalinger er sertifiserte modeller med verifisert pris hos hockeystore.no (10.07.2026).</p>
+
+  <div class="qblock">
+    <span class="qlabel">1. Hvor gammelt er barnet?</span>
+    <div class="opts" id="q-age">
+      <button data-v="yth">Under ca. 9 år (YTH)</button>
+      <button data-v="jr">Ca. 9–14 år (JR)</button>
+    </div>
+  </div>
+  <div class="qblock">
+    <span class="qlabel">2. Hva passer barnet best?</span>
+    <div class="opts" id="q-type">
+      <button data-v="collar">Enklest mulig — egen krage rundt halsen</button>
+      <button data-v="shirt">Klager på ting rundt halsen / vil ha undertrøye med innebygd beskyttelse</button>
+      <button data-v="usikker">Vet ikke — vis begge</button>
+    </div>
+  </div>
+  <div class="qblock">
+    <span class="qlabel">3. Budsjett?</span>
+    <div class="opts" id="q-budget">
+      <button data-v="lav">Lavest mulig</button>
+      <button data-v="normal">Normalt — best verdi</button>
+      <button data-v="maks">Maks beskyttelse</button>
+    </div>
+  </div>
+  <div id="q-result"></div>
+
+  <h2 style="margin-top:34px">Førstesesong-sjekkliste</h2>
+  <p class="mut">Det små-utstyret nybegynnere faktisk trenger (hjelm, skøyter, kølle osv. dekkes i andre seksjoner). Huk av — summen regnes fra verifiserte priser og prisspenn hos hockeystore.no.</p>
+  <div class="qblock" id="checklist"></div>
+  <p class="small">Spenn = billigste til dyreste rimelige alternativ i butikken 10.07.2026. Vannflaske er ikke med i summen fordi prisen ikke er bekreftet ennå.</p>
+</section>
+
+<!-- ==================== KATALOG ==================== -->
+<section class="pane" id="pane-katalog">
+  <h2>Halsbeskyttere</h2>
+  <p class="mut">YTH/JR-modeller hos hockeystore.no. Priser sjekket 10.07.2026. «Pris ubekreftet» = modellen finnes i butikken, men prisen er ikke verifisert ennå.</p>
+  <div class="filters" id="filters">
+    <button data-f="all" class="sel">Alle</button>
+    <button data-f="collar">Krage</button>
+    <button data-f="shirt">Trøye</button>
+    <button data-f="YTH">YTH</button>
+    <button data-f="JR">JR</button>
+  </div>
+  <div class="grid" id="pgrid"></div>
+  <div class="lgn-toggle"><label class="small" style="cursor:pointer"><input type="checkbox" id="lgn" style="accent-color:var(--accent);margin-right:6px">Vis forrige generasjon / uavklarte modeller</label></div>
+
+  <h2 style="margin-top:34px">Tilbehør</h2>
+  <p class="mut">Guide-først: prisspenn fra butikkens egne kategorier + ett verifisert eksempel per kategori.</p>
+  <div id="agrid"></div>
+</section>
+
+<!-- ==================== LÆR ==================== -->
+<section class="pane" id="pane-laer">
+
+  <div class="learn">
+    <h3>1 · Regelen i Norge — med kilder</h3>
+    <p><b>Kort versjon for foreldre:</b> Halsbeskytter er påbudt for barnet ditt på både trening og kamp. Slik har det vært lenge for barn og ungdom — og siden 2024 gjelder det alle, også seniorer.</p>
+    <ul>
+      <li><b>Regelteksten:</b> NIHF Spilleregler, regel 9.12 (sitert øverst på siden): godkjent halsbeskyttelse er påbudt, den skal dekke mest mulig av halsen, brukes riktig og ikke modifiseres. Håndheving: advarsel fra dommer, deretter liten straff (2 min).</li>
+      <li><b>For de yngste:</b> NIHFs kampreglement lister halsbeskytter som påbudt utstyr også i barnehockey (gjeldende versjon revidert av Forbundsstyret 23.03.2026, hockey.no).</li>
+      <li><b>Tidslinjen:</b> Etter Adam Johnsons dødsfall (oktober 2023) vedtok NIHF-styret 30.10.2023 å utvide påbudet til senior (hockey.no-nyhet). Regelendringen kom i mars 2024 og gjelder fra sesongen 2024/25 (Dagbladet 02.10.2024, hockeypresident Tage Pettersen). IIHF gjorde det samme internasjonalt: styrevedtak desember 2023, regel 9.12 i regelboken fra 2024/25.</li>
+      <li><b>Også anbefalt:</b> Regel 9.5 i samme regelverk anbefaler sterkt kuttbestandige sokker og undertøy for alle spillere.</li>
+    </ul>
+    <p class="small">Kilder m/dato: hockey.no «Forbundsstyret vil endre regel om halsbeskytter» (31.10.2023) · NIHF Spilleregler ver. 30.07.2025 · NIHF Kampreglement rev. 23.03.2026 · Dagbladet «Norge tar grep» (02.10.2024) · iihf.com «IIHF mandates neck laceration protection at all levels» (des. 2023). Alle sjekket 10.07.2026.</p>
+  </div>
+
+  <div class="learn">
+    <h3>2 · Krage eller trøye? Og hva betyr merkene?</h3>
+    <table>
+      <tr><th></th><th>Krage</th><th>Trøye med innebygd krage</th></tr>
+      <tr><td><b>Pris</b></td><td>179–449 kr</td><td>499–1 099 kr</td></tr>
+      <tr><td><b>Fordeler</b></td><td>Billig, rask av/på, lett å bytte når barnet vokser</td><td>«Glemmes» ikke — den er en del av undertøyet. Mange barn synes den kiler mindre. Noen modeller beskytter også håndleddene</td></tr>
+      <tr><td><b>Ulemper</b></td><td>Kan oppleves stram, lett å glemme hjemme, må sitte tett (ikke brettes ned)</td><td>Dyrere, følger klesstørrelse (må byttes når trøya blir for liten), en trøye i vask = reserve trengs</td></tr>
+    </table>
+    <p><b>Gutter og jenter:</b> kragene er unisex, og det samme er de fleste trøyene. Egen jentepassform i Yth/Jr finnes hos CCM FTW (i katalogen). Sjekk uansett passform — trøyer følger klesstørrelse.</p>
+    <p><b>Sertifiseringer — dette er selve godkjenningen:</b></p>
+    <ul>
+      <li><b>BNQ</b> (CAN/BNQ 9415-370): den kanadiske standarden for halsbeskyttere siden 1990 — kravet i Hockey Canada siden 1993. Er i ferd med å erstattes av…</li>
+      <li><b>ISO 10256-5</b> (2017): den internasjonale standarden bygget på BNQ-standarden; i Canada tatt inn som CAN/BNQ 0102-565. Ser du BNQ- eller ISO 10256-5-merke, er selve beskytteren testet som halsbeskytter.</li>
+      <li><b>CE / UKCA:</b> europeisk/britisk samsvarsmerking for verneutstyr. <b>HECC:</b> amerikansk sertifiseringsorgan som startet eget halsbeskytter-program i januar 2025.</li>
+    </ul>
+    <p><b>Markedsføring vs. spesifikasjon:</b> «ANSI Level 3/6» og «A5» beskriver <i>stoffets</i> kuttmotstand etter generelle materialstandarder — nyttig for å sammenligne, men det er ikke en halsbeskytter-godkjenning. Se etter BNQ/ISO/CE-merket først, og les kuttnivået som bonusinformasjon. NIHF-regelen krever «godkjent halsbeskyttelse» uten å navngi én standard — sertifiserte modeller fra etablerte merker er det trygge valget.</p>
+    <p class="small">Kilder: bnq.qc.ca (standardsidene for 9415-370 og 0102-565/ISO 10256-5), hecc.org (15.01.2025), produktsider hos bauer.com og hockeystore.no. Sjekket 10.07.2026.</p>
+  </div>
+
+  <div class="learn">
+    <h3>3 · Førstesesong-sjekkliste med totalbudsjett</h3>
+    <p>Bruk <a href="#" data-goto="velger">generatoren under Velger</a> — den summerer verifiserte priser. Grovt bilde for småutstyret (utenom hjelm/skøyter/kølle/beskyttere):</p>
+    <table>
+      <tr><th>Post</th><th>Verifisert spenn (NOK)</th></tr>
+      <tr><td>Halsbeskytter (krage)</td><td>179–449</td></tr>
+      <tr><td>… eller halsbeskyttertrøye</td><td>499–1 099</td></tr>
+      <tr><td>Hockeybag med hjul</td><td>500–1 500 (opptil 3 000 for de største)</td></tr>
+      <tr><td>Kølletape, 2 ruller</td><td>90–138</td></tr>
+      <tr><td>Skøytelisser (reservepar)</td><td>39–59</td></tr>
+      <tr><td>Voks (valgfritt)</td><td>119</td></tr>
+    </table>
+    <p><b>Med standardvalgene regner generatoren 808–2 146 kr</b> — nederst i spennet med rimelig krage og bag, øverst med dyreste valg. Før hjelm, skøyter og kølle. Tips: kragen er det siste stedet å spare 200 kr; bagen er det første.</p>
+  </div>
+
+  <div class="learn">
+    <h3>4 · Tørkerutinen som familievane</h3>
+    <p>Vått utstyr ruster skøytestål, lukter og sliter på borrelås og søm. Rutinen tar under ti minutter og trenger ikke eget stativ:</p>
+    <figure class="dia">
+      <svg viewBox="0 0 640 120" role="img" aria-label="Tørkerutine i fire steg" style="width:100%;height:auto">
+        <g fill="none" stroke="#a8a59f" stroke-width="2">
+          <rect x="8" y="18" width="140" height="66" rx="8"/>
+          <rect x="172" y="18" width="140" height="66" rx="8"/>
+          <rect x="336" y="18" width="140" height="66" rx="8"/>
+          <rect x="500" y="18" width="132" height="66" rx="8"/>
+          <path d="M150 51h18m164 0h18m164 0h18" stroke="#ff5b1f"/>
+        </g>
+        <g fill="#e8e6e1" font-family="Inter,sans-serif" font-size="13" text-anchor="middle">
+          <text x="78" y="44">Rett hjem:</text><text x="78" y="62">ALT ut av bagen</text>
+          <text x="242" y="44">Heng opp,</text><text x="242" y="62">åpne borrelås</text>
+          <text x="406" y="44">Løsne lisser,</text><text x="406" y="62">tørk stålet</text>
+          <text x="566" y="44">Neste dag:</text><text x="566" y="62">pakk sjekkliste</text>
+        </g>
+        <g fill="#ff5b1f" font-family="Inter,sans-serif" font-size="11" font-weight="700">
+          <text x="14" y="14">1</text><text x="178" y="14">2</text><text x="342" y="14">3</text><text x="506" y="14">4</text>
+        </g>
+      </svg>
+      <figcaption>Veiledende skisse — fire steg, samme rekkefølge hver gang.</figcaption>
+    </figure>
+    <ul>
+      <li>La <b>barnet</b> eie steg 1–2 fra første sesong. Det er halve poenget.</li>
+      <li>Halsbeskytter og trøye: heng luftig, vask jevnlig etter vaskelappen — svette bryter ned materialet over tid, og en beskytter i god stand er en del av godkjenningen.</li>
+      <li>Skøytestål tørkes med håndkle og får aldri stå i fuktige «soakers» over natten.</li>
+      <li>Eget tørkestativ er hyggelig, ikke nødvendig. Vi fant ikke hockey-spesifikke stativ hos hockeystore.no (sjekket 10.07.2026) — et vanlig tørkestativ funker. Mot lukt fører butikken duftspray (Odor-Aid m.fl.).</li>
+    </ul>
+  </div>
+
+  <div class="learn">
+    <h3>5 · Kølletape — kryss-lenke til Stick Lab</h3>
+    <p>Hvordan tape blad og knob viser vi med video i <a href="https://sticklab-three.vercel.app" target="_blank" rel="noopener">Stick Lab → Lær</a>. Her er bare handlelisten: 25&nbsp;mm passer smale barneblad, 36&nbsp;mm dekker raskere. Verifisert hos hockeystore.no: Howies Premium 25&nbsp;mm 45&nbsp;kr / 36&nbsp;mm 69&nbsp;kr; det meste av sortimentet (45 varianter) ligger på 45–100&nbsp;kr. Voks på bladet (f.eks. Howies Tacky, 119&nbsp;kr) er valgfritt, men tapen varer lenger og snø fester seg mindre.</p>
+  </div>
+
+</section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><b>Om prisene:</b> hockeystore.no er en svensk forhandler (Spobik AB) med norskspråklig butikk — «på lager» betyr bestillbar til Norge, ikke norsk lokalbutikk. Alle priser sjekket 10.07.2026 og kan endres. «Pris ubekreftet» betyr at vi ikke har verifisert beløpet ennå.</p>
+    <p><b>Kilder (regel):</b> NIHF Spilleregler ver. 30.07.2025 og Kampreglement rev. 23.03.2026 (hockey.no) · hockey.no-nyhet 31.10.2023 · Dagbladet 02.10.2024 · iihf.com des. 2023 · bnq.qc.ca · hecc.org 15.01.2025.</p>
+    <p>Gear Lab er en foreldreguide og er ikke tilknyttet NIHF eller butikkene. Regler kan endres — sjekk hockey.no og klubben din ved tvil.</p>
+    <p style="margin-top:14px;letter-spacing:.18em;text-transform:uppercase;font-size:11px">GEAR LAB · Hals &amp; tilbehør v0.1</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DATA (delt NO/EN — taglines på engelsk per konvensjon) ============ */
+const NG = [
+{id:'bauer-nlp7-core',brand:'Bauer',family:'NLP',model:'NLP7 Core',tier:'budget',type:'collar',age:['YTH'],
+ cert:['BNQ','CE','UKCA'],material:'100 % polyester, THERMO MAX fukttransport',
+ sizes:'YTH én størrelse, justerbar borrelås',
+ tagline:'Entry-level certified collar',
+ stores:[{name:'hockeystore.no',priceNOK:179,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.17854/bauer-halsbeskyttere-nlp7-core-yth',lastChecked:'2026-07-10'}],
+ notes:'Størrelsesteksten «L/XL (34–43 cm)» på Yth-siden ser ut som Sr-kopi — halsmål for Yth å verifisere. Sertifisering fra produktsiden.'},
+{id:'bauer-ng21-premium',brand:'Bauer',family:'NG',model:'NG21 Premium',tier:'mid',type:'collar',age:['JR'],
+ cert:['BNQ','CE'],material:'DuPont Kevlar + para-aramid/polyester, HeiQ Fresh',
+ sizes:'JR S/M: hals 10–14″ (≈ 25–36 cm)',
+ tagline:'Kevlar collar, proven mid pick',
+ stores:[{name:'hockeystore.no',priceNOK:199,priceOrd:349,url:'https://www.hockeystore.no/no/articles/2.559.12802/bauer-halsbeskytter-ng21-premium-jr',lastChecked:'2026-07-10'},
+         {name:'bauer.com (MSRP)',priceNOK:null,priceOrd:null,url:'https://www.bauer.com/products/ng21-premier-neckguard-collar',lastChecked:'2026-07-10',msrpNote:'Produsentside funnet; MSRP-beløp å verifisere'}],
+ notes:'Sertifisering og halsmål bekreftet på bauer.com. På tilbud ved sjekk (ord. 349 kr).'},
+{id:'bauer-bodyguard-collar',brand:'Bauer',family:'Bodyguard',model:'Bodyguard krage',tier:'flagship',type:'collar',age:['YTH'],
+ cert:['BNQ','CE','HECC'],material:'DuPont Kevlar + rustfri stålfiber/polyester · A5 kuttmotstand · HeiQ Fresh',
+ sizes:'YTH, justerbar',
+ tagline:'New flagship collar (2025/26)',
+ stores:[{name:'hockeystore.no',priceNOK:399,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.29396/bauer-halsbeskytter-bodyguard-yth',lastChecked:'2026-07-10'}],
+ notes:'Nyhet 2025/26. JR-størrelse ikke funnet i butikken ved sjekk — kun YTH og SR.'},
+{id:'ccm-pro-collar',brand:'CCM',family:'Pro',model:'Pro krage',tier:'mid',type:'collar',age:['JR'],
+ cert:['CE'],material:'Dyneema, todelt design, borrelås + armfester',
+ sizes:'JR (svart eller hvit)',
+ tagline:'Two-piece Dyneema collar',
+ stores:[{name:'hockeystore.no',priceNOK:449,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.15001/ccm-halsbeskytter-pro-jr-svart',lastChecked:'2026-07-10'}],
+ notes:'Produktsiden oppgir kun «CE-godkjent» — BNQ-status å verifisere hos CCM.'},
+{id:'bauer-bodyguard-shirt',brand:'Bauer',family:'Bodyguard',model:'Bodyguard trøye LS',tier:'flagship',type:'shirt',age:['YTH'],
+ cert:['BNQ','CE','HECC'],material:'Kevlar-krage + stålfiber (A5) · polyester/spandex · mesh · HeiQ Smart Temp/Fresh · silikongrep for albuebeskyttere',
+ sizes:'YTH XS–XL (klesstørrelse)',
+ tagline:'Flagship neck-guard base layer',
+ stores:[{name:'hockeystore.no',priceNOK:699,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.29393/bauer-svedtroje-bodyguard-yth',lastChecked:'2026-07-10'}],
+ notes:'Nyhet 2025/26. JR-variant ikke funnet ved sjekk.'},
+{id:'ccm-shirt-ls',brand:'CCM',family:'Neck Guard Shirt',model:'Halsbeskyttertrøye Langermet',tier:'mid',type:'shirt',age:['YTH','JR'],
+ cert:['BNQ','HECC','CE','UKCA'],material:'ANSI Level 3-krage · polyester/spandex · borrelås som ikke napper hår',
+ sizes:'YTH og JR (klesstørrelser)',
+ tagline:'Certified long-sleeve base layer',
+ stores:[{name:'hockeystore.no (YTH)',priceNOK:549,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32103/ccm-halsbeskytterestroye-langermet-yth',lastChecked:'2026-07-10'},
+         {name:'hockeystore.no (JR)',priceNOK:649,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32101/ccm-halsbeskytterestroye-langermet-jr',lastChecked:'2026-07-10'}],
+ notes:''},
+{id:'ccm-ftw-ls',brand:'CCM',family:'FTW',model:'FTW Halsbeskyttertrøye LS',tier:'flagship',type:'shirt',age:['YTH','JR'],fit:'girls',
+ cert:['BNQ','HECC','CE','UKCA'],material:'ANSI Level 6-krage + kuttbeskyttede mansjetter (håndledd) · ventilert rygg',
+ sizes:'YTH og JR — jente-/damepassform',
+ tagline:'Girls fit · Level 6 + wrist cuffs',
+ stores:[{name:'hockeystore.no (YTH)',priceNOK:999,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32106/ccm-halsbeskytterestroye-ftw-lang-arm-yth',lastChecked:'2026-07-10'},
+         {name:'hockeystore.no (JR)',priceNOK:1099,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32104/ccm-halsbeskytterestroye-ftw-lang-arm-jr',lastChecked:'2026-07-10'}],
+ notes:'FTW er CCMs jente-/damelinje.'},
+{id:'ccm-tacks-ls',brand:'CCM',family:'Tacks',model:'Tacks Halsbeskyttertrøye LS',tier:'flagship',type:'shirt',age:['YTH','JR'],
+ cert:['BNQ','HECC','CE','UKCA'],material:'ANSI Level 6-krage + kuttbeskyttede mansjetter · meshrygg',
+ sizes:'YTH og JR (klesstørrelser)',
+ tagline:'Level 6 + wrist cuffs',
+ stores:[{name:'hockeystore.no (JR)',priceNOK:null,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32108/ccm-halsbeskytterestroye-tacks-langermet-jr',lastChecked:'2026-07-10'}],
+ notes:'Spesifikasjoner bekreftet på produktsiden; pris ikke fanget ved sjekk — å verifisere. YTH: artikkel 32110.'},
+{id:'aycane-blade-gty',brand:'Aycane',family:'Blade',model:'Blade GTY trøye LS',tier:'flagship',type:'shirt',age:['YTH'],
+ cert:[],material:'BLADE-TEC™-krage · ANSI/ISEA 105 Level A7 + EN ISO 13997 Level F kuttmotstand · AERCELL™ · V-ENTRY™ uten borrelås',
+ sizes:'YTH (klesstørrelser)',
+ tagline:'Pro-level A7 youth shirt',
+ stores:[{name:'hockeystore.no',priceNOK:1299,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32979/aycane-halsbeskytterestroye-blade-gty-yth',lastChecked:'2026-07-10'},
+         {name:'aycane.com (MSRP)',priceNOK:1430,priceOrd:null,url:'https://aycane.com/en-us',lastChecked:'2026-07-10',msrpNote:'Offisiell MSRP $129.99 USD omregnet 1:11'}],
+ notes:'Produktsiden oppgir materialnivå A7/F — BNQ/CE-merking å verifisere ved kjøp. Nyhet 2025/26.'},
+{id:'aycane-blade-y',brand:'Aycane',family:'Blade',model:'Blade Y trøye LS',tier:'mid',type:'shirt',age:['JR'],
+ cert:['BNQ'],material:'A6-kuttbeskyttelse hals + håndledd · TORALOCK™-lukking uten borrelås · lett, elastisk funksjonsmateriale',
+ sizes:'JR (klesstørrelser)',
+ tagline:'BNQ-certified junior shirt',
+ stores:[{name:'hockeystore.no',priceNOK:null,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.606.27517/aycane-blade-y-jr-halsbeskyttelsestroye-langermet',lastChecked:'2026-07-10'}],
+ notes:'BNQ-sertifisert iflg. produktsiden. Ligger i undertøy-kategorien hos butikken; pris å verifisere.'},
+/* — skjult som standard: forrige generasjon / uavklart — */
+{id:'ccm-pro-cutres',brand:'CCM',family:'Pro',model:'Pro Cut Resistance',tier:'mid',type:'collar',age:['JR'],lastGen:true,successor:'ccm-pro-collar',
+ cert:[],material:'Kuttbestandig krage',sizes:'JR',
+ tagline:'Previous-gen CCM collar (to verify)',
+ stores:[{name:'hockeystore.no',priceNOK:449,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.17172/ccm-halsbeskyttere-pro-cut-resistans-jr',lastChecked:'2026-07-10'}],
+ notes:'Trolig forrige generasjon av CCM Pro — forhold og sertifisering å verifisere.'},
+{id:'bauer-ls-shirt-old',brand:'Bauer',family:'NG shirt',model:'Halsbeskyttertrøye Lang Arm',tier:'mid',type:'shirt',age:['YTH'],lastGen:true,successor:'bauer-bodyguard-shirt',
+ cert:[],material:'DuPont Kevlar-krage · HeiQ Fresh/Smart Temp · grepssoner for albuebeskyttere',sizes:'YTH',
+ tagline:'Previous-gen Bauer LS shirt',
+ stores:[{name:'hockeystore.no (kategori)',priceNOK:null,priceOrd:null,url:'https://www.hockeystore.no/no/articles/559/halsbeskyttere-hockey',lastChecked:'2026-07-10'}],
+ notes:'Sett i sortimentet (artikkel 17480); direkte NO-lenke, pris og sertifisering å verifisere. Erstattes av Bodyguard-trøyen.'},
+{id:'mohawke-collar',brand:'Mohawke',family:'—',model:'Halsbeskytter',tier:'budget',type:'collar',age:['JR'],lastGen:true,
+ cert:[],material:'—',sizes:'—',
+ tagline:'Budget collar (specs to verify)',
+ stores:[{name:'hockeystore.no',priceNOK:219,priceOrd:null,url:'https://www.hockeystore.no/no/articles/559/halsbeskyttere-hockey',lastChecked:'2026-07-10'}],
+ notes:'Pris fra kategorisiden; størrelser og sertifisering å verifisere før den kan anbefales.'},
+{id:'kosa-collar',brand:'Kosa',family:'—',model:'Halsbeskyttelse',tier:'budget',type:'collar',age:['JR'],lastGen:true,
+ cert:['CE'],material:'Kevlar',sizes:'Junior (10–16 år) og Senior',
+ tagline:'CE Kevlar budget collar',
+ stores:[{name:'hockeystore.no',priceNOK:null,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.1548.19636/kosa-halsbeskyttelse',lastChecked:'2026-07-10'}],
+ notes:'Selges i bandy-kategorien, brukbar spesifikasjon (CE, Kevlar) — pris å verifisere.'}
+];
+
+const ACC = [
+{cat:'Hockeybag med hjul',rng:'500–3 000 kr · flest 1 000–1 500',
+ body:'For barn: velg hjul. Bagen veier fort mer enn barnet orker å bære, og med hjul kan barnet trille selv — en del av selvstendigheten. Bauer Core-serien: YTH 25″ og JR 30″; sjekk at bagen får plass i bilen.',
+ ex:{nm:'Bauer Hjulbag Premium Jr Navy',pr:'799 kr (ord. 999)',url:'https://www.hockeystore.no/no/articles/2.512.3912/bauer-hjulbag-premium-jr-navy'},
+ src:'Spenn fra butikkens prisfilter (29 hjulbager), 10.07.2026.'},
+{cat:'Kølletape',rng:'45–100 kr per rull (45 varianter)',
+ body:'25 mm passer smale barneblad; 36 mm dekker raskere. Hvit vs. svart er smak. To ruller holder lenge for en nybegynner. Se tapevideoen i Stick Lab.',
+ ex:{nm:'Howies Premium Tape 25 mm hvit',pr:'45 kr',url:'https://www.hockeystore.no/no/articles/540/kolletape'},
+ src:'Priser fra kategorisiden 10.07.2026 (36 mm: 69 kr).'},
+{cat:'Skøytelisser',rng:'39–59 kr · lengder 182–330 cm',
+ body:'Voksede lisser holder knuten og strammingen bedre for barnehender — verdt de ekstra kronene. Ha alltid ett reservepar i bagen. Riktig lengde avhenger av skøytestørrelse — bruk lengdeguiden på produktsiden.',
+ ex:{nm:'CCM Lisser Vokset',pr:'49 kr (ord. 59)',url:'https://www.hockeystore.no/no/articles/2.504.26672/ccm-lisser-vokset-white'},
+ src:'Priser og lengdeutvalg fra kategorisiden 10.07.2026.'},
+{cat:'Hockeyvoks',rng:'~119 kr (valgfritt)',
+ body:'Voks over tapen gjør at snø fester seg mindre og tapen varer lenger. Hyggelig å ha, ikke nødvendig første sesong.',
+ ex:{nm:'Howies Tacky Vax',pr:'119 kr',url:'https://www.hockeystore.no/no/articles/2.669.25567/howies-tacky-vax'},
+ src:'Produktside 10.07.2026.'},
+{cat:'Vannflaske',rng:'Pris ubekreftet',
+ body:'Med heldekkende gitter er flaske med langt sugerør det praktiske valget — barnet drikker uten å ta av hjelmen. 1-liters er standard.',
+ ex:{nm:'Bauer Vannflaske med sugerør (1 l)',pr:'Pris ubekreftet',url:'https://www.hockeystore.no/no/articles/2.670.18053/bauer-vannflaske-med-sugeror'},
+ src:'Produkt bekreftet i sortimentet 10.07.2026; pris å verifisere.'},
+{cat:'Tørk & lukt',rng:'—',
+ body:'Hockey-spesifikt tørkestativ fant vi ikke hos hockeystore.no (sjekket 10.07.2026) — et vanlig tørkestativ gjør jobben, se rutinen under Lær. Butikken fører duftspray (bl.a. Odor-Aid) og håndklær; priser å verifisere.',
+ ex:null,
+ src:'Kategoristruktur sjekket 10.07.2026.'}
+];
+
+/* ============ Sjekkliste-poster (verifiserte spenn) ============ */
+const CHECK = [
+ {id:'guard-collar',nm:'Halsbeskytter — krage',min:179,max:449,on:true,alt:'guard-shirt'},
+ {id:'guard-shirt',nm:'Halsbeskytter — trøye (alternativ)',min:499,max:1099,on:false,alt:'guard-collar'},
+ {id:'bag',nm:'Hockeybag med hjul',min:500,max:1500,on:true},
+ {id:'tape',nm:'Kølletape × 2',min:90,max:138,on:true},
+ {id:'laces',nm:'Skøytelisser (reserve)',min:39,max:59,on:true},
+ {id:'wax',nm:'Voks (valgfritt)',min:119,max:119,on:false},
+ {id:'bottle',nm:'Vannflaske m/ sugerør',min:null,max:null,on:true,note:'pris ubekreftet — ikke i summen'}
+];
+
+/* ============ UI ============ */
+const fmt = n => n.toLocaleString('nb-NO') + ' kr';
+const T = {unk:'Pris ubekreftet', last:'sjekket', lastgen:'FORRIGE GEN', upcoming:'KOMMER 2026'};
+
+function tabs(){
+  const btns=[...document.querySelectorAll('nav.tabs button')];
+  const show=id=>{btns.forEach(b=>{const on=b.dataset.tab===id;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});
+    document.querySelectorAll('section.pane').forEach(p=>p.classList.toggle('on',p.id==='pane-'+id));
+    if(location.hash!=='#'+id)history.replaceState(null,'','#'+id);
+    window.scrollTo({top:0});};
+  btns.forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
+  document.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();show(a.dataset.goto)}));
+  const h=location.hash.replace('#','');if(['velger','katalog','laer'].includes(h))show(h);
+}
+
+function priceHtml(s){
+  if(s.priceNOK==null) return '<span class="pr-unk">'+T.unk+'</span>';
+  let h='<span class="pr-now">'+fmt(s.priceNOK)+'</span>';
+  if(s.priceOrd)h+='<span class="pr-ord">'+fmt(s.priceOrd)+'</span>';
+  return h;
+}
+function card(p){
+  const certs=p.cert.length?p.cert.map(c=>'<span class="bdg cert">'+c+'</span>').join(''):'<span class="bdg">sert. å verifisere</span>';
+  const ages=p.age.map(a=>'<span class="bdg">'+a+'</span>').join('');
+  const gen=p.lastGen?'<span class="bdg gen">'+T.lastgen+'</span>':'';
+  const stores=p.stores.map(s=>'<div>'+priceHtml(s)+' &nbsp;<a href="'+s.url+'" target="_blank" rel="noopener">'+s.name+'</a> <span class="small">('+T.last+' '+s.lastChecked+')</span>'+(s.msrpNote?'<div class="small">'+s.msrpNote+'</div>':'')+'</div>').join('');
+  return '<article class="card'+(p.lastGen?' lastgen hide':'')+'" data-type="'+p.type+'" data-age="'+p.age.join(' ')+'">'+
+   '<div class="hd"><div><div class="fam">'+p.brand+' · '+p.family+'</div><div class="nm">'+p.model+'</div></div>'+
+   '<span class="bdg tier-'+p.tier+'">'+p.tier+'</span></div>'+
+   '<div class="badges">'+'<span class="bdg">'+(p.type==='collar'?'Krage':'Trøye')+'</span>'+ages+gen+certs+'</div>'+
+   '<div class="tagline">'+p.tagline+'</div>'+
+   '<div class="spec"><b>Str.:</b> '+p.sizes+'<br><b>Materiale:</b> '+p.material+'</div>'+
+   (p.notes?'<div class="note">'+p.notes+'</div>':'')+
+   '<div class="pricebox">'+stores+'</div></article>';
+}
+function catalog(){
+  document.getElementById('pgrid').innerHTML=NG.map(card).join('');
+  let f='all';
+  const apply=()=>{document.querySelectorAll('#pgrid .card').forEach(c=>{
+    const showGen=document.getElementById('lgn').checked;
+    let ok=true;
+    if(f==='collar'||f==='shirt')ok=c.dataset.type===f;
+    else if(f==='YTH'||f==='JR')ok=c.dataset.age.includes(f);
+    const isGen=c.classList.contains('lastgen');
+    c.classList.toggle('hide',!ok||(isGen&&!showGen));
+  })};
+  document.querySelectorAll('#filters button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel');f=b.dataset.f;apply();}));
+  document.getElementById('lgn').addEventListener('change',apply);
+  apply();
+  document.getElementById('agrid').innerHTML=ACC.map(a=>'<div class="acc"><h3 style="margin-top:0">'+a.cat+' <span class="rng" style="font-size:13px;margin-left:8px">'+a.rng+'</span></h3><p style="margin-bottom:6px">'+a.body+'</p>'+(a.ex?'<div class="ex">Verifisert eksempel: <a href="'+a.ex.url+'" target="_blank" rel="noopener">'+a.ex.nm+'</a> — <b>'+a.ex.pr+'</b></div>':'')+'<div class="small">'+a.src+'</div></div>').join('');
+}
+
+/* Velger */
+const ans={age:null,type:null,budget:null};
+function quiz(){
+  [['q-age','age'],['q-type','type'],['q-budget','budget']].forEach(([id,k])=>{
+    document.querySelectorAll('#'+id+' button').forEach(b=>b.addEventListener('click',()=>{
+      document.querySelectorAll('#'+id+' button').forEach(x=>x.classList.remove('sel'));
+      b.classList.add('sel');ans[k]=b.dataset.v;render();}));
+  });
+}
+function pick(){
+  const vis=NG.filter(p=>!p.lastGen);
+  const byAge=p=>p.age.includes(ans.age==='yth'?'YTH':'JR');
+  let pool=vis.filter(byAge);
+  if(!pool.length)pool=vis;
+  const collars=pool.filter(p=>p.type==='collar');
+  const shirts=pool.filter(p=>p.type==='shirt');
+  const priced=l=>l.filter(p=>p.stores.some(s=>s.priceNOK!=null));
+  const cheap=l=>priced(l).sort((a,b)=>a.stores[0].priceNOK-b.stores[0].priceNOK)[0];
+  const flag=l=>priced(l).find(p=>p.tier==='flagship'&&p.fit!=='girls')||priced(l).find(p=>p.tier==='mid')||priced(l)[0];
+  const mid=l=>priced(l).find(p=>p.tier==='mid')||cheap(l);
+  const f=ans.budget==='lav'?cheap:(ans.budget==='maks'?flag:mid);
+  const out=[];
+  if(ans.type!=='shirt'&&collars.length)out.push(f(collars));
+  if(ans.type!=='collar'&&shirts.length)out.push(f(shirts));
+  return out.filter(Boolean);
+}
+function render(){
+  const el=document.getElementById('q-result');
+  if(!ans.age||!ans.type||!ans.budget){el.innerHTML='';return;}
+  const picks=pick();
+  const items=picks.map(p=>{const s=p.stores.find(x=>x.priceNOK!=null)||p.stores[0];
+    return '<p><b>'+p.brand+' '+p.model+'</b> ('+(p.type==='collar'?'krage':'trøye')+') — '+(s.priceNOK!=null?fmt(s.priceNOK):T.unk)+' · <a href="'+s.url+'" target="_blank" rel="noopener">'+s.name+'</a><br><span class="small">'+p.sizes+' · '+(p.cert.length?p.cert.join(' / '):'sertifisering å verifisere')+'</span></p>';}).join('');
+  el.innerHTML='<div class="result"><h3>Vårt forslag</h3>'+items+
+   '<p class="small"><b>Passform-regelen:</b> beskytteren skal sitte tett inntil halsen og aldri brettes ned — det er slik den er godkjent. Er du i tvil mellom to størrelser: velg den som sitter tett nå, ikke den barnet «vokser i». Prøv gjerne i butikk; nettkjøp har 60 dagers åpent kjøp.</p>'+
+   (ans.type!=='collar'?'<p class="small">Til jenter: CCM FTW-trøyene (Yth/Jr) har egen jentepassform — se Katalog.</p>':'')+
+   (ans.age==='yth'?'<p class="small">YTH-utvalget av krager er tynnere enn JR — trøye i riktig klesstørrelse er ofte det enkleste for de minste.</p>':'')+
+   '</div>';
+}
+
+/* Sjekkliste */
+function checklist(){
+  const box=document.getElementById('checklist');
+  box.innerHTML=CHECK.map(c=>'<label class="chk"><input type="checkbox" data-id="'+c.id+'"'+(c.on?' checked':'')+'><div><div class="nm">'+c.nm+'</div>'+(c.note?'<div class="small">'+c.note+'</div>':'')+'</div><div class="pr">'+(c.min==null?T.unk:(c.min===c.max?fmt(c.min):fmt(c.min)+' – '+fmt(c.max)))+'</div></label>').join('')+
+   '<div class="total"><span>Sum</span><span id="chk-total"></span></div>';
+  const upd=()=>{
+    let mn=0,mx=0;
+    box.querySelectorAll('input').forEach(i=>{
+      if(!i.checked)return;const c=CHECK.find(x=>x.id===i.dataset.id);
+      if(c.min!=null){mn+=c.min;mx+=c.max;}
+    });
+    document.getElementById('chk-total').textContent=mn===mx?fmt(mn):fmt(mn)+' – '+fmt(mx);
+  };
+  box.querySelectorAll('input').forEach(i=>i.addEventListener('change',e=>{
+    const c=CHECK.find(x=>x.id===i.dataset.id);
+    if(i.checked&&c.alt){const o=box.querySelector('input[data-id="'+c.alt+'"]');if(o)o.checked=false;}
+    upd();
+  }));
+  upd();
+}
+tabs();catalog();quiz();checklist();
+</script>
+</body>
+</html>

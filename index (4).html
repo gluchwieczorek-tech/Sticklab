@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bukselab — Gear Lab</title>
+<meta name="description" content="Hockeybukser for junior og barn: størrelsesguide, dekningssjekk, seler vs belte, forlengelses-glidelås og verifiserte priser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#141313;--panel:#1b1917;--line:#282320;--ink:#e8e6e1;--faint:#a8a59f;--accent:#ff5b1f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:14px 0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+header.top a{color:var(--faint)}header.top a:hover{color:var(--ink)}
+.hero{padding:26px 0 10px}
+.hero h1{font-family:Fraunces,serif;font-weight:700;font-size:clamp(38px,7vw,56px);line-height:1.02;margin:6px 0 10px}
+.hero .sub{color:var(--faint);max-width:56ch;margin:0 0 18px}
+.trap{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--panel);border-radius:0 14px 14px 0;padding:14px 16px;margin:0 0 8px}
+.trap b,.trap strong{color:var(--ink)}
+.trap .tt{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+nav.tabs{position:sticky;top:0;z-index:5;background:rgba(20,19,19,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:4px}
+.tabbtn{appearance:none;background:none;border:0;color:var(--faint);font:600 15px Inter,sans-serif;padding:14px 14px;cursor:pointer;border-bottom:2px solid transparent}
+.tabbtn.active{color:var(--ink);border-bottom-color:var(--accent)}
+section.pane{display:none;padding:26px 0 40px}section.pane.active{display:block}
+h2{font-family:Fraunces,serif;font-size:30px;margin:0 0 6px}
+.intro{color:var(--faint);margin:0 0 20px;max-width:62ch}
+form.quiz{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:16px}
+@media(min-width:640px){form.quiz{grid-template-columns:1fr 1fr}}
+.field label{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.field .hint{font-size:12.5px;color:var(--faint);margin-top:6px}
+input[type=number],select{width:100%;background:#12100f;border:1px solid var(--line);border-radius:10px;color:var(--ink);font:500 17px Inter;padding:12px}
+.seg{display:flex;gap:8px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{flex:1;text-align:center;border:1px solid var(--line);border-radius:10px;padding:11px 8px;cursor:pointer;font-weight:600;color:var(--faint);text-transform:none;letter-spacing:0;font-size:15px;margin:0}
+.seg input:checked+label{border-color:var(--accent);color:var(--ink);background:rgba(255,91,31,.08)}
+.seg input:focus-visible+label{outline:2px solid var(--accent);outline-offset:2px}
+button.go{grid-column:1/-1;background:var(--accent);color:#141313;border:0;border-radius:12px;font:700 17px Inter;padding:14px;cursor:pointer}
+button.go:hover{filter:brightness(1.06)}
+#qres{margin-top:22px}
+.sizeRow{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+.sizePill{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:10px 12px;font-size:14.5px}
+.sizePill b{font-size:16px}.sizePill .why{display:block;color:var(--faint);font-size:13px;margin-top:2px;max-width:34ch}
+.advice{border:1px dashed var(--line);border-radius:12px;padding:11px 13px;color:var(--ink);background:rgba(255,91,31,.05);margin:12px 0;font-size:14.5px}
+h4.rh{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:22px 0 10px}
+.grid{display:grid;gap:14px}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card h3{margin:0 0 6px;font-size:18.5px;line-height:1.25}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chip{font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);color:var(--faint);border-radius:999px;padding:3px 9px;white-space:nowrap}
+.chip.zip{border-color:var(--accent);color:var(--accent)}
+.chip.warn{border-color:#6b5b3a;color:#d4b06a}
+.price{font-family:Fraunces,serif;font-size:26px;margin:8px 0 2px}
+.price .reg{font:400 14px Inter;color:var(--faint);text-decoration:line-through;margin-left:8px}
+.store{font-size:13.5px;color:var(--faint);margin:3px 0}
+.tagline{color:var(--faint);font-style:italic;font-size:14px;margin:2px 0 0}
+.szs{font-size:13px;color:var(--faint);margin:10px 0 0;border-top:1px solid var(--line);padding-top:10px}
+.nts{font-size:13.5px;color:var(--faint);margin-top:8px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 18px}
+.fbtn{background:none;border:1px solid var(--line);color:var(--faint);border-radius:999px;padding:7px 13px;font:600 13.5px Inter;cursor:pointer}
+.fbtn.on{border-color:var(--accent);color:var(--ink);background:rgba(255,91,31,.08)}
+label.tog{display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--faint);cursor:pointer;margin-left:auto}
+.diagrams{display:grid;gap:10px;margin-top:12px}
+@media(min-width:560px){.diagrams{grid-template-columns:1fr 1fr}}
+.diagrams svg{width:100%;height:auto;background:#12100f;border:1px solid var(--line);border-radius:12px}
+.fine{font-size:12px;color:var(--faint)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 4px}
+th{color:var(--faint);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:7px 8px}
+td{border-top:1px solid var(--line);padding:8px}
+.tsrc{font-size:12.5px;color:var(--faint);margin:0 0 18px}
+.vid{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#000;margin:4px 0 6px}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vcap{font-size:13px;color:var(--faint);margin:0 0 18px}
+footer{border-top:1px solid var(--line);padding:24px 0 46px;color:var(--faint);font-size:13.5px}
+.badge-lg{font-size:10.5px;letter-spacing:.12em;border:1px solid var(--faint);color:var(--faint);border-radius:4px;padding:2px 6px;vertical-align:middle;margin-left:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a href="../">&larr; Gear Lab</a><span>GEAR LAB · TRONDHEIM</span><a href="en/">English</a></header>
+<div class="hero">
+<h1>Bukselab</h1>
+<p class="sub">Hockeybukser for junior og barn — størrelse, dekning og modeller med verifiserte priser.</p>
+<div class="trap"><span class="tt">Fellen i denne kategorien</span>Lappen oppgir midje + høyde, men det som teller er <strong>dekning</strong>: halebein, hofter, nyrer og overlappet mot leggbeskytteren. Mange modeller skjuler dessuten en <strong>+1-tommes (2,5&nbsp;cm) glidelås</strong> som forlenger buksa — og på tynne barn holder <strong>seler</strong> beskyttelsen på plass der beltet glipper.</div>
+</div>
+</div>
+<nav class="tabs"><div class="wrap">
+<button class="tabbtn active" data-t="quiz">Quiz</button>
+<button class="tabbtn" data-t="kat">Katalog</button>
+<button class="tabbtn" data-t="laer">Lær</button>
+</div></nav>
+<div class="wrap">
+<section id="pane-quiz" class="pane active">
+<h2>Finn størrelse</h2><p class="intro">Svar på fire ting — få størrelse per merke og modeller som passer budsjettet.</p>
+<form class="quiz" id="qform" novalidate>
+<div class="field"><label for="qw">Midjemål (cm)</label><input id="qw" type="number" inputmode="numeric" min="40" max="100" placeholder="62"><div class="hint">mål der buksa sitter, rett over hoftekammen</div></div>
+<div class="field"><label for="qh">Høyde (cm)</label><input id="qh" type="number" inputmode="numeric" min="90" max="195" placeholder="150"></div>
+<div class="field"><label>Kroppsbygning</label><div class="seg">
+<input type="radio" name="build" id="b-slim" value="slim"><label for="b-slim">Slank</label>
+<input type="radio" name="build" id="b-norm" value="normal" checked><label for="b-norm">Normal</label>
+</div></div>
+<div class="field"><label for="qb">Budsjett</label><select id="qb">
+<option value="all">Alle</option><option value="b1">Under 900 kr</option>
+<option value="b2">900–1500 kr</option><option value="b3">Over 1500 kr</option></select></div>
+<button type="submit" class="go">Finn størrelse og modeller</button>
+</form>
+<div id="qres" aria-live="polite"></div>
+</section>
+<section id="pane-kat" class="pane">
+<h2>Katalog</h2><p class="intro">Priser fra hockeystore.no (sist sjekket 2026-07-09) og amerikansk veiledende pris omregnet 1:11. «Pris ubekreftet» vises der vi mangler verifisert pris.</p>
+<div class="filters" id="kfilters">
+<button class="fbtn on" data-g="all">Alle</button>
+<button class="fbtn" data-g="JR">Junior (JR)</button>
+<button class="fbtn" data-g="YTH">Barn (YTH)</button>
+<label class="tog"><input type="checkbox" id="lgTog"> Vis forrige generasjon</label>
+</div>
+<div class="grid" id="kgrid"></div>
+</section>
+<section id="pane-laer" class="pane">
+<h2>Lær</h2><p class="intro">Det foreldre faktisk trenger å vite — måling, seler, glidelåsen og kne-overlappet.</p>
+<div class="grid">
+<article class="card">
+<h3>1 · Måleguide + dekningssjekk</h3>
+<p>Mål <strong>midjen der buksa faktisk sitter</strong> — rett over hoftekammen, stramt men ikke inntil. Høyde uten skøyter. Og husk fellen: <strong>buksestørrelse ≠ jeansstørrelse</strong> (Bauer ber f.eks. voksne trekke fra ~7&nbsp;cm fra vanlig buksemål) — mål barnet, ikke klesstørrelsen.</p>
+<p>Med buksa på (helst med leggbeskyttere): <strong>1) Halebein</strong> — polstringen dekker hele halebeinet, også i skøytestilling. <strong>2) Hofter</strong> — harde kapper rett over hoftekammen. <strong>3) Nyrer</strong> — nyrebeskyttelsen sitter over nyrene og møter skulderbeskytterens ryggplate. <strong>4) Kne</strong> — buksekanten 2–5&nbsp;cm over kneskålen, utenpå leggbeskytterens topp.</p>
+<div class="diagrams"><svg viewBox="0 0 320 274" role="img" aria-label="Dekningssjekk bakfra: nyrer, hofter, halebein">
+<title>Dekningssjekk bakfra: nyrer, hofter, halebein</title>
+<rect x="110" y="18" width="100" height="118" rx="28" fill="none" stroke="#a8a59f" stroke-width="1.4"/>
+<rect x="96" y="116" width="128" height="98" rx="18" fill="rgba(255,91,31,.07)" stroke="#ff5b1f" stroke-width="1.6"/>
+<rect x="118" y="214" width="30" height="38" rx="10" fill="none" stroke="#a8a59f" stroke-width="1.4"/>
+<rect x="172" y="214" width="30" height="38" rx="10" fill="none" stroke="#a8a59f" stroke-width="1.4"/>
+<circle cx="128" cy="136" r="5" fill="#ff5b1f"/><circle cx="192" cy="136" r="5" fill="#ff5b1f"/>
+<circle cx="102" cy="168" r="5" fill="#ff5b1f"/><circle cx="218" cy="168" r="5" fill="#ff5b1f"/>
+<circle cx="160" cy="204" r="5" fill="#ff5b1f"/>
+<line x1="197" y1="134" x2="248" y2="112" stroke="#a8a59f" stroke-width="1"/>
+<text x="252" y="115" fill="#e8e6e1" font-size="12">Nyrer</text>
+<line x1="223" y1="168" x2="248" y2="168" stroke="#a8a59f" stroke-width="1"/>
+<text x="252" y="172" fill="#e8e6e1" font-size="12">Hofter</text>
+<line x1="165" y1="207" x2="228" y2="240" stroke="#a8a59f" stroke-width="1"/>
+<text x="232" y="244" fill="#e8e6e1" font-size="12">Halebein</text>
+<text x="14" y="24" fill="#a8a59f" font-size="11" letter-spacing=".08em">DEKNINGSSJEKK · BAKFRA</text>
+</svg> <svg viewBox="0 0 320 274" role="img" aria-label="Sidevisning: buksekant, leggbeskytter og overlapp">
+<title>Sidevisning: buksekant, leggbeskytter og overlapp</title>
+<rect x="120" y="18" width="64" height="112" rx="20" fill="none" stroke="#a8a59f" stroke-width="1.4"/>
+<rect x="104" y="14" width="96" height="134" rx="16" fill="rgba(255,91,31,.07)" stroke="#ff5b1f" stroke-width="1.6"/>
+<line x1="112" y1="128" x2="196" y2="128" stroke="#ff5b1f" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="14" y="120" fill="#ff5b1f" font-size="11">+1″ glidelås</text>
+<rect x="118" y="128" width="68" height="122" rx="14" fill="rgba(232,230,225,.05)" stroke="#e8e6e1" stroke-opacity=".55" stroke-width="1.4"/>
+<circle cx="152" cy="172" r="13" fill="none" stroke="#a8a59f" stroke-width="1.4"/>
+<line x1="212" y1="128" x2="212" y2="148" stroke="#ff5b1f" stroke-width="1.6"/>
+<line x1="206" y1="128" x2="218" y2="128" stroke="#ff5b1f" stroke-width="1.6"/>
+<line x1="206" y1="148" x2="218" y2="148" stroke="#ff5b1f" stroke-width="1.6"/>
+<text x="224" y="142" fill="#e8e6e1" font-size="12">2–5 cm overlapp</text>
+<text x="14" y="52" fill="#e8e6e1" font-size="12">Buksekant</text>
+<line x1="52" y1="56" x2="102" y2="70" stroke="#a8a59f" stroke-width="1"/>
+<text x="14" y="236" fill="#e8e6e1" font-size="12">Leggbeskytter</text>
+<line x1="66" y1="232" x2="116" y2="222" stroke="#a8a59f" stroke-width="1"/>
+<text x="14" y="24" fill="#a8a59f" font-size="11" letter-spacing=".08em">KNE-OVERLAPP · FRA SIDEN</text>
+</svg></div>
+<p class="fine">Veiledende skisse — ikke i målestokk.</p>
+</article>
+<article class="card">
+<h3>2 · Seler vs belte for tynne barn</h3>
+<p>På smale hofter glir belte-buksa ned i løpet av økta: kappene roterer, og halebein/nyrer står ubeskyttet — akkurat når det smeller. <strong>Hockey-seler holder beskyttelsen på plass uavhengig av midjemål</strong>; de fleste juniorbukser har selerknapper.</p>
+<p>Tommelfingerregel: slank kroppsbygning, eller midje i nedre kant av størrelsen → seler. Beltet strammes <em>i tillegg</em>, ikke i stedet.</p>
+</article>
+<article class="card">
+<h3>3 · Forlengelses-glidelåsen (+1″)</h3>
+<p>Mange modeller skjuler en glidelås (ofte under nyrebeltet) som gir <strong>+1 tomme ≈ 2,5&nbsp;cm lengde</strong> — gratis vekstmonn og finjustering av kne-overlappet. Bekreftet på: <strong>CCM Jetspeed / Jetspeed&nbsp;+ / Jetspeed Pro (JR)</strong> og <strong>Warrior Alpha LX&nbsp;20 (JR)</strong>. Bauers nåværende Performance/Elite/Pro-bukser markedsfører ingen forlengelse. Se merking på hvert kort i katalogen.</p>
+<p>Kjøpstips: står barnet mellom to størrelser i høyde — velg den som låser midjen, og hent lengden i glidelåsen.</p>
+</article>
+<article class="card">
+<h3>4 · Gap til leggbeskytteren</h3>
+<p>Stående skal buksekanten ende <strong>2–5&nbsp;cm over kneskålen</strong> og ligge <strong>utenpå</strong> leggbeskytterens topp. I utfallsposisjon skal låret aldri bli bart. For lang bukse dytter leggbeskytteren ned og hekter i kneet; for kort gir bart lår og kne-gap — blåmerkesonen for skudd og køller. Test alltid i skøytestilling, med leggbeskyttere på.</p>
+</article>
+<article class="card">
+<h3>5 · Girdle vs klassisk bukse</h3>
+<p>Girdle = tettsittende beskyttelse + separat overtrekk (shell). I junior finnes bl.a. <strong>Bauer ACP</strong> (Pro/Elite) og Warriors Alpha-girdle. Sitter som kompresjon og glir mindre, men er to deler å kjøpe og strammere i passform. Klassisk bukse er standard for barn i Norge; girdle er nisjevalget for spillere som hater at buksa «flyter».</p>
+</article>
+<article class="card">
+<h3>6 · Regler i Norge + stell</h3>
+<p><strong>NIHF følger IIHF-reglene:</strong> buksa er standard beskyttelsesutstyr, og beskyttelse skal (med få unntak som hansker og hjelm) bæres under drakten (regel 210). Det finnes <strong>ingen egne størrelses- eller sertifiseringskrav for bukser</strong>. I barnehockeyens minimumsliste nevnes hjelm med gitter, leggskinn, halsbeskytter, skøyter og kølle spesielt (kampreglementet).</p>
+<p><strong>Stell:</strong> heng til lufting etter hver økt med glidelåser/borrelås åpne. Håndvask eller 30° skånsomt uten sentrifugering ved behov. Aldri tørketrommel — skummet deformeres.</p>
+</article></div>
+<h4 class="rh">Størrelsestabeller (cm)</h4>
+<h3 style='font-size:16px;margin:14px 0 0'>CCM · JR</h3><table><thead><tr><th>Størrelse</th><th>Midje (cm)</th><th>Høyde (cm)</th></tr></thead><tbody><tr><td>S</td><td>58–63</td><td>132–142</td></tr><tr><td>M</td><td>61–66</td><td>142–158</td></tr><tr><td>L</td><td>66–71</td><td>158–168</td></tr><tr><td>XL</td><td>69–74</td><td>162–170</td></tr></tbody></table><p class='tsrc'>CCM-tabell via HockeyMonkey (JR + YTH)</p><h3 style='font-size:16px;margin:14px 0 0'>CCM · YTH</h3><table><thead><tr><th>Størrelse</th><th>Midje (cm)</th><th>Høyde (cm)</th></tr></thead><tbody><tr><td>S</td><td>51–56</td><td>102–110</td></tr><tr><td>M</td><td>53–58</td><td>110–122</td></tr><tr><td>L</td><td>56–61</td><td>122–132</td></tr></tbody></table><p class='tsrc'>CCM-tabell via HockeyMonkey (JR + YTH)</p><h3 style='font-size:16px;margin:14px 0 0'>Bauer · JR</h3><table><thead><tr><th>Størrelse</th><th>Midje (cm)</th><th>Høyde (cm)</th></tr></thead><tbody><tr><td>XS</td><td>56–58</td><td>125–140</td></tr><tr><td>S</td><td>56–61</td><td>130–142</td></tr><tr><td>M</td><td>61–66</td><td>140–152</td></tr><tr><td>L</td><td>66–71</td><td>150–163</td></tr><tr><td>L (Tall)</td><td>66–71</td><td>160–173</td></tr><tr><td>XL</td><td>71–76</td><td>160–173</td></tr></tbody></table><p class='tsrc'>Bauer-tabell via Discount Hockey (JR + YTH, tommer omregnet til cm)</p><h3 style='font-size:16px;margin:14px 0 0'>Bauer · YTH</h3><table><thead><tr><th>Størrelse</th><th>Midje (cm)</th><th>Høyde (cm)</th></tr></thead><tbody><tr><td>XS</td><td>51–56</td><td>91–117</td></tr><tr><td>S</td><td>51–56</td><td>99–124</td></tr><tr><td>M</td><td>53–58</td><td>109–132</td></tr><tr><td>L</td><td>53–58</td><td>114–140</td></tr></tbody></table><p class='tsrc'>Bauer-tabell via Discount Hockey (JR + YTH, tommer omregnet til cm)</p><h3 style='font-size:16px;margin:14px 0 0'>Warrior · JR</h3><table><thead><tr><th>Størrelse</th><th>Midje (cm)</th><th>Høyde (cm)</th></tr></thead><tbody><tr><td>S</td><td>56–61</td><td>131–146</td></tr><tr><td>M</td><td>61–66</td><td>140–155</td></tr><tr><td>L</td><td>66–71</td><td>152–168</td></tr><tr><td>XL</td><td>71–73</td><td>165–180</td></tr></tbody></table><p class='tsrc'>Warrior junior-tabell via SkatePro</p>
+<p class="tsrc">Produsenttabeller slik forhandlerne publiserer dem — enkeltmodeller kan avvike; sjekk alltid produktsiden.</p>
+<h4 class="rh">Se det gjort</h4>
+<div class='vid'><iframe loading='lazy' src='https://www.youtube-nocookie.com/embed/MIhR6PGcBmc' title="«How to Size an Ice Hockey Pant» — IW Hockey (YouTube)" allow='encrypted-media; picture-in-picture' allowfullscreen></iframe></div><p class='vcap'>«How to Size an Ice Hockey Pant» — IW Hockey (YouTube) · <a href='https://www.youtube.com/watch?v=MIhR6PGcBmc' rel='noopener'>youtube.com/watch?v=MIhR6PGcBmc</a></p><div class='vid'><iframe loading='lazy' src='https://www.youtube-nocookie.com/embed/0SnE-R0JoX8' title="«How to Buy and Size Hockey Pants» — Pure Hockey (YouTube)" allow='encrypted-media; picture-in-picture' allowfullscreen></iframe></div><p class='vcap'>«How to Buy and Size Hockey Pants» — Pure Hockey (YouTube) · <a href='https://www.youtube.com/watch?v=0SnE-R0JoX8' rel='noopener'>youtube.com/watch?v=0SnE-R0JoX8</a></p>
+<h4 class="rh">Kilder</h4>
+<p class="fine">hockeystore.no (priser og lagerstatus, 2026-07-09) · ccmhockey.com · bauer.com · warrior-forhandlere (Ice Warehouse, Hockey World, Dick's) · hockeymonkey.com &amp; discounthockey.com &amp; skatepro (størrelsestabeller, US-priser) · hockey.no (NIHF spilleregler/kampreglement).</p>
+</section>
+<footer>hockeystore.no er en svensk forhandler (Spobik AB) med norsk språkbutikk — «på lager» betyr bestillbar til Norge, ikke norsk lokallager. Gear Lab anbefaler, du bestemmer. Bygget seksjon for seksjon i Trondheim.</footer>
+</div>
+<script>
+const LANG="no";
+const T={"priceUnverified": "Pris ubekreftet", "reg": "ord.", "checked": "sjekket", "kr": "kr", "zipYes": "+1″ forlengelses-glidelås", "zipNo": "uten forlengelse", "zipUnk": "+1″: ikke bekreftet", "girdle": "GIRDLE — krever shell", "lastGen": "FORRIGE GEN", "tierF": "FLAGGSKIP", "tierM": "MELLOM", "tierB": "BUDSJETT", "grpJR": "JR", "grpYTH": "YTH (barn)", "stPerfect": "treffer både midje og høyde", "stSusp": "midjen er under nedre kant — bruk seler", "stExt": "litt høy for størrelsen — åpne +1″-glidelåsen", "stBetween": "mellom størrelser — prøv begge; la midjen styre og løs lengden med seler/glidelås", "stWaistUp": "midjen styrer opp en størrelse — sjekk at buksa ikke går for langt ned mot kneet", "noYth": "ingen YTH-tabell — minste bukse er JR S (fra 131 cm)", "aboveJr": "over junior-tabellen — sjekk Intermediate. Hockeystore veileder: INT M ≈ 155–165 cm / 40–45 kg, INT L ≈ 165–170 cm / 45–68 kg.", "outside": "utenfor tabellene for dette merket", "selerAlways": "Slank kroppsbygning: bruk seler uansett merke — de holder halebeins- og nyrebeskyttelsen på plass når beltet glipper.", "extPick": "Trenger du lengde? Modeller med bekreftet +1″-glidelås er merket og sortert først.", "recHead": "Anbefalte modeller", "sizeHead": "Størrelse per merke", "otherHead": "Utenfor hockeystore.no", "noMatch": "Ingen modeller matcher filtrene — prøv «Alle» i budsjett.", "fillBoth": "Fyll inn både midjemål og høyde (i cm).", "buy": "Til butikk", "sizes": "Størrelser", "notes": "Notater", "succ": "Etterfølger"};
+const CHARTS={"CCM": {"JR": [{"label": "S", "wMin": 58, "wMax": 63, "hMin": 132, "hMax": 142}, {"label": "M", "wMin": 61, "wMax": 66, "hMin": 142, "hMax": 158}, {"label": "L", "wMin": 66, "wMax": 71, "hMin": 158, "hMax": 168}, {"label": "XL", "wMin": 69, "wMax": 74, "hMin": 162, "hMax": 170}], "YTH": [{"label": "S", "wMin": 51, "wMax": 56, "hMin": 102, "hMax": 110}, {"label": "M", "wMin": 53, "wMax": 58, "hMin": 110, "hMax": 122}, {"label": "L", "wMin": 56, "wMax": 61, "hMin": 122, "hMax": 132}]}, "Bauer": {"JR": [{"label": "XS", "wMin": 56, "wMax": 58, "hMin": 125, "hMax": 140}, {"label": "S", "wMin": 56, "wMax": 61, "hMin": 130, "hMax": 142}, {"label": "M", "wMin": 61, "wMax": 66, "hMin": 140, "hMax": 152}, {"label": "L", "wMin": 66, "wMax": 71, "hMin": 150, "hMax": 163}, {"label": "L (Tall)", "wMin": 66, "wMax": 71, "hMin": 160, "hMax": 173}, {"label": "XL", "wMin": 71, "wMax": 76, "hMin": 160, "hMax": 173}], "YTH": [{"label": "XS", "wMin": 51, "wMax": 56, "hMin": 91, "hMax": 117}, {"label": "S", "wMin": 51, "wMax": 56, "hMin": 99, "hMax": 124}, {"label": "M", "wMin": 53, "wMax": 58, "hMin": 109, "hMax": 132}, {"label": "L", "wMin": 53, "wMax": 58, "hMin": 114, "hMax": 140}]}, "Warrior": {"JR": [{"label": "S", "wMin": 56, "wMax": 61, "hMin": 131, "hMax": 146}, {"label": "M", "wMin": 61, "wMax": 66, "hMin": 140, "hMax": 155}, {"label": "L", "wMin": 66, "wMax": 71, "hMin": 152, "hMax": 168}, {"label": "XL", "wMin": 71, "wMax": 73, "hMin": 165, "hMax": 180}]}};
+const DATA=[{"id": "ccm-jetspeed-pro-jr", "brand": "CCM", "family": "Jetspeed", "model": "Jetspeed Pro", "tier": "flagship", "fitType": "pants", "ageGroup": "JR", "extensionZipper": true, "tagline": "Pro-level venting, D3O spine, featherlight.", "stores": [{"name": "hockeystore.no", "priceNOK": 1899, "priceMSRP": null, "url": "https://www.hockeystore.no/no/articles/2.686.26798/ccm-hockeybukser-jetspeed-pro-jr-red", "lastChecked": "2026-07-09"}, {"name": "hockeymonkey.com (MSRP)", "priceNOK": 2310, "priceMSRP": null, "usd": 209.99, "url": null, "lastChecked": "2026-07-09", "note": {"no": "US-pris 209.99 USD omregnet 1:11", "en": "US price $209.99 converted at 1:11"}}], "notes": {"no": "2025 (Jetspeed FT8 Pro-linjen). AER-TEC-ventilasjon, flytende ryggskjold med D3O, anti-twist-belte. +1\"-glidelås bekreftet hos CCM. Hockeystore: str. M/L i rød pr. sjekk — S/XL finnes i sortimentet, sjekk farge.", "en": "2025 (Jetspeed FT8 Pro line). AER-TEC venting, floating spine shield with D3O, anti-twist belt. +1\" zipper confirmed by CCM. Hockeystore had M/L in red at check — S/XL exist in the line, check colours."}}, {"id": "ccm-jetspeed-plus-jr", "brand": "CCM", "family": "Jetspeed", "model": "Jetspeed +", "tier": "mid", "fitType": "pants", "ageGroup": "JR", "extensionZipper": true, "tagline": "Elite protection, friendlier price.", "stores": [{"name": "hockeystore.no", "priceNOK": 1599, "priceMSRP": null, "url": "https://www.hockeystore.no/no/articles/2.686.26803/ccm-hockeybukser-jetspeed-jr-black", "lastChecked": "2026-07-09"}, {"name": "hockeymonkey.com (MSRP)", "priceNOK": 1980, "priceMSRP": null, "usd": 179.99, "url": null, "lastChecked": "2026-07-09", "note": {"no": "US-pris 179.99 USD omregnet 1:11", "en": "US price $179.99 converted at 1:11"}}], "notes": {"no": "2025-linjen. Samme AER-TEC og hybrid ryggskjold som Pro (uten D3O). +1\"-glidelås bekreftet hos CCM.", "en": "2025 line. Same AER-TEC and hybrid spine shield as Pro (without D3O). +1\" zipper confirmed by CCM."}}, {"id": "ccm-jetspeed-jr", "brand": "CCM", "family": "Jetspeed", "model": "Jetspeed", "tier": "budget", "fitType": "pants", "ageGroup": "JR", "extensionZipper": true, "tagline": "The Jetspeed fit at entry price.", "stores": [{"name": "hockeystore.no", "priceNOK": 1249, "priceMSRP": null, "url": "https://www.hockeystore.no/no/articles/2.686.26733/ccm-hockeybukser-jetspeed-jr-navy", "lastChecked": "2026-07-09"}, {"name": "hockeymonkey.com (MSRP)", "priceNOK": 1210, "priceMSRP": null, "usd": 109.99, "url": null, "lastChecked": "2026-07-09", "note": {"no": "US-pris 109.99 USD omregnet 1:11", "en": "US price $109.99 converted at 1:11"}}], "notes": {"no": "2025-linjen, snøring foran + internt belte. +1\"-glidelås bekreftet. Etterfølger Jetspeed FT6 (2023). NOK-prisen ligger nær US-nivå på denne.", "en": "2025 line, laced front + internal belt. +1\" zipper confirmed. Succeeds Jetspeed FT6 (2023). NOK price sits close to US level on this one."}}, {"id": "ccm-next-jr", "brand": "CCM", "family": "Next", "model": "Next", "tier": "budget", "fitType": "pants", "ageGroup": "JR", "extensionZipper": false, "tagline": "Rec-level basics done right.", "stores": [{"name": "hockeymonkey.com (MSRP)", "priceNOK": 770, "priceMSRP": null, "usd": 69.99, "url": null, "lastChecked": "2026-07-09", "note": {"no": "US-pris 69.99 USD omregnet 1:11", "en": "US price $69.99 converted at 1:11"}}], "notes": {"no": "Rekreasjonsnivå (2023-linjen), 210D-nylon, snøring + polstret belte — ingen forlengelses-glidelås (bekreftet i spesifikasjonen). Ikke lagerført i JR hos hockeystore.no pr. sjekk (kun YTH).", "en": "Recreational level (2023 line), 210D nylon, lace + padded belt — no extension zipper (confirmed in spec). Not stocked in JR at hockeystore.no at check (YTH only)."}}, {"id": "bauer-pro-jr", "brand": "Bauer", "family": "HP (S24)", "model": "Pro", "tier": "flagship", "fitType": "pants", "ageGroup": "JR", "extensionZipper": false, "tagline": "CURV composite spine, 840D shell.", "stores": [{"name": "hockeystore.no", "priceNOK": 1399, "priceMSRP": null, "url": "https://www.hockeystore.no/no/articles/2.686.20958/bauer-hockeybukser-pro-jr-black", "lastChecked": "2026-07-09"}, {"name": "hockeymonkey.com (MSRP)", "priceNOK": 1760, "priceMSRP": null, "usd": 159.99, "url": null, "lastChecked": "2026-07-09", "note": {"no": "US-pris 159.99 USD omregnet 1:11", "en": "US price $159.99 converted at 1:11"}}], "notes": {"no": "Offisielt «Bauer HP Pro Pant» (S24, 2024). Uavhengig ryggplate i CURV-kompositt, DC TECH-skum ved hoften. Ingen forlengelses-glidelås markedsført. Str. S/M/L hos hockeystore.", "en": "Officially “Bauer HP Pro Pant” (S24, 2024). Independent CURV composite spine plate, DC TECH hip foam. No length-extension zipper advertised. S/M/L at hockeystore."}}, {"id": "bauer-elite-jr", "brand": "Bauer", "family": "HP (S24)", "model": "Elite", "tier": "mid", "fitType": "pants", "ageGroup": "JR", "extensionZipper": false, "tagline": "Classic look, solid HD-foam core.", "stores": [{"name": "hockeystore.no", "priceNOK": 999, "priceMSRP": null, "url": "https://www.hockeystore.no/no/articles/2.686.20935/bauer-hockeybukse-elite-jr-navy", "lastChecked": "2026-07-09"}, {"name": "hockeymonkey.com (MSRP)", "priceNOK": 1430, "priceMSRP": null, "usd": 129.99, "url": null, "lastChecked": "2026-07-09", "note": {"no": "US-pris 129.99 USD omregnet 1:11", "en": "US price $129.99 converted at 1:11"}}], "notes": {"no": "«Bauer HP Elite Pant» (S24). Integrert ryggbeskyttelse i HD-skum, 840D-nylon. Ingen forlengelse markedsført. OBS: sto som «ikke på lager» hos hockeystore pr. sjekk.", "en": "“Bauer HP Elite Pant” (S24). Integrated HD-foam spine, 840D nylon. No extension advertised. NB: listed “out of stock” at hockeystore at check."}}, {"id": "bauer-performance-jr", "brand": "Bauer", "family": "HP (S24)", "model": "Performance", "tier": "budget", "fitType": "pants", "ageGroup": "JR", "extensionZipper": false, "tagline": "Honest starter armour.", "stores": [{"name": "hockeystore.no", "priceNOK": 799, "priceMSRP": null, "url": "https://www.hockeystore.no/no/articles/2.686.20948/bauer-hockeybukser-performance-jr-blue", "lastChecked": "2026-07-09"}, {"name": "hockeymonkey.com (MSRP)", "priceNOK": 1100, "priceMSRP": null, "usd": 99.99, "url": null, "lastChecked": "2026-07-09", "note": {"no": "US-pris 99.99 USD omregnet 1:11", "en": "US price $99.99 converted at 1:11"}}], "notes": {"no": "«Bauer HP Performance Pant» (S24) — innstegsmodellen i linjen. Ingen forlengelse markedsført.", "en": "“Bauer HP Performance Pant” (S24) — the line's entry model. No extension advertised."}}, {"id": "warrior-alpha-lx20-jr", "brand": "Warrior", "family": "Alpha LX", "model": "Alpha LX 20", "tier": "mid", "fitType": "pants", "ageGroup": "JR", "extensionZipper": true, "tagline": "Tailored pro fit, IMPAX spine.", "stores": [{"name": "hockeystore.no", "priceNOK": 1419, "priceMSRP": 1499, "url": "https://www.hockeystore.no/no/articles/2.686.18842/warrior-hockeybukser-lx-20-jr-black", "lastChecked": "2026-07-09"}, {"name": "hockeymonkey.com (MSRP)", "priceNOK": 1430, "priceMSRP": null, "usd": 129.99, "url": null, "lastChecked": "2026-07-09", "note": {"no": "US-pris 129.99 USD omregnet 1:11", "en": "US price $129.99 converted at 1:11"}}], "notes": {"no": "Alpha LX-generasjonen (2021) — fortsatt Warriors aktuelle juniorbukse hos forhandlere. 1\"-glidelåsforlengelse (gusset) bekreftet, IMPAX-skum i ryggen, flytende internt belte.", "en": "Alpha LX generation (2021) — still Warrior's current junior pant at retail. 1\" zippered leg-extension gusset confirmed, IMPAX spine foam, floating internal belt."}}, {"id": "warrior-alpha-lx30-jr", "brand": "Warrior", "family": "Alpha LX", "model": "Alpha LX 30", "tier": "budget", "fitType": "pants", "ageGroup": "JR", "extensionZipper": null, "tagline": "LX fit on a budget.", "stores": [{"name": "hockeystore.no", "priceNOK": 1049, "priceMSRP": 1099, "url": "https://www.hockeystore.no/no/articles/2.686.18846/warrior-hockeybukser-lx-30-jr-navy", "lastChecked": "2026-07-09"}], "notes": {"no": "Budsjettmodellen i LX-linjen. Forlengelses-glidelås ikke bekreftet for LX 30 — antatt uten, må verifiseres. US-pris ikke funnet hos store forhandlere (pris å verifisere).", "en": "Budget model in the LX line. Extension zipper not confirmed for LX 30 — assumed absent, to verify. US price not found at major retailers (price to verify)."}}, {"id": "bauer-acp-pro-girdle-jr", "brand": "Bauer", "family": "ACP", "model": "Pro ACP (girdle)", "tier": "mid", "fitType": "girdle", "ageGroup": "JR", "extensionZipper": false, "tagline": "Compression girdle, pro tier.", "stores": [{"name": "hockeystore.no", "priceNOK": 1099, "priceMSRP": null, "url": "https://www.hockeystore.no/no/articles/2.686.20923/bauer-hockeybukse-acp-pro-belte-jr", "lastChecked": "2026-07-09"}], "notes": {"no": "Girdle (tettsittende beskyttelse) — krever separat overtrekk/shell. Hockeystore-navnet «ACP Pro Belte» = Bauer Pro ACP girdle. JR US-pris ikke funnet (SR ligger på 209,99 USD) — pris å verifisere.", "en": "Girdle (compression protective) — needs a separate shell. Hockeystore's “ACP Pro Belte” = Bauer Pro ACP girdle. JR US price not found (SR is $209.99) — price to verify."}}, {"id": "bauer-acp-elite-girdle-jr", "brand": "Bauer", "family": "ACP", "model": "Elite ACP (girdle)", "tier": "budget", "fitType": "girdle", "ageGroup": "JR", "extensionZipper": false, "tagline": "Girdle entry point.", "stores": [{"name": "hockeystore.no", "priceNOK": 849, "priceMSRP": null, "url": "https://www.hockeystore.no/no/articles/2.686.20920/bauer-hockeybukse-acp-elite-belte-jr", "lastChecked": "2026-07-09"}, {"name": "hockeymonkey.com (MSRP)", "priceNOK": 1210, "priceMSRP": null, "usd": 109.99, "url": null, "lastChecked": "2026-07-09", "note": {"no": "US-pris 109.99 USD omregnet 1:11", "en": "US price $109.99 converted at 1:11"}}], "notes": {"no": "Girdle — krever separat shell (shell selges separat, sjekk «Hockeybelte & Overtrekk»).", "en": "Girdle — needs a separate shell (sold separately, see the shells category)."}}, {"id": "true-catalyst-9x4-jr", "brand": "True", "family": "Catalyst", "model": "Catalyst 9X4", "tier": "flagship", "fitType": "pants", "ageGroup": "JR", "extensionZipper": null, "tagline": "True's mobile flagship.", "stores": [{"name": "hockeymonkey.com (MSRP)", "priceNOK": 2420, "priceMSRP": null, "usd": 219.99, "url": null, "lastChecked": "2026-07-09", "note": {"no": "US-pris 219.99 USD omregnet 1:11", "en": "US price $219.99 converted at 1:11"}}], "notes": {"no": "Ikke lagerført hos hockeystore.no (butikken fører True, men ikke buksene pr. sjekk). Catalyst-serien er i generasjonsskifte (X5-produkter er begynt å dukke opp) — 9X4 selges nedsatt i USA (164,99 USD ved sjekk). Forlengelses-glidelås ikke verifisert.", "en": "Not stocked at hockeystore.no (they carry True, but not the pants at check). Catalyst series is mid-generation-change (X5 items appearing) — 9X4 on markdown in the US ($164.99 at check). Extension zipper not verified."}}, {"id": "ccm-next-yth", "brand": "CCM", "family": "Next", "model": "Next", "tier": "budget", "fitType": "pants", "ageGroup": "YTH", "extensionZipper": false, "tagline": "First real pants.", "stores": [{"name": "hockeystore.no", "priceNOK": 399, "priceMSRP": 449, "url": "https://www.hockeystore.no/no/articles/2.687.16814/ccm-bukse-next-yth-black", "lastChecked": "2026-07-09"}, {"name": "ushockeysupply.com (MSRP)", "priceNOK": 495, "priceMSRP": null, "usd": 44.99, "url": null, "lastChecked": "2026-07-09", "note": {"no": "US-pris 44.99 USD omregnet 1:11", "en": "US price $44.99 converted at 1:11"}}], "notes": {"no": "Snøring + polstret belte, 210D-nylon. På SUMMER SALE ved sjekk (ord. 449 kr).", "en": "Lace + padded belt, 210D nylon. On summer sale at check (reg. 449 kr)."}}, {"id": "ccm-asv-pro-yth", "brand": "CCM", "family": "Tacks", "model": "Tacks AS-V Pro", "tier": "mid", "fitType": "pants", "ageGroup": "YTH", "extensionZipper": null, "tagline": "Tacks-era protection, outlet price.", "stores": [{"name": "hockeystore.no", "priceNOK": 589, "priceMSRP": 699, "url": "https://www.hockeystore.no/no/articles/2.687.16249/ccm-hockeybukse-as-v-pro-yth-red", "lastChecked": "2026-07-09"}], "lastGen": true, "successor": {"no": "Tacks XF → Tacks (nyere generasjoner ikke lagerført i YTH hos hockeystore.no)", "en": "Tacks XF → Tacks (newer generations not stocked in YTH at hockeystore.no)"}, "notes": {"no": "Forrige Tacks-generasjon (2022) på utsalg («NICE PRICE»). God beskyttelse for prisen. Detaljspesifikasjoner ikke verifisert for YTH-varianten.", "en": "Previous Tacks generation (2022) on clearance. Strong protection for the money. Detailed specs not verified for the YTH variant."}}, {"id": "bauer-supreme-mach-yth", "brand": "Bauer", "family": "Supreme", "model": "Supreme Mach", "tier": "mid", "fitType": "pants", "ageGroup": "YTH", "extensionZipper": null, "tagline": "Supreme-era comfort, clearance deal.", "stores": [{"name": "hockeystore.no", "priceNOK": 399, "priceMSRP": 699, "url": "https://www.hockeystore.no/no/articles/2.687.18487/bauer-hockeybukser-supreme-mach-yth-black", "lastChecked": "2026-07-09"}], "lastGen": true, "successor": {"no": "Supreme Fuse (2025 — ikke lagerført i YTH hos hockeystore.no)", "en": "Supreme Fuse (2025 — not stocked in YTH at hockeystore.no)"}, "notes": {"no": "2022-generasjonen på utsalg, «begrenset lager». Sterkt kjøp til 399 kr hvis størrelsen passer. Forlengelse ikke verifisert for YTH.", "en": "2022 generation on clearance, “limited stock”. Strong buy at 399 kr if the size fits. Extension not verified for YTH."}}, {"id": "bauer-x-yth", "brand": "Bauer", "family": "X", "model": "X (2024)", "tier": "budget", "fitType": "pants", "ageGroup": "YTH", "extensionZipper": null, "tagline": "Bare-bones starter.", "stores": [{"name": "hockeystore.no", "priceNOK": 449, "priceMSRP": null, "url": "https://www.hockeystore.no/no/articles/2.687.20978/bauer-hockeybukser-x-yth-black", "lastChecked": "2026-07-09"}], "notes": {"no": "Innstegslinjen X (2024). OBS: «ikke på lager» hos hockeystore pr. sjekk. JR-varianten ligger på 59,99 USD i USA; YTH-US-pris ikke funnet.", "en": "Entry X line (2024). NB: “out of stock” at hockeystore at check. JR version is $59.99 in the US; YTH US price not found."}}];
+const nb=n=>n.toLocaleString("nb-NO").replace(/\u00a0/g,"\u2009");
+const fmt=n=>nb(n)+"\u2009kr";
+function effPrice(p){const h=p.stores.find(s=>s.name==="hockeystore.no"&&s.priceNOK);if(h)return h.priceNOK;const m=p.stores.find(s=>s.priceNOK);return m?m.priceNOK:null}
+function tierChip(t){return t==="flagship"?T.tierF:(t==="mid"?T.tierM:T.tierB)}
+function zipChip(p){if(p.extensionZipper===true)return '<span class="chip zip">'+T.zipYes+'</span>';if(p.extensionZipper===false)return '<span class="chip">'+T.zipNo+'</span>';return '<span class="chip warn">'+T.zipUnk+'</span>'}
+function storeRows(p){return p.stores.map(s=>{
+ let t="";
+ if(s.name==="hockeystore.no"){t=s.name+" — "+(s.priceNOK?fmt(s.priceNOK):T.priceUnverified);
+  if(s.priceMSRP)t+=" ("+T.reg+" "+fmt(s.priceMSRP)+")";t+=" · "+T.checked+" "+s.lastChecked;
+  return '<p class="store"><a href="'+s.url+'" rel="noopener">'+t+' \u2192</a></p>'}
+ t=s.name+" — \u2248 "+fmt(s.priceNOK)+" · "+(s.note?s.note[LANG]:"");
+ return '<p class="store">'+t+'</p>'}).join("")}
+function sizesLine(p){const c=CHARTS[p.brand]&&CHARTS[p.brand][p.ageGroup];
+ if(!c)return T.sizes+": "+(LANG==="no"?"S–XL — tabell ikke innhentet, sjekk produsenten":"S–XL — chart not collected, check the manufacturer");
+ return T.sizes+": "+c.map(s=>s.label+" "+s.wMin+"–"+s.wMax+" · "+s.hMin+"–"+s.hMax+" cm").join("  |  ")}
+function headPrice(p){const h=p.stores.find(s=>s.name==="hockeystore.no");
+ if(h&&h.priceNOK){let x='<div class="price">'+fmt(h.priceNOK);if(h.priceMSRP)x+='<span class="reg">'+fmt(h.priceMSRP)+"</span>";return x+"</div>"}
+ return '<div class="price" style="font-size:19px;color:var(--faint)">'+T.priceUnverified+"</div>"}
+function card(p,compact){
+ let chips='<span class="chip">'+p.ageGroup+'</span><span class="chip">'+tierChip(p.tier)+"</span>"+zipChip(p);
+ if(p.fitType==="girdle")chips+='<span class="chip warn">'+T.girdle+"</span>";
+ if(p.lastGen)chips+='<span class="chip warn">'+T.lastGen+"</span>";
+ let h='<article class="card"><h3>'+p.brand+" "+p.model+"</h3>"+'<p class="tagline">'+p.tagline+'</p><div class="chips">'+chips+"</div>"+headPrice(p)+storeRows(p);
+ if(!compact){h+='<p class="szs">'+sizesLine(p)+"</p>"+'<p class="nts">'+p.notes[LANG]+(p.successor?(" "+T.succ+": "+p.successor[LANG]):"")+"</p>"}
+ return h+"</article>"}
+/* tabs */
+document.querySelectorAll(".tabbtn").forEach(b=>b.addEventListener("click",()=>{
+ document.querySelectorAll(".tabbtn").forEach(x=>x.classList.toggle("active",x===b));
+ document.querySelectorAll(".pane").forEach(p=>p.classList.toggle("active",p.id==="pane-"+b.dataset.t));
+ window.scrollTo({top:0});}));
+/* katalog */
+let kg="all";
+function renderKat(){const lg=document.getElementById("lgTog").checked;
+ const items=DATA.filter(p=>(kg==="all"||p.ageGroup===kg)&&(lg||!p.lastGen));
+ document.getElementById("kgrid").innerHTML=items.map(p=>card(p,false)).join("")}
+document.querySelectorAll("#kfilters .fbtn").forEach(b=>b.addEventListener("click",()=>{
+ kg=b.dataset.g;document.querySelectorAll("#kfilters .fbtn").forEach(x=>x.classList.toggle("on",x===b));renderKat()}));
+document.getElementById("lgTog").addEventListener("change",renderKat);
+renderKat();
+/* quiz */
+function tryGroup(sizes,w,h){
+ const ex=sizes.find(s=>w>=s.wMin&&w<=s.wMax&&h>=s.hMin&&h<=s.hMax);
+ if(ex)return{label:ex.label,st:"stPerfect",flags:[]};
+ const hFit=sizes.filter(s=>h>=s.hMin&&h<=s.hMax);
+ for(const s of hFit){if(w<=s.wMax){if(s.wMin-w<=6)return{label:s.label,st:"stSusp",flags:["susp"]}}}
+ if(hFit.length&&w>hFit[hFit.length-1].wMax){
+  const up=sizes[sizes.indexOf(hFit[hFit.length-1])+1];
+  if(up&&w>=up.wMin&&w<=up.wMax)return{label:up.label,st:"stWaistUp",flags:[]}}
+ const wFit=sizes.filter(s=>w>=s.wMin&&w<=s.wMax);
+ for(const s of wFit){if(h>s.hMax&&h-s.hMax<=6)return{label:s.label,st:"stExt",flags:["ext"]};
+  if(h<s.hMin&&s.hMin-h<=6)return{label:s.label,st:"stBetween",flags:[]}}
+ if(wFit.length||hFit.length)return{label:(wFit[0]||hFit[0]).label,st:"stBetween",flags:[]};
+ return null}
+function fitBrand(brand,w,h){const ch=CHARTS[brand];if(!ch)return null;
+ const jr=ch.JR,yt=ch.YTH;
+ if(yt&&h<=yt[yt.length-1].hMax){const r=tryGroup(yt,w,h);if(r)return Object.assign({group:"YTH"},r)}
+ if(h>jr[jr.length-1].hMax)return{group:"JR",label:null,st:"aboveJr",flags:[]};
+ if(h<jr[0].hMin&&!yt)return{group:"JR",label:null,st:"noYth",flags:[]};
+ const r=tryGroup(jr,w,h);if(r)return Object.assign({group:"JR"},r);
+ if(yt){const r2=tryGroup(yt,w,h);if(r2)return Object.assign({group:"YTH"},r2)}
+ return{group:"JR",label:null,st:"outside",flags:[]}}
+function inBudget(p,b){const x=effPrice(p);if(b==="all"||x===null)return true;
+ if(b==="b1")return x<900;if(b==="b2")return x>=900&&x<=1500;return x>1500}
+document.getElementById("qform").addEventListener("submit",ev=>{
+ ev.preventDefault();
+ const w=parseInt(document.getElementById("qw").value,10),h=parseInt(document.getElementById("qh").value,10);
+ const out=document.getElementById("qres");
+ if(!w||!h){out.innerHTML='<div class="advice">'+T.fillBoth+"</div>";return}
+ const slim=document.getElementById("b-slim").checked,bud=document.getElementById("qb").value;
+ const brands=["CCM","Bauer","Warrior"];const res={};let anyExt=false,anySusp=false;const groups=new Set();
+ let html='<h4 class="rh">'+T.sizeHead+'</h4><div class="sizeRow">';
+ for(const b of brands){const r=fitBrand(b,w,h);res[b]=r;
+  if(r&&r.label){groups.add(r.group);anyExt=anyExt||r.flags.includes("ext");anySusp=anySusp||r.flags.includes("susp");
+   html+='<div class="sizePill"><b>'+b+" — "+r.group+" "+r.label+'</b><span class="why">'+T[r.st]+"</span></div>"}
+  else if(r){html+='<div class="sizePill"><b>'+b+'</b><span class="why">'+T[r.st]+"</span></div>"}}
+ html+="</div>";
+ if(slim||anySusp)html+='<div class="advice">'+T.selerAlways+"</div>";
+ if(anyExt)html+='<div class="advice">'+T.extPick+"</div>";
+ let recs=[];
+ for(const b of brands){const r=res[b];if(!r||!r.label)continue;
+  recs=recs.concat(DATA.filter(p=>p.brand===b&&p.ageGroup===r.group&&p.fitType==="pants"&&!p.lastGen&&effPrice(p)!==null&&inBudget(p,bud)))}
+ const tierOrd={flagship:0,mid:1,budget:2};
+ recs.sort((a,c)=>{if(anyExt&&(a.extensionZipper===true)!==(c.extensionZipper===true))return a.extensionZipper===true?-1:1;
+  return tierOrd[a.tier]-tierOrd[c.tier]});
+ html+='<h4 class="rh">'+T.recHead+"</h4>";
+ html+=recs.length?'<div class="grid">'+recs.map(p=>card(p,true)).join("")+"</div>":'<div class="advice">'+T.noMatch+"</div>";
+ if(groups.has("JR")){const oth=DATA.filter(p=>p.fitType==="pants"&&p.ageGroup==="JR"&&!p.lastGen&&!p.stores.some(s=>s.name==="hockeystore.no"));
+  if(oth.length)html+='<h4 class="rh">'+T.otherHead+'</h4><div class="grid">'+oth.map(p=>card(p,true)).join("")+"</div>"}
+ out.innerHTML=html;out.scrollIntoView({behavior:"smooth",block:"start"})});
+</script>
+</body>
+</html>

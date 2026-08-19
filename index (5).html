@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gear Lab — all youth hockey gear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#141313; --card:#1c1b1a; --ink:#e8e6e1; --faint:#a8a59f; --accent:#ff5b1f; --line:#2c2a28; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--bg); color:var(--ink); font-family:Inter,sans-serif; line-height:1.55; }
+.wrap { max-width:920px; margin:0 auto; padding:28px 20px 60px; }
+.top { display:flex; justify-content:space-between; align-items:center; margin-bottom:34px; }
+.eyebrow { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); }
+.lang { color:var(--faint); text-decoration:none; border:1px solid var(--line); padding:6px 12px; border-radius:8px; font-size:13px; }
+h1 { font-family:Fraunces,serif; font-size:clamp(34px,6vw,52px); line-height:1.08; margin:10px 0 12px; }
+h1 em { color:var(--accent); font-style:normal; }
+.lead { color:var(--faint); max-width:640px; margin-bottom:30px; }
+.method { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px; margin:0 0 38px; }
+.method div { border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-size:13px; color:var(--faint); }
+.method strong { color:var(--ink); display:block; margin-bottom:3px; font-size:13.5px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; text-decoration:none; color:var(--ink); transition:border-color .15s; display:block; }
+.card.ready { border-color:rgba(255,91,31,.5); }
+.card.ready:hover { border-color:var(--accent); }
+.card-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.emoji { font-size:26px; }
+.badge { font-size:10.5px; letter-spacing:.08em; padding:3px 9px; border-radius:99px; font-weight:700; }
+.badge.ready { background:rgba(255,91,31,.16); color:var(--accent); }
+.badge.next { background:rgba(255,210,63,.13); color:#ffd23f; }
+.badge.planned { background:rgba(168,165,159,.13); color:var(--faint); }
+.card h3 { font-family:Fraunces,serif; font-size:19px; margin-bottom:6px; }
+.card p { font-size:13px; color:var(--faint); }
+.roadmap { margin-top:42px; border-top:1px solid var(--line); padding-top:22px; font-size:13.5px; color:var(--faint); max-width:680px; }
+.roadmap strong { color:var(--ink); }
+</style></head>
+<body><div class="wrap">
+  <div class="top"><span class="eyebrow">Gear Lab · trial version</span><a class="lang" href="/gear/">Norsk</a></div>
+  <h1>All the <em>gear</em> — one section at a time.</h1>
+  <p class="lead">Same method as Stick Lab: verified data, real prices, a quiz that actually understands growing kids. Sticks are done — the rest we build together, section by section.</p>
+  <div class="method">
+    <div><strong>Verified data</strong>No guessing — specs from manufacturers and shops; assumptions are always flagged.</div>
+    <div><strong>Real prices</strong>hockeystore.no as primary source (Swedish shop, Norwegian-language site) + manufacturer MSRP.</div>
+    <div><strong>A quiz for kids</strong>Height, weight, age and play style — calibrated on real setups, not shop heuristics.</div>
+    <div><strong>Learn sections</strong>Parent knowledge: what matters, what is marketing, videos with credit.</div>
+  </div>
+  <div class="grid">
+      <a class="card ready" href="/en/" >
+        <div class="card-top"><span class="emoji">🏒</span><span class="badge ready">READY</span></div>
+        <h3>Sticks</h3><p>110 models, quiz, prices, lineage, Learn with video. v0.2 — live and in testing.</p>
+      </a>
+      <a class="card ready" href="/gear/skoyter/en/">
+        <div class="card-top"><span class="emoji">⛸️</span><span class="badge ready">READY</span></div>
+        <h3>Skates</h3><p>Fit systems (CCM/Bauer), size vs shoe size, baking, junior growth.</p>
+      </a>
+      <a class="card ready" href="/gear/hjelm/en/">
+        <div class="card-top"><span class="emoji">🪖</span><span class="badge ready">READY</span></div>
+        <h3>Helmet & cage</h3><p>Certifications, sizing/adjustment, when to replace.</p>
+      </a>
+      <a class="card ready" href="/gear/leggbeskyttere/en/">
+        <div class="card-top"><span class="emoji">🦵</span><span class="badge ready">READY</span></div>
+        <h3>Shin guards</h3><p>Inch sizing, knee fit, over/under the tongue.</p>
+      </a>
+      <a class="card ready" href="/gear/hansker/en/">
+        <div class="card-top"><span class="emoji">🧤</span><span class="badge ready">READY</span></div>
+        <h3>Gloves</h3><p>Length sizing, protection vs mobility for kids.</p>
+      </a>
+      <a class="card ready" href="/gear/albue-skulder/en/">
+        <div class="card-top"><span class="emoji">💪</span><span class="badge ready">READY</span></div>
+        <h3>Elbow & shoulder</h3><p>Sizing, protection level per age class.</p>
+      </a>
+      <a class="card ready" href="/gear/bukse/en/">
+        <div class="card-top"><span class="emoji">👖</span><span class="badge ready">READY</span></div>
+        <h3>Hockey pants</h3><p>Fit, suspenders vs belt, growth adjustment.</p>
+      </a>
+      <a class="card ready" href="/gear/hals-tilbehor/en/">
+        <div class="card-top"><span class="emoji">🛡️</span><span class="badge ready">READY</span></div>
+        <h3>Neck & accessories</h3><p>Neck guard (mandatory for kids), bag, tape, drying.</p>
+      </a>
+  </div>
+  <p class="roadmap"><strong>Roadmap:</strong> All seven sections delivered (July 2026) and ready for review. Everything built on verified data — assumptions are flagged "to verify" in each section.</p>
+</div></body></html>

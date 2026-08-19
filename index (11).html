@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hjelm & Gitter - Gear Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#ff5b1f;--ink:#e8e6e1;--faint:#a8a59f;--bg:#141313;--card:#1c1b1a;--line:#2b2927;--ok:#7fb069;--warn:#e0b04c}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15}
+.wrap{max-width:1060px;margin:0 auto;padding:0 18px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.brand{font-family:Fraunces,Georgia,serif;color:var(--faint);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+.brand a{color:var(--faint)}
+.langsw{border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:.82rem;color:var(--ink)}
+.hero{padding:52px 0 30px}
+.hero h1{font-size:clamp(2.3rem,6vw,3.6rem)}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.lede{color:var(--faint);max-width:620px;margin-top:14px;font-size:1.05rem}
+.trap{margin:26px 0 0;border:1px solid var(--accent);border-left-width:6px;border-radius:10px;padding:16px 18px;background:linear-gradient(180deg,rgba(255,91,31,.08),transparent)}
+.trap b{color:var(--accent);display:block;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+nav.pillars{position:sticky;top:0;z-index:40;background:rgba(20,19,19,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav.pillars .wrap{display:flex;gap:6px;padding-top:9px;padding-bottom:9px}
+nav.pillars a{padding:7px 16px;border-radius:999px;color:var(--faint);font-size:.9rem}
+nav.pillars a:hover{color:var(--ink);text-decoration:none;background:var(--card)}
+section{padding:56px 0 8px}
+section>.wrap>h2{font-size:2rem}
+.sub{color:var(--faint);margin:10px 0 26px;max-width:720px}
+.qgrid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.qcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.qcard label.qt{display:block;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.cmrow{display:flex;gap:12px;align-items:center}
+input[type=number]{width:86px;background:#0f0e0e;border:1px solid var(--line);border-radius:8px;color:var(--ink);font-size:1.35rem;padding:8px;text-align:center;font-family:Fraunces,Georgia,serif}
+input[type=range]{flex:1;accent-color:var(--accent)}
+.help{font-size:.8rem;color:var(--faint);margin-top:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:.86rem;color:var(--faint);cursor:pointer;background:transparent}
+.chip.on{border-color:var(--accent);color:var(--ink);background:rgba(255,91,31,.12)}
+.gobtn{margin-top:24px;background:var(--accent);color:#141313;border:0;border-radius:999px;padding:13px 30px;font-size:1rem;font-weight:600;cursor:pointer;font-family:Inter,sans-serif}
+.gobtn:hover{filter:brightness(1.08)}
+.hardrule{margin-top:22px;border:1px dashed var(--accent);border-radius:10px;padding:12px 16px;color:var(--accent);font-weight:600}
+#quizout{margin-top:26px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.msg{grid-column:1/-1;color:var(--warn);border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--card)}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.pcard.hit{border-color:var(--accent)}
+.pbrand{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.pname{font-family:Fraunces,Georgia,serif;font-size:1.28rem}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:3px 9px;color:var(--faint)}
+.badge.tier{border-color:var(--accent);color:var(--accent)}
+.badge.lg{border-color:var(--warn);color:var(--warn)}
+.recline{border:1px solid var(--accent);border-radius:10px;padding:9px 12px;background:rgba(255,91,31,.09)}
+.recline b{color:var(--accent)}
+.sizetags{display:flex;flex-wrap:wrap;gap:6px}
+.sz{font-size:.78rem;border:1px solid var(--line);border-radius:6px;padding:3px 8px;color:var(--faint)}
+.sz.assumed{border-style:dashed}
+.sz.rec{border-color:var(--accent);color:var(--ink);background:rgba(255,91,31,.14)}
+.price{font-family:Fraunces,Georgia,serif;font-size:1.5rem}
+.price s{color:var(--faint);font-size:.95rem;margin-left:8px}
+.meta{font-size:.82rem;color:var(--faint)}
+.meta b{color:var(--ink);font-weight:600}
+.plink{margin-top:auto;font-size:.9rem}
+.fitnote{font-size:.82rem}
+.fitnote.ok{color:var(--ok)}.fitnote.low{color:var(--warn)}
+.mapbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;overflow-x:auto}
+.maprow{display:grid;grid-template-columns:180px 1fr;align-items:center;gap:12px;padding:4px 0;min-width:560px}
+.maplabel{font-size:.8rem;color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.maptrack{position:relative;height:16px;background:#0f0e0e;border-radius:8px}
+.mapbar{position:absolute;top:2px;bottom:2px;border-radius:6px;opacity:.9}
+.mapbar.assumed{background-image:repeating-linear-gradient(45deg,transparent 0 4px,rgba(20,19,19,.5) 4px 8px)}
+.mapscale{display:grid;grid-template-columns:180px 1fr;gap:12px;min-width:560px;margin-top:8px}
+.mapticks{position:relative;height:20px;font-size:.7rem;color:var(--faint)}
+.mapticks span{position:absolute;transform:translateX(-50%)}
+#cmline{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--accent);display:none}
+.b-CCM{background:#ff5b1f}.b-Bauer{background:#5d8bb3}.b-Warrior{background:#9b8f4b}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:.78rem;color:var(--faint)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:22px}
+.filters .lab{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-right:2px}
+#katalog .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.learngrid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.lcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.lcard h3{font-size:1.2rem;margin-bottom:12px}
+.lcard ol,.lcard ul{padding-left:20px;display:grid;gap:8px;color:var(--ink);font-size:.94rem}
+.lcard p{font-size:.94rem;color:var(--ink)}
+.rules{border:1px solid var(--accent);grid-column:1/-1}
+.rules p{font-size:1rem}
+.srcs{margin-top:14px;font-size:.8rem;color:var(--faint)}
+.srcs a{display:block;margin-top:4px}
+.certgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:6px}
+.cert{border:1px solid var(--line);border-radius:12px;padding:14px;background:#0f0e0e}
+.cert .code{font-family:Fraunces,Georgia,serif;font-size:1.5rem}
+.cert .reg{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.cert .exp{display:inline-block;margin:8px 0;font-size:.72rem;border-radius:999px;padding:3px 9px}
+.cert .exp.yes{border:1px solid var(--warn);color:var(--warn)}
+.cert .exp.no{border:1px solid var(--line);color:var(--faint)}
+.cert p{font-size:.86rem;color:var(--ink);margin-top:4px}
+.sketch{margin:6px 0 12px}
+.sketchcap{font-size:.72rem;color:var(--faint);font-style:italic}
+footer{margin-top:70px;border-top:1px solid var(--line);padding:30px 0 50px;color:var(--faint);font-size:.84rem}
+footer .wrap{display:grid;gap:10px}
+@media(max-width:640px){.maprow{grid-template-columns:120px 1fr;min-width:440px}.mapscale{grid-template-columns:120px 1fr;min-width:440px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap"><header class="top">
+  <div class="brand"><a href="../">Gear Lab</a> / Hjelm & gitter</div>
+  <a class="langsw" href="en/">English</a>
+</header></div>
+
+<div class="wrap hero">
+  <h1>Hjelm & gitter <em>&mdash; cm f&oslash;rst</em></h1>
+  <p class="lede">Hjelmguide for hockeyforeldre. Størrelse = hodeomkrets i centimeter - ikke alder, ikke S/M/L-gjetting.</p>
+  <div class="trap"><b>Fellen i denne kategorien</b>Hjelmstørrelse er hodets OMKRETS i cm, målt rett over øyenbrynene. Foreldre gjetter S/M/L ut fra alder - og kjøper for stort «så det er noe å vokse i». En løs hjelm glir ut av posisjon og beskytter ikke. Mål hodet først. Og sjekk klistremerkene: HECC-merket har en trykt utløpsdato de fleste aldri ser på.</div>
+</div>
+
+<nav class="pillars"><div class="wrap">
+  <a href="#quiz">Quiz</a><a href="#kart">Størrelseskartet</a><a href="#katalog">Katalog</a><a href="#laer">Lær</a>
+</div></nav>
+
+<section id="quiz"><div class="wrap">
+  <h2>Finn riktig hjelm</h2><p class="sub">Fire spørsmål. Svaret er en størrelse per modell + 2-3 forslag.</p>
+  <div class="qgrid">
+    <div class="qcard"><label class="qt" for="cmnum">1 · Hodeomkrets (cm)</label>
+      <div class="cmrow"><input id="cmnum" type="number" min="40" max="70" step="0.5" inputmode="decimal">
+      <input id="cmrange" type="range" min="46" max="65" step="0.5" value="55" aria-label="cm"></div>
+      <p class="help">Mål med målebånd rett over øyenbrynene, lengste vei rundt bakhodet. Se måleguiden under Lær.</p></div>
+    <div class="qcard"><span class="qt">2 · Aldersgruppe</span>
+      <div class="chips" id="agechips">
+        <button class="chip" data-v="u9" type="button">Under 9 år</button>
+        <button class="chip on" data-v="912" type="button">9-12 år</button>
+        <button class="chip" data-v="1317" type="button">13-17 år</button>
+      </div></div>
+    <div class="qcard"><span class="qt">3 · Combo eller løst gitter?</span>
+      <div class="chips" id="combochips">
+        <button class="chip on" data-v="yes" type="button">Combo (hjelm + gitter samlet)</button>
+        <button class="chip" data-v="sep" type="button">Hjelm og gitter hver for seg</button>
+      </div>
+      <p class="help" id="sepnote" style="display:none">For barn anbefaler vi combo: gitteret er ferdig tilpasset hjelmen og totalprisen er lavere. Forslagene under er derfor combo-modeller; egne gitter kommer i en senere versjon.</p></div>
+    <div class="qcard"><span class="qt">4 · Budsjett</span>
+      <div class="chips" id="budgetchips">
+        <button class="chip" data-v="b1" type="button">Under 1 000 kr</button>
+        <button class="chip" data-v="b2" type="button">1 000-2 000 kr</button>
+        <button class="chip" data-v="b3" type="button">Over 2 000 kr</button>
+        <button class="chip on" data-v="all" type="button">Alt</button>
+      </div></div>
+  </div>
+  <button class="gobtn" id="gobtn" type="button">Vis forslag</button>
+  <div class="hardrule">Aldri kjøp hjelm med vokserom. En hjelm som sitter løst i dag, beskytter ikke i dag.</div>
+  <div id="quizout"></div>
+</div></section>
+
+<section id="kart"><div class="wrap">
+  <h2>Størrelseskartet</h2><p class="sub">Hver stripe viser hvilke hodeomkretser modellen faktisk dekker (heltrukket = verifisert tabell, stiplet = antatt). Skriv inn cm i quizen, så tegnes linjen her.</p>
+  <div class="mapbox">
+    <div id="maprows" style="position:relative"><div id="cmline"></div></div>
+    <div class="mapscale"><div></div><div class="mapticks" id="mapticks"></div></div>
+    <div class="legend"><span><i class="b-CCM"></i>CCM</span><span><i class="b-Bauer"></i>Bauer</span><span><i class="b-Warrior"></i>Warrior</span></div>
+  </div>
+</div></section>
+
+<section id="katalog"><div class="wrap">
+  <h2>Katalog</h2><p class="sub">Combo-hjelmer (hjelm + gitter) hos hockeystore.no. Priser sjekket 2026-07-10. Merk: hockeystore.no er en svensk forhandler (Spobik AB) med norsk butikk - «på lager» betyr «kan bestilles til Norge».</p>
+  <div class="filters">
+    <span class="lab">Brand</span>
+    <span class="chips" id="brandchips">
+      <button class="chip on" data-v="all" type="button">Alle</button>
+      <button class="chip" data-v="CCM" type="button">CCM</button>
+      <button class="chip" data-v="Bauer" type="button">Bauer</button>
+      <button class="chip" data-v="Warrior" type="button">Warrior</button>
+    </span>
+    <label class="chip" style="cursor:pointer"><input type="checkbox" id="lastgen" style="accent-color:var(--accent);margin-right:6px">Vis forrige generasjon</label>
+  </div>
+  <div class="grid" id="katgrid"></div>
+</div></section>
+
+<section id="laer"><div class="wrap">
+  <h2>Lær</h2><p class="sub">Det en hockeyforelder faktisk trenger å vite - regler med kilder, resten uten markedsføringsstøy.</p>
+  <div class="learngrid">
+    <div class="lcard rules"><h3>3 &middot; Reglene i Norge (NIHF)</h3><p>NIHF: alle spillere til og med U18 skal bruke heldekkende ansiktsbeskyttelse (gitter eller heldekkende visir). I barneidretten (U13 og yngre) er hjelm med gitter, halsbeskytter og leggskinn påbudt utstyr. Hjelmen skal tilfredsstille internasjonale standarder og brukes med hakeremmen festet. Alle spillere skal bruke halsbeskytter; U20 skal i tillegg bruke tannbeskyttelse.</p>
+      <div class="srcs">Kilder:<a href="https://www.hockey.no/contentassets/ad3de13d993c4dae814806c65e2accf6/spilleregler-ver300725.pdf" target="_blank" rel="noopener">NIHF Spilleregler (hockey.no, ver. 30.07.2025)</a><a href="https://www.hockey.no/contentassets/bca027c9bef0493fabea0f1c784ae48a/kampreglementet-rev-fs-24.03.25.pdf" target="_blank" rel="noopener">NIHF Kampreglement (rev. 24.03.2025)</a><a href="https://www.hockey.no/contentassets/0243b46c5a6f47198b0b8435c0d0f33c/dommerhefte-niva-1---klubbdommer---2019-1.0.pdf" target="_blank" rel="noopener">NIHF Dommerhefte Nivå 1 (hockey.no)</a></div></div>
+    <div class="lcard"><h3>1 · Slik måler du hodet</h3><svg class="sketch" viewBox="0 0 300 170" width="100%" height="auto" role="img" aria-label="Head measurement sketch">
+<ellipse cx="120" cy="85" rx="62" ry="74" fill="none" stroke="#a8a59f" stroke-width="2"/>
+<path d="M96 66 q10 -8 24 0" fill="none" stroke="#a8a59f" stroke-width="2"/>
+<path d="M146 66 q10 -8 24 0" fill="none" stroke="#a8a59f" stroke-width="2"/>
+<path d="M58 58 q62 -26 124 0" fill="none" stroke="#ff5b1f" stroke-width="5" stroke-linecap="round"/>
+<path d="M58 58 q62 22 124 0" fill="none" stroke="#ff5b1f" stroke-width="5" stroke-dasharray="7 6" stroke-linecap="round" opacity=".7"/>
+<line x1="120" y1="66" x2="120" y2="52" stroke="#e8e6e1" stroke-width="1.5"/>
+<text x="212" y="50" fill="#e8e6e1" font-family="Inter,sans-serif" font-size="11">2 cm over</text>
+<text x="212" y="66" fill="#a8a59f" font-family="Inter,sans-serif" font-size="10">øyenbrynene</text>
+<text x="30" y="150" fill="#a8a59f" font-family="Inter,sans-serif" font-size="10">Målebåndet: lengste vei rundt bakhodet</text>
+</svg><div class="sketchcap">veiledende skisse</div>
+      <ol><li>Bruk et mykt målebånd (eller hyssing + linjal).</li><li>Legg det ca. én fingerbredde / 2 cm over øyenbrynene, over ørene, og den lengste veien rundt bakhodet.</li><li>Les av i hele/halve cm. Mål to ganger - barnehoder og målebånd flytter på seg.</li><li>Sammenlign med modellens tabell. Passer målet i to størrelser: velg den minste.</li></ol></div>
+    <div class="lcard" style="grid-column:1/-1"><h3>2 &middot; Sertifiseringer forklart</h3>
+      <div class="certgrid"><div class="cert"><div class="code">CE</div><div class="reg">Europa / Norge (EØS)</div><span class="exp no">Ingen trykt utløpsdato</span><p>Lovkravet i Norge. Hjelmer som selges i EØS skal være CE-merket etter den europeiske standarden for ishockeybeskyttelse (EN ISO 10256). For å spille organisert ishockey må hjelmen være CE-merket. Produksjonsdato er merket i hjelmen - CE-merket har ingen trykt utløpsdato, men skummet eldes likevel.</p></div><div class="cert"><div class="code">HECC</div><div class="reg">USA</div><span class="exp yes">Har utløpsdato</span><p>Amerikansk sertifisering (kreves av USA Hockey). HECC-klistremerket har en TRYKT UTLØPSDATO: 6,5 år etter produksjonsdato. Utløpt, uleselig eller fjernet merke = hjelmen regnes ikke lenger som sertifisert. Datoen er den beste tommelfingerregelen for skummets levetid - også i Norge.</p></div><div class="cert"><div class="code">CSA</div><div class="reg">Canada</div><span class="exp no">Ingen trykt utløpsdato</span><p>Kanadisk standard (CSA Z262.1). Merket viser produksjonsår men har ingen utløpsdato. Anbefalingen i Canada er likevel å bytte hjelm etter ca. 6-7 år.</p></div></div>
+      <div class="srcs">Kilder:<a href="https://hecc.org/for-consumers/important-notices-regarding-labels/" target="_blank" rel="noopener">HECC - Important Notices Regarding Labels (hecc.org)</a><a href="https://www.hockeystore.no/no/articles/510/hockeyhjelmer" target="_blank" rel="noopener">Hockeystore: CE-krav og merking (NO)</a><a href="https://ccmhockey.com/no-no/hjelmer/handle-etter-aldersgruppe/hjelmer---barn" target="_blank" rel="noopener">CCM Norge: gitter/CE-krav for spillere under 18</a></div></div>
+    <div class="lcard"><h3>4 · Når må hjelmen byttes?</h3><ul><li>Umiddelbart etter hjernerystelse eller ett kraftig smell - skummet er engangs på store treff.</li><li>Etter ca. 6-7 år uansett: HECC setter utløp 6,5 år etter produksjon, og skummet eldes like fort i Norge. Produksjonsdato står i/på hjelmen.</li><li>Ved sprekker i skallet, løse skruer/nagler, sammenpresset skum eller matt, oppskrapt overflate.</li><li>Når hodet har vokst ut av intervallet - en for liten hjelm er også feil hjelm.</li></ul></div>
+    <div class="lcard"><h3>5 · Passform-testen (i butikk eller hjemme)</h3><ol><li>Fremre kant én fingerbredde over øyenbrynene - ikke oppå panna, ikke nedi blikket.</li><li>Åpne justeringen helt, sett hjelmen på, stram inn til den sitter - uten trykkpunkter.</li><li>Rist på hodet: hjelmen skal ikke flytte seg eller løfte.</li><li>Hakerem stram men behagelig; gitterets hakekopp skal hvile mot haken uten å presse.</li><li>Ørene midt i øreåpningene. Sitter alt: kjøp. Noe glipper: annen størrelse eller modell.</li></ol></div>
+    <div class="lcard"><h3>6 · Brukt hjelm = nei</h3><ul><li>Skum degraderer usynlig - en hjelm kan se fin ut og være ferdig.</li><li>Du kjenner ikke smellhistorikken. Én kraftig treff er nok.</li><li>Sertifiseringen kan være utløpt (sjekk HECC-datoen) eller merkene fjernet - da er hjelmen formelt ikke godkjent.</li><li>Dette er det ene plagget der «arve fra storebror» er et dårlig råd. Kjøp ny - budsjettmodellene i katalogen er godkjent beskyttelse.</li></ul></div>
+    <div class="lcard" style="grid-column:1/-1"><h3>7 · Uavhengige tester (Virginia Tech)</h3><p>CE og HECC er bestått/ikke bestått-minimum for å få selges. Virginia Tech Helmet Lab tester videre: uavhengig, uten produsentpenger, og rangerer hjelmer 0-5 stjerner etter målt evne til å redusere hjernerystelsesrisiko.</p>
+      <ul style="margin-top:10px"><li>Desember 2025 kom labens første egne rangering av ungdomshjelmer: 33 modeller, testet med gitter montert og med barnetilpasset testdukke og treffenergi.</li><li>10 hjelmer fikk 5 stjerner og 6 fikk 4. Laben anbefaler å velge en hjelm med 4 eller 5 stjerner.</li><li>Godkjent er ikke det samme som best: to CE/HECC-godkjente hjelmer kan beskytte ulikt, og en godkjent hjelm kan score lavt hos VT.</li><li>Sjekk din modell (eksakt navn) i listene under - ungdoms- og seniorlistene er separate og tallene kan ikke sammenlignes på tvers. Stjerner per modell er ikke lagt inn i katalogen vår ennå.</li></ul>
+      <div class="srcs">Kilder:<a href="https://www.helmet.beam.vt.edu/youth-hockey-helmet-ratings.html" target="_blank" rel="noopener">VT Youth Hockey Ratings</a><a href="https://www.helmet.beam.vt.edu/hockey-helmet-ratings.html" target="_blank" rel="noopener">VT Hockey Ratings (senior)</a><a href="https://news.vt.edu/articles/2025/12/research-youth-hockey-helmets.html" target="_blank" rel="noopener">Virginia Tech News 16.12.2025</a></div></div>
+    <div class="lcard"><h3>Justeringssystemer - kort</h3><p>Alle nyere hjelmer i katalogen justeres uten verktøy: CCM Tacks har spenner/klaffer i skallet, Bauer RE-AKT bruker sentraljustering (og FreeForm lengde/bredde på enkelte modeller), Warrior CF 100 har Snap Flaps pluss innlegg som varmeformes i stekeovn for nesten skreddersydd passform. Eldre modeller (f.eks. Bauer 5100) kan kreve skrutrekker. Combo for barn (Tacks 70 YTH/JR) har i tillegg høydejusterbart gitter.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>Gear Lab · verifiserte data eller tydelig merket antakelse - aldri gjetting presentert som fakta. Priser og lagerstatus endrer seg; lenkene går til produktsidene.</div>
+  <div><a href="../">&larr; Til Gear Lab-huben</a></div>
+</div></footer>
+<script>
+const P = [{"id": "ccm-tacks70-yth", "brand": "CCM", "family": "Tacks", "model": "Tacks 70 Combo YTH", "tier": "budget", "type": "combo", "ageGroup": "YTH", "sizes": [{"label": "YTH (one size)", "min": 49, "max": 53, "verified": true}], "cage": "FM 70 (høydejusterbart gitter)", "adj": "Verktøyfri justering, hurtigspenne på hakerem", "tagline": "The starter combo for 3-7 yr olds - grows with the head via rear ear-loop design.", "stores": [{"name": "hockeystore.no", "priceNOK": 749, "priceOrd": 849, "url": "https://www.hockeystore.no/no/articles/2.18.16314/ccm-hockeyhjelm-tacks-70-combo-yth-rod", "lastChecked": "2026-07-10", "stock": "På lager (nettlager)"}], "notes": "Størrelse 49-53 cm og aldersguide 3-7 år fra CCM-tekst på produktsiden. Pris 729-749 kr avhengig av farge (ord. 849).", "notesEn": "Size 49-53 cm and 3-7 yr age guide from CCM text on the product page. Price 729-749 kr by colour (ord. 849)."}, {"id": "ccm-tacks70-jr", "brand": "CCM", "family": "Tacks", "model": "Tacks 70 Combo JR", "tier": "budget", "type": "combo", "ageGroup": "JR", "sizes": [{"label": "JR (one size)", "min": 52.5, "max": 57, "verified": true}], "cage": "FM 70 (høydejusterbart gitter)", "adj": "Verktøyfri justering, hurtigspenne på hakerem", "tagline": "CCM's 7-10 yr combo - one size, cage height adjusts as the face grows.", "stores": [{"name": "hockeystore.no", "priceNOK": 749, "priceOrd": 849, "url": "https://www.hockeystore.no/no/articles/2.18.16309/ccm-hockeyhjelm-tacks-70-combo-jr-black", "lastChecked": "2026-07-10", "stock": "På lager (nettlager, 3 stk sjekket)"}], "notes": "52.5-57 cm fra CCM-tekst; spek-tabell hos butikken oppgir 53-56 cm som kjerneintervall. Pris 749-759 kr etter farge (ord. 849).", "notesEn": "52.5-57 cm from CCM text; the shop spec table lists 53-56 cm as the core band. 749-759 kr by colour (ord. 849)."}, {"id": "ccm-tacks70-sr", "brand": "CCM", "family": "Tacks", "model": "Tacks 70 Combo (S-L)", "tier": "budget", "type": "combo", "ageGroup": "S-L", "sizes": [{"label": "S", "min": 52.5, "max": 57, "verified": true}, {"label": "M", "min": 56, "max": 60, "verified": true}, {"label": "L", "min": 58.5, "max": 62, "verified": true}], "cage": "FM 70 med flytende hakekopp", "adj": "Verktøyfri justering", "tagline": "Same budget shell in S/M/L - the S is the classic first 'big' helmet for 10-13 yr olds.", "stores": [{"name": "hockeystore.no", "priceNOK": 759, "priceOrd": 849, "url": "https://www.hockeystore.no/no/articles/2.18.16305/ccm-hockeyhjelm-tacks-70-combo-sr-black", "lastChecked": "2026-07-10", "stock": "På lager"}], "notes": "Selges som 'SR' men S 52.5-57 cm dekker de fleste 10-13-åringer - hjelm sorteres etter cm, ikke alder. Størrelser fra CCM-tekst på produktsiden.", "notesEn": "Sold as 'SR' but the S (52.5-57 cm) fits most 10-13 yr olds - helmets are sized by cm, not age. Sizes from CCM text."}, {"id": "ccm-tacks210", "brand": "CCM", "family": "Tacks", "model": "Tacks 210 Combo", "tier": "mid", "type": "combo", "ageGroup": "S-L", "sizes": [{"label": "S", "min": 52.5, "max": 57, "verified": false}, {"label": "M", "min": 56, "max": 60, "verified": false}, {"label": "L", "min": 58.5, "max": 62, "verified": false}], "cage": "CCM-gitter (inkludert)", "adj": "Verktøyfri justering", "tagline": "Step-up CCM combo with better interior foam than the 70.", "stores": [{"name": "hockeystore.no", "priceNOK": 1399, "priceOrd": null, "url": "https://www.hockeystore.no/no/articles/2.18.3414/ccm-hockeyhjelm-tacks-210-combo-svart", "lastChecked": "2026-07-10", "stock": "På lager"}], "notes": "cm-intervaller antatt etter CCMs felles Tacks-tabell (verifisert for Tacks 70) - sjekk tabellen på produktsiden.", "notesEn": "cm ranges assumed from CCM's shared Tacks chart (verified for Tacks 70) - check the table on the product page."}, {"id": "ccm-tacks720", "brand": "CCM", "family": "Tacks", "model": "Tacks 720 Combo", "tier": "mid", "type": "combo", "ageGroup": "S-L", "sizes": [{"label": "S", "min": 52.5, "max": 57, "verified": false}, {"label": "M", "min": 56, "max": 60, "verified": false}, {"label": "L", "min": 58.5, "max": 62, "verified": false}], "cage": "CCM-gitter (inkludert)", "adj": "Verktøyfri justering", "tagline": "CCM mid-tier developed with University of Ottawa impact lab - strong value on sale.", "stores": [{"name": "hockeystore.no", "priceNOK": 1849, "priceOrd": 2499, "url": "https://www.hockeystore.no/no/articles/2.18.16843/ccm-hockeyhjelm-tacks-720-combo-black", "lastChecked": "2026-07-10", "stock": "På lager"}], "notes": "Ottawa-samarbeid nevnt i forhandleromtale (ikke spec-ark). cm-intervaller antatt etter felles Tacks-tabell - to verify.", "notesEn": "Ottawa collaboration mentioned in retailer copy (not a spec sheet). cm ranges assumed from shared Tacks chart - to verify."}, {"id": "ccm-tacks920", "brand": "CCM", "family": "Tacks", "model": "Tacks 920 Combo", "tier": "flagship", "type": "combo", "ageGroup": "S-L", "sizes": [{"label": "S", "min": 52.5, "max": 57, "verified": false}, {"label": "M", "min": 56, "max": 60, "verified": false}, {"label": "L", "min": 58.5, "max": 62, "verified": false}], "cage": "CCM-gitter (inkludert)", "adj": "Verktøyfri justering", "tagline": "CCM's current top combo in the Tacks line.", "stores": [{"name": "hockeystore.no", "priceNOK": 3299, "priceOrd": 3399, "url": "https://www.hockeystore.no/no/articles/2.18.26737/ccm-hockeyhjelm-tacks-920-combo-sr-black", "lastChecked": "2026-07-10", "stock": "På lager"}], "notes": "cm-intervaller antatt etter felles Tacks-tabell - to verify. For 11-åring med normal hodestørrelse er 720/210 som regel nok.", "notesEn": "cm ranges assumed from shared Tacks chart - to verify. For an average 11-year-old head, the 720/210 is usually enough."}, {"id": "bauer-reakt55", "brand": "Bauer", "family": "RE-AKT", "model": "RE-AKT 55 Combo", "tier": "budget", "type": "combo", "ageGroup": "S-L", "sizes": [{"label": "S", "min": 51.8, "max": 56.9, "verified": true}, {"label": "M", "min": 54.4, "max": 58.9, "verified": true}, {"label": "L", "min": 56.9, "max": 62, "verified": true}], "cage": "Bauer-gitter (inkludert)", "adj": "Mono-Lock verktøyfri tilpasning", "tagline": "Bauer's budget combo - S starts at 51.8 cm, one of the widest junior windows.", "stores": [{"name": "hockeystore.no", "priceNOK": 699, "priceOrd": null, "url": "https://www.hockeystore.no/no/articles/2.18.21028/bauer-hockeyhjelm-re-akt-55-combo-black", "lastChecked": "2026-07-10", "stock": "På lager"}], "notes": "Størrelsestabell verifisert via forhandler (Zebrasclub, Bauer-tabell for RE-AKT 55). Ekskludert fra rabattkoder hos hockeystore.", "notesEn": "Size chart verified via retailer (Zebrasclub, Bauer chart for RE-AKT 55). Excluded from discount codes at hockeystore."}, {"id": "bauer-reakt70", "brand": "Bauer", "family": "RE-AKT", "model": "RE-AKT 70 Combo", "tier": "mid", "type": "combo", "ageGroup": "S-L", "sizes": [{"label": "S", "min": 52, "max": 57, "verified": false}, {"label": "M", "min": 55, "max": 59.5, "verified": false}, {"label": "L", "min": 58, "max": 63, "verified": false}], "cage": "Bauer-gitter (inkludert)", "adj": "Verktøyfri justering (RE-AKT-serien)", "tagline": "2025-generation mid Bauer combo.", "stores": [{"name": "hockeystore.no", "priceNOK": 1499, "priceOrd": null, "url": "https://www.hockeystore.no/no/articles/2.18.26352/bauer-hockeyhjalm-re-akt-70-combo-black", "lastChecked": "2026-07-10", "stock": "På lager"}], "notes": "cm-intervaller IKKE verifisert for 70/90 - antatt etter Bauer S/M/L-konvensjon, sjekk tabellen på produktsiden før kjøp.", "notesEn": "cm ranges NOT verified for the 70/90 - assumed from Bauer S/M/L convention; check the product-page table before buying."}, {"id": "bauer-reakt90", "brand": "Bauer", "family": "RE-AKT", "model": "RE-AKT 90 Combo", "tier": "mid", "type": "combo", "ageGroup": "S-L", "sizes": [{"label": "S", "min": 52, "max": 57, "verified": false}, {"label": "M", "min": 55, "max": 59.5, "verified": false}, {"label": "L", "min": 58, "max": 63, "verified": false}], "cage": "Bauer-gitter (inkludert)", "adj": "Verktøyfri justering (RE-AKT-serien)", "tagline": "S25 upper-mid Bauer combo - comfort and protection step over the 70.", "stores": [{"name": "hockeystore.no", "priceNOK": 1999, "priceOrd": null, "url": "https://www.hockeystore.no/no/articles/2.18.26384/bauer-hockeyhjalm-re-akt-90-combo-black", "lastChecked": "2026-07-10", "stock": "På lager"}], "notes": "cm-intervaller IKKE verifisert - antatt etter Bauer-konvensjon, to verify på produktsiden.", "notesEn": "cm ranges NOT verified - assumed from Bauer convention, to verify on the product page."}, {"id": "bauer-reakt155", "brand": "Bauer", "family": "RE-AKT", "model": "RE-AKT 155 Combo", "tier": "flagship", "type": "combo", "ageGroup": "XS-L", "sizes": [{"label": "XS", "min": 51, "max": 55.5, "verified": true}, {"label": "S", "min": 53, "max": 57.5, "verified": true}, {"label": "M", "min": 55.5, "max": 60.5, "verified": true}, {"label": "L", "min": 59, "max": 64, "verified": true}], "cage": "Bauer-gitter (inkludert)", "adj": "Verktøyfritt sentraljustering + Occipital Lock", "tagline": "Premium Bauer combo with Suspend-Tech rotational liner - and an XS shell smaller kids' heads actually fit.", "stores": [{"name": "hockeystore.no", "priceNOK": 2999, "priceOrd": null, "url": "https://www.hockeystore.no/no/articles/2.18.21023/bauer-hockeyhjelm-re-akt-155-combo-black", "lastChecked": "2026-07-10", "stock": "På lager"}], "notes": "cm-tabell fra Bauers RE-AKT-retningslinjer (via IceWarehouse) - RE-AKT-serien har egen tabell som avviker fra andre Bauer-hjelmer. Suspend-Tech/PORON XRD dokumentert for RE-AKT-serien.", "notesEn": "cm chart from Bauer's RE-AKT guidelines (via IceWarehouse) - the RE-AKT line has its own chart that differs from other Bauer helmets. Suspend-Tech / PORON XRD documented for the RE-AKT line."}, {"id": "warrior-cf100", "brand": "Warrior", "family": "Covert", "model": "Covert CF 100 Combo", "tier": "mid", "type": "combo", "ageGroup": "S-L", "sizes": [{"label": "S", "min": 54, "max": 56, "verified": true}, {"label": "M", "min": 56, "max": 59, "verified": true}, {"label": "L", "min": 59, "max": 62, "verified": true}], "cage": "Warrior-gitter (inkludert)", "adj": "Snap Flaps verktøyfri + varmeformbare Custom Fit-innlegg", "tagline": "Warrior's oven-moldable liner gives a near-custom fit - but S only starts at 54 cm.", "stores": [{"name": "hockeystore.no", "priceNOK": 1569, "priceOrd": 1699, "url": "https://www.hockeystore.no/no/articles/2.18.16465/warrior-hockeyhjelm-cf-100-combo-svart", "lastChecked": "2026-07-10", "stock": "På lager"}], "notes": "EPP-liner + Impax-soner over tinning (warrior.com). Størrelser fra SkatePro size guide for CF 80/100. OBS: S fra 54 cm - passer ikke de minste hodene.", "notesEn": "EPP liner + Impax temple zones (warrior.com). Sizes from the SkatePro size guide for CF 80/100. NOTE: S starts at 54 cm - does not fit the smallest heads."}, {"id": "bauer-reakt100-yth", "brand": "Bauer", "family": "RE-AKT", "model": "RE-AKT 100 Combo YTH", "tier": "budget", "type": "combo", "ageGroup": "YTH", "lastGen": true, "sizes": [{"label": "YTH (one size)", "min": 48, "max": 53.5, "verified": false}], "cage": "Bauer-gitter (inkludert)", "adj": "FreeForm lengde/bredde-justering", "tagline": "Bauer's youth combo on clearance - the only Bauer YTH option left.", "stores": [{"name": "hockeystore.no", "priceNOK": 499, "priceOrd": 749, "url": "https://www.hockeystore.no/no/articles/2.18.14993/bauer-hockeyhjelm-re-akt-100-combo-yth-navy", "lastChecked": "2026-07-10", "stock": "Begrenset restlager - sjekk produktsiden"}], "notes": "Restlager/utgående. YTH cm-intervall IKKE verifisert (antatt ca. 48-53.5 etter Bauer YTH-konvensjon) - to verify. FreeForm bekreftet av Bauers size guide.", "notesEn": "Clearance / outgoing. YTH cm range NOT verified (assumed ~48-53.5 per Bauer YTH convention) - to verify. FreeForm confirmed by Bauer's size guide."}, {"id": "warrior-alphaone-yth", "brand": "Warrior", "family": "Alpha", "model": "Alpha One Combo YTH", "tier": "budget", "type": "combo", "ageGroup": "YTH", "lastGen": true, "sizes": [{"label": "YTH (one size)", "min": 48, "max": 53, "verified": false}], "cage": "Warrior-gitter (inkludert)", "adj": "Justerbar (detaljer ikke verifisert)", "tagline": "Warrior youth combo, clearance stock.", "stores": [{"name": "hockeystore.no", "priceNOK": 899, "priceOrd": null, "url": "https://www.hockeystore.no/no/articles/2.18.959/warrior-alpha-one-combo-yth", "lastChecked": "2026-07-10", "stock": "Restlager - lagerstatus varierer, sjekk produktsiden"}], "notes": "YTH cm-intervall IKKE verifisert - to verify på produktsiden.", "notesEn": "YTH cm range NOT verified - to verify on the product page."}, {"id": "bauer-reakt65", "brand": "Bauer", "family": "RE-AKT", "model": "RE-AKT 65 Combo", "tier": "budget", "type": "combo", "ageGroup": "S-L", "lastGen": true, "successor": "bauer-reakt70", "sizes": [{"label": "S", "min": 52, "max": 57, "verified": false}, {"label": "M", "min": 55, "max": 59.5, "verified": false}, {"label": "L", "min": 58, "max": 63, "verified": false}], "cage": "Bauer-gitter (inkludert)", "adj": "Verktøyfri justering", "tagline": "Previous-gen Bauer combo at nearly half price while stock lasts.", "stores": [{"name": "hockeystore.no", "priceNOK": 799, "priceOrd": 1499, "url": "https://www.hockeystore.no/no/articles/2.18.18324/bauer-hockeyhjelm-re-akt-65-combo-navy", "lastChecked": "2026-07-10", "stock": "Restlager - lagerstatus varierer, sjekk produktsiden"}], "notes": "Erstattes av RE-AKT 70. cm-intervaller antatt - to verify.", "notesEn": "Replaced by RE-AKT 70. cm ranges assumed - to verify."}, {"id": "bauer-reakt85", "brand": "Bauer", "family": "RE-AKT", "model": "RE-AKT 85 Combo", "tier": "mid", "type": "combo", "ageGroup": "S-L", "lastGen": true, "successor": "bauer-reakt90", "sizes": [{"label": "S", "min": 52, "max": 57, "verified": false}, {"label": "M", "min": 55, "max": 59.5, "verified": false}, {"label": "L", "min": 58, "max": 63, "verified": false}], "cage": "Bauer-gitter (inkludert)", "adj": "FreeForm lengde/bredde-justering", "tagline": "Last-gen mid Bauer with FreeForm fit system - big clearance discount.", "stores": [{"name": "hockeystore.no", "priceNOK": 1139, "priceOrd": 1899, "url": "https://www.hockeystore.no/no/articles/2.18.16245/bauer-hockeyhjelm-re-akt-85-combo-nav", "lastChecked": "2026-07-10", "stock": "Restlager - lagerstatus varierer, sjekk produktsiden"}], "notes": "Erstattes av RE-AKT 90. FreeForm bekreftet av Bauers size guide. cm-intervaller antatt - to verify.", "notesEn": "Replaced by RE-AKT 90. FreeForm confirmed by Bauer's size guide. cm ranges assumed - to verify."}, {"id": "bauer-reakt150", "brand": "Bauer", "family": "RE-AKT", "model": "RE-AKT 150 Combo", "tier": "flagship", "type": "combo", "ageGroup": "S-L", "lastGen": true, "successor": "bauer-reakt155", "sizes": [{"label": "S", "min": 53, "max": 57.5, "verified": false}, {"label": "M", "min": 55.5, "max": 60.5, "verified": false}, {"label": "L", "min": 59, "max": 64, "verified": false}], "cage": "Bauer-gitter (inkludert)", "adj": "FreeForm + verktøyfri", "tagline": "Premium last-gen Bauer combo at a serious cut.", "stores": [{"name": "hockeystore.no", "priceNOK": 1649, "priceOrd": 2999, "url": "https://www.hockeystore.no/no/articles/2.18.15493/bauer-hockeyhjelm-re-akt-150-combo-hvit", "lastChecked": "2026-07-10", "stock": "Restlager - lagerstatus varierer, sjekk produktsiden"}], "notes": "Erstattes av RE-AKT 155. cm-intervaller antatt etter RE-AKT-tabellen (verifisert for 155) - to verify.", "notesEn": "Replaced by RE-AKT 155. cm ranges assumed from the RE-AKT chart (verified for the 155) - to verify."}, {"id": "ccm-tacks910", "brand": "CCM", "family": "Tacks", "model": "Tacks 910 Combo", "tier": "flagship", "type": "combo", "ageGroup": "S-L", "lastGen": true, "successor": "ccm-tacks920", "sizes": [{"label": "S", "min": 52.5, "max": 57, "verified": false}, {"label": "M", "min": 56, "max": 60, "verified": false}, {"label": "L", "min": 58.5, "max": 62, "verified": false}], "cage": "CCM-gitter (inkludert)", "adj": "Verktøyfri justering", "tagline": "Previous CCM flagship combo, -38% while it lasts.", "stores": [{"name": "hockeystore.no", "priceNOK": 1799, "priceOrd": 2899, "url": "https://www.hockeystore.no/no/articles/2.18.15357/ccm-hockeyhjelm-tacks-910-combo-rod", "lastChecked": "2026-07-10", "stock": "Restlager - flere farger utsolgt, sjekk produktsiden"}], "notes": "Erstattes av Tacks 920. cm-intervaller antatt etter felles Tacks-tabell - to verify.", "notesEn": "Replaced by Tacks 920. cm ranges assumed from shared Tacks chart - to verify."}, {"id": "bauer-5100", "brand": "Bauer", "family": "Classic", "model": "5100 Combo (II)", "tier": "budget", "type": "combo", "ageGroup": "S-L", "lastGen": true, "sizes": [{"label": "S", "min": 54, "max": 57, "verified": false}, {"label": "M", "min": 56, "max": 59, "verified": false}, {"label": "L", "min": 59, "max": 63, "verified": false}], "cage": "Bauer-gitter (inkludert)", "adj": "Klassisk justering (skrutrekker kan trengs pa eldre system)", "tagline": "The old-school classic that refuses to die.", "stores": [{"name": "hockeystore.no", "priceNOK": 849, "priceOrd": null, "url": "https://www.hockeystore.no/no/articles/2.18.9/bauer-hockeyhjelm-5100-combo-ii", "lastChecked": "2026-07-10", "stock": "Sjekk produktsiden"}], "notes": "Klassikermodell. cm-intervaller antatt etter Bauer-tabell for samme generasjon (4500/5100-æra) - to verify.", "notesEn": "Classic model. cm ranges assumed from same-era Bauer chart (4500/5100) - to verify."}];
+const T = {"lang": "no", "htmlLang": "nb", "otherHref": "en/", "otherLabel": "English", "hubHref": "../", "hub": "Gear Lab", "title": "Hjelm & Gitter - Gear Lab", "h1": "Hjelm & gitter", "lede": "Hjelmguide for hockeyforeldre. Størrelse = hodeomkrets i centimeter - ikke alder, ikke S/M/L-gjetting.", "trapTitle": "Fellen i denne kategorien", "trapBody": "Hjelmstørrelse er hodets OMKRETS i cm, målt rett over øyenbrynene. Foreldre gjetter S/M/L ut fra alder - og kjøper for stort «så det er noe å vokse i». En løs hjelm glir ut av posisjon og beskytter ikke. Mål hodet først. Og sjekk klistremerkene: HECC-merket har en trykt utløpsdato de fleste aldri ser på.", "navQuiz": "Quiz", "navKat": "Katalog", "navLearn": "Lær", "quizH": "Finn riktig hjelm", "quizSub": "Fire spørsmål. Svaret er en størrelse per modell + 2-3 forslag.", "qCm": "1 · Hodeomkrets (cm)", "qCmHelp": "Mål med målebånd rett over øyenbrynene, lengste vei rundt bakhodet. Se måleguiden under Lær.", "qAge": "2 · Aldersgruppe", "ageU9": "Under 9 år", "age912": "9-12 år", "age1317": "13-17 år", "qCombo": "3 · Combo eller løst gitter?", "comboYes": "Combo (hjelm + gitter samlet)", "comboSep": "Hjelm og gitter hver for seg", "comboSepNote": "For barn anbefaler vi combo: gitteret er ferdig tilpasset hjelmen og totalprisen er lavere. Forslagene under er derfor combo-modeller; egne gitter kommer i en senere versjon.", "qBudget": "4 · Budsjett", "b1": "Under 1 000 kr", "b2": "1 000-2 000 kr", "b3": "Over 2 000 kr", "bAll": "Alt", "quizBtn": "Vis forslag", "hardRule": "Aldri kjøp hjelm med vokserom. En hjelm som sitter løst i dag, beskytter ikke i dag.", "noCm": "Skriv inn hodeomkrets i cm først.", "noMatch": "Ingen modeller i katalogen dekker denne omkretsen med valgt budsjett. Prøv «Alt» i budsjett - eller mål på nytt (vanligste feil: målebåndet ligger for høyt).", "recSize": "Anbefalt størrelse", "fitLow": "Obs: helt nederst i intervallet - prøv den før kjøp, eller vurder en mindre modell.", "fitOk": "God passform nå - stram til med justeringssystemet.", "assumedSize": "cm-intervall antatt, ikke verifisert - sjekk tabellen på produktsiden.", "lastGenBadge": "Forrige generasjon - restlager", "ord": "ord.", "mapH": "Størrelseskartet", "mapSub": "Hver stripe viser hvilke hodeomkretser modellen faktisk dekker (heltrukket = verifisert tabell, stiplet = antatt). Skriv inn cm i quizen, så tegnes linjen her.", "katH": "Katalog", "katSub": "Combo-hjelmer (hjelm + gitter) hos hockeystore.no. Priser sjekket 2026-07-10. Merk: hockeystore.no er en svensk forhandler (Spobik AB) med norsk butikk - «på lager» betyr «kan bestilles til Norge».", "fAll": "Alle", "fShowLast": "Vis forrige generasjon", "tier_budget": "Budsjett", "tier_mid": "Mellomklasse", "tier_flagship": "Toppmodell", "sizes": "Størrelser", "stock": "Lager", "buy": "Se hos hockeystore.no", "notes": "Verifisering", "learnH": "Lær", "learnSub": "Det en hockeyforelder faktisk trenger å vite - regler med kilder, resten uten markedsføringsstøy.", "ruleH": "Reglene i Norge (NIHF)", "ruleSrc": "Kilder", "certH": "Sertifiseringer forklart", "certExp": "Har utløpsdato", "certNoExp": "Ingen trykt utløpsdato", "srcLabel": "Kilder", "measureH": "1 · Slik måler du hodet", "measureSketch": "veiledende skisse", "measure1": "Bruk et mykt målebånd (eller hyssing + linjal).", "measure2": "Legg det ca. én fingerbredde / 2 cm over øyenbrynene, over ørene, og den lengste veien rundt bakhodet.", "measure3": "Les av i hele/halve cm. Mål to ganger - barnehoder og målebånd flytter på seg.", "measure4": "Sammenlign med modellens tabell. Passer målet i to størrelser: velg den minste.", "fitH": "5 · Passform-testen (i butikk eller hjemme)", "fit1": "Fremre kant én fingerbredde over øyenbrynene - ikke oppå panna, ikke nedi blikket.", "fit2": "Åpne justeringen helt, sett hjelmen på, stram inn til den sitter - uten trykkpunkter.", "fit3": "Rist på hodet: hjelmen skal ikke flytte seg eller løfte.", "fit4": "Hakerem stram men behagelig; gitterets hakekopp skal hvile mot haken uten å presse.", "fit5": "Ørene midt i øreåpningene. Sitter alt: kjøp. Noe glipper: annen størrelse eller modell.", "replaceH": "4 · Når må hjelmen byttes?", "rep1": "Umiddelbart etter hjernerystelse eller ett kraftig smell - skummet er engangs på store treff.", "rep2": "Etter ca. 6-7 år uansett: HECC setter utløp 6,5 år etter produksjon, og skummet eldes like fort i Norge. Produksjonsdato står i/på hjelmen.", "rep3": "Ved sprekker i skallet, løse skruer/nagler, sammenpresset skum eller matt, oppskrapt overflate.", "rep4": "Når hodet har vokst ut av intervallet - en for liten hjelm er også feil hjelm.", "usedH": "6 · Brukt hjelm = nei", "used1": "Skum degraderer usynlig - en hjelm kan se fin ut og være ferdig.", "used2": "Du kjenner ikke smellhistorikken. Én kraftig treff er nok.", "used3": "Sertifiseringen kan være utløpt (sjekk HECC-datoen) eller merkene fjernet - da er hjelmen formelt ikke godkjent.", "used4": "Dette er det ene plagget der «arve fra storebror» er et dårlig råd. Kjøp ny - budsjettmodellene i katalogen er godkjent beskyttelse.", "vtH": "7 · Uavhengige tester (Virginia Tech)", "vtIntro": "CE og HECC er bestått/ikke bestått-minimum for å få selges. Virginia Tech Helmet Lab tester videre: uavhengig, uten produsentpenger, og rangerer hjelmer 0-5 stjerner etter målt evne til å redusere hjernerystelsesrisiko.", "vt1": "Desember 2025 kom labens første egne rangering av ungdomshjelmer: 33 modeller, testet med gitter montert og med barnetilpasset testdukke og treffenergi.", "vt2": "10 hjelmer fikk 5 stjerner og 6 fikk 4. Laben anbefaler å velge en hjelm med 4 eller 5 stjerner.", "vt3": "Godkjent er ikke det samme som best: to CE/HECC-godkjente hjelmer kan beskytte ulikt, og en godkjent hjelm kan score lavt hos VT.", "vt4": "Sjekk din modell (eksakt navn) i listene under - ungdoms- og seniorlistene er separate og tallene kan ikke sammenlignes på tvers. Stjerner per modell er ikke lagt inn i katalogen vår ennå.", "adjH": "Justeringssystemer - kort", "adjBody": "Alle nyere hjelmer i katalogen justeres uten verktøy: CCM Tacks har spenner/klaffer i skallet, Bauer RE-AKT bruker sentraljustering (og FreeForm lengde/bredde på enkelte modeller), Warrior CF 100 har Snap Flaps pluss innlegg som varmeformes i stekeovn for nesten skreddersydd passform. Eldre modeller (f.eks. Bauer 5100) kan kreve skrutrekker. Combo for barn (Tacks 70 YTH/JR) har i tillegg høydejusterbart gitter.", "footNote": "Gear Lab · verifiserte data eller tydelig merket antakelse - aldri gjetting presentert som fakta. Priser og lagerstatus endrer seg; lenkene går til produktsidene.", "backHub": "Til Gear Lab-huben"};
+const CMIN=46, CMAX=65;
+const state={age:'912',combo:'yes',budget:'all'};
+function pct(v){return ((v-CMIN)/(CMAX-CMIN)*100)}
+function chipInit(groupId,key){
+  document.querySelectorAll('#'+groupId+' .chip').forEach(c=>{
+    c.addEventListener('click',()=>{
+      document.querySelectorAll('#'+groupId+' .chip').forEach(x=>x.classList.remove('on'));
+      c.classList.add('on');state[key]=c.dataset.v;
+      if(key==='combo'){document.getElementById('sepnote').style.display = (c.dataset.v==='sep')?'block':'none';}
+    });
+  });
+}
+chipInit('agechips','age');chipInit('combochips','combo');chipInit('budgetchips','budget');
+const cmNum=document.getElementById('cmnum'), cmRange=document.getElementById('cmrange');
+function syncCm(v){cmNum.value=v;cmRange.value=v;drawLine(v);}
+cmNum.addEventListener('input',()=>syncCm(cmNum.value));
+cmRange.addEventListener('input',()=>syncCm(cmRange.value));
+function drawLine(v){const l=document.getElementById('cmline');const cm=parseFloat(v);
+  if(!cm||cm<CMIN||cm>CMAX){l.style.display='none';return;}
+  l.style.display='block';l.style.left=pct(cm)+'%';}
+function pickSize(p,cm){
+  const cands=p.sizes.filter(s=>cm>=s.min&&cm<=s.max);
+  if(!cands.length)return null;
+  cands.sort((a,b)=>a.max-b.max);return cands[0];
+}
+function inBudget(p){const pr=p.stores[0].priceNOK;
+  if(state.budget==='all')return true;
+  if(state.budget==='b1')return pr<1000;
+  if(state.budget==='b2')return pr>=1000&&pr<=2000;
+  return pr>2000;}
+function runQuiz(){
+  const out=document.getElementById('quizout');out.innerHTML='';
+  const cm=parseFloat(cmNum.value);
+  if(!cm||cm<40||cm>70){out.innerHTML='<div class="msg">'+T.noCm+'</div>';return;}
+  drawLine(cm);
+  let scored=[];
+  for(const p of P){
+    const s=pickSize(p,cm); if(!s)continue; if(!inBudget(p))continue;
+    let score=0;
+    if(s.verified)score+=2; if(!p.lastGen)score+=1;
+    const pos=(cm-s.min)/(s.max-s.min);
+    let fit='ok'; if(pos<0.12){fit='low';score-=1;} else if(pos>=0.2&&pos<=0.9){score+=1;}
+    if(state.age==='u9'&&(p.ageGroup==='YTH'||p.ageGroup==='JR'))score+=2;
+    if(state.age==='912'&&(p.ageGroup==='JR'||s.label==='S'||s.label==='XS'))score+=1;
+    if(p.tier==='mid')score+=0.5;
+    scored.push({p,s,fit,score});
+  }
+  if(!scored.length){out.innerHTML='<div class="msg">'+T.noMatch+'</div>';return;}
+  scored.sort((a,b)=>b.score-a.score||a.p.stores[0].priceNOK-b.p.stores[0].priceNOK);
+  scored.slice(0,3).forEach(r=>out.appendChild(card(r.p,r.s,r.fit)));
+}
+document.getElementById('gobtn').addEventListener('click',runQuiz);
+function esc(t){return (t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function card(p,rec,fit){
+  const st=p.stores[0];
+  const el=document.createElement('article');el.className='pcard'+(rec?' hit':'');
+  const notes = (T.lang==='no')?p.notes:p.notesEn;
+  let h='<div class="pbrand">'+p.brand+' · '+p.family+'</div>';
+  h+='<div class="pname">'+esc(p.model)+'</div>';
+  h+='<div class="badges"><span class="badge tier">'+T['tier_'+p.tier]+'</span><span class="badge">'+p.ageGroup+'</span>';
+  if(p.lastGen)h+='<span class="badge lg">'+T.lastGenBadge+'</span>';
+  h+='</div>';
+  if(rec){h+='<div class="recline">'+T.recSize+': <b>'+esc(rec.label)+'</b> ('+rec.min+'\u2013'+rec.max+' cm'+(rec.verified?'':' ~')+')</div>';
+    h+='<div class="fitnote '+fit+'">'+(fit==='low'?T.fitLow:T.fitOk)+(rec.verified?'':' '+T.assumedSize)+'</div>';}
+  h+='<div class="sizetags">'+p.sizes.map(s=>'<span class="sz'+(s.verified?'':' assumed')+(rec&&s.label===rec.label?' rec':'')+'">'+esc(s.label)+' '+s.min+'\u2013'+s.max+'</span>').join('')+'</div>';
+  h+='<div class="price">'+st.priceNOK+' kr'+(st.priceOrd?'<s>'+T.ord+' '+st.priceOrd+' kr</s>':'')+'</div>';
+  h+='<div class="meta"><b>'+T.stock+':</b> '+esc(st.stock)+' · '+esc(st.name)+' · '+st.lastChecked+'</div>';
+  h+='<div class="meta"><b>'+esc(p.cage)+'</b> · '+esc(p.adj)+'</div>';
+  h+='<div class="meta">'+esc(p.tagline)+'</div>';
+  h+='<div class="meta"><b>'+T.notes+':</b> '+esc(notes)+'</div>';
+  h+='<a class="plink" href="'+st.url+'" target="_blank" rel="noopener">'+T.buy+' \u2192</a>';
+  el.innerHTML=h;return el;
+}
+// size map
+(function(){
+  const box=document.getElementById('maprows');
+  P.forEach(p=>{
+    const row=document.createElement('div');row.className='maprow';
+    const allv=p.sizes.every(s=>s.verified);
+    const mn=Math.min(...p.sizes.map(s=>s.min)),mx=Math.max(...p.sizes.map(s=>s.max));
+    row.innerHTML='<div class="maplabel">'+esc(p.brand+' '+p.model)+'</div>'+
+      '<div class="maptrack"><div class="mapbar b-'+p.brand+(allv?'':' assumed')+'" style="left:'+pct(mn)+'%;width:'+(pct(mx)-pct(mn))+'%"></div></div>';
+    box.appendChild(row);
+  });
+  const tick=document.getElementById('mapticks');
+  for(let c=46;c<=65;c+=2){const s=document.createElement('span');s.style.left=pct(c)+'%';s.textContent=c;tick.appendChild(s);}
+})();
+// katalog
+const katState={brand:'all',showLast:false};
+function renderKat(){
+  const g=document.getElementById('katgrid');g.innerHTML='';
+  P.filter(p=>(katState.brand==='all'||p.brand===katState.brand)&&(katState.showLast||!p.lastGen))
+   .sort((a,b)=>a.stores[0].priceNOK-b.stores[0].priceNOK)
+   .forEach(p=>g.appendChild(card(p,null,null)));
+}
+document.querySelectorAll('#brandchips .chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('#brandchips .chip').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on');katState.brand=c.dataset.v;renderKat();
+}));
+document.getElementById('lastgen').addEventListener('change',e=>{katState.showLast=e.target.checked;renderKat();});
+renderKat();
+</script>
+</body>
+</html>

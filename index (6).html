@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neck &amp; accessories — Gear Lab</title>
+<meta name="description" content="Neck guards are mandatory in Norwegian ice hockey. Selector, catalog with verified prices, and a parent guide to neck protection and accessories.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#ff5b1f;--ink:#e8e6e1;--faint:#a8a59f;--bg:#141313;--card:#1c1b1a;--line:#2a2827;--ok:#7fb069}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header{padding:20px 0 0}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-size:12px;letter-spacing:.18em;color:var(--faint);text-transform:uppercase}
+.brand a{color:var(--faint)}
+.langsw{display:flex;gap:2px;border:1px solid var(--line);border-radius:6px;overflow:hidden;font-size:12px}
+.langsw a,.langsw span{padding:4px 10px;color:var(--faint)}
+.langsw span{background:var(--accent);color:#141313;font-weight:600}
+h1{font-family:Fraunces,serif;font-weight:600;font-size:clamp(30px,6vw,44px);line-height:1.1;margin:14px 0 6px}
+.sub{color:var(--faint);max-width:620px}
+.rulecard{margin:26px 0 8px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;background:var(--card);padding:18px 18px 14px;position:relative}
+.rulecard .tag{display:inline-block;background:var(--accent);color:#141313;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:10px}
+.rulecard .para{font-family:Fraunces,serif;font-size:13px;color:var(--faint);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.rulecard blockquote{font-family:Fraunces,serif;font-size:clamp(17px,2.6vw,20px);line-height:1.45}
+.rulecard .src{margin-top:10px;font-size:12.5px;color:var(--faint)}
+nav.tabs{display:flex;gap:8px;margin:24px 0 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5;padding-top:6px}
+nav.tabs button{background:none;border:none;color:var(--faint);font:inherit;font-weight:600;padding:10px 4px 12px;cursor:pointer;border-bottom:2px solid transparent;font-size:15px}
+nav.tabs button.on{color:var(--ink);border-bottom-color:var(--accent)}
+section.pane{display:none;padding:26px 0 10px}
+section.pane.on{display:block}
+h2{font-family:Fraunces,serif;font-weight:600;font-size:24px;margin:6px 0 12px}
+h3{font-size:16px;font-weight:700;margin:18px 0 8px}
+p{margin:0 0 12px}
+.mut{color:var(--faint);font-size:14px}
+.small{font-size:12.5px;color:var(--faint)}
+.qblock{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
+.qlabel{font-weight:600;margin-bottom:8px;display:block}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{background:var(--bg);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:9px 12px;font:inherit;font-size:14px;cursor:pointer;text-align:left}
+.opts button.sel{border-color:var(--accent);background:#241a15}
+.result{border:1px solid var(--accent);border-radius:10px;padding:16px;margin-top:14px;background:#1b1512}
+.result h3{margin-top:0}
+.chk{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.chk:last-child{border-bottom:none}
+.chk input{margin-top:4px;accent-color:var(--accent);width:16px;height:16px}
+.chk .nm{font-weight:600}
+.chk .pr{margin-left:auto;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink)}
+.total{display:flex;justify-content:space-between;font-weight:700;padding-top:12px;font-size:17px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.filters button{background:var(--card);border:1px solid var(--line);color:var(--faint);border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.filters button.sel{color:#141313;background:var(--accent);border-color:var(--accent);font-weight:600}
+.grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.card .hd{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.card .nm{font-weight:700;font-size:16px}
+.card .fam{color:var(--faint);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.bdg{font-size:11px;font-weight:600;border:1px solid var(--line);border-radius:4px;padding:2px 6px;color:var(--faint)}
+.bdg.tier-flagship{border-color:var(--accent);color:var(--accent)}
+.bdg.tier-mid{border-color:#7a7671;color:var(--ink)}
+.bdg.cert{border-color:var(--ok);color:var(--ok)}
+.bdg.gen{border-color:#6b675f;color:#6b675f}
+.tagline{font-style:italic;color:var(--faint);font-size:13.5px}
+.spec{font-size:13.5px;color:var(--ink)}
+.spec b{font-weight:600}
+.pricebox{margin-top:auto;border-top:1px dashed var(--line);padding-top:10px;font-size:14px}
+.pr-now{font-weight:700;font-size:17px}
+.pr-ord{color:var(--faint);text-decoration:line-through;margin-left:6px;font-size:13px}
+.pr-unk{color:var(--faint);font-style:italic}
+.note{font-size:12.5px;color:var(--faint);border-left:2px solid var(--line);padding-left:8px}
+.lgn-toggle{margin:14px 0}
+.hide{display:none!important}
+.acc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px}
+.acc .rng{color:var(--accent);font-weight:700}
+.acc .ex{margin-top:8px;font-size:14px}
+.learn{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:16px}
+.learn h3{margin-top:0;font-family:Fraunces,serif;font-size:19px;font-weight:600}
+.learn ul{margin:0 0 12px 18px}
+.learn li{margin-bottom:6px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--faint);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.dia{margin:12px 0;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px}
+.dia figcaption{font-size:12px;color:var(--faint);margin-top:6px}
+footer{border-top:1px solid var(--line);margin-top:36px;padding:22px 0 40px;font-size:12.5px;color:var(--faint)}
+footer p{margin-bottom:8px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="topbar">
+    <div class="brand"><a href="../../en/">← GEAR LAB</a></div>
+    <div class="langsw"><a href="../">NO</a><span>EN</span></div>
+  </div>
+  <h1>Neck &amp; accessories</h1>
+  <p class="sub">The neck guard is the most important — and cheapest — piece of safety gear in the bag. Here: the rule in Norway (with sources), verified prices, a simple selector, and a first-season checklist.</p>
+
+  <div class="rulecard">
+    <span class="tag">Mandatory in Norway — all levels</span>
+    <div class="para">IIHF Official Rule Book · Rule 9.12 Neck laceration protector</div>
+    <blockquote>“For all players in all categories of IIHF Competition, it is mandatory to wear a neck laceration protector designed for this specific purpose, choosing a design that covers as much of the neck as possible. [...] For violation of this rule, after warning by the Referee, a Minor Penalty shall be imposed.”</blockquote>
+    <div class="src">Source: IIHF Official Rule Book 2024/25, Rule 9.12 — adopted in Norway via NIHF Spilleregler (Norwegian translation, version 30 Jul 2025, hockey.no). Checked 10 Jul 2026. For kids and youth, neck guards have long been mandatory in Norway; since the 2024/25 season the mandate covers every level, seniors included. More under <a href="#" data-goto="laer">Learn</a>.</div>
+  </div>
+</header>
+
+<div class="wrap">
+<nav class="tabs" role="tablist">
+  <button class="on" data-tab="velger" role="tab" aria-selected="true">Selector</button>
+  <button data-tab="katalog" role="tab" aria-selected="false">Catalog</button>
+  <button data-tab="laer" role="tab" aria-selected="false">Learn</button>
+</nav>
+
+<!-- ==================== SELECTOR ==================== -->
+<section class="pane on" id="pane-velger">
+  <h2>Neck guard selector</h2>
+  <p class="mut">Three questions. Every recommendation is a certified model with a price verified at hockeystore.no (10 Jul 2026).</p>
+
+  <div class="qblock">
+    <span class="qlabel">1. How old is your child?</span>
+    <div class="opts" id="q-age">
+      <button data-v="yth">Under ~9 years (YTH)</button>
+      <button data-v="jr">~9–14 years (JR)</button>
+    </div>
+  </div>
+  <div class="qblock">
+    <span class="qlabel">2. What suits your child best?</span>
+    <div class="opts" id="q-type">
+      <button data-v="collar">Simplest option — a separate collar around the neck</button>
+      <button data-v="shirt">Complains about things around the neck / wants a base layer with built-in protection</button>
+      <button data-v="usikker">Not sure — show both</button>
+    </div>
+  </div>
+  <div class="qblock">
+    <span class="qlabel">3. Budget?</span>
+    <div class="opts" id="q-budget">
+      <button data-v="lav">Lowest possible</button>
+      <button data-v="normal">Normal — best value</button>
+      <button data-v="maks">Maximum protection</button>
+    </div>
+  </div>
+  <div id="q-result"></div>
+
+  <h2 style="margin-top:34px">First-season checklist</h2>
+  <p class="mut">The small gear beginners actually need (helmet, skates, stick etc. are covered in other sections). Tick items — the total is computed from verified prices and ranges at hockeystore.no.</p>
+  <div class="qblock" id="checklist"></div>
+  <p class="small">Range = cheapest to priciest sensible option in the store on 10 Jul 2026. The water bottle is excluded from the total because its price is not verified yet.</p>
+</section>
+
+<!-- ==================== CATALOG ==================== -->
+<section class="pane" id="pane-katalog">
+  <h2>Neck guards</h2>
+  <p class="mut">YTH/JR models at hockeystore.no. Prices checked 10 Jul 2026. “Price unverified” = the model is in the store, but we have not verified the amount yet.</p>
+  <div class="filters" id="filters">
+    <button data-f="all" class="sel">All</button>
+    <button data-f="collar">Collar</button>
+    <button data-f="shirt">Shirt</button>
+    <button data-f="YTH">YTH</button>
+    <button data-f="JR">JR</button>
+  </div>
+  <div class="grid" id="pgrid"></div>
+  <div class="lgn-toggle"><label class="small" style="cursor:pointer"><input type="checkbox" id="lgn" style="accent-color:var(--accent);margin-right:6px">Show previous generation / unverified models</label></div>
+
+  <h2 style="margin-top:34px">Accessories</h2>
+  <p class="mut">Guide-first: price ranges from the store&rsquo;s own categories + one verified example per category.</p>
+  <div id="agrid"></div>
+</section>
+
+<!-- ==================== LEARN ==================== -->
+<section class="pane" id="pane-laer">
+
+  <div class="learn">
+    <h3>1 · The rule in Norway — with sources</h3>
+    <p><b>Short version for parents:</b> your child must wear a neck guard at both practice and games. It has been that way for kids and youth for a long time — and since 2024 it applies to everyone, seniors included.</p>
+    <ul>
+      <li><b>The rule text:</b> IIHF Official Rule Book Rule 9.12, adopted in Norway via NIHF Spilleregler (quoted at the top of this page): an approved neck laceration protector is mandatory, must cover as much of the neck as possible, be worn properly and not be modified. Enforcement: referee warning, then a minor penalty (2 min).</li>
+      <li><b>For the youngest:</b> NIHF&rsquo;s Kampreglement lists the neck guard as mandatory equipment in kids&rsquo; hockey too (current version revised by the federation board 23 Mar 2026, hockey.no).</li>
+      <li><b>The timeline:</b> after Adam Johnson&rsquo;s death (October 2023), the NIHF board decided on 30 Oct 2023 to extend the mandate to seniors (hockey.no news). The rule change came in March 2024 and applies from the 2024/25 season (Dagbladet, 2 Oct 2024, federation president Tage Pettersen). The IIHF did the same internationally: council decision December 2023, Rule 9.12 in the rulebook from 2024/25.</li>
+      <li><b>Also recommended:</b> Rule 9.5 of the same rulebook strongly recommends cut-resistant socks and base layers for all players.</li>
+    </ul>
+    <p class="small">Sources with dates: hockey.no “Forbundsstyret vil endre regel om halsbeskytter” (31 Oct 2023) · NIHF Spilleregler ver. 30 Jul 2025 · NIHF Kampreglement rev. 23 Mar 2026 · Dagbladet “Norge tar grep” (2 Oct 2024) · iihf.com “IIHF mandates neck laceration protection at all levels” (Dec 2023). All checked 10 Jul 2026.</p>
+  </div>
+
+  <div class="learn">
+    <h3>2 · Collar or shirt? And what do the marks mean?</h3>
+    <table>
+      <tr><th></th><th>Collar</th><th>Shirt with built-in collar</th></tr>
+      <tr><td><b>Price</b></td><td>NOK 179–449</td><td>NOK 499–1,099</td></tr>
+      <tr><td><b>Pros</b></td><td>Cheap, quick on/off, easy to replace as the child grows</td><td>Can&rsquo;t be “forgotten” — it is part of the base layer. Many kids find it less itchy. Some models also protect the wrists</td></tr>
+      <tr><td><b>Cons</b></td><td>Can feel tight, easy to leave at home, must sit snug (never folded down)</td><td>Pricier, follows clothing size (replace when the shirt gets too small), one shirt in the wash = you need a spare</td></tr>
+    </table>
+    <p><b>Boys and girls:</b> collars are unisex, and so are most shirts. A dedicated girls fit in Yth/Jr comes from CCM FTW (in the catalog). Either way, check the fit — shirts follow clothing sizes.</p>
+    <p><b>Certifications — this is the actual approval:</b></p>
+    <ul>
+      <li><b>BNQ</b> (CAN/BNQ 9415-370): the Canadian neck protector standard since 1990 — required by Hockey Canada since 1993. It is being replaced by…</li>
+      <li><b>ISO 10256-5</b> (2017): the international standard built on the BNQ one; adopted in Canada as CAN/BNQ 0102-565. If you see a BNQ or ISO 10256-5 mark, the protector itself has been tested as a neck guard.</li>
+      <li><b>CE / UKCA:</b> European/UK conformity marking for protective equipment. <b>HECC:</b> the US certification body, which launched its own neck protector program in January 2025.</li>
+    </ul>
+    <p><b>Marketing vs. spec:</b> “ANSI Level 3/6” and “A5” describe the <i>fabric&rsquo;s</i> cut resistance under general material standards — useful for comparison, but not a neck guard approval. Look for the BNQ/ISO/CE mark first, and read the cut level as bonus information. The Norwegian rule requires “approved neck protection” without naming a single standard — certified models from established brands are the safe choice.</p>
+    <p class="small">Sources: bnq.qc.ca (standard pages for 9415-370 and 0102-565/ISO 10256-5), hecc.org (15 Jan 2025), product pages at bauer.com and hockeystore.no. Checked 10 Jul 2026.</p>
+  </div>
+
+  <div class="learn">
+    <h3>3 · First-season checklist with a total budget</h3>
+    <p>Use <a href="#" data-goto="velger">the generator under Selector</a> — it sums verified prices. The rough picture for the small gear (excluding helmet/skates/stick/pads):</p>
+    <table>
+      <tr><th>Item</th><th>Verified range (NOK)</th></tr>
+      <tr><td>Neck guard (collar)</td><td>179–449</td></tr>
+      <tr><td>… or a neck guard shirt</td><td>499–1,099</td></tr>
+      <tr><td>Wheeled hockey bag</td><td>500–1,500 (up to 3,000 for the biggest)</td></tr>
+      <tr><td>Stick tape, 2 rolls</td><td>90–138</td></tr>
+      <tr><td>Skate laces (spare pair)</td><td>39–59</td></tr>
+      <tr><td>Wax (optional)</td><td>119</td></tr>
+    </table>
+    <p><b>With the default picks the generator computes NOK 808–2,146</b> — the low end with an affordable collar and bag, the high end with the priciest picks. Before helmet, skates and stick. Tip: the collar is the last place to save NOK 200; the bag is the first.</p>
+  </div>
+
+  <div class="learn">
+    <h3>4 · The drying routine as a family habit</h3>
+    <p>Wet gear rusts skate steel, smells, and wears out velcro and seams. The routine takes under ten minutes and needs no special rack:</p>
+    <figure class="dia">
+      <svg viewBox="0 0 640 120" role="img" aria-label="Drying routine in four steps" style="width:100%;height:auto">
+        <g fill="none" stroke="#a8a59f" stroke-width="2">
+          <rect x="8" y="18" width="140" height="66" rx="8"/>
+          <rect x="172" y="18" width="140" height="66" rx="8"/>
+          <rect x="336" y="18" width="140" height="66" rx="8"/>
+          <rect x="500" y="18" width="132" height="66" rx="8"/>
+          <path d="M150 51h18m164 0h18m164 0h18" stroke="#ff5b1f"/>
+        </g>
+        <g fill="#e8e6e1" font-family="Inter,sans-serif" font-size="13" text-anchor="middle">
+          <text x="78" y="44">Straight home:</text><text x="78" y="62">EVERYTHING out</text>
+          <text x="242" y="44">Hang it up,</text><text x="242" y="62">open all velcro</text>
+          <text x="406" y="44">Loosen laces,</text><text x="406" y="62">wipe the steel</text>
+          <text x="566" y="44">Next day:</text><text x="566" y="62">pack by checklist</text>
+        </g>
+        <g fill="#ff5b1f" font-family="Inter,sans-serif" font-size="11" font-weight="700">
+          <text x="14" y="14">1</text><text x="178" y="14">2</text><text x="342" y="14">3</text><text x="506" y="14">4</text>
+        </g>
+      </svg>
+      <figcaption>Schematic sketch — four steps, same order every time.</figcaption>
+    </figure>
+    <ul>
+      <li>Let <b>the child</b> own steps 1–2 from the very first season. That is half the point.</li>
+      <li>Neck guard and shirt: hang to air, wash regularly per the care label — sweat degrades the material over time, and a protector in good condition is part of the approval.</li>
+      <li>Wipe skate steel with a towel and never leave it in damp soakers overnight.</li>
+      <li>A dedicated drying rack is nice, not necessary. We found no hockey-specific racks at hockeystore.no (checked 10 Jul 2026) — an ordinary laundry rack works. Against odor, the store carries scent sprays (Odor-Aid and others).</li>
+    </ul>
+  </div>
+
+  <div class="learn">
+    <h3>5 · Stick tape — cross-link to Stick Lab</h3>
+    <p>How to tape the blade and knob is shown on video in <a href="https://sticklab-three.vercel.app" target="_blank" rel="noopener">Stick Lab → Learn</a>. Here is just the shopping list: 25&nbsp;mm suits narrow kids&rsquo; blades, 36&nbsp;mm covers faster. Verified at hockeystore.no: Howies Premium 25&nbsp;mm NOK 45 / 36&nbsp;mm NOK 69; most of the range (45 variants) sits at NOK 45–100. Wax on the blade (e.g. Howies Tacky, NOK 119) is optional, but tape lasts longer and snow sticks less.</p>
+  </div>
+
+</section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><b>About the prices:</b> hockeystore.no is a Swedish retailer (Spobik AB) with a Norwegian-language storefront — “in stock” means orderable to Norway, not Norwegian local retail. All prices checked 10 Jul 2026 and may change. “Price unverified” means we have not verified the amount yet. Product links open the Norwegian storefront.</p>
+    <p><b>Sources (the rule):</b> NIHF Spilleregler ver. 30 Jul 2025 and Kampreglement rev. 23 Mar 2026 (hockey.no) · hockey.no news 31 Oct 2023 · Dagbladet 2 Oct 2024 · iihf.com Dec 2023 · bnq.qc.ca · hecc.org 15 Jan 2025.</p>
+    <p>Gear Lab is a parent guide and is not affiliated with NIHF or any store. Rules can change — check hockey.no and your club when in doubt.</p>
+    <p style="margin-top:14px;letter-spacing:.18em;text-transform:uppercase;font-size:11px">GEAR LAB · Neck &amp; accessories v0.1</p>
+  </div>
+</footer>
+
+<script>
+/* ============ DATA (mirrors the Norwegian page; strings translated) ============ */
+const NG = [
+{id:'bauer-nlp7-core',brand:'Bauer',family:'NLP',model:'NLP7 Core',tier:'budget',type:'collar',age:['YTH'],
+ cert:['BNQ','CE','UKCA'],material:'100% polyester, THERMO MAX moisture wicking',
+ sizes:'YTH one size, adjustable velcro',
+ tagline:'Entry-level certified collar',
+ stores:[{name:'hockeystore.no',priceNOK:179,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.17854/bauer-halsbeskyttere-nlp7-core-yth',lastChecked:'2026-07-10'}],
+ notes:'The size text "L/XL (34–43 cm)" on the Yth page looks like Sr copy — Yth neck measurement to verify. Certification from the product page.'},
+{id:'bauer-ng21-premium',brand:'Bauer',family:'NG',model:'NG21 Premium',tier:'mid',type:'collar',age:['JR'],
+ cert:['BNQ','CE'],material:'DuPont Kevlar + para-aramid/polyester, HeiQ Fresh',
+ sizes:'JR S/M: neck 10–14 in (≈ 25–36 cm)',
+ tagline:'Kevlar collar, proven mid pick',
+ stores:[{name:'hockeystore.no',priceNOK:199,priceOrd:349,url:'https://www.hockeystore.no/no/articles/2.559.12802/bauer-halsbeskytter-ng21-premium-jr',lastChecked:'2026-07-10'},
+         {name:'bauer.com (MSRP)',priceNOK:null,priceOrd:null,url:'https://www.bauer.com/products/ng21-premier-neckguard-collar',lastChecked:'2026-07-10',msrpNote:'Manufacturer page found; MSRP amount to verify'}],
+ notes:'Certification and neck sizing confirmed at bauer.com. On sale when checked (reg. NOK 349).'},
+{id:'bauer-bodyguard-collar',brand:'Bauer',family:'Bodyguard',model:'Bodyguard collar',tier:'flagship',type:'collar',age:['YTH'],
+ cert:['BNQ','CE','HECC'],material:'DuPont Kevlar + stainless steel fiber/polyester · A5 cut resistance · HeiQ Fresh',
+ sizes:'YTH, adjustable',
+ tagline:'New flagship collar (2025/26)',
+ stores:[{name:'hockeystore.no',priceNOK:399,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.29396/bauer-halsbeskytter-bodyguard-yth',lastChecked:'2026-07-10'}],
+ notes:'New for 2025/26. No JR size found in the store when checked — YTH and SR only.'},
+{id:'ccm-pro-collar',brand:'CCM',family:'Pro',model:'Pro collar',tier:'mid',type:'collar',age:['JR'],
+ cert:['CE'],material:'Dyneema, two-piece design, velcro + arm straps',
+ sizes:'JR (black or white)',
+ tagline:'Two-piece Dyneema collar',
+ stores:[{name:'hockeystore.no',priceNOK:449,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.15001/ccm-halsbeskytter-pro-jr-svart',lastChecked:'2026-07-10'}],
+ notes:'The product page states "CE approved" only — BNQ status to verify with CCM.'},
+{id:'bauer-bodyguard-shirt',brand:'Bauer',family:'Bodyguard',model:'Bodyguard shirt LS',tier:'flagship',type:'shirt',age:['YTH'],
+ cert:['BNQ','CE','HECC'],material:'Kevlar collar + steel fiber (A5) · polyester/spandex · mesh · HeiQ Smart Temp/Fresh · silicone grip for elbow pads',
+ sizes:'YTH XS–XL (clothing size)',
+ tagline:'Flagship neck-guard base layer',
+ stores:[{name:'hockeystore.no',priceNOK:699,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.29393/bauer-svedtroje-bodyguard-yth',lastChecked:'2026-07-10'}],
+ notes:'New for 2025/26. No JR variant found when checked.'},
+{id:'ccm-shirt-ls',brand:'CCM',family:'Neck Guard Shirt',model:'Neck guard shirt LS',tier:'mid',type:'shirt',age:['YTH','JR'],
+ cert:['BNQ','HECC','CE','UKCA'],material:'ANSI Level 3 collar · polyester/spandex · velcro designed not to snag hair',
+ sizes:'YTH and JR (clothing sizes)',
+ tagline:'Certified long-sleeve base layer',
+ stores:[{name:'hockeystore.no (YTH)',priceNOK:549,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32103/ccm-halsbeskytterestroye-langermet-yth',lastChecked:'2026-07-10'},
+         {name:'hockeystore.no (JR)',priceNOK:649,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32101/ccm-halsbeskytterestroye-langermet-jr',lastChecked:'2026-07-10'}],
+ notes:''},
+{id:'ccm-ftw-ls',brand:'CCM',family:'FTW',model:'FTW neck guard shirt LS',tier:'flagship',type:'shirt',age:['YTH','JR'],fit:'girls',
+ cert:['BNQ','HECC','CE','UKCA'],material:'ANSI Level 6 collar + cut-resistant cuffs (wrists) · ventilated back',
+ sizes:'YTH and JR — girls/womens fit',
+ tagline:'Girls fit · Level 6 + wrist cuffs',
+ stores:[{name:'hockeystore.no (YTH)',priceNOK:999,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32106/ccm-halsbeskytterestroye-ftw-lang-arm-yth',lastChecked:'2026-07-10'},
+         {name:'hockeystore.no (JR)',priceNOK:1099,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32104/ccm-halsbeskytterestroye-ftw-lang-arm-jr',lastChecked:'2026-07-10'}],
+ notes:'FTW is CCM&rsquo;s girls/womens line.'},
+{id:'ccm-tacks-ls',brand:'CCM',family:'Tacks',model:'Tacks neck guard shirt LS',tier:'flagship',type:'shirt',age:['YTH','JR'],
+ cert:['BNQ','HECC','CE','UKCA'],material:'ANSI Level 6 collar + cut-resistant cuffs · mesh back',
+ sizes:'YTH and JR (clothing sizes)',
+ tagline:'Level 6 + wrist cuffs',
+ stores:[{name:'hockeystore.no (JR)',priceNOK:null,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32108/ccm-halsbeskytterestroye-tacks-langermet-jr',lastChecked:'2026-07-10'}],
+ notes:'Specs confirmed on the product page; price not captured when checked — to verify. YTH: article 32110.'},
+{id:'aycane-blade-gty',brand:'Aycane',family:'Blade',model:'Blade GTY shirt LS',tier:'flagship',type:'shirt',age:['YTH'],
+ cert:[],material:'BLADE-TEC™ collar · ANSI/ISEA 105 Level A7 + EN ISO 13997 Level F cut resistance · AERCELL™ · V-ENTRY™, no velcro',
+ sizes:'YTH (clothing sizes)',
+ tagline:'Pro-level A7 youth shirt',
+ stores:[{name:'hockeystore.no',priceNOK:1299,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.32979/aycane-halsbeskytterestroye-blade-gty-yth',lastChecked:'2026-07-10'},
+         {name:'aycane.com (MSRP)',priceNOK:1430,priceOrd:null,url:'https://aycane.com/en-us',lastChecked:'2026-07-10',msrpNote:'Official manufacturer MSRP, $129.99 USD converted at 1:11'}],
+ notes:'The product page states material levels A7/F — BNQ/CE marking to verify at purchase. New for 2025/26.'},
+{id:'aycane-blade-y',brand:'Aycane',family:'Blade',model:'Blade Y shirt LS',tier:'mid',type:'shirt',age:['JR'],
+ cert:['BNQ'],material:'A6 cut protection at neck + wrists · TORALOCK™ closure, no velcro · light, stretchy performance fabric',
+ sizes:'JR (clothing sizes)',
+ tagline:'BNQ-certified junior shirt',
+ stores:[{name:'hockeystore.no',priceNOK:null,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.606.27517/aycane-blade-y-jr-halsbeskyttelsestroye-langermet',lastChecked:'2026-07-10'}],
+ notes:'BNQ certified per the product page. Listed under the base-layer category at the store; price to verify.'},
+{id:'ccm-pro-cutres',brand:'CCM',family:'Pro',model:'Pro Cut Resistance',tier:'mid',type:'collar',age:['JR'],lastGen:true,successor:'ccm-pro-collar',
+ cert:[],material:'Cut-resistant collar',sizes:'JR',
+ tagline:'Previous-gen CCM collar (to verify)',
+ stores:[{name:'hockeystore.no',priceNOK:449,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.559.17172/ccm-halsbeskyttere-pro-cut-resistans-jr',lastChecked:'2026-07-10'}],
+ notes:'Likely the previous generation of the CCM Pro — relationship and certification to verify.'},
+{id:'bauer-ls-shirt-old',brand:'Bauer',family:'NG shirt',model:'LS neck guard shirt',tier:'mid',type:'shirt',age:['YTH'],lastGen:true,successor:'bauer-bodyguard-shirt',
+ cert:[],material:'DuPont Kevlar collar · HeiQ Fresh/Smart Temp · grip zones for elbow pads',sizes:'YTH',
+ tagline:'Previous-gen Bauer LS shirt',
+ stores:[{name:'hockeystore.no (category)',priceNOK:null,priceOrd:null,url:'https://www.hockeystore.no/no/articles/559/halsbeskyttere-hockey',lastChecked:'2026-07-10'}],
+ notes:'Seen in the range (article 17480); direct link, price and certification to verify. Superseded by the Bodyguard shirt.'},
+{id:'mohawke-collar',brand:'Mohawke',family:'—',model:'Neck guard',tier:'budget',type:'collar',age:['JR'],lastGen:true,
+ cert:[],material:'—',sizes:'—',
+ tagline:'Budget collar (specs to verify)',
+ stores:[{name:'hockeystore.no',priceNOK:219,priceOrd:null,url:'https://www.hockeystore.no/no/articles/559/halsbeskyttere-hockey',lastChecked:'2026-07-10'}],
+ notes:'Price from the category page; sizes and certification to verify before it can be recommended.'},
+{id:'kosa-collar',brand:'Kosa',family:'—',model:'Neck protection',tier:'budget',type:'collar',age:['JR'],lastGen:true,
+ cert:['CE'],material:'Kevlar',sizes:'Junior (10–16 yrs) and Senior',
+ tagline:'CE Kevlar budget collar',
+ stores:[{name:'hockeystore.no',priceNOK:null,priceOrd:null,url:'https://www.hockeystore.no/no/articles/2.1548.19636/kosa-halsbeskyttelse',lastChecked:'2026-07-10'}],
+ notes:'Sold under the bandy category, decent spec (CE, Kevlar) — price to verify.'}
+];
+
+const ACC = [
+{cat:'Wheeled hockey bag',rng:'NOK 500–3,000 · most 1,000–1,500',
+ body:'For kids: pick wheels. The bag quickly weighs more than the child can carry, and with wheels they can pull it themselves — part of the independence. Bauer Core line: YTH 25 in and JR 30 in; check that the bag fits your car.',
+ ex:{nm:'Bauer Hjulbag Premium Jr Navy',pr:'NOK 799 (reg. 999)',url:'https://www.hockeystore.no/no/articles/2.512.3912/bauer-hjulbag-premium-jr-navy'},
+ src:'Range from the store&rsquo;s price filter (29 wheeled bags), 10 Jul 2026.'},
+{cat:'Stick tape',rng:'NOK 45–100 per roll (45 variants)',
+ body:'25 mm suits narrow kids&rsquo; blades; 36 mm covers faster. White vs. black is taste. Two rolls last a beginner a long time. See the taping video in Stick Lab.',
+ ex:{nm:'Howies Premium Tape 25 mm white',pr:'NOK 45',url:'https://www.hockeystore.no/no/articles/540/kolletape'},
+ src:'Prices from the category page 10 Jul 2026 (36 mm: NOK 69).'},
+{cat:'Skate laces',rng:'NOK 39–59 · lengths 182–330 cm',
+ body:'Waxed laces hold the knot and tension better for small hands — worth the extra kroner. Always keep one spare pair in the bag. The right length depends on skate size — use the length guide on the product page.',
+ ex:{nm:'CCM Laces Waxed',pr:'NOK 49 (reg. 59)',url:'https://www.hockeystore.no/no/articles/2.504.26672/ccm-lisser-vokset-white'},
+ src:'Prices and length range from the category page 10 Jul 2026.'},
+{cat:'Hockey wax',rng:'~NOK 119 (optional)',
+ body:'Wax over the tape keeps snow from sticking and makes the tape last longer. Nice to have, not needed the first season.',
+ ex:{nm:'Howies Tacky Vax',pr:'NOK 119',url:'https://www.hockeystore.no/no/articles/2.669.25567/howies-tacky-vax'},
+ src:'Product page 10 Jul 2026.'},
+{cat:'Water bottle',rng:'Price unverified',
+ body:'With a full cage, a bottle with a long straw is the practical choice — the child drinks without removing the helmet. One liter is standard.',
+ ex:{nm:'Bauer water bottle with straw (1 L)',pr:'Price unverified',url:'https://www.hockeystore.no/no/articles/2.670.18053/bauer-vannflaske-med-sugeror'},
+ src:'Product confirmed in the range 10 Jul 2026; price to verify.'},
+{cat:'Drying &amp; odor',rng:'—',
+ body:'We found no hockey-specific drying rack at hockeystore.no (checked 10 Jul 2026) — an ordinary laundry rack does the job, see the routine under Learn. The store carries scent sprays (incl. Odor-Aid) and towels; prices to verify.',
+ ex:null,
+ src:'Category structure checked 10 Jul 2026.'}
+];
+
+const CHECK = [
+ {id:'guard-collar',nm:'Neck guard — collar',min:179,max:449,on:true,alt:'guard-shirt'},
+ {id:'guard-shirt',nm:'Neck guard — shirt (alternative)',min:499,max:1099,on:false,alt:'guard-collar'},
+ {id:'bag',nm:'Wheeled hockey bag',min:500,max:1500,on:true},
+ {id:'tape',nm:'Stick tape × 2',min:90,max:138,on:true},
+ {id:'laces',nm:'Skate laces (spare)',min:39,max:59,on:true},
+ {id:'wax',nm:'Wax (optional)',min:119,max:119,on:false},
+ {id:'bottle',nm:'Water bottle w/ straw',min:null,max:null,on:true,note:'price unverified — not in the total'}
+];
+
+const fmt = n => 'NOK ' + n.toLocaleString('en-GB');
+const T = {unk:'Price unverified', last:'checked', lastgen:'PREVIOUS GEN', upcoming:'COMING 2026'};
+
+function tabs(){
+  const btns=[...document.querySelectorAll('nav.tabs button')];
+  const show=id=>{btns.forEach(b=>{const on=b.dataset.tab===id;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});
+    document.querySelectorAll('section.pane').forEach(p=>p.classList.toggle('on',p.id==='pane-'+id));
+    if(location.hash!=='#'+id)history.replaceState(null,'','#'+id);
+    window.scrollTo({top:0});};
+  btns.forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
+  document.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();show(a.dataset.goto)}));
+  const h=location.hash.replace('#','');if(['velger','katalog','laer'].includes(h))show(h);
+}
+function priceHtml(s){
+  if(s.priceNOK==null) return '<span class="pr-unk">'+T.unk+'</span>';
+  let h='<span class="pr-now">'+fmt(s.priceNOK)+'</span>';
+  if(s.priceOrd)h+='<span class="pr-ord">'+fmt(s.priceOrd)+'</span>';
+  return h;
+}
+function card(p){
+  const certs=p.cert.length?p.cert.map(c=>'<span class="bdg cert">'+c+'</span>').join(''):'<span class="bdg">cert. to verify</span>';
+  const ages=p.age.map(a=>'<span class="bdg">'+a+'</span>').join('');
+  const gen=p.lastGen?'<span class="bdg gen">'+T.lastgen+'</span>':'';
+  const stores=p.stores.map(s=>'<div>'+priceHtml(s)+' &nbsp;<a href="'+s.url+'" target="_blank" rel="noopener">'+s.name+'</a> <span class="small">('+T.last+' '+s.lastChecked+')</span>'+(s.msrpNote?'<div class="small">'+s.msrpNote+'</div>':'')+'</div>').join('');
+  return '<article class="card'+(p.lastGen?' lastgen hide':'')+'" data-type="'+p.type+'" data-age="'+p.age.join(' ')+'">'+
+   '<div class="hd"><div><div class="fam">'+p.brand+' · '+p.family+'</div><div class="nm">'+p.model+'</div></div>'+
+   '<span class="bdg tier-'+p.tier+'">'+p.tier+'</span></div>'+
+   '<div class="badges">'+'<span class="bdg">'+(p.type==='collar'?'Collar':'Shirt')+'</span>'+ages+gen+certs+'</div>'+
+   '<div class="tagline">'+p.tagline+'</div>'+
+   '<div class="spec"><b>Sizes:</b> '+p.sizes+'<br><b>Material:</b> '+p.material+'</div>'+
+   (p.notes?'<div class="note">'+p.notes+'</div>':'')+
+   '<div class="pricebox">'+stores+'</div></article>';
+}
+function catalog(){
+  document.getElementById('pgrid').innerHTML=NG.map(card).join('');
+  let f='all';
+  const apply=()=>{document.querySelectorAll('#pgrid .card').forEach(c=>{
+    const showGen=document.getElementById('lgn').checked;
+    let ok=true;
+    if(f==='collar'||f==='shirt')ok=c.dataset.type===f;
+    else if(f==='YTH'||f==='JR')ok=c.dataset.age.includes(f);
+    const isGen=c.classList.contains('lastgen');
+    c.classList.toggle('hide',!ok||(isGen&&!showGen));
+  })};
+  document.querySelectorAll('#filters button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel');f=b.dataset.f;apply();}));
+  document.getElementById('lgn').addEventListener('change',apply);
+  apply();
+  document.getElementById('agrid').innerHTML=ACC.map(a=>'<div class="acc"><h3 style="margin-top:0">'+a.cat+' <span class="rng" style="font-size:13px;margin-left:8px">'+a.rng+'</span></h3><p style="margin-bottom:6px">'+a.body+'</p>'+(a.ex?'<div class="ex">Verified example: <a href="'+a.ex.url+'" target="_blank" rel="noopener">'+a.ex.nm+'</a> — <b>'+a.ex.pr+'</b></div>':'')+'<div class="small">'+a.src+'</div></div>').join('');
+}
+const ans={age:null,type:null,budget:null};
+function quiz(){
+  [['q-age','age'],['q-type','type'],['q-budget','budget']].forEach(([id,k])=>{
+    document.querySelectorAll('#'+id+' button').forEach(b=>b.addEventListener('click',()=>{
+      document.querySelectorAll('#'+id+' button').forEach(x=>x.classList.remove('sel'));
+      b.classList.add('sel');ans[k]=b.dataset.v;render();}));
+  });
+}
+function pick(){
+  const vis=NG.filter(p=>!p.lastGen);
+  const byAge=p=>p.age.includes(ans.age==='yth'?'YTH':'JR');
+  let pool=vis.filter(byAge);
+  if(!pool.length)pool=vis;
+  const collars=pool.filter(p=>p.type==='collar');
+  const shirts=pool.filter(p=>p.type==='shirt');
+  const priced=l=>l.filter(p=>p.stores.some(s=>s.priceNOK!=null));
+  const cheap=l=>priced(l).sort((a,b)=>a.stores[0].priceNOK-b.stores[0].priceNOK)[0];
+  const flag=l=>priced(l).find(p=>p.tier==='flagship'&&p.fit!=='girls')||priced(l).find(p=>p.tier==='mid')||priced(l)[0];
+  const mid=l=>priced(l).find(p=>p.tier==='mid')||cheap(l);
+  const f=ans.budget==='lav'?cheap:(ans.budget==='maks'?flag:mid);
+  const out=[];
+  if(ans.type!=='shirt'&&collars.length)out.push(f(collars));
+  if(ans.type!=='collar'&&shirts.length)out.push(f(shirts));
+  return out.filter(Boolean);
+}
+function render(){
+  const el=document.getElementById('q-result');
+  if(!ans.age||!ans.type||!ans.budget){el.innerHTML='';return;}
+  const picks=pick();
+  const items=picks.map(p=>{const s=p.stores.find(x=>x.priceNOK!=null)||p.stores[0];
+    return '<p><b>'+p.brand+' '+p.model+'</b> ('+(p.type==='collar'?'collar':'shirt')+') — '+(s.priceNOK!=null?fmt(s.priceNOK):T.unk)+' · <a href="'+s.url+'" target="_blank" rel="noopener">'+s.name+'</a><br><span class="small">'+p.sizes+' · '+(p.cert.length?p.cert.join(' / '):'certification to verify')+'</span></p>';}).join('');
+  el.innerHTML='<div class="result"><h3>Our suggestion</h3>'+items+
+   '<p class="small"><b>The fit rule:</b> the protector must sit snug against the neck and never be folded down — that is how it is approved. If in doubt between two sizes: choose the one that fits snugly now, not the one the child will “grow into”. Try in store if you can; online orders come with 60-day returns.</p>'+
+   (ans.type!=='collar'?'<p class="small">For girls: the CCM FTW shirts (Yth/Jr) come in a dedicated girls fit — see Catalog.</p>':'')+
+   (ans.age==='yth'?'<p class="small">The YTH collar range is thinner than JR — a shirt in the right clothing size is often the easiest option for the smallest players.</p>':'')+
+   '</div>';
+}
+function checklist(){
+  const box=document.getElementById('checklist');
+  box.innerHTML=CHECK.map(c=>'<label class="chk"><input type="checkbox" data-id="'+c.id+'"'+(c.on?' checked':'')+'><div><div class="nm">'+c.nm+'</div>'+(c.note?'<div class="small">'+c.note+'</div>':'')+'</div><div class="pr">'+(c.min==null?T.unk:(c.min===c.max?fmt(c.min):fmt(c.min)+' – '+fmt(c.max)))+'</div></label>').join('')+
+   '<div class="total"><span>Total</span><span id="chk-total"></span></div>';
+  const upd=()=>{
+    let mn=0,mx=0;
+    box.querySelectorAll('input').forEach(i=>{
+      if(!i.checked)return;const c=CHECK.find(x=>x.id===i.dataset.id);
+      if(c.min!=null){mn+=c.min;mx+=c.max;}
+    });
+    document.getElementById('chk-total').textContent=mn===mx?fmt(mn):fmt(mn)+' – '+fmt(mx);
+  };
+  box.querySelectorAll('input').forEach(i=>i.addEventListener('change',e=>{
+    const c=CHECK.find(x=>x.id===i.dataset.id);
+    if(i.checked&&c.alt){const o=box.querySelector('input[data-id="'+c.alt+'"]');if(o)o.checked=false;}
+    upd();
+  }));
+  upd();
+}
+tabs();catalog();quiz();checklist();
+</script>
+</body>
+</html>
